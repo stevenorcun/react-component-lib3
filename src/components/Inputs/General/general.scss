@@ -1,0 +1,61 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.inputContainer {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.inputReadonly {
+  cursor: pointer;
+}
+
+.inputElement {
+  position: relative;
+  margin: 20px;
+  width: 100%;
+
+  input {
+    @include size(calc(100% - 12px), 50px);
+    box-sizing: border-box;
+    padding-left: 10px;
+    border-radius: 4px;
+    background-color: $color-white;
+    border: 1px solid $color-divider-grey;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .inputWithIcon {
+    padding-left: 42px;
+  }
+
+  .icon {
+    svg {
+      position: absolute;
+      top: 18px;
+      left: 12px;
+    }
+  }
+
+  .iconArrow {
+    position: absolute;
+    right: 22px;
+    top: 30px;
+  }
+}
+
+.label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  padding-bottom: 0.5rem;
+  color: $color-label;
+}

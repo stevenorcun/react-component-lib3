@@ -1,0 +1,115 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/_commons";
+
+.filterExplorer {
+  left: 0;
+  right: 0;
+  top: 65px;
+  position: absolute;
+  color: $color-blue;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 10px;
+  border: 1px solid $color-divider-grey;
+  background: $color-white;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid $color-divider-grey;
+
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      margin-left: 0.5rem !important;
+      color: $color-blue;
+    }
+  }
+}
+
+.containerFilter {
+  border-radius: 4px;
+  background: $color-grey-white;
+  padding: 1rem;
+  width: 80%;
+  margin: 1rem;
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      color: $color-label;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.contentInput {
+  display: flex;
+  align-items: center;
+
+  .input {
+    margin: 0.5rem;
+  }
+}
+
+.dropDownInput {
+  position: absolute;
+  left: 10px;
+  right: 5px;
+  border: 1px solid $color-divider-grey;
+  box-shadow: 0px 8px 20px rgba(42, 46, 115, 0.09);
+  border-radius: 2px;
+
+  max-height: 350px;
+  background-color: $color-white;
+  overflow: auto;
+
+  &__element {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin: 0;
+    border-radius: 2px 2px 0px 0px;
+    color: $color-black;
+    font-weight: 400;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eaf3fe;
+      color: $color-blue;
+    }
+  }
+}
+
+.addCritere {
+  margin-left: 1rem !important;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 16px;
+  color: $color-blue;
+}
+
+.buttonFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  margin: 1rem;
+  color: $color-white;
+  background: $color-blue;
+  border-radius: 4px;
+}

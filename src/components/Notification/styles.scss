@@ -1,0 +1,49 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.notification {
+  padding: 20px;
+  padding-left: 30px;
+  position: relative;
+  text-align: left;
+
+  > .title {
+    color: $color-grey;
+    font-size: 14px;
+
+    &.badge:before {
+      content: "";
+      background: #f53e6a;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 25px;
+      left: 14px;
+      z-index: 9;
+      border-radius: 100%;
+    }
+  }
+
+  .description {
+    margin-top: 5px;
+    color: $color-grey80;
+    font-size: 12px;
+  }
+
+  .link {
+    color: $color-blue;
+    text-decoration: underline;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .time {
+    color: #ddd;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ededee;
+  }
+}

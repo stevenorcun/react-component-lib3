@@ -1,0 +1,385 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.Modal {
+  height: unset;
+  max-height: 90%;
+}
+
+.TabSelectors {
+  padding: 13px 62px;
+  gap: 16px;
+
+  .TabSelector {
+    padding: 12px 0;
+    width: 50%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: $color-grey60;
+    flex-shrink: 0;
+    border-bottom: solid 2px transparent;
+
+    &.Active {
+      color: $color-blue;
+      border-bottom: solid 2px $color-blue;
+    }
+
+    &:first-of-type {
+      justify-content: center;
+    }
+
+    &:last-of-type {
+      justify-content: center;
+    }
+  }
+}
+
+.SelectedEntity {
+  gap: 16px;
+  padding: 16px;
+  overflow: auto;
+  //max-height: 630px;
+}
+
+.Section {
+  // margin: 1rem;
+  background: #f2f4f8;
+  border-radius: 4px;
+}
+
+.SelectedEntityLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  margin-bottom: 10px;
+  gap: 8px;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: $color-grey;
+
+  .SelectedEntityLabel__Prefix {
+    text-align: end;
+  }
+
+  .SelectedEntityLabel__Label {
+    background: $color-blue10;
+    border: 2px solid $color-blue;
+    border-radius: 100px;
+    padding: 0px 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-blue;
+  }
+}
+
+.TargetSummary {
+  padding: 16px;
+  min-height: 180px;
+
+  .Value {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-grey80;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+
+.Label {
+  // margin-bottom: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-grey;
+
+  .Blue {
+    color: $color-blue;
+  }
+}
+
+.TargetSummary__Left,
+.TargetSummary__Right {
+  width: 50%;
+}
+
+.TargetSummary__Right {
+  border-left: 1px solid $color-blue20;
+  padding-left: 32px;
+  gap: 16px;
+}
+
+.TargetSummary__Left {
+  svg {
+    width: 100%;
+    height: 116%;
+  }
+
+  .TileSvg {
+    transform: translate(18%, 15px) scale(0.73);
+  }
+}
+
+.Accordion {
+  margin: -16px -16px 0 -16px;
+
+  .AccordionTitle {
+    gap: 14px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.FusionTargetSelection {
+  gap: 16px;
+  padding: 16px 16px 0 16px;
+}
+
+.Assistance {
+  border-radius: 10px;
+  color: $color-grey;
+  font-weight: 400;
+  font-style: normal;
+  padding: 16px;
+  margin: 0.8rem 0;
+  font-size: 14px;
+  line-height: 19px;
+  background: $color-blue10;
+}
+
+.SearchInput {
+  background: $color-white;
+  padding: 3px 5px 3px 16px;
+  border: solid 1px $color-blue;
+  border-radius: 4px;
+
+  input {
+    border-width: 0;
+    width: 100%;
+    outline: 0 !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-grey;
+  }
+
+  .SubmitButton {
+    width: 39px;
+    height: 31px;
+    background: $color-blue;
+    padding: 7.65311px 11.4797px;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $color-white;
+    }
+  }
+}
+
+.DropdownList {
+  max-height: calc(4 * 56px);
+  overflow: auto;
+  box-shadow: 0 7.58719px 20px #2a2e7326;
+}
+
+.Summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-blue5;
+  }
+
+  &_Selected {
+    background: $color-blue10;
+  }
+
+  .Summary__Left {
+    gap: 9px;
+
+    .Summary__Icon {
+      svg {
+        width: 13px;
+        height: 16px;
+        fill: $color-grey;
+        stroke: $color-grey;
+      }
+    }
+
+    .Summary__Label {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+      color: $color-grey;
+    }
+  }
+}
+
+.Summary__Properties {
+  border-bottom: 1px solid $color-grey10;
+}
+
+.Footer {
+  justify-content: center;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.Footer__Button {
+  border: 2px solid $color-blue;
+  border-radius: 4px;
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  // width: auto;
+}
+
+.Footer__Cancel {
+  background: $color-white;
+  color: $color-blue;
+}
+
+.Footer__Submit {
+  background: $color-blue;
+  color: $color-white !important;
+}
+
+.Modal__Header {
+  padding: 15px 20px;
+  justify-content: space-between;
+  background: $color-blue;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-white;
+  border-radius: 10px 0;
+  // or remove background white from Modal... (1px of white visible above the header)
+  margin-top: -1px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: $color-white;
+  }
+
+  svg + div {
+    padding-left: 14px;
+  }
+
+  div:last-of-type {
+    cursor: pointer;
+  }
+}
+
+.Modal__Body {
+  padding: 24px;
+  max-height: 80%;
+
+  &__propertyFusion {
+    height: 79%;
+    padding: 24px 24px 0 24px;
+  }
+
+  .Label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-grey;
+    padding-bottom: 12px;
+  }
+}
+
+.Modal__Footer {
+  padding-top: 25px;
+  width: 30%;
+  margin: auto;
+
+  .Footer {
+    padding: 16px 0 0;
+  }
+}
+
+.NoBackground {
+  background: none !important;
+}
+
+.AnotherOverlayYay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  // max-height: calc(100vh - 300px);
+  height: 100vh;
+  background: rgba(77, 80, 86, 0.5);
+}
+
+.SecondaryModal {
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background: white;
+
+  &__UndoFusion {
+    height: auto;
+    min-width: 425px;
+    width: 25%;
+  }
+
+  &.PickOneModal {
+    .PropsToPick {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      height: 70%;
+      overflow: auto;
+
+      .Row {
+        gap: 3em;
+        padding: 0.5rem;
+
+        .Half {
+          width: 50%;
+          gap: 0.3em;
+        }
+      }
+    }
+  }
+}
+
+.alignItemCenter {
+  display: flex;
+  align-items: center;
+}

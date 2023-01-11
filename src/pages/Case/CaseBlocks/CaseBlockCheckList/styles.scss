@@ -1,0 +1,55 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.checkListAccordionTitle {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border-top: 1px solid #ededee;
+  border-bottom: 1px solid #ededee;
+}
+
+.messageBox {
+  @include flexbox;
+  @include flex-direction(column);
+  background-color: #f6f6f6;
+  padding: 15px 20px 10px 20px;
+  border-radius: 10px;
+  margin: 0 30px 14px 30px;
+  &.checkListBox {
+    @include flexbox;
+    @include flex-direction(row);
+    @include align-items(center);
+    padding: 0;
+    background-color: #fff;
+    &:nth-child(2) {
+      margin-top: 0.5rem !important;
+    }
+    .actionChecked {
+      color: #d2d3d4;
+      .checkListBoxTitle {
+        color: #94969a;
+      }
+    }
+  }
+  .checkListBoxTitle {
+    color: #4d5056;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .messageText {
+    font-size: 10px;
+  }
+}
+
+.boxContent {
+  margin: 0 !important;
+  &.accordionMargin {
+    margin-bottom: 10px !important;
+  }
+}
+
+:global {
+  .case-boxContent {
+    margin: 0 !important;
+  }
+}

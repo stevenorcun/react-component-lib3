@@ -1,0 +1,95 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.headerEntity {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 1rem 1rem 47px;
+  position: relative;
+  @include box-sizing(border-box);
+
+  img,
+  &Icon > svg {
+    width: 84px;
+    height: 84px;
+    border-radius: 5px;
+  }
+
+  &Identity {
+    height: 61px;
+    margin-left: 1.5rem;
+    margin-right: 2rem;
+
+    &Name {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+      color: #3083f7;
+    }
+
+    &Type {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #717378;
+    }
+  }
+
+  &Divider {
+    height: 4rem;
+    margin: 0 2rem;
+    transform: rotate(0deg);
+    border: 1px solid #cfd8ec;
+  }
+
+  &Label {
+    @include flexbox;
+    @include justify-content(center);
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5rem;
+      height: 30px;
+      border-radius: 5px;
+    }
+
+    &Blue {
+      background-color: #e7f3ff;
+    }
+
+    &Green {
+      margin: 0 1rem;
+      background-color: #e1fff1;
+    }
+
+    &Red {
+      background-color: #ffe2e4;
+    }
+  }
+
+  &Action {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 189px;
+    height: 42px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0 0 0 5px;
+    color: white;
+    background-color: #3083f7;
+  }
+
+  .MenuOptions {
+    width: 230px;
+    padding: 0 7px;
+    right: 0;
+    top: 42px;
+  }
+}

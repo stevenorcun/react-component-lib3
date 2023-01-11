@@ -1,0 +1,44 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.HeaderComponent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+
+  &Left {
+    display: flex;
+    align-items: center;
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+}
+
+.componentHeaderTitle {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--app-main-color, $color-darkblue);
+}
+
+.componentHeaderSubtitle {
+  font-size: 13px;
+  color: #94969a;
+}
+
+.divider {
+  border: 1px solid #ededee;
+}
+
+.buttonSettings {
+  & > svg {
+    fill: #3083f7;
+    width: 20px;
+    height: 20px;
+  }
+}

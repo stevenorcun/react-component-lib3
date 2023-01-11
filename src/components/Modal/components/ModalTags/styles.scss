@@ -1,0 +1,80 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.modalContent {
+  margin: 20px;
+}
+.selectedValue {
+  color: #4d5056;
+  background-color: #f2f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  > span {
+    background-color: #eaf3fe;
+    color: #3083f7;
+    border: 2px solid #3083f7;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 10px;
+  }
+}
+.tagsContainer {
+  p {
+    color: #4d5056;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}
+
+.addButtonContainer {
+  margin-top: 20px;
+  .addButton {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    color: $color-blue;
+    span {
+      margin-left: 6px;
+    }
+  }
+}
+
+.contextMenuOption {
+  @include flexbox;
+  @include align-items(center);
+  padding: 5px 15px;
+  font-size: 12px;
+  font-weight: 400;
+  > svg {
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: #ededee;
+  }
+}
+
+.inputElement {
+  width: 50% !important;
+  border-radius: 10px !important;
+  border: 2px solid #3083f7 !important;
+  box-shadow: none !important;
+}
+.addIcon {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  background-color: #3083f7;
+  padding: 0 5px;
+  border-radius: 5px;
+  box-shadow: 0px 3.06125px 7.65311px rgba(0, 129, 255, 0.4);
+}
+
+.optionElementInteractive {
+  width: 100%;
+  text-align: left;
+}

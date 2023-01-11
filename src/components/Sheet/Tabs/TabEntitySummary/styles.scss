@@ -1,0 +1,24 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.divider {
+  border: 1px solid #ededee;
+}
+
+.component {
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border: 1px solid #ededee;
+  position: relative;
+
+  &__multimediaMinus {
+    height: 270px;
+    overflow: hidden;
+  }
+
+  &__multimediaAll {
+    height: auto;
+  }
+}

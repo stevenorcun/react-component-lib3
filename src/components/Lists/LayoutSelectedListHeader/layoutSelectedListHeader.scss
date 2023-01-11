@@ -1,0 +1,50 @@
+.selectedHeader {
+  background: #3083F7;
+  border-radius: 10px 0px 0px 0px;
+  height: 70px;
+  width: 100%;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .time {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+
+    .listsButton {
+      display: flex;
+    }
+
+    .buttonIcon {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F6F6F6;
+      border-radius: 4px;
+      margin: .5rem;
+
+      & > svg {
+        fill: #3083F7;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

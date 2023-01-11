@@ -1,0 +1,94 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.navigation {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  @include flex-direction(column);
+  position: absolute;
+  top: 8%;
+  left: 35%;
+  background: white;
+  box-shadow: 0px 7.58719px 18.968px rgba(42, 46, 115, 0.28);
+  border-radius: 10px;
+  @include size(430px, auto);
+  z-index: 6;
+
+  .active2 {
+    border: solid #3083f7;
+  }
+  .header {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include size(100%, 55px);
+    border-bottom: 1px solid #ededee;
+
+    div {
+      color: $color-grey60;
+      font-size: 14px;
+      font-weight: bold;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+
+      &.active {
+        background: #3083f7;
+        border-radius: 5px;
+        color: white;
+        padding: 10px 15px;
+      }
+    }
+  }
+
+  .filters {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    margin: 10px 0;
+
+    .filter {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include flex-direction(column);
+      @include size(110px, 110px);
+      background: $color-grey5;
+      border-radius: 11px;
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+
+      > svg {
+        @include size(41px, 41px);
+        color: #3083f7;
+      }
+
+      p {
+        color: #717378;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+      }
+    }
+  }
+
+  .clearFilter {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    color: $color-grey60;
+    fill: $color-grey60;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    svg {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.attributes {
+  color: $color-grey;
+  &:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-grey10;
+  }
+
+  .attributeName {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 10px 20px 5px;
+  }
+}

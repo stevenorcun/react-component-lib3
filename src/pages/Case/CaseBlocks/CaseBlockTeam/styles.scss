@@ -1,0 +1,21 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.agentContent {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include flex-wrap(wrap);
+  .agent {
+    @include flexbox;
+    @include flex-direction(column);
+    flex-basis: 49%;
+    margin-bottom: 15px;
+    color: #4d5056;
+    span {
+      line-height: 22px;
+    }
+    .agentName {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

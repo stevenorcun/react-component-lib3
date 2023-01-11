@@ -1,0 +1,10 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.imageContainer {
+  width: 40%;
+  z-index: 1;
+  .image {
+    width: 100%;
+  }
+}

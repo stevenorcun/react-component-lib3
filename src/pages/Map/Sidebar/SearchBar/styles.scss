@@ -1,0 +1,160 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.searchContainer {
+  position: absolute;
+  width: 27%;
+  height: 6%;
+  left: 2%;
+  top: 10%;
+  background: #ffffff;
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 10px;
+  z-index: 5;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  transition: all 0.4s ease-in;
+
+  &.opened {
+    // left: 22%;
+    transition: all 0.4s ease-in;
+  }
+}
+
+//Media Query Width
+
+@media screen and (min-width: 2000px) {
+  .opened {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .opened {
+    left: 22%;
+  }
+}
+
+@media screen and (max-width: 1780px) {
+  .opened {
+    left: 24%;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .opened {
+    left: 26%;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .opened {
+    left: 28%;
+  }
+}
+
+@media screen and (max-width: 1480px) {
+  .opened {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .opened {
+    left: 33%;
+  }
+
+  .searchContainer {
+    width: 35%;
+    left: 3%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .searchContainer {
+    width: 40%;
+    left: 3%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .opened {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .searchContainer {
+    display: none;
+  }
+}
+
+//Media Query Height
+
+@media screen and (min-height: 1100px) {
+  .searchContainer {
+    height: 4%;
+  }
+}
+
+@media screen and (max-height: 1050px) {
+  .searchContainer {
+    height: 5%;
+  }
+}
+
+@media screen and (max-height: 1000px) {
+  .searchContainer {
+    height: 6%;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .searchContainer {
+    height: 8%;
+  }
+}
+
+.containerMapGeocoder {
+  position: absolute;
+  width: 75%;
+  left: 10%;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border-width: 0px;
+  border: none;
+}
+
+.iconSearch {
+  position: static;
+  top: 30%;
+  bottom: 30%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 14px;
+  right: 87.33%;
+  left: 6.67%;
+  height: 20px;
+  width: 20px;
+}
+
+.btnSearch {
+  float: right;
+  height: 60%;
+  width: 100%;
+}
+
+.btnSearchDiv {
+  position: absolute;
+  right: 2%;
+  width: 8%;
+  height: 70%;
+  background: #3083f7;
+  box-shadow: 0px 3px 10px rgba(0, 129, 255, 0.4);
+  border-radius: 10px;
+}

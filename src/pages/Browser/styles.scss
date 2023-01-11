@@ -1,0 +1,384 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.main {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  @include size(100%, 100%);
+  position: relative;
+  overflow: hidden;
+
+  .searchResultsContainer {
+    @include flexbox;
+
+    .leftContainer {
+      @include size(calc(100% - 375px), 100%);
+      @include flexbox;
+      @include flex-direction(column);
+      flex: auto;
+
+      .searchbarContainer {
+        position: relative;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        margin-top: 40px;
+        margin-bottom: 24px;
+        border-radius: 10px;
+
+        form {
+          @include flexbox;
+          @include size(95%, 60px);
+          background: #ffffff;
+          position: relative;
+          box-shadow: 0px 8px 20px rgba(42, 46, 115, 0.09);
+
+          .searchInput {
+            font-size: 20px;
+            // @include size(calc(100% - 50px - 50px), 60px);
+            // @include size(50%, 60px);
+            flex: auto;
+            border-top: 1px solid #ededee;
+            border-left: 1px solid #ededee;
+            border-bottom: 1px solid #ededee;
+            border-right: none;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            padding-left: 50px;
+            &::placeholder {
+              color: $color-grey60;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .searchOptions {
+            @include size(auto, 58px);
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(flex-end);
+            border-top: 1px solid #ededee;
+            border-bottom: 1px solid #ededee;
+            border-right: 1px solid #ededee;
+            border-left: none;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+
+            .sqlFilter {
+              color: #cfd8ec;
+              border-right: 1px solid #cfd8ec;
+              padding-right: 18px;
+              margin-right: 18px;
+            }
+
+            .datesFilters {
+              @include flexbox;
+              p {
+                color: #94969a;
+                font-size: 10px;
+                margin-top: -10px;
+                padding: 0 10px;
+              }
+            }
+          }
+
+          .searchBtn {
+            @include flexbox;
+            @include align-items(center);
+            @include justify-content(center);
+            @include size(45px, 35px);
+            background: $color-blue;
+            box-shadow: 0px 4px 10px rgba(0, 129, 255, 0.4);
+            border-radius: 10px;
+            margin-left: 40px;
+            margin-right: 22px;
+            top: 12px;
+
+            > svg {
+              height: 15px;
+              width: 15px;
+            }
+          }
+
+          > svg,
+          form > svg {
+            position: absolute;
+            left: 15px;
+            height: 24px;
+            width: 24px;
+            top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.backgroundModal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: transparant;
+}
+
+.divider {
+  width: 14px;
+  height: 1.5px;
+  background: #ededee;
+  background: #4d5056;
+  display: block;
+  margin: auto 0.5rem;
+  text-align: center;
+}
+.inputStartDate {
+  border: none;
+}
+
+.dateFirst {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: auto;
+  cursor: pointer;
+  margin-top: 1rem;
+  &Value {
+    font-size: 14px !important;
+    color: black !important;
+    &Color {
+      color: #3083f7 !important;
+    }
+  }
+}
+.DateWrapper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 72px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  background: white;
+  z-index: 99;
+  width: 749px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    transform: translate(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+  }
+  &ArrowsStart {
+    &::before {
+      left: 58%;
+    }
+  }
+  &ArrowsEnd {
+    &::before {
+      left: 78%;
+    }
+  }
+
+  .DateWrapperContentLeft {
+    width: 160px;
+    border-right: solid 1px #ededee;
+    padding: 24px 0 0;
+    &LiActive {
+      background: #eaf3fe;
+      color: #3083f7;
+    }
+    ul {
+      padding: 0;
+      li {
+        list-style-type: none;
+        font-size: 13px;
+        padding: 4px 24px;
+        height: 26px;
+        cursor: pointer;
+        margin: auto;
+      }
+    }
+  }
+  .DateWrapperContentRight {
+    display: flex;
+    flex-direction: column;
+    width: 588px;
+
+    .DateWrapperContentRightTop {
+      display: flex;
+      &Calendar {
+        border: none;
+        width: 419px;
+        padding: 20px 24px 24px;
+        button {
+          border-radius: 5px;
+        }
+      }
+      &Hour {
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin: auto;
+        flex-direction: column;
+        overflow-y: scroll;
+        cursor: pointer;
+        scrollbar-color: $color-grey40 $color-white;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+          margin-right: 0.4rem;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background-color: #d2d3d4;
+          border-radius: 4px;
+          margin-right: 0.4rem;
+        }
+        border-left: 1px solid #ededee;
+        width: 168px;
+        height: 329px;
+        padding: 20px 24px 24px;
+        font-size: 13px;
+        &::before {
+          content: "";
+          height: 150px;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 10%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          top: 0;
+          right: 10;
+          width: 168px;
+          position: fixed;
+          pointer-events: none;
+        }
+        &::after {
+          content: "";
+          height: 150px;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 10%,
+            rgba(255, 255, 255, 1) 100%
+          );
+          bottom: 70px;
+          right: 10;
+          width: 168px;
+          position: fixed;
+          pointer-events: none;
+        }
+        &Select {
+          background: #d6e6fd;
+          color: #3083f7;
+        }
+        & > span {
+          margin: 7px 0px;
+          width: 47px;
+          height: 24px;
+          padding: 0.3rem;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .DateWrapperContentBottom {
+    border-top: solid 1px #ededee;
+    height: 67px;
+    width: 588px;
+    display: flex;
+    justify-content: c;
+    justify-items: center;
+    &Dates {
+      width: 366px;
+      height: 35px;
+      display: flex;
+      margin: auto;
+      font-size: 14px;
+      background: #f6f6f6;
+      border-radius: 5px;
+      & > span {
+        margin: auto;
+        &:nth-child(2n) {
+          color: #3083f7;
+        }
+      }
+    }
+    &Button {
+      height: 35px;
+      left: 398px;
+      margin: auto;
+      & > button {
+        padding: 8px 16px;
+        width: 83px;
+        height: 35px;
+        border-radius: 5px;
+        border: none;
+        margin: auto 0.1rem;
+        cursor: pointer;
+      }
+      &Cancel {
+        background: #f6f6f6;
+      }
+      &Update {
+        background: #3083f7;
+        color: white;
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.EntityDetailsLayout {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+
+  .EntityDetailsContainer {
+    width: 1440px;
+  }
+}
+
+.CreateSearchAlert,
+.OpenAllInNewTabs {
+  @include size(327px, 45px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 10px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 16px;
+  background: #3083f7;
+  border-radius: 10px 10px 0 0;
+  color: $color-white;
+
+  svg {
+    @include size(12px, 10px);
+    fill: $color-white;
+    padding-right: 6px;
+  }
+
+  &.OpenAllInNewTabs {
+    width: 230px;
+    left: unset;
+    right: 0;
+  }
+}

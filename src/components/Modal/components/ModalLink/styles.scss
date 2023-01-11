@@ -1,0 +1,222 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.modalLink {
+  transition: all 0.6s ease-in-out;
+}
+
+.margin {
+  margin: 16px 16px 0 16px;
+}
+
+.containerHeader {
+  margin: 1rem;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f4f8;
+  box-sizing: border-box;
+
+  .selected {
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+
+    &Value {
+      border: 2px solid #3083f7;
+      border-radius: 100px;
+      color: #3083f7;
+      font-weight: 700;
+      padding: 0px 10px;
+      font-size: 14px;
+      margin: 0.5rem;
+    }
+  }
+}
+
+.inputContainer {
+  @include flexbox;
+  @include flex-direction(column);
+  padding: 15px 20px;
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4d5056;
+    margin-bottom: 3px;
+    span {
+      font-weight: 400;
+    }
+  }
+  .input {
+    height: 50px;
+  }
+}
+.inputRow {
+  @include flexbox;
+  > .inputContainer {
+    width: 50%;
+  }
+}
+.inputText {
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 4px;
+  height: 30px;
+  padding: 5px 8px;
+}
+.switchContainer {
+  @include flex-direction(row);
+  @include align-items(center);
+  label {
+    margin-left: 5px;
+  }
+}
+.accordion {
+  height: 45px;
+  box-sizing: border-box;
+}
+.accordionTitle {
+  @include flexbox;
+  @include align-items(center);
+  svg {
+    margin-right: 10px;
+  }
+}
+.headerRowSearch {
+  width: 100%;
+  margin: auto;
+  height: 60px;
+  border-top: none;
+  border-bottom: none;
+  div {
+    margin: 0;
+    input {
+      font-size: 10px;
+      padding-left: 17px;
+      height: 28px;
+      width: calc(100% - 21px);
+      background-color: $color-white;
+      border-radius: 4px;
+      border: 1px solid #cfd8ec;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      top: 20px;
+      left: 12px;
+    }
+  }
+}
+.inputCalendar {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  > div {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 20px 0 40px;
+    height: 58px;
+    width: calc(100% - 21px);
+    background-color: $color-white;
+    border-radius: 4px;
+    border: 1px solid #cfd8ec;
+    svg {
+      position: absolute;
+      &.iconRemove {
+        cursor: pointer;
+        width: 12px;
+        height: 12px;
+        left: unset;
+        right: 4px;
+        top: 24px;
+      }
+    }
+    > div {
+      @include flexbox;
+      @include align-items(center);
+      height: 100%;
+      > p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        &.placeholder {
+          color: #94969a;
+        }
+      }
+    }
+  }
+  .filterCalendar {
+    transform: translateX(-45%);
+  }
+}
+
+.calendar {
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+}
+
+.linkPreviewContainer {
+  // Dimensions
+  $bg-color: #f2f4f8;
+  $dot-size: 4px;
+  $dot-space: 30px;
+  $dot-color: rgba(0, 0, 0, 0.1);
+
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+  border-radius: 10px;
+  padding: 30px 30px 15px 30px;
+  margin: 0 20px;
+  .inputLinkContainer {
+    background-color: #e7ecf5;
+    border-radius: 10px;
+    margin-top: 15px;
+    button {
+      color: #3083f7;
+      font-weight: 900;
+      font-size: 12px;
+    }
+  }
+  .inputContainer {
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    padding: 8px 15px;
+  }
+}
+.tilesContainer {
+  @include flexbox;
+  position: relative;
+}
+.tileContainer {
+  width: 50%;
+  overflow: inherit;
+  box-sizing: border-box;
+}
+.tile {
+  transform: scale(0.6) translate(20px, 20px);
+  &.tileTarget {
+    transform: translate(calc(100% - 92px), 20px) scale(0.6);
+  }
+}
+.connexionContainer {
+  position: absolute;
+}
+
+.buttonFooter {
+  width: 33%;
+  &.buttonCancel {
+    margin-left: 65px;
+  }
+  &.buttonValidate {
+    margin-right: 65px;
+  }
+}

@@ -1,0 +1,81 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.rightNavigation {
+  @include flex;
+  @include justify-content(flex-end);
+  @include align-items(center);
+  font-size: 15px;
+  padding-right: 15px;
+
+  .userDetails {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction;
+    color: #3083f7;
+    background: #fff;
+    border-radius: 80%;
+    @include size(23px, 23px);
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  .item {
+    border-bottom: none;
+  }
+
+  .searchControls {
+    position: relative;
+    .searchInput {
+      margin: 0 17px;
+      @include size(245px, 30px);
+      color: white;
+      background: #4165b2;
+      box-shadow: 0px 8px 20px rgba(42, 46, 115, 0.09);
+      border: none;
+      border-radius: 7px;
+      font-size: 12px;
+      line-height: 22px;
+      font-style: italic;
+      padding-left: 20px;
+      height: 40px;
+
+      &::placeholder {
+        color: white;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+    .searchBtn {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include size(38px, 31px);
+      background: $color-blue;
+      border-radius: 7px;
+      position: absolute;
+      right: 23px;
+      top: 5px;
+    }
+  }
+}
+
+.itemRow {
+  flex-direction: row !important;
+}
+
+.secondary {
+  min-width: auto !important;
+  margin: 0 7px;
+}
+
+.tertiary {
+  min-width: auto !important;
+}

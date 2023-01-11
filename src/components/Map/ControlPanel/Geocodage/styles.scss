@@ -1,0 +1,271 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.container {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 425px;
+  height: 85%;
+  background: #ffffff;
+  box-shadow: 0px 7.58719px 20px rgba(42, 46, 115, 0.15);
+  border-radius: 10px;
+}
+
+@media screen and (max-height: 900px) {
+  .container {
+    height: 80%;
+  }
+  .scrollbar {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .container {
+    height: 80%;
+  }
+  .scrollbar {
+    overflow-y: scroll;
+  }
+  .button_container {
+    margin-bottom: 5%;
+  }
+}
+
+.scrollbar {
+  height: 90%;
+}
+
+.head_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 5px;
+  height: 30px;
+  left: 35px;
+  top: 273px;
+  background: #3083f7;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.inputs_container {
+  margin-bottom: 40%;
+}
+
+.worldSearchIcon {
+  position: static;
+  top: 30%;
+  bottom: 30%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 14px;
+  right: 87.33%;
+  left: 6.67%;
+  height: 20px;
+  width: 22px;
+}
+
+.head_label {
+  color: #ffffff;
+  position: static;
+  width: 228px;
+  left: calc(50% - 228px / 2 + 16px);
+  top: 28.89%;
+  bottom: 28.89%;
+  font-family: $font-primary-default;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+
+.iconEditDiv {
+  position: absolute;
+  right: 20px;
+}
+
+.iconEditIcon {
+  padding: static;
+  float: right;
+  height: 18px;
+  width: 18px;
+}
+
+.value_preview {
+  padding: 15px;
+  height: 3%;
+  margin: 20px;
+  background: #f2f4f8;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+  justify-content: center;
+}
+
+.label_preview {
+  left: 20%;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  color: #4d5056;
+  margin-top: 2%;
+}
+
+.label_preview_value {
+  padding: 7px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #3083f7;
+  border: 2px solid #3083f7;
+  border-radius: 100px;
+}
+
+.sub_label {
+  margin-left: 5%;
+  margin-top: 3%;
+  margin-bottom: 10%;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  color: #4d5056;
+}
+
+.label_input_geometry {
+  margin-left: 12%;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  color: #4d5056;
+  display: block;
+}
+
+.input_section {
+  float: left;
+  margin-right: 10px;
+  margin-top: 3%;
+}
+
+.input2_section {
+  float: left;
+  margin-top: 3%;
+}
+
+.input3_section {
+  float: left;
+}
+
+.input_geometry {
+  display: block;
+  width: 152px;
+  height: 15px;
+  margin-left: 10%;
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 15px;
+}
+
+.input_geometry_altitude {
+  display: block;
+  width: 152px;
+  height: 15px;
+  margin-left: 10%;
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 4px;
+  background: #ffffff;
+  padding: 15px;
+  cursor: not-allowed;
+}
+
+.button_container {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.submit_button {
+  height: 40px;
+  width: 42%;
+  background: #3083f7;
+  border-radius: 4px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.cancel_button {
+  margin-left: 7%;
+  margin-right: 3%;
+  width: 40%;
+  height: 40px;
+  background: #ffffff;
+  border: 2px solid #3083f7;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3083f7;
+}
+
+/** navigation controls */
+.reference {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px 15px;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+.markerBlue,
+.markerGray {
+  border-radius: 20px;
+  height: 10px;
+  width: 10px;
+}
+.markerBlue {
+  background: #3083f7;
+}
+.markerGray {
+  background-color: grey;
+}
+
+.mapPreview {
+  margin: auto;
+  margin-top: 3%;
+  height: 35%;
+  width: 90%;
+}
+
+.horizontalBar {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}

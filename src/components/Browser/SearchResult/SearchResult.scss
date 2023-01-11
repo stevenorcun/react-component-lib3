@@ -1,0 +1,155 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.EntityTypeTag {
+  border: solid 1.5px #f04c8b;
+  color: #f04c8b;
+  padding: 1px 3px;
+  font-size: 10px;
+  line-height: 14px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 0.25em;
+}
+
+.SearchResult {
+  box-sizing: border-box;
+  background: $color-white;
+  border-radius: 8.75px;
+  border: solid 2px $color-white;
+  cursor: pointer;
+  user-select: none;
+
+  &__Selected {
+    border: solid 2px $color-blue;
+  }
+
+  &__Header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 17px 17px 14px 0;
+    @include box-sizing(border-box);
+    width: 100%;
+    height: 111px;
+
+    &__CheckboxContainer {
+      height: 100%;
+      padding-left: 16px;
+      padding-right: 13px;
+
+      input {
+        @include size(18px, 18px);
+        margin: 0;
+        cursor: pointer;
+      }
+    }
+
+    &__IconContainer {
+      height: 100%;
+
+      .SearchResult__Header__Icon {
+        background: #f6f6f6;
+        border-radius: 10px;
+        width: 80px;
+        height: 80px;
+
+        display: flex;
+        align-items: center;
+
+        svg,
+        img {
+          fill: $color-blue;
+          margin: 0 auto;
+          display: block;
+          width: 40px;
+          height: 40px;
+        }
+
+        img {
+          @include size(80px, 80px);
+        }
+      }
+    }
+
+    &__TitleContainer {
+      display: flex;
+      flex-direction: row;
+      width: calc(100% - 132px);
+      height: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      overflow: auto;
+      @include box-sizing(border-box);
+
+      &__Tags {
+        flex: 0 0 100%;
+        align-self: center;
+      }
+
+      &__Name {
+        flex: 0 0 100%;
+
+        span {
+          font-weight: bold;
+          font-size: 17.6444px;
+          line-height: 24px;
+          color: var(--app-main-color, $color-darkblue);
+        }
+      }
+    }
+
+    &__NewTabButton {
+      margin-left: -16px;
+
+      svg {
+        fill: #d2d3d4;
+      }
+
+      &:hover svg {
+        fill: $color-grey50;
+      }
+    }
+  }
+
+  .SearchResult__Body {
+    @include flexbox;
+    @include flex-direction(column);
+    @include box-sizing(border-box);
+    border-top: 1px solid #ededee;
+    padding: 17px 22px 12px;
+    gap: 7px;
+  }
+
+  .SearchResult__Footer {
+    border-top: 1px solid #ededee;
+    text-align: center;
+    padding: 6px 0;
+    font-weight: 600;
+    font-size: 10.5067px;
+    line-height: 14px;
+    color: $color-blue;
+    user-select: none;
+
+    .SearchResult__Footer__Link:first-of-type {
+      padding-left: 10px;
+    }
+
+    .SearchResult__Footer__Link {
+      text-decoration: underline;
+
+      &.SearchResult__Footer__Link_Disabled {
+        color: $color-blue40;
+        cursor: none;
+        pointer-events: none;
+      }
+    }
+
+    .SearchResult__Footer__Separator {
+      color: $color-grey50;
+      margin: 0 10px;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.inputContainer {
+  @include flexbox;
+  @include flex-direction(column);
+  padding: 15px 20px;
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4d5056;
+    margin-bottom: 3px;
+  }
+  .input {
+    height: 50px;
+  }
+}
+.switchContainer {
+  @include flexbox;
+  @include align-items(center);
+}
+.switchCheckedText {
+  margin-left: 5px;
+  color: #f33e6a;
+  font-size: 12px;
+  font-weight: 600;
+  &.switchChecked {
+    color: #25cc7e;
+  }
+}
+
+.accordion {
+  height: 45px;
+  margin-top: 0 !important;
+  box-sizing: border-box;
+}
+.accordionTitle {
+  @include flexbox;
+  @include align-items(center);
+  svg {
+    margin-right: 10px;
+  }
+}
+
+.optionElementInteractive {
+  width: 100%;
+  text-align: left;
+}
+.inputTagElement {
+  user-select: none;
+  cursor: default;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: #f2f4f8;
+  > svg {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+.inputTagElementLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.buttonFooter {
+  width: 33%;
+  &.buttonCancel {
+    margin-left: 65px;
+  }
+  &.buttonValidate {
+    margin-right: 65px;
+  }
+}

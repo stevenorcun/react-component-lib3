@@ -1,0 +1,286 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.emptySelection {
+  @include flexbox;
+  font-size: 14px;
+  width: 200px;
+  margin: 50px auto 0;
+  padding: 50px;
+  text-align: center;
+  border-radius: 8px;
+  background: $color-grey5;
+  color: $color-grey60;
+}
+
+.selectionWrapper {
+  overflow-x: auto;
+}
+
+.group {
+  .groupName {
+    @include flexbox;
+    @include align-items(center);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 13px;
+    color: #4d5056;
+    background: #f2f4f8;
+
+    span {
+      padding-left: 10px;
+    }
+  }
+}
+
+.entity {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(flex-start);
+  padding: 0 1rem;
+  height: 90px;
+
+  &Content {
+    &Image,
+    svg {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+    }
+  }
+
+  .entityDetails {
+    @include flexbox;
+    @include flex-direction(column);
+    margin-left: 1rem;
+
+    svg {
+      path {
+        transform: scale(0.5);
+      }
+    }
+
+    .EntityLabel {
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 25px;
+      color: $color-blue;
+    }
+
+    .entityType {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 22px;
+      color: $color-grey80;
+    }
+  }
+}
+
+.entityProperty {
+  @include flexbox;
+  @include align-items(center);
+  height: 30px;
+
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  div {
+    font-size: 14px;
+
+    &:first-child {
+      color: #717378;
+      margin-left: 40px;
+      min-width: 95px;
+      max-width: 95px;
+    }
+
+    &:nth-child(2) {
+      color: #4d5056;
+      font-size: 16px;
+      margin-left: 30px;
+    }
+  }
+
+  .entityNumber {
+    background: $color-blue10;
+    color: #3083f7 !important;
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+.actions {
+  border-top: 1px solid $color-grey10;
+  height: 37px;
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  font-size: 12px;
+  color: #accdfc;
+
+  p {
+    margin: 0;
+    text-decoration: none;
+  }
+
+  div {
+    text-decoration: underline;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    margin-left: 10px;
+
+    svg {
+      margin-right: 3px;
+    }
+  }
+}
+
+.Property {
+  .PropertyLabel {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-grey;
+  }
+
+  .PropertyValue {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-grey80;
+  }
+}
+
+.entityLinksContainer {
+  border-top: 1px solid rgba(77, 80, 86, 0.1);
+  @include flexbox;
+  @include align-items(center);
+  justify-content: center;
+  height: 37px;
+
+  .Link {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    color: $color-blue;
+
+    span {
+      margin-left: 6px;
+    }
+  }
+
+  .DotSeparator {
+    margin: 0 8px;
+  }
+}
+
+.GroupValuesContainer {
+  width: 100%;
+  padding: 20px;
+  @include box-sizing(border-box);
+  gap: 1em;
+}
+
+.RelatedEvents__Container {
+  width: 100%;
+}
+
+.GroupedEventLine {
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+
+  .GroupedEventLine__Left {
+    width: 50%;
+    font-weight: bold;
+    color: $color-grey;
+
+    span {
+      padding-left: 9px;
+    }
+
+    svg {
+      fill: $color-grey;
+    }
+  }
+
+  .GroupedEventLine__Right {
+    width: 50%;
+
+    & span {
+      background-color: $color-blue10;
+      font-weight: bold;
+      color: $color-blue;
+      padding: 3px 9.5px;
+      border-radius: 5px;
+    }
+  }
+}
+
+.GroupedEventList {
+  margin-top: 0.3em;
+  gap: 0.3em;
+}
+
+.RelatedEvents__Values {
+  padding-left: 15px;
+}
+
+.Loader {
+  margin: auto;
+
+  svg {
+    stroke: $color-blue;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.EventMini {
+  margin-left: 20px;
+
+  .EventMini__Icon {
+    svg {
+      @include size(16px, 16px);
+      background: $color-grey10;
+      border-radius: 3px;
+      padding: 4px;
+    }
+  }
+
+  .EventMini__Details {
+    padding-left: 10px;
+    flex-grow: 1;
+
+    .EventMini__Details_Label {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      color: $color-grey;
+    }
+
+    .EventMini__Details_Date {
+      svg {
+        @include size(12px, 12px);
+        fill: $color-blue;
+      }
+
+      time {
+        font-size: 12px;
+        line-height: 16px;
+        color: $color-grey80;
+        margin-left: 0.25em;
+      }
+    }
+  }
+}
+
+.CurrentSelectionWidgetOffset {
+  overflow-y: auto;
+  // 100% - SelectionWidget's height - (Navbar height + Graph toolbar height)
+  height: calc(100vh - 24vh - 150px);
+}

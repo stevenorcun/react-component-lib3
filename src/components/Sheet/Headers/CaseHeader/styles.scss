@@ -1,0 +1,129 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.header {
+  @include flexbox;
+  @include justify-content(space-between);
+  margin: 30px 42px;
+  .headerCaseFavorite {
+    align-self: center;
+    margin-right: 10px;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+  .headerCaseMainInfos {
+    @include flexbox;
+    @include align-items(center);
+    img,
+    svg {
+      @include size(80px, 80px);
+      border-radius: 14px;
+      margin-right: 15px;
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 30px;
+      color: #3083f7;
+      margin: 0;
+    }
+    .mainInfos {
+      color: #717378;
+      font-weight: 600;
+      font-size: 18px;
+
+      p {
+        margin: 0;
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      .mainInfos {
+        font-size: 10px;
+      }
+      h1 {
+        font-size: 10px;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      .mainInfos {
+        font-size: 13px;
+      }
+      h1 {
+        font-size: 13px;
+      }
+    }
+
+    @media screen and (max-width: 1400px) {
+      .mainInfos {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .headerCaseComplementaryInfos {
+    @include flexbox;
+    @include align-items(center);
+    > div {
+      @include flexbox;
+      @include flex-direction(column);
+      margin-right: 40px;
+      .infoTitle {
+        font-size: 12px;
+        font-weight: 600;
+        color: #4d5056;
+      }
+      .infoContent {
+        font-size: 14px;
+        color: #717378;
+      }
+    }
+  }
+  .headerButtons {
+    @include flexbox;
+    position: relative;
+    button:first-child {
+      margin-right: 20px;
+    }
+    .optionMenu {
+      position: absolute;
+      top: 100%;
+      background-color: var(--app-main-color, $color-darkblue);
+      box-shadow: 0px 7.587192535400391px 20px 0px #2a2e7326;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      .optionMenuTitle {
+        margin: 8px 0;
+        padding: 0 14px;
+      }
+      > button {
+        color: #fff;
+        margin: 10px 0;
+        padding: 0 14px;
+      }
+    }
+  }
+}
+
+.divider {
+  display: inline-block;
+  margin: 0 12px;
+  border: 1px solid #cfd8ec;
+  opacity: 0.7;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.horizontalDivider {
+  border-bottom: 1px solid #fff;
+  opacity: 0.5;
+  margin: 0 6px;
+}

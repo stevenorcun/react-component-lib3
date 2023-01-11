@@ -1,0 +1,24 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.button {
+  height: 40px;
+  margin: auto;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  &:disabled {
+    opacity: 0.75;
+  }
+  &.primary {
+    color: #fff;
+    background-color: var(--app-main-color, #113e9f);
+  }
+  &.secondary {
+    color: #3083f7;
+    border: 2px solid #3083f7;
+  }
+  &.tertiary {
+    color: #fff;
+    background-color: #3083f7;
+  }
+}

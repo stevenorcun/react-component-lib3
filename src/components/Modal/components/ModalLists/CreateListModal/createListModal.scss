@@ -1,0 +1,23 @@
+.createList {
+  display: flex;
+  flex-grow: 1;
+  min-height: 200px;
+  max-height: 280px;
+  width: 400px;
+  top: calc(50% - 265px);
+
+  div:nth-child(2) {
+    overflow: initial;
+    overflow-x: clip;
+  }
+
+  .footerModal {
+    margin: 0 1rem 1.5rem 1rem;
+    align-items: flex-end;
+    text-align: end;
+
+    .boutonAllLists {
+      padding: 12px;
+    }
+  }
+}

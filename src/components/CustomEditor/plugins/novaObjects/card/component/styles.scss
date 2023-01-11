@@ -1,0 +1,13 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.cardMode {
+  display: block;
+  max-width: 394px;
+  > div {
+    position: relative;
+    max-width: 394px;
+    cursor: default;
+    z-index: 1;
+  }
+}

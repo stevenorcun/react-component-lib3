@@ -1,0 +1,75 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/_commons";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.thead {
+  box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid $color-divider-grey;
+  border-radius: 5px 5px 0 0;
+}
+
+.arrayExplorer {
+  height: 100%;
+}
+
+.content {
+  margin: 2rem 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  width: 100%;
+  border-radius: 5px;
+  height: 87%;
+  overflow: scroll;
+  color: $color-grey;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table,
+  tr {
+    width: 100%;
+  }
+
+  tr {
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  td {
+    padding: 16px 10px;
+    border-left: 1px solid $color-divider-grey;
+    max-width: 150px;
+  }
+}
+
+.textOverflowLines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.thHeader {
+  position: sticky;
+  top: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: $color-divider-grey;
+  white-space: nowrap;
+}
+
+.trBody {
+  border-bottom: 5px solid $color-divider-grey;
+  cursor: pointer;
+  width: 100%;
+
+  &Selected {
+    background-color: #eaf3fe;
+    &Over {
+      background-color: #ffa809;
+    }
+  }
+}

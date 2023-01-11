@@ -1,0 +1,84 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+/* Automatically center text inside p tag */
+.AnnotationContent {
+  display: table-cell;
+  padding: 0 0.5em;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 3px;
+  overflow-wrap: break-word;
+  &.focused {
+    display: none;
+  }
+}
+
+form > .HiddenInput {
+  display: none;
+}
+
+.AnnotationContainer.focused {
+  border-color: lime !important;
+
+  &.focused form,
+  &.focused form > .HiddenInput {
+    display: block;
+  }
+}
+
+.HiddenInput,
+.GhostInput {
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: black;
+  caret-color: red;
+  resize: none;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0;
+  text-shadow: none;
+  flex-direction: column;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  column-count: initial !important;
+}
+
+.HiddenInput:focus-visible {
+  outline: none;
+}
+
+/* Invisible (inline) element used to compute the appropriate font size for HiddenInput */
+.GhostInput {
+  opacity: 0;
+  z-index: -9999;
+  position: absolute;
+  float: left;
+}
+
+.ResizeTriangle {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #e4e0e0;
+  border-left: 10px solid transparent;
+  bottom: 0;
+  right: -1px;
+  cursor: nwse-resize;
+  user-select: none;
+  display: none;
+}
+
+.AnnotationContainer:hover .ResizeTriangle,
+.ResizeTriangle[data-visible="true"] {
+  display: block;
+}

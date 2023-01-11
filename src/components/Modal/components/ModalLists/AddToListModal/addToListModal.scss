@@ -1,0 +1,144 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/_commons";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  margin: 0.5rem 0;
+}
+
+.tab {
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #94969a;
+
+  &__active {
+    font-weight: bold;
+    color: #3083f7;
+    border-bottom: #3083f7 2px solid;
+  }
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  height: 100%;
+}
+
+.intro {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 1rem 0;
+}
+
+.cards {
+  padding: 1rem;
+  min-height: 200px;
+  border-top: 1px solid $color-divider-grey;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding: 0.7rem 0.7rem 0.7rem 0;
+  border-bottom: 1px solid $color-divider-grey;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__active {
+    outline: solid 2px #3083f7;
+  }
+}
+
+.modalteste {
+  display: flex;
+  flex-grow: 1;
+  min-height: 400px;
+  height: auto;
+  max-height: 620px;
+  width: 400px;
+  right: 30px;
+  left: auto;
+
+  div:nth-child(2) {
+    overflow: initial;
+    overflow-x: clip;
+  }
+
+  .footerModal {
+    margin: 0 1rem 1.5rem 1rem;
+    align-items: flex-end;
+    text-align: end;
+
+    .boutonAllLists {
+      padding: 12px;
+    }
+  }
+}
+
+.iconList {
+  & > svg {
+    margin-right: 0.5rem;
+    transform: scale(0.6);
+    fill: $color-blue;
+  }
+}
+
+.label {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-black;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.time {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: $color-sublabel;
+}
+
+.footerModal {
+  margin: 0 1rem 1.5rem 1rem;
+  align-items: flex-end;
+  text-align: end;
+
+  .boutonFooter {
+    padding: 12px;
+  }
+}
+
+.Input {
+  height: 50px;
+  padding: 15px;
+  background: $color-white;
+  border: 1px solid $color-grey10;
+  box-sizing: border-box;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 4px;
+  margin: 6px 0px;
+
+  &:focus-visible {
+    outline: none;
+  }
+}

@@ -1,0 +1,31 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.mainContent {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(flex-start);
+  margin: 38px 32px 98px 32px;
+  overflow-y: auto;
+  .flex_100 {
+    width: 100%;
+  }
+  .flex_66 {
+    width: 66%;
+  }
+  .flex_50 {
+    width: 49%;
+  }
+  .flex_33 {
+    width: 33%;
+  }
+  .principalColumnContainer {
+    @include flexbox;
+    @include justify-content(space-between);
+    flex-wrap: wrap;
+  }
+  .blockContainer {
+    > div {
+      margin-bottom: 15px;
+    }
+  }
+}

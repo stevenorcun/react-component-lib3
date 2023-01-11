@@ -1,0 +1,133 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.styleButton {
+  height: 30px;
+  width: 30px;
+}
+.collaboratorIcon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  padding: 8px;
+}
+.rightSideControls {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.directoryDocTitle {
+  font-size: 20px;
+}
+
+.documentControls {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  justify-content: space-between;
+  height: 40px;
+}
+.editorToolbar {
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  padding: 5px 20px 5px 20px;
+  margin-top: 0px;
+}
+.docContainer {
+  /*border: 1px solid black;*/
+  /*color: blue;
+  height: 500px;
+  width: 500px;*/
+  height: 100%;
+  /*margin: 30px 50px 30px 50px;*/
+  /*border: 1px solid red;*/
+  /*background-color: '#EEEEEE'*/
+}
+.customWidth {
+  width: 150;
+  height: 2;
+}
+.alignRight div {
+  text-align: right !important;
+}
+
+.alignLeft div {
+  text-align: left !important;
+}
+
+.alignCenter div {
+  text-align: center !important;
+}
+
+.documentContainer {
+  position: relative;
+  .documentPreview {
+    :global {
+      .drawer-drawerTab {
+        background-color: #f6f6f6;
+      }
+      .drawer-navigationButton {
+        background: none;
+        color: #94969a;
+        font-weight: 600;
+        font-size: 12px;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.editor {
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  padding: 30px;
+  height: 100%;
+  background-color: #ededee;
+  margin: 0 70px;
+  overflow: auto;
+  .editorContainer {
+    height: 100%;
+    /* min-height: 500px; */
+    max-height: calc(100vh - 250px);
+    .editorDocument {
+      margin: auto;
+      padding-bottom: 15px;
+      width: 793px;
+    }
+  }
+}
+
+.singleEditorContainer {
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 793px;
+  box-sizing: border-box;
+  :global {
+    .public-DraftEditor-content {
+      height: 1082px;
+    }
+  }
+}
+
+.editorOptionsContainer {
+  margin: 5px;
+}
+
+.unfocused {
+  &:hover {
+    cursor: default;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px var(--app-secondary-color, #3083f7);
+  }
+}
+
+.focused {
+  cursor: default;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px var(--app-main-color, #113e9f);
+}

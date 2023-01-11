@@ -1,0 +1,96 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.drawer {
+  @include flex;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  top: 0;
+  right: -365px; // fixes flickering and initially hidden
+  min-width: 365px;
+  max-width: 365px;
+  flex: auto;
+  border-bottom-left-radius: 5px;
+  transition: all 0.4s ease-in;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  height: 100%;
+
+  .drawerBorder {
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    z-index: 1;
+
+    &.resizable:hover {
+      cursor: ew-resize;
+    }
+  }
+
+  .toggleVisibilityBtn {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    z-index: 0;
+    border-radius: 10px 0 0 10px;
+    transform: translate(-21px, 0);
+    cursor: pointer;
+    position: absolute;
+    background: white;
+    width: 22px;
+    height: 70px;
+    top: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.resizing {
+    transition: all 0s ease-in !important;
+  }
+
+  &.opened {
+    transition: all 0.4s ease-in;
+    right: 0;
+
+    .toggleVisibilityBtn svg {
+      transform: rotate(0deg);
+    }
+  }
+
+  .floatBtn {
+    cursor: pointer;
+  }
+
+  &.floating {
+    border-radius: 5px;
+    width: 500px;
+    height: calc(100% - 200px);
+    transition: all 0s;
+    right: 0;
+  }
+
+  &.leftDrawer {
+    left: -365px; // fixes flickering and initially hidden
+    right: 0;
+    .drawerBorder {
+      right: 0;
+    }
+    .toggleVisibilityBtn {
+      right: -22px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.Drawer__Body {
+  height: 100%;
+
+  .Drawer__Tab {
+    overflow-y: auto;
+    height: calc(100% - 70px);
+  }
+}

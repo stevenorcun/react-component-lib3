@@ -1,0 +1,96 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.mapControls {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(flex-end);
+  position: absolute;
+  transition: all 0.4s ease-in;
+  right: 10px;
+  bottom: 2%;
+
+  &.opened {
+    right: 20%;
+    transition: all 0.4s ease-in;
+  }
+
+  @media screen and (max-width: 1850px) {
+    &.opened {
+      right: 22%;
+    }
+  }
+  @media screen and (max-width: 1700px) {
+    &.opened {
+      right: 23%;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+    &.opened {
+      right: 25%;
+    }
+  }
+  @media screen and (max-width: 1500px) {
+    &.opened {
+      right: 27%;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    &.opened {
+      right: 28%;
+    }
+  }
+  @media screen and (max-width: 1350px) {
+    &.opened {
+      right: 30%;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    &.opened {
+      right: 32%;
+    }
+  }
+  @media screen and (max-width: 1150px) {
+    &.opened {
+      right: 35%;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    &.opened {
+      right: 38%;
+    }
+  }
+
+  .control {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #3083f7;
+    box-shadow: 0px 4px 10px rgba(0, 129, 255, 0.4);
+  }
+
+  .zoomControls {
+    @include flexbox;
+    @include flex-direction(row);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    background: white;
+    border-radius: 10px;
+
+    .control {
+      background: transparent;
+      margin-bottom: 0;
+      box-shadow: none;
+      border-radius: 0;
+
+      &:not(:first-child) {
+        border-left: 1px solid $color-grey40;
+      }
+    }
+  }
+}
+
+.MenuOptions {
+  right: 0px;
+  top: -330%;
+  z-index: 0;
+}

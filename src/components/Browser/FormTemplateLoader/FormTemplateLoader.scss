@@ -1,0 +1,97 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.DropDown {
+  // padding: 15px 0;
+  display: flex !important;
+  width: 260px;
+}
+
+.DropDownMenu {
+  box-shadow: 0 7.58719px 18.968px rgba(42, 46, 115, 0.28);
+  max-height: 400px !important;
+}
+
+.SearchInput__IconContainer {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $color-grey; // #4D5056
+  }
+}
+
+.SearchInput {
+  width: 90%;
+  box-sizing: border-box;
+
+  padding: 15px 24px 15px 10px;
+
+  border: 0;
+  outline: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+
+  display: flex;
+  align-items: center;
+}
+
+.TemplateList {
+  padding: 16px 0px;
+  color: $color-grey;
+  gap: 12px;
+
+  .TemplateStatusGroup {
+    .StatusHeader,
+    .TemplateLabel {
+      padding: 4.5px 20px;
+    }
+
+    .StatusHeader {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .TemplateLabel {
+      border-top: none !important;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 9px;
+
+      svg {
+        fill: $color-grey10;
+
+        &:hover {
+          transform: scale(1.3);
+        }
+
+        &.IsFav {
+          fill: $color-blue;
+        }
+      }
+
+      &:hover {
+        background-color: $color-grey10;
+      }
+
+      span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}

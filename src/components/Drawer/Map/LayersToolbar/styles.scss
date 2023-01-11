@@ -1,0 +1,60 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.btnStyle {
+  width: 55px;
+  height: 55px;
+  left: 0px;
+  top: 0px;
+  background: #f6f6f6;
+  border: 1px solid #ededee;
+  box-sizing: border-box;
+  border-radius: 4px;
+  @include align-items(center);
+  @include justify-content(center);
+  cursor: pointer;
+}
+
+.btnStyle.dragover {
+  background-color: red;
+}
+
+.btnStyle:hover {
+  background: #3083f7;
+}
+
+.containers {
+  padding: 7%;
+}
+
+.layers_icon_container_select {
+  width: 20%;
+  justify-content: space-between;
+  display: inline-block;
+}
+
+.layers_icon_text {
+  width: 60px;
+  top: 40px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+  margin-left: 15%;
+  text-align: center;
+  color: #717378;
+}
+
+input[type="file"] {
+  left: 0;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+}
+
+.IconOpenFile {
+  margin-left: 25%;
+  margin-top: 25%;
+}

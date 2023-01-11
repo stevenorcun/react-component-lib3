@@ -1,0 +1,31 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.drawerPreviewContainer {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  padding: 30px 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  .previewPage {
+    @include flexbox;
+    @include size((793px * 0.3), (1082px * 0.3));
+    align-items: center;
+    margin: auto 30px;
+    margin-bottom: 30px;
+    .numPage {
+      margin-right: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #94969a;
+    }
+  }
+  .previewEditorContainer {
+    transform: translate((0.3 - 1) * 50%, 0) scale(0.3);
+  }
+  .buttonContainer {
+    text-align: center;
+    margin-top: 15px;
+  }
+}

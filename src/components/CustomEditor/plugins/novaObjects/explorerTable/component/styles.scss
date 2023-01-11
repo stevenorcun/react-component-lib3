@@ -1,0 +1,13 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.explorerMode {
+  max-height: 500px;
+  overflow: auto;
+  > div {
+    height: auto;
+    width: auto;
+    overflow: unset;
+    z-index: 1;
+  }
+}

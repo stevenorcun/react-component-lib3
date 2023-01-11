@@ -1,0 +1,27 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.relatedHeader {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background: #f2f4f8;
+  &Title {
+    font-weight: 900;
+    font-size: 14px;
+    color: #4d5056;
+  }
+}
+
+.icon {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    fill: $color-blue;
+    height: 18px;
+    width: 18px;
+  }
+}

@@ -1,0 +1,19 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.Field {
+  clear: both;
+  margin: 0 0 1em;
+
+  .Label {
+    display: block;
+    margin: 0 0 12px 0;
+    color: $color-grey;
+    text-transform: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

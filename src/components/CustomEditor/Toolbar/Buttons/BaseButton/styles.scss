@@ -1,0 +1,28 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.styleButton {
+  @include size(auto, auto);
+  border-radius: 8px;
+  margin-left: 10px;
+  padding: 9px;
+  > svg {
+    width: 18px;
+    height: 18px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin-left: 7px;
+    padding: 6px;
+  }
+}
+.activeButton {
+  background-color: #eaf3fe;
+  > svg {
+    fill: #3083f7;
+  }
+}
+.disabledButton {
+  > svg {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,155 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.form_layers {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.right_arrow {
+  border: solid #4d5056;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 2px 5px;
+  transition: all 0.2s ease-in;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.down_arrow {
+  border: solid #4d5056;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin: 2px 5px;
+  transition: all 0.2s ease-in;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.layers_title {
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.head_label {
+  font-size: 17px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  color: #4d5056;
+  padding: 3%;
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+.rct-title {
+  font-size: 17px;
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  color: #4d5056;
+  cursor: pointer;
+}
+
+.head_icon_layers {
+  margin: 0px 14px;
+  height: 15px;
+  width: 17px;
+  fill: #7b61ff;
+  cursor: pointer;
+}
+
+.head_icon2_layers {
+  margin: -2px 14px;
+  height: 17px;
+  width: 18px;
+  fill: #3083f7;
+  cursor: pointer;
+}
+
+.head_icon_metro_layers {
+  margin: -5px 5px;
+  height: 17px;
+  width: 18px;
+  cursor: pointer;
+}
+
+.tree::after {
+  content: "";
+  display: block;
+  clear: left;
+}
+
+.tree .div_layers {
+  clear: left;
+  margin-left: 2%;
+  margin-top: 14px;
+  width: 300px;
+}
+
+.input_layers[type="checkbox"] {
+  cursor: pointer;
+}
+
+.sub_title {
+  margin-left: 3px;
+  margin-top: 14px;
+}
+
+.label_layers {
+  font-size: 14px;
+  padding: 3%;
+  cursor: pointer;
+}
+
+.label_layers .p_layers {
+  display: block;
+  clear: left;
+  position: relative;
+  margin-left: 25px;
+  border-radius: 5px;
+  color: #5c5d5e;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.input_layers:focus + .label_layers,
+.p_layers:focus {
+  outline: none;
+  background-color: #b9c3c9;
+}
+
+.sub {
+  display: none;
+  margin-left: 30px;
+}
+
+.input_layers:checked ~ .sub {
+  display: block;
+}
+
+.input_reset_layers[type="reset"] {
+  display: block;
+  width: 35%;
+  margin-left: 30%;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #3083f7;
+  font-family: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-top: 10%;
+}
+
+.input_reset_layers[type="reset"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #b9c3c9;
+}

@@ -1,0 +1,48 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.ResultTypeFilters__Header {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-darkblue;
+}
+
+.ResultTypeFilters_Wrapper {
+  margin-top: 1em;
+
+  svg {
+    @include size(15px, 15px);
+    fill: $color-grey;
+    stroke: $color-grey;
+    stroke-width: 0.1;
+  }
+
+  .ResultTypeFilters__Filters_Checkbox {
+    flex-shrink: 0;
+  }
+
+  .ResultTypeFilters__Filters_FilterCount {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-grey60;
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+.ResultTypeFilters__Filter_Group_Label {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-grey;
+}
+
+.ResultTypeFilters__Filter_Group {
+  padding-left: 2em;
+}

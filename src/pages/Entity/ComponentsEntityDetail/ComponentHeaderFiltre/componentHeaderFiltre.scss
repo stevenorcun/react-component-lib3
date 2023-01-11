@@ -1,0 +1,116 @@
+.headerProperty {
+  width: 100%;
+  height: 50px;
+  margin: 2rem 0;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      &:focus {
+        border: none;
+        outline:  none;
+      }
+    }
+    .buttonSearch {
+        height: 40px;
+        cursor: pointer;
+        width: 40px;
+        border: none;
+        border-radius: 10px;
+        background: #3083F7;
+        box-shadow: 0px 3px 10px rgba(0, 129, 255, 0.4);
+    }
+  }
+
+  &Left {
+    width: auto;
+    height: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background: #F6F6F6;
+
+    &Search {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    &Filter {
+      display: flex;
+      align-items: center;
+    }
+
+    &Label {
+      font-weight: bold;
+      font-size: 12px;
+      margin-right: .6rem;
+      color: #4D5056;
+    }
+
+    select {
+      border-radius: 4px;
+      height: 30px;
+      padding: 0 .5rem;
+      border: 1px solid #F6F6F6;
+      color: #3083F7;
+      box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    }
+
+    &Divider {
+      height: 25px;
+      margin-right: 2rem;
+      transform: rotate(0deg);
+      border: 1px solid #D2D3D4;
+    }
+
+    &IconFilter {
+      margin-right: 1rem;
+    }
+  }
+
+  &Right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: 1rem;
+
+    select {
+      margin-left: 1rem;
+      width: auto;
+      height: 40px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      color: #3083F7;
+      padding: 0 .5rem;
+      border: 2px solid #3083F7;
+
+    }
+
+    &Button {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      padding: 12px;
+      border: none;
+      font-size: 12px;
+      color: white;
+      background-color: #3083F7;
+
+      &Icon {
+        margin-right: .7rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.modalMap {
+  width: 426px;
+  overflow-y: auto;
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 25%;
+  right: 7%;
+  bottom: 30px;
+}
+
+.header {
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: $color-white;
+  background-color: $color-blue;
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-weight: 900;
+      font-size: 14px;
+      margin-left: 1rem !important;
+    }
+  }
+}
+
+.headerComponent {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 45px;
+  background-color: #f2f4f8;
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    .textTitle {
+      font-size: 14px;
+      margin-left: 0.5rem;
+      font-weight: 900;
+      color: #4d5056;
+    }
+  }
+}
+
+.listAdressComponent {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: $color-white;
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    color: #717378;
+
+    &__title {
+      font-weight: 600;
+      font-size: 12px;
+      color: #4d5056;
+    }
+
+    &__paragraph {
+      font-size: 14px;
+      color: #717378;
+    }
+  }
+}
+
+.listTypes {
+  background-color: $color-white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    &__title {
+      font-size: 14px;
+      color: #717378;
+    }
+
+    p {
+      margin-left: 1rem;
+    }
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.attributeValue {
+  @include flexbox;
+  @include align-items(center);
+  font-size: 14px;
+
+  .bar {
+    position: relative;
+    width: 100px;
+    height: 7px;
+    border-radius: 50px;
+    margin-left: 10px;
+    background: $color-grey10;
+
+    .loadBar {
+      position: absolute;
+      height: 7px;
+      border-radius: 10px;
+      background: linear-gradient(90.61deg, #0081ff -16.15%, #45a3ff 52.54%);
+    }
+  }
+}
+
+.attributes {
+  margin: 0 1rem;
+  color: $color-grey;
+
+  &__name {
+    font-weight: 600;
+    line-height: 22px;
+    font-size: 14px;
+    color: #4d5056;
+  }
+
+  &__totalName {
+    line-height: 22px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3083f7;
+  }
+}
+
+.flexArround {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textTitle {
+  margin-left: 1rem !important;
+}

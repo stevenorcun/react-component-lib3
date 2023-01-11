@@ -1,0 +1,130 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/_commons";
+
+.searchExplorer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputSearch {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  padding-left: 0.8rem;
+  color: $color-grey;
+
+  &::placeholder {
+    color: $color-grey;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.search {
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 59px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+  border: 1px solid $color-divider-grey;
+
+  .sql {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #cfd8ec;
+    margin: 0 1rem;
+  }
+}
+
+.iconSearch {
+  display: flex;
+  justify-content: center;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    fill: $color-blue;
+  }
+}
+
+.dateTimePicker {
+  display: flex;
+  align-items: center;
+
+  .iconCalendar {
+    margin: 0.5rem;
+  }
+}
+
+.titleDate {
+  font-size: 10px;
+  line-height: 14px;
+  color: $color-sublabel;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexAlign {
+  display: flex;
+  align-items: center;
+}
+
+.flexColumn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contentDate {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70px;
+
+  p {
+    width: 100%;
+  }
+  .date {
+    width: 100%;
+  }
+}
+
+.buttonSearch {
+  width: 45px;
+  height: 35px;
+  box-shadow: 0px 4px 10px rgba(0, 129, 255, 0.4);
+  border-radius: 10px;
+  background-color: $color-blue;
+}
+
+.filterExplorer {
+  width: 10%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 59px;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid $color-divider-grey;
+}
+
+.filter {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-blue;
+}

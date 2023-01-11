@@ -1,0 +1,196 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.Container {
+  background-color: $color-white;
+  user-select: none;
+
+  .Time {
+    background-color: inherit;
+    border: 1px solid #a0a096;
+    border-top: 0;
+    justify-content: space-around;
+  }
+}
+
+.Column {
+  width: 53px;
+}
+
+.NumberSelect {
+  height: 32px;
+}
+
+.SigmaContainer {
+  background: $color-white;
+  box-shadow: 0 7.58719px 20px rgba(42, 46, 115, 0.15);
+  border-radius: 10px;
+  min-width: 995px;
+  user-select: none;
+
+  .Sigma_Left {
+    @include box-sizing(border-box);
+    //height: 100%;
+    border-right: solid 1px $color-grey10;
+    width: 155px;
+
+    .QuickPeriodWidget {
+      padding-top: 24px;
+      gap: 8px;
+
+      .QuickPeriodWidget_Period {
+        height: 32px;
+        font-size: 13px;
+        line-height: 32px;
+        color: $color-grey60;
+        padding-left: 24px;
+
+        &:hover {
+          background: $color-blue10;
+        }
+
+        &.Selected {
+          background: $color-blue10;
+          font-weight: 900;
+          color: $color-blue;
+        }
+      }
+    }
+  }
+
+  .Sigma_Right {
+    @include box-sizing(border-box);
+    width: 840px;
+
+    .CalendarContainer,
+    .Footer {
+      padding: 24px;
+    }
+
+    .CalendarContainer {
+      margin: auto;
+
+      .SigmaCalendar {
+        border: none;
+        width: 800px;
+        // use the `:global()` keyword to prevent scss from renaming the class
+        //:global(.react-calendar__tile--active) {
+        //  border-radius: 50% 0 0 50%;
+        //  background: linear-gradient(90deg, rgba(48, 131, 247, 0.6) 6.49%, rgba(48, 131, 247, 0) 100%);
+        //}
+        //:global(.react-calendar__tile--active ~ .react-calendar__tile--active) {
+        //  border-radius: 0;
+        //  background: $color-blue;
+        //}
+      }
+    }
+
+    .Footer {
+      border-top: solid 1px $color-grey10;
+      gap: 22px;
+      min-height: 129px;
+      box-sizing: border-box;
+
+      .Footer_TimePickers {
+        @include size(605px, 80px);
+        background: #f2f4f8;
+        border-radius: 10px;
+        gap: 20px;
+
+        .Footer_TimePickers__Icon {
+          svg {
+            fill: $color-blue;
+          }
+        }
+
+        .Footer_TimePickers__StartDate,
+        .Footer_TimePickers__EndDate {
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 24px;
+          color: $color-blue;
+        }
+
+        .Footer_TimePickers__StartTime,
+        .Footer_TimePickers__EndTime {
+          width: 124px;
+        }
+
+        .Footer_TimePickers__Separator {
+          padding: 0 15px;
+
+          svg {
+            fill: $color-grey50;
+          }
+        }
+
+        .Footer_TimePickers__EndDate {
+          color: $color-grey;
+        }
+      }
+
+      .Footer_SubmitButtons {
+        gap: 8px;
+
+        .Footer_SubmitButtons_Cancel,
+        .Footer_SubmitButtons_Confirm {
+          border: solid 2px $color-blue;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+
+          &:hover {
+            box-shadow: 0 7.58719px 20px rgba(42, 46, 115, 0.15);
+          }
+        }
+
+        .Footer_SubmitButtons_Cancel {
+          background: $color-white;
+          color: $color-blue;
+        }
+
+        .Footer_SubmitButtons_Confirm {
+          background: $color-blue;
+          color: $color-white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.HhMmSsSss_Container {
+  box-sizing: border-box;
+
+  .HhMmSsSss__TimeSeparator {
+    height: 23px;
+    background: $color-white;
+  }
+
+  .HhMmSsSss__TimeInput {
+    width: 100%;
+
+    .HhMmSsSss__TimeInput_Input {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+
+      height: 23px;
+      background: $color-white;
+      border: none;
+
+      &.First {
+        border-radius: 2.5px 0 0 2.5px;
+      }
+
+      &.Last {
+        border-radius: 0 2.5px 2.5px 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

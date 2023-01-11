@@ -1,0 +1,25 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.link {
+  padding: 0 0.2em;
+  border-radius: 4px;
+  &.active {
+    cursor: pointer;
+    &:hover {
+      color: #3083f7;
+      text-decoration: underline;
+    }
+  }
+  &.light {
+    color: white;
+  }
+  .icon {
+    > svg {
+      width: 1em;
+      height: 0.8em;
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}

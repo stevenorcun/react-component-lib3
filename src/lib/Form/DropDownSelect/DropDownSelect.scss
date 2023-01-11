@@ -1,0 +1,220 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.DropDown {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: 0;
+  text-align: left;
+  @include transition(
+    box-shadow 0.1s ease,
+    width 0.1s ease,
+    -webkit-box-shadow 0.1s ease
+  );
+  -webkit-tap-highlight-color: transparent;
+  border: 1px solid #f6f6f6;
+  @include box-sizing(border-box);
+  /* Shadow Light */
+  @include box-shadow(0 7.58719px 34px rgba(42, 46, 115, 0.05));
+  border-radius: 4px;
+  user-select: none;
+  color: $color-blue;
+
+  & > select {
+    display: none !important;
+  }
+
+  .DropDown__Icon {
+    position: absolute;
+    fill: $color-grey;
+    right: 8px;
+    top: 45%; // TODO use flex...
+  }
+
+  .Default.Text {
+    padding: 7px 10px;
+  }
+
+  .SelectedValues {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    margin-right: 20px;
+    gap: 0.25em;
+  }
+
+  & > .Text {
+    display: inline-block;
+    @include transition(none);
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+    // Prevents height collapsing if empty and no placeholder
+    min-height: 14px;
+  }
+
+  &.DropDownSelect {
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    width: 100%;
+    background: #fff;
+    display: inline-block;
+    @include box-shadow(none);
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+    @include transition(
+      box-shadow 0.1s ease,
+      width 0.1s ease,
+      -webkit-box-shadow 0.1s ease
+    );
+
+    &.Active {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      //border-color: #96c8da;
+      z-index: 10;
+
+      .Menu {
+        display: block;
+        visibility: visible;
+        // border-color: #96c8da;
+      }
+
+      .DropDown__Icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .Menu {
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      min-width: calc(100% - 2px);
+      margin: 0 -1px;
+      border-radius: 0 0 4px 4px;
+      @include transition(opacity 0.1s ease);
+      max-height: 250px;
+
+      .Item {
+        border-top: 1px solid #fafafa;
+        white-space: normal;
+        word-wrap: normal;
+        display: flex;
+        @include align-items(center);
+
+        .Item__Unselect {
+          display: none;
+          @include align-items(center);
+          fill: $color-white;
+          margin-left: auto;
+          margin-right: 1em;
+          height: 15px;
+        }
+
+        &.Item__Selected {
+          background: $color-blue;
+          color: $color-white;
+
+          .Item__Icon > svg {
+            fill: $color-white;
+          }
+
+          &:hover {
+            background: $color-blue80;
+          }
+
+          .Item__Unselect {
+            display: flex;
+          }
+        }
+
+        .Item__Icon,
+        .Item__Icon > svg {
+          @include size(20px, 15px);
+          fill: $color-blue;
+        }
+
+        .Item__Label {
+          padding-left: 1em;
+          height: 15px;
+        }
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+          z-index: 13;
+        }
+      }
+
+      .Item:first-child {
+        border-top-width: 0;
+      }
+    }
+  }
+
+  // ???
+  .Menu {
+    cursor: auto;
+    position: absolute;
+    left: 0;
+    display: none;
+    top: 100%;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
+    margin: 0;
+    padding: 2px 0;
+    background: #fff;
+    font-size: 1em;
+    text-shadow: none;
+    text-align: left;
+    // @include box-shadow(0 2px 3px 0 $color-blue20);
+    // border: 1px solid rgba(34,36,38,.15);
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+    @include transition(opacity 0.1s ease);
+    z-index: 11;
+    will-change: transform, opacity;
+
+    .Item {
+      position: relative;
+      cursor: pointer;
+      display: block;
+      border: none;
+      height: auto;
+      text-align: left;
+      border-top: none;
+      line-height: 1em;
+      // padding: .78571429rem 1.14285714rem!important;
+      padding: 7px 0 7px 10px;
+      font-size: 0.75em;
+      text-transform: none;
+      font-weight: 400;
+      @include box-shadow(none);
+      -webkit-touch-callout: none;
+      user-select: none;
+    }
+  }
+}
+
+.Filter__Container {
+  padding: 0.2em 0.5em;
+}
+
+.Filter__Input {
+  width: 100%;
+  height: 30px;
+  outline: none !important;
+  border: solid $color-blue 1px;
+  border-radius: 4px;
+  padding: 0.2em 0.5em;
+  box-sizing: border-box;
+}

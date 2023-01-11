@@ -1,0 +1,173 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.iconArrowFull {
+  margin-left: 0.5rem;
+}
+
+.generalProperty {
+  &Main {
+    margin-top: 1rem;
+    &__open {
+      display: none;
+    }
+    &Checkbox {
+      margin-right: 0.7rem;
+    }
+
+    &Content {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      width: auto;
+      opacity: 0.7;
+      margin: 1rem 0 3rem 0;
+
+      &Ligne {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0.9rem 0;
+        font-size: 14px;
+      }
+
+      &Title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: auto;
+        opacity: 0.7;
+        margin: 1rem 0 1rem;
+        font-weight: 500;
+        font-size: 12px;
+        color: #94969a;
+      }
+
+      &TitleColomn {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+      }
+
+      &IconArrowFull {
+        margin-left: 0.5rem;
+      }
+      &First {
+        font-weight: bold;
+        font-size: 14px;
+        width: 15%;
+        color: #3083f7;
+
+        &__subtitle {
+          position: absolute;
+          margin: 0.5rem 0;
+        }
+      }
+
+      &StartDate,
+      &EndDate {
+        width: 14%;
+        font-size: 14px;
+        color: #717378;
+      }
+
+      &Type {
+        display: flex;
+        align-items: center;
+        width: 15%;
+
+        &__label {
+          font-weight: bold;
+          font-size: 12px;
+          border-radius: 4px;
+          padding: 8px 10px;
+          margin-left: 1rem;
+          color: var(--app-main-color, $color-darkblue);
+          background: #f2f4f8;
+        }
+      }
+
+      &Email {
+        width: 23%;
+        display: flex;
+        align-items: center;
+
+        &__text {
+          font-weight: bold;
+          font-size: 14px;
+          padding-left: 0.5rem;
+          text-decoration: underline;
+          color: #4d5056;
+        }
+      }
+
+      &Quotation {
+        width: 14%;
+        color: #717378;
+      }
+
+      &LinkText {
+        width: 12%;
+        color: #4d5056;
+
+        &__text {
+          font-weight: bold;
+          font-size: 14px;
+          margin-left: 0.5rem;
+          color: #4d5056;
+        }
+
+        &Tag {
+          border-radius: 48.609px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          background: #eaf3fe;
+        }
+
+        &Number {
+          font-weight: 600;
+          font-size: 14px;
+          margin-left: 0.5rem;
+
+          &__colorTag {
+            color: var(--app-main-color, $color-darkblue);
+            background: #eaf3fe;
+          }
+
+          &__colorDatabase {
+            color: #aa83fe;
+            background: #f0e9ff;
+          }
+
+          &__colorPerson {
+            color: #f04c8b;
+            background: #ffeff6;
+          }
+        }
+      }
+
+      &Divider {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #d2d3d4;
+      }
+    }
+  }
+}
+
+.flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+.headerTitle {
+  font-size: 12px;
+  color: #94969a;
+}

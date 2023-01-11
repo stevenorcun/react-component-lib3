@@ -1,0 +1,276 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.related {
+  &Icon {
+    margin: 0 1rem;
+  }
+
+  &IconFile {
+    margin: 0 1rem 0 0;
+  }
+
+  &Main {
+    max-height: 600px;
+    overflow-y: scroll;
+
+    &__minusRelatedDocument {
+      max-height: 210px;
+      overflow: auto;
+    }
+
+    &__minusRelatedObject {
+      max-height: 230px;
+      overflow: auto;
+    }
+
+    &__minusRelatedEvent {
+      max-height: 330px;
+      overflow: auto;
+    }
+  }
+
+  &List {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 1rem;
+    margin: 0 0.1rem;
+
+    p {
+      margin: 0;
+    }
+
+    &Left {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+
+      svg {
+        margin: 0 0.5rem 0 0;
+        width: 18px;
+        height: 18px;
+      }
+
+      &Round {
+        border-radius: 50%;
+        width: 3px;
+        height: 3px;
+        margin: 0 0.4rem;
+        background-color: black;
+      }
+
+      a {
+        font-weight: 600;
+        color: #3083f7;
+      }
+    }
+
+    &RightDate {
+      font-size: 12px;
+      color: #94969a;
+    }
+
+    &NumberTitle {
+      font-weight: normal;
+      margin-left: 0.5em;
+      color: $color-grey80;
+    }
+
+    &Title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--app-main-color, $color-darkblue);
+    }
+  }
+
+  &ObjectList {
+    margin: 0.9rem 0;
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    &Wrapper {
+      @include flexbox;
+      @include flex-wrap(wrap);
+    }
+
+    &Content {
+      display: flex;
+      align-items: center;
+      flex: 50%;
+
+      .EntitySummary {
+        padding: 0 1rem;
+        margin: 0 0.1rem;
+      }
+
+      &Icon {
+        margin: 0 0.5rem 0 0 !important;
+
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  .linkDocument {
+    pointer-events: none;
+  }
+
+  &Event {
+    &Main {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+
+      &Pipe {
+        &Circle {
+          border-radius: 50%;
+          position: absolute;
+          background-color: #3083f7;
+          width: 5px;
+          height: 5px;
+          left: -3px;
+          top: 2px;
+        }
+      }
+
+      &Icon {
+        margin: 0 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &Content {
+        flex-direction: column;
+        display: flex;
+        width: 100%;
+
+        &Vol {
+          font-weight: bold;
+          font-size: 14px;
+          color: #4d5056;
+          margin: 0;
+        }
+
+        &Subtitle {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+
+        &Left {
+          display: flex;
+          align-items: center;
+          margin-right: 0.7rem;
+          font-size: 12px;
+          color: #717378;
+          width: 30%;
+          flex-grow: 1;
+          box-sizing: border-box;
+        }
+
+        &Right {
+          display: flex;
+          align-items: center;
+          margin-left: 0.7rem;
+          font-size: 12px;
+          color: #717378;
+          flex-grow: 1;
+          width: 60%;
+        }
+
+        &Icon {
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+
+  &Footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3083f7;
+    font-weight: 600;
+    font-size: 11px;
+    height: 35px;
+
+    &Round {
+      border-radius: 50%;
+      width: 10px !important;
+      height: 10px !important;
+      margin: 0 0.4rem;
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+      color: #3083f7;
+      font-weight: 600;
+      text-decoration: underline;
+      font-size: 11px;
+    }
+
+    .button__disable {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+}
+
+.textglobal {
+  margin: 0;
+  font-size: 12px;
+  color: #94969a;
+}
+
+.relatedObjectText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #4d5056;
+}
+
+.backgroundIcon {
+  background: #f6f6f6;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem 0 1rem;
+
+  svg {
+    @include size(20px, 16px);
+  }
+}
+
+.DraggableSummary {
+  border-radius: 5px;
+  cursor: grab;
+
+  &:hover {
+    @include box-shadow(0 0 10px $color-grey30);
+  }
+}
+
+.Relative {
+  position: relative;
+}
+
+.RelatedTypeGroup {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.DraggableOffset {
+  margin: 0.5em;
+}

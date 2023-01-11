@@ -1,0 +1,69 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.selectionExplorer {
+  overflow-y: auto;
+  height: calc(100% - 70px);
+}
+
+.selectionLine {
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  margin: 0.5rem 1.6rem;
+
+  .property {
+    font-weight: 600;
+    margin-left: 0.5rem;
+    color: #4d5056;
+  }
+}
+
+.content {
+  margin: 1rem 0;
+}
+
+.relatedEntities {
+  padding: 1rem 0.5rem;
+  font-size: 14px;
+
+  .category {
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    & > svg {
+      fill: #4d5056;
+    }
+  }
+
+  .label {
+    font-weight: 600;
+    color: #4d5056;
+  }
+}
+
+.value {
+  display: flex;
+  justify-content: flex-start;
+  // flex-grow: 1;
+  width: 34%;
+  &String {
+    color: #717378;
+  }
+  &Number {
+    font-weight: 700;
+    box-sizing: border-box;
+    color: $color-blue;
+    background: #eaf3fe;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
+
+.noData {
+  margin: 1.5rem auto;
+}

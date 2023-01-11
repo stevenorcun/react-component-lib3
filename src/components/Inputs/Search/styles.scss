@@ -1,0 +1,33 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.inputContainer {
+  @include size(100%, 90px);
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  border-top: 1px solid #ededee;
+  border-bottom: 1px solid #ededee;
+}
+.inputElement {
+  position: relative;
+  margin: 20px;
+  width: 100%;
+  input {
+    @include size(calc(100% - 42px), 50px);
+    padding-left: 42px;
+    background-color: #f2f4f8;
+    border-radius: 10px;
+    border: none;
+    &::placeholder {
+      color: #94969a;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  svg {
+    position: absolute;
+    top: 18px;
+    left: 12px;
+  }
+}

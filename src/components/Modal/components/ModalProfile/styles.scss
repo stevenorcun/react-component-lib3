@@ -1,0 +1,108 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/_commons";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  height: 100%;
+}
+
+.modalteste {
+  display: flex;
+  flex-grow: 1;
+  min-height: 100px;
+  height: auto;
+  max-height: 200px;
+  width: 200px;
+  right: 10px;
+  left: auto;
+
+  div:nth-child(2) {
+    overflow: initial;
+    overflow-x: clip;
+  }
+
+  .footerModal {
+    margin: 0 1rem 1.5rem 1rem;
+    align-items: flex-end;
+    text-align: end;
+
+    .boutonAllLists {
+      padding: 12px;
+    }
+  }
+
+  .cards {
+    margin: 1rem;
+    min-height: 200px;
+    border-top: 1px solid $color-divider-grey;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: overlay !important;
+    scrollbar-color: $color-grey40 $color-white;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      @include size(6px, 6px);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey40;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent;
+    }
+  }
+
+  .card {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0.7rem 0.7rem 0.7rem 0;
+    border-bottom: 1px solid $color-divider-grey;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+
+  .label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-black;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+
+  .time {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-sublabel;
+  }
+
+  .iconList {
+    & > svg {
+      margin-right: 0.5rem;
+      transform: scale(0.6);
+      fill: $color-blue;
+    }
+  }
+}
+
+.noContentList {
+  justify-content: center;
+}
+
+.noList {
+  width: auto;
+}

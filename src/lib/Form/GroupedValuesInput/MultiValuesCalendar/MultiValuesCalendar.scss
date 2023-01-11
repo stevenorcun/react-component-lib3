@@ -1,0 +1,37 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.Container,
+.Container * {
+  cursor: pointer !important;
+}
+
+.Input_Date__Icon {
+  @include transform(scale(0.909));
+  fill: $color-grey60;
+  padding: 0 0.5em;
+}
+
+.Calendar__InputAndIcon {
+  background: $color-white;
+  border: 1px solid rgba(77, 80, 86, 0.1);
+  border-radius: 4px;
+}
+
+.Calendar__Input {
+  border-radius: 4px 0 0 4px !important;
+  border-left: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.Calendar__Input__Value {
+  font-size: small;
+}
+
+.Input_Date__Calendar_Container {
+  position: absolute;
+  z-index: 2;
+  width: 260px;
+}

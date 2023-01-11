@@ -1,0 +1,14 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.Icon {
+  width: 16px;
+  height: 20px;
+}
+
+.Label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: $color-grey;
+}

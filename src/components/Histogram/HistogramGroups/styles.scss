@@ -1,0 +1,32 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.groupName {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(space-between);
+  background: #f2f4f8;
+  color: $color-grey;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 13px 20px;
+  margin-top: 20px;
+}
+
+.ClearHighlights {
+  height: 16px;
+  color: $color-blue;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 16px;
+
+  span {
+    padding: 0 6px;
+  }
+
+  svg {
+    align-self: center;
+    height: 12px;
+    fill: $color-blue;
+  }
+}

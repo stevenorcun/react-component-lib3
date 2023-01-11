@@ -1,0 +1,107 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.histogramExplorer {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.FilterHistogram {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+
+  .buttonFilter {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 7px 10px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #717378;
+    background: #ededee;
+  }
+
+  .iconButton {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+
+    & > svg {
+      width: 9px;
+      height: 9px;
+    }
+  }
+}
+
+.card {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  @include justify-content(space-between);
+  line-height: 19px;
+  padding: 5px 25px 5px 20px;
+  cursor: pointer;
+
+  &Selected {
+    background-color: rgba(48, 131, 247, 0.2);
+  }
+
+  &Label {
+    font-weight: 400;
+    max-width: 60%;
+    color: #4d5056;
+    word-break: break-all;
+  }
+  .attributeValue {
+    @include flexbox;
+    @include align-items(center);
+    font-size: 14px;
+
+    .bar {
+      background: $color-grey10;
+      position: relative;
+      width: 100px;
+      height: 7px;
+      border-radius: 50px;
+      margin-left: 10px;
+
+      &:hover {
+        box-shadow: 0 0 5px $color-grey60;
+      }
+
+      .loadBar {
+        position: absolute;
+        height: 7px;
+        background: linear-gradient(90.61deg, #0081ff -16.15%, #45a3ff 52.54%);
+        border-radius: 10px;
+      }
+    }
+  }
+  .BarContainer {
+    padding: 5px 0;
+  }
+}
+
+.componentTypes {
+  color: #4d5056;
+
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0.5rem 0.7rem;
+  }
+
+  .iconArrow {
+    margin-right: 0.5rem;
+
+    & > svg {
+      fill: #4d5056;
+    }
+  }
+}

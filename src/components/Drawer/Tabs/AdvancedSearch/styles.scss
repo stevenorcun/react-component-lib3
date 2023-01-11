@@ -1,0 +1,124 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.Container {
+  padding: 20px 12.5px 0;
+}
+
+.Results__Container {
+  margin-top: 45px;
+}
+
+.SaveAsTemplateWidget {
+  position: unset;
+}
+
+.Form {
+  width: 100%;
+}
+
+.ResultsHeader {
+  // undo global Drawer padding
+  margin: 0 -12.5px;
+  background: $color-blue;
+  padding: 25px 20px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 19px;
+  color: $color-white;
+
+  &__Count {
+    font-weight: 400;
+  }
+}
+
+.TypeHeader {
+  padding: 0.3em 0.5em;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--app-main-color, $color-darkblue);
+
+  &__Count {
+    font-weight: 400;
+    color: $color-grey60;
+  }
+}
+
+.Results {
+  margin: 0 -0.5em;
+  gap: 30px;
+
+  .TypeGroup {
+    gap: 20px;
+
+    &__Entities {
+      gap: 0.3em;
+
+      .MiniResult {
+        gap: 11px;
+        padding: 0.3em 0.5em;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: $color-grey;
+
+        svg {
+          width: 16px;
+          height: 20px;
+          fill: $color-blue;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+.SortAndFilters {
+  margin: 0;
+  //padding: 16px 23px;
+  padding: 7px 0;
+  gap: 10px;
+
+  .Dropdown {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    background: $color-grey10;
+    border-radius: 50px;
+    gap: 13px;
+
+    span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: $color-grey80;
+    }
+
+    svg {
+      fill: $color-grey60;
+    }
+  }
+
+  .Sorting,
+  .Filter {
+    gap: 6px;
+
+    svg {
+      fill: $color-grey;
+    }
+
+    .Label {
+      flex-shrink: 0;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      color: $color-grey;
+    }
+  }
+}

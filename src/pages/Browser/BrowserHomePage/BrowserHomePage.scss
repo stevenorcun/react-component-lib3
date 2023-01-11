@@ -1,0 +1,152 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.NewSearchContainer {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .SearchTitle {
+    font-size: 34px;
+    color: $color-darkblue;
+    margin: 0 0 24px;
+    font-weight: bold;
+  }
+
+  .SearchBarContainer {
+    position: relative;
+    width: 735px;
+
+    .SearchInput {
+      font-size: 20px;
+      width: calc(100% - 60px);
+      height: 80px;
+      background: #fff;
+      border: 1px solid #ededee;
+      box-shadow: 0 8px 20px rgba(42, 46, 115, 0.09);
+      border-radius: 10px;
+      padding-left: 60px;
+
+      &::placeholder {
+        color: $color-grey60;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .SearchBtn {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include size(55px, 55px);
+      background: $color-blue;
+      box-shadow: 0 6.17143px 15.4286px rgba(0, 129, 255, 0.4);
+      border-radius: 15px;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+
+      > svg {
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    > svg,
+    form > svg {
+      position: absolute;
+      left: 27px;
+      height: 24px;
+      width: 24px;
+      top: 30px;
+    }
+  }
+
+  .AdvancedSearchByModelContainer {
+    padding-top: 5em;
+    width: 735px;
+    z-index: 1;
+
+    .AdvancedSearchByModelContainer__Hint {
+      text-align: center;
+      font-style: normal;
+      font-size: 18px;
+      line-height: 25px;
+      color: $color-grey;
+      margin-bottom: 20px;
+    }
+
+    .AdvancedSearchByModelContainer__Content {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(space-between);
+
+      .AdvancedSearchByModel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        background: white;
+        border-radius: 10px;
+        width: 225px;
+        height: 228px;
+        padding: 21px 23px;
+        @include box-sizing(border-box);
+
+        .AdvancedSearchByModel__Icon {
+          @include size(40px, 40px);
+          fill: $color-blue;
+          background: #f6f6f6;
+          border-radius: 10px;
+          @include flex-shrink(0);
+
+          svg {
+            @include size(20px, 20px);
+            margin: 10px;
+          }
+        }
+
+        .AdvancedSearchByModel__Title {
+          color: $color-grey;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: bold;
+          line-height: 22px;
+          margin-bottom: 0;
+        }
+
+        .AdvancedSearchByModel__Description {
+          font-size: 12px;
+          line-height: 16.34px;
+          font-weight: 400;
+          color: $color-grey80;
+        }
+
+        .AdvancedSearchByModel__Button {
+          padding: 12px;
+          background: $color-blue;
+          color: #ffffff;
+          border-radius: 4px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* T922 */
+.Hack {
+  position: absolute;
+  top: 39%;
+  background-color: $color-white;
+  width: 735px;
+  z-index: 10;
+}

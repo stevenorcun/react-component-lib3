@@ -1,0 +1,32 @@
+.search {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  background: #F2F4F8;
+}
+
+.input {
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 2.7rem;
+  background-color: transparent;
+  color: #717378;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 17px;
+  top: 17px;
+  height: 18px;
+  width: 18px;
+  fill: #3083F7;
+}

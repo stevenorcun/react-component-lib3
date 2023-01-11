@@ -1,0 +1,59 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.attribute {
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #717378;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  @include justify-content(space-between);
+
+  img,
+  svg {
+    @include size(24px, 24px);
+  }
+
+  &.isToggled {
+    background-color: $color-blue20;
+  }
+
+  &.totalLabel {
+    color: $color-blue;
+    font-weight: bold;
+  }
+
+  .attributeValue {
+    @include flexbox;
+    @include align-items(center);
+    font-size: 14px;
+    margin-right: 40px;
+
+    .bar {
+      background: $color-grey10;
+      position: relative;
+      width: 100px;
+      height: 7px;
+      border-radius: 50px;
+      margin-left: 10px;
+
+      &:hover {
+        box-shadow: 0 0 5px $color-grey60;
+      }
+
+      .loadBar {
+        position: absolute;
+        height: 7px;
+        background: linear-gradient(90.61deg, #0081ff -16.15%, #45a3ff 52.54%);
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.BarContainer {
+  padding: 5px 0;
+}

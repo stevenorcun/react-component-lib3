@@ -1,0 +1,72 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.SearchResult__Body__PropertyLine {
+  width: 100%;
+  //padding: 7px 22px 0;
+  @include box-sizing(border-box);
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  & > span {
+    display: flex;
+    flex: 50%;
+  }
+
+  .AddressesPropertyValues:not(:last-of-type)::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  .SearchResult__Body__PropertyLine__PropertyLabel {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.2578px;
+    line-height: 19px;
+    color: $color-grey60;
+    cursor: pointer;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+  }
+  .SearchResult__Body__PropertyLine__PropertyValue {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12.25px;
+    line-height: 19px;
+    color: $color-grey;
+    position: relative;
+    overflow-y: hidden;
+    flex-wrap: wrap;
+    gap: 0.5em;
+
+    &.SearchResult__Body__PropertyLine__PropertyValue_Collapsed {
+      // 4 lines max
+      max-height: calc(4 * 19px);
+    }
+
+    .DOTDOTDOT {
+      display: none;
+    }
+
+    .ArtifactIcons_Container {
+      display: flex;
+      @include align-items(center);
+
+      svg {
+        padding-left: 0.5em;
+      }
+    }
+
+    &.SearchResult__Body__PropertyLine__PropertyValue_Collapsed.SearchResult__Body__PropertyLine__PropertyValue_Overflowing
+      .DOTDOTDOT {
+      display: inline;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+}

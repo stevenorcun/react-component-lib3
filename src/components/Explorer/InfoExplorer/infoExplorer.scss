@@ -1,0 +1,17 @@
+.infoExplorer {
+  display: flex;
+
+  .label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    padding-right: .5rem;
+  }
+
+  .value {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 1rem;
+  }
+}

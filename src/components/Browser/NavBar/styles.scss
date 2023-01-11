@@ -1,0 +1,81 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.SearchNavigation {
+  @include flexbox;
+  @include align-items(center);
+  background: white;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 7.58719px 18.968px rgba(42, 46, 115, 0.13);
+  z-index: 1;
+  overflow: scroll hidden;
+
+  .NewTabButton {
+    @include flexbox;
+    @include align-items(center);
+    padding: 0 10px;
+    height: 20px;
+    margin-top: 6px;
+
+    svg {
+      width: 12px;
+      fill: $color-grey50;
+
+      &:hover {
+        fill: $color-blue;
+      }
+    }
+  }
+
+  .SearchTab {
+    @include flexbox;
+    @include align-items(center);
+    @include flex-shrink(0);
+    color: $color-grey60;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 20px;
+    border-right: 1px solid #cfd8ec;
+    user-select: none;
+    // To remain centered despite the scrollbar (commons.PrettyScroll)
+    margin-top: 6px;
+
+    &.Active + .SearchTab,
+    &.Active + .NewTabButton {
+      border-left: 1px solid #cfd8ec;
+    }
+
+    .SearchIcon,
+    svg:not(.CloseIcon) {
+      background: #eaf3fe;
+      border-radius: 2px;
+      padding: 5px;
+      margin-right: 6px;
+
+      width: 21px;
+      height: 20px;
+      fill: #0081ff;
+    }
+
+    &.Active {
+      background: #3083f7;
+      padding: 10px;
+      color: white;
+      margin-left: 20px;
+      margin-right: 20px;
+      border-radius: 5px;
+
+      .CloseIcon {
+        margin-right: 5px;
+      }
+
+      .SearchIcon,
+      svg:not(.CloseIcon) {
+        display: none;
+      }
+    }
+  }
+}

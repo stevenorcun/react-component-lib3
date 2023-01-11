@@ -1,0 +1,217 @@
+{
+  "rules": [
+    {
+      "id": "1151b5905bae2797a5d22bc2",
+      "reference": "#123456782",
+      "rule": {
+        "isDataShown": false,
+        "controlTags": [
+          {
+            "label": "Toulouse",
+            "type": 6
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Localisation",
+            "type": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc1",
+      "reference": "#123456781",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "Urgence attentat",
+            "type": 6
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Localisation",
+            "type": 3
+          },
+          {
+            "label": "EI",
+            "type": 2
+          },
+          {
+            "label": "Daesh",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc3",
+      "reference": "#123456783",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "CD",
+            "type": 1
+          },
+          {
+            "label": "CT",
+            "type": 1
+          },
+          {
+            "label": "Babar",
+            "type": 2
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Babar",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc4",
+      "reference": "#123456784",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "CD",
+            "type": 1
+          },
+          {
+            "label": "CT",
+            "type": 1
+          },
+          {
+            "label": "Retour Cyclone",
+            "type": 2
+          },
+          {
+            "label": "Algérie",
+            "type": 4
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Bornage",
+            "type": 3
+          },
+          {
+            "label": "Gherbi",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc5",
+      "reference": "#123456785",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "CD",
+            "type": 1
+          },
+          {
+            "label": "CT",
+            "type": 1
+          },
+          {
+            "label": "Flux transfrontaliers",
+            "type": 2
+          },
+          {
+            "label": "Syrie",
+            "type": 4
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Babar",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc6",
+      "reference": "#123456786",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "CD",
+            "type": 1
+          },
+          {
+            "label": "CT",
+            "type": 1
+          },
+          {
+            "label": "Flux transfrontaliers",
+            "type": 2
+          },
+          {
+            "label": "Corruption internationale",
+            "type": 2
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Fadets",
+            "type": 3
+          },
+          {
+            "label": "Panama",
+            "type": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "1151b5905bae2797a5d22bc7",
+      "reference": "#123456787",
+      "rule": {
+        "isDataShown": true,
+        "controlTags": [
+          {
+            "label": "CD",
+            "type": 1
+          },
+          {
+            "label": "CT",
+            "type": 1
+          },
+          {
+            "label": "Fraude",
+            "type": 2
+          },
+          {
+            "label": "Suisse",
+            "type": 4
+          }
+        ],
+        "dataTags": [
+          {
+            "label": "Bornage",
+            "type": 3
+          },
+          {
+            "label": "Babar",
+            "type": 2
+          },
+          {
+            "label": "Panama",
+            "type": 3
+          }
+        ]
+      }
+    }
+  ]
+}

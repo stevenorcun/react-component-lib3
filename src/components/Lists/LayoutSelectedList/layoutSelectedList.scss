@@ -1,0 +1,22 @@
+.OverflowMeDaddy {
+  max-height: 85vh;
+  overflow: auto;
+}
+
+.selectedListCards {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.cardList {
+  width: 394px;
+  border-radius: 8.75556px;
+  margin: 1rem;
+  height: auto;
+  background-color: transparent;
+  box-shadow: 0px 6.64301px 29.7689px rgba(42, 46, 115, 0.05);
+}
+
+

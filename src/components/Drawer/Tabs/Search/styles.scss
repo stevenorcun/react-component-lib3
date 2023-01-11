@@ -1,0 +1,79 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.search {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .searchContainer {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+
+    .searchControls {
+      position: relative;
+      width: 100%;
+
+      .searchInput {
+        @include size(80%, 30px);
+        color: $color-grey60;
+        background: #f6f6f6;
+        border: none;
+        border-radius: 7px;
+        font-size: 14px;
+        line-height: 19px;
+        margin-top: 20px;
+        margin-left: 14px;
+        padding-left: 20px;
+        height: 40px;
+
+        &::placeholder {
+          color: $color-grey60;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+      .searchBtn {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include size(38px, 31px);
+        background: $color-blue;
+        border-radius: 7px;
+        position: absolute;
+        right: 50px;
+        top: 25px;
+      }
+    }
+  }
+
+  .result {
+    margin: 20px;
+    border-bottom: 1px solid #ededee;
+
+    .date {
+      color: $color-grey;
+      font-size: 12px;
+      margin-top: 0;
+    }
+    .description {
+      color: $color-grey80;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .link {
+      color: $color-blue;
+      margin-top: 15px;
+      font-size: 12px;
+      text-decoration: underline;
+    }
+  }
+}

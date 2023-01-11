@@ -1,0 +1,230 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.Form {
+  position: relative;
+  max-width: 100%;
+
+  .SearchFrom__CustomPropertyField {
+    border-top: solid 1px $color-blue20;
+    //margin: 0 -20px; // (ugly) value of the Form container's padding
+    padding: 19px 0 0.5em;
+    position: relative;
+  }
+
+  .SearchFormSelect {
+    margin-bottom: 11px;
+    min-width: 145px;
+
+    &.NationalitySelect,
+    &.EntityType {
+      color: $color-grey;
+      min-height: 40px;
+      display: flex;
+    }
+
+    &.EntityType {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 49px;
+    }
+  }
+
+  textarea.Input {
+    resize: vertical;
+    min-height: 51px; // if set at 50px, a scrollbar appears when height === 50px
+    max-height: 250px;
+  }
+
+  .Input {
+    @include size(100%, 50px);
+    min-height: 50px;
+    padding: 10px 15px;
+    background: #ffffff;
+    border: 1px solid $color-grey10;
+    box-sizing: border-box;
+    box-shadow: 0 7.58719px 34px rgba(42, 46, 115, 0.05);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-grey;
+
+    &::placeholder {
+      color: $color-grey60;
+    }
+
+    &.Date {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+
+      span {
+        min-width: 187px;
+        flex-grow: 1;
+        margin-right: -14px;
+
+        &.Input_Date__Placeholder {
+          color: $color-grey50;
+          user-select: none;
+        }
+      }
+
+      .Input_Date__DeleteIcon {
+        flex-grow: 1;
+        fill: $color-blue;
+      }
+    }
+  }
+
+  .Input_Date__Calendar {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.Form__Body {
+  width: 260px;
+  padding-top: 0;
+
+  .Form__Editor {
+    border-top: 1px solid $color-darkblue20;
+    color: $color-blue;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0;
+    //margin-left: -20px;
+    //margin-right: -20px;
+    gap: 0.5em;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 16px;
+
+    div {
+      margin: 0.5em 0;
+
+      @include flexbox;
+      @include align-items(center);
+
+      svg {
+        fill: #3083f7;
+        stroke: #3083f7;
+        stroke-width: 1px;
+        padding-right: 0.5em;
+      }
+    }
+  }
+}
+
+.Form__SubmitButton {
+  padding: 12px;
+  background: #fff;
+  border: 2px solid $color-blue;
+  @include box-sizing(border-box);
+  border-radius: 4px;
+  width: 110px;
+  height: 40px;
+  display: flex;
+
+  svg {
+    transform: translate(-4px, -4px) scale(0.8);
+  }
+
+  span {
+    width: 69px;
+    height: 16px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: #3083f7;
+  }
+}
+
+.Nationalities__SelectedValues {
+  margin: 0.1em 0.75em 0.1em 0;
+  background: $color-grey10;
+  padding: 0.2em 0.5em;
+  gap: 4px;
+}
+
+.EntityType__InputValue_Container {
+  cursor: auto;
+  padding: 6px !important;
+  font-size: 8px !important;
+  line-height: 11px !important;
+  @include box-sizing(border-box);
+  margin: 0 !important;
+
+  .EntityType__InputValue_DeleteButton {
+    cursor: pointer;
+    margin-left: 5px;
+  }
+}
+
+.DateTimePicker_Container {
+  border: 1px solid $color-grey10;
+  border-radius: 4px;
+  font-weight: 500;
+
+  .Separator {
+    padding: 0 18px;
+  }
+
+  .DateInput {
+    width: 100%;
+    align-items: start;
+
+    &:first-of-type {
+      padding-left: 16px;
+    }
+
+    &:last-of-type {
+      padding-right: 16px;
+    }
+
+    .Label {
+      font-size: 10px;
+      line-height: 14px;
+      color: $color-grey60;
+    }
+
+    .Value {
+      font-size: 14px;
+      line-height: 19px;
+      color: $color-grey;
+    }
+
+    .Time {
+      font-size: 12px;
+      line-height: 16px;
+      color: $color-grey60;
+    }
+  }
+}
+
+.DateTimePicker {
+  position: fixed;
+  bottom: 250px;
+  left: 3em;
+  z-index: 10;
+
+  &__DisplayLeft {
+    right: 3em;
+    left: unset;
+  }
+}
+
+.DeleteField {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0 0.5em;
+
+  &__Icon {
+    @include size(8.5px, 8.5px);
+    fill: $color-grey60;
+  }
+}

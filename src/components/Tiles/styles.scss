@@ -1,0 +1,31 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.tileTransition {
+  transition: all 0.8s ease-in;
+}
+
+.tile {
+  filter: drop-shadow(0px 7.58719px 34px rgba(42, 46, 115, 0.1));
+}
+
+.Avatar,
+.Avatar svg {
+  @include size(75px, 75px);
+  fill: inherit;
+}
+
+.Pin {
+  width: 9px;
+  height: 9px;
+  border: 0.5px solid $color-blue;
+  background-color: $color-white;
+  cursor: crosshair;
+}
+
+.HitBox {
+  fill: transparent;
+  width: 164px; // Tile width + 2 x 15
+  height: 230px; // Tile height + 15 + 20 (20 because
+  stroke-width: 3px;
+}

@@ -1,0 +1,23 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+.customActionsMenuContainer {
+  position: relative;
+  margin-left: 10px;
+  .customActionsMenu {
+    right: unset;
+    top: unset;
+    bottom: 25px;
+  }
+}
+
+.openIn {
+  @include flexbox;
+  @include align-items(center);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  > svg {
+    margin-left: 5px;
+  }
+}

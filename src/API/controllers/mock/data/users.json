@@ -1,0 +1,29 @@
+{
+    "listUsers": [
+      {
+        "id": "mjc",
+        "name": "Marie-Jo COTIN",
+        "service": "Contre-terrorisme",
+        "job": "Analyste"
+      },
+      {
+        "id": "jrc",
+        "name": "Jean-René CALOT",
+        "service": "Contre-terrorisme",
+        "job": "Analyste"
+      },
+      {
+        "id": "mm",
+        "name": "Maurice Mercaillon",
+        "service": "Contre-terrorisme",
+        "job": "Analyste"
+      },
+      {
+        "id": "jj",
+        "name": "Jacky Jacquart",
+        "service": "Contre-terrorisme",
+        "job": "Analyste"
+      }
+    ]
+  }
+  

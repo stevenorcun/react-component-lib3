@@ -1,0 +1,18 @@
+import React from 'react';
+import { STYLE_BY_FILL_COLORS } from '@/constants/graph-themes';
+
+const IconGeoSlim = (props: React.SVGProps<SVGSVGElement> = {}) => (
+  <svg
+    width="11"
+    height="14"
+    viewBox="0 0 11 14"
+    xmlns="http://www.w3.org/2000/svg"
+    fill={props.fill || STYLE_BY_FILL_COLORS.DEFAULT_STYLE.blueByDefault}
+    stroke={props.stroke || STYLE_BY_FILL_COLORS.DEFAULT_STYLE.blueByDefault}
+    strokeWidth="0.2"
+    {...props}
+  >
+    <path d="M 9.347 1.5958 C 8.323 0.5674 6.959 0.001 5.506 0.001 H 5.5 C 2.573 -0.0589 0.006 2.5182 0.067 5.4433 C 0.143 7.5088 2.13 10.132 3.678 12.1473 C 4.132 12.6901 4.794 13 5.506 13 C 6.242 13 6.925 12.6682 7.381 12.0898 C 8.529 10.6633 11.008 7.2322 10.933 5.4433 C 10.933 3.9891 10.37 2.6227 9.347 1.5958 Z M 6.583 11.4614 C 6.059 12.1536 4.955 12.1548 4.43 11.4626 C 2.331 8.7908 1.082 6.5658 1.082 5.4433 C 1.082 3.0024 3.064 1.0166 5.5 1.0166 H 5.506 C 7.938 1.0166 9.917 3.0024 9.917 5.4433 C 9.917 6.578 8.702 8.7715 6.583 11.4614 Z M 5.528 7.5922 C 4.338 7.5922 3.37 6.6241 3.37 5.4342 C 3.489 2.5712 7.568 2.5721 7.686 5.4342 C 7.686 6.6241 6.718 7.5922 5.528 7.5922 Z M 5.528 4.2917 C 4.898 4.2917 4.386 4.8042 4.386 5.4342 C 4.449 6.9499 6.608 6.9494 6.671 5.4342 C 6.671 4.8042 6.158 4.2917 5.528 4.2917 Z" />
+  </svg>
+);
+export default IconGeoSlim;

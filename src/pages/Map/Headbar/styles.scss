@@ -1,0 +1,72 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.headbar {
+  @include size(100vw, 60px);
+  @include flexbox;
+  @include flex-direction(row);
+  background: white;
+  position: absolute;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0px 7.58719px 18.968px rgba(42, 46, 115, 0.1);
+  left: 0;
+  top: 0px;
+  z-index: 3;
+
+  .sideItem {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    color: white;
+    outline: none;
+    background: none;
+    border: none;
+    margin-bottom: 15px;
+    width: 60px;
+
+    &.active {
+      border-radius: 10px;
+    }
+
+    &:hover svg {
+      fill: #3083f7;
+    }
+
+    // &:last-child {
+    //   margin-bottom: 20px;
+    // }
+  }
+}
+
+.headbar_icon_container_select {
+  width: 60px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.headbar_icon_container_draw {
+  width: 60px;
+  justify-content: space-between;
+  display: flex;
+
+  &Selected {
+    color: #3083f7;
+    font-weight: 700;
+  }
+}
+
+.headbar_icon_text {
+  position: absolute;
+  width: 60px;
+  top: 40px;
+
+  font-family: $font-primary-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 14px;
+
+  text-align: center;
+  color: #717378;
+}

@@ -1,0 +1,30 @@
+.globalModal {
+  display: flex;
+  flex-grow: 1;
+  width: 400px;
+  box-shadow: 0px 7.58719px 20px rgba(42, 46, 115, 0.15);
+
+  div:nth-child(2) {
+    overflow: initial;
+    overflow-x: clip;
+  }
+
+  .globalModal__footer {
+    margin: 0 1rem .5rem 1rem;
+    align-items: flex-end;
+    text-align: end;
+
+    .boutonAllLists {
+      padding: 12px;
+    }
+  }
+}
+
+.intro {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 1rem 0;
+}
+
+

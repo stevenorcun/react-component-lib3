@@ -1,0 +1,13 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.sidebar {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include size(356px, 100%);
+  background-color: #fff;
+  color: #94969a;
+  position: fixed;
+  overflow-y: auto;
+  box-shadow: 0px 7.58719px 20px rgba(42, 46, 115, 0.15);
+}

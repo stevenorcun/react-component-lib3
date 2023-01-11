@@ -1,0 +1,44 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.contextMenuOption {
+  @include flexbox;
+  @include justify-content(space-between);
+  color: #4d5056;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 6px 20px;
+  &:hover {
+    background-color: #f6f6f6;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &.disabled {
+    cursor: default;
+    color: #d2d3d4;
+    &:hover {
+      background-color: inherit;
+    }
+    .optionLabel {
+      > svg {
+        fill: #d2d3d4;
+      }
+    }
+  }
+  .optionLabel {
+    padding-right: 50px;
+    .label {
+      margin-left: 7px;
+      &.noIcon {
+        margin-left: 21px;
+      }
+    }
+    > svg {
+      width: 14px;
+      height: 14px;
+      fill: #94969a;
+    }
+  }
+}

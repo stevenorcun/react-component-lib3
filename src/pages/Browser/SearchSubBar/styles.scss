@@ -1,0 +1,204 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.subBar {
+  @include flexbox;
+  @include align-items(center);
+  margin-top: 24px;
+  width: 95%;
+
+  .buttonFilters {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include size(100px, 50px);
+    border: 1px solid #ededee;
+    background: white;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    color: #3083f7;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:focus {
+      outline: none;
+    }
+
+    > svg {
+      margin-right: 10px;
+    }
+  }
+
+  .tagsContainer {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    margin-left: 20px;
+
+    .tag {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      background: $color-blue20;
+      color: $color-blue;
+      padding: 3px 10px;
+      border-radius: 5px;
+      height: 30px;
+      font-size: 12px;
+      font-weight: 600;
+
+      > svg {
+        margin-left: 5px;
+        fill: $color-blue;
+      }
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .searchSettings {
+    @include flexbox;
+    @include flex;
+    @include justify-content(flex-end);
+    @include align-items(center);
+    font-size: 14px;
+    padding-right: 50px;
+    color: $color-blue;
+
+    .setting {
+      @include flexbox;
+      @include justify-content(flex-end);
+      @include align-items(center);
+      margin-left: 10px;
+
+      &:not(:first-child) {
+        border-left: 1px solid #cfd8ec;
+        padding-left: 10px;
+      }
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .filtersPanel {
+    border: none;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    @include flexbox;
+    @include flex-direction(column);
+    flex: auto;
+
+    .filtersHeader {
+      @include flex;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(flex-start);
+      background: white;
+      color: #3083f7;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      padding-left: 20px;
+
+      > svg {
+        margin-right: 5px;
+      }
+
+      .tagsHeader {
+        @include flexbox;
+        flex: auto;
+        margin: 10px;
+        margin-left: 30px;
+
+        .tag {
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          background: $color-blue20;
+          color: $color-blue;
+          padding: 3px 10px;
+          border-radius: 5px;
+          height: 30px;
+          font-size: 12px;
+          font-weight: 600;
+
+          > svg {
+            margin-left: 5px;
+            fill: $color-blue;
+          }
+
+          &:not(:first-child) {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .rightHeader {
+        @include flexbox;
+        @include align-items(center);
+
+        button {
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+          background: $color-blue;
+          border: none;
+          color: white;
+          padding: 5px;
+          border-radius: 4px;
+          > svg {
+            margin-right: 5px;
+          }
+        }
+
+        div {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .filtersFields {
+      @include flexbox;
+      background: white;
+      border-top: 1px solid #ededee;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 25px;
+
+      .field {
+        @include flexbox;
+        @include flex-direction(column);
+        color: $color-grey80;
+        font-size: 12px;
+        font-weight: 700;
+        flex: auto;
+
+        &:not(:first-child) {
+          padding-left: 20px;
+        }
+
+        &:last-child {
+          padding-right: 20px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 6px;
+        }
+
+        input {
+          padding: 10px;
+          border: 1px solid $color-grey10;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

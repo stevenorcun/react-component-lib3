@@ -1,0 +1,55 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.box {
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 10px;
+  .boxHeader {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 0 30px;
+    height: 68px;
+    border-bottom: 1px solid #ededee;
+    svg {
+      margin-right: 13px;
+    }
+    .boxBlock {
+      display: flex;
+      align-items: center;
+    }
+    .boxTitle {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(baseline);
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--app-main-color, $color-darkblue);
+    }
+    .boxSubtitle {
+      font-size: 12px;
+      font-weight: normal;
+      color: #94969a;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    .boxHeader {
+      padding: 10px 30px;
+    }
+  }
+  .boxContent {
+    margin: 20px 30px;
+  }
+}
+
+.showMore {
+  @include flexbox;
+  @include justify-content(center);
+  font-size: 10px;
+  color: #3083f7;
+  font-weight: 600;
+  padding: 10px 0;
+  border-top: 1px solid #ededee;
+}

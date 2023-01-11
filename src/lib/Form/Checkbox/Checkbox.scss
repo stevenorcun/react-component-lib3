@@ -1,0 +1,40 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.Checkbox {
+  @include box-sizing(border-box);
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 18px;
+  @include align-items(center);
+
+  .Input {
+    @include size(16px, 16px);
+    background: $color-blue;
+    color: $color-white;
+    cursor: pointer;
+
+    &:checked + .Label,
+    &:checked + .Icon + .Label {
+      color: $color-grey;
+    }
+  }
+
+  .Icon {
+    display: flex;
+    margin-left: 12px;
+  }
+
+  .Icon + .Label {
+    padding-left: 6px;
+  }
+
+  .Label {
+    display: block;
+    padding-left: 1em;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-grey80;
+  }
+}

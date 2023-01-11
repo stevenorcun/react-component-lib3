@@ -1,0 +1,154 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.emptySelection {
+  @include flexbox;
+  background: $color-grey5;
+  color: $color-grey60;
+  font-size: 14px;
+  width: 200px;
+  margin: 50px auto 0;
+  padding: 50px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.selectionWrapper {
+  overflow-x: auto;
+}
+
+.entity {
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(flex-start);
+  padding: 0 1rem;
+  height: 90px;
+
+  &Content {
+    &Image,
+    svg {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+  }
+
+  .entityDetails {
+    @include flexbox;
+    @include flex-direction(column);
+    margin-left: 1rem;
+
+    svg {
+      path {
+        transform: scale(0.5);
+      }
+    }
+
+    .EntityLabel {
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 25px;
+      color: $color-blue;
+    }
+
+    .entityType {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 22px;
+      color: $color-grey80;
+    }
+  }
+}
+
+.entityLinksContainer {
+  border-top: 1px solid rgba(77, 80, 86, 0.1);
+  @include flexbox;
+  @include align-items(center);
+  justify-content: center;
+  height: 37px;
+  .DotSeparator {
+    margin: 0 8px;
+  }
+}
+.Link {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  color: $color-blue;
+  span {
+    margin-left: 6px;
+  }
+}
+
+.accordion {
+  height: 25px;
+}
+.accordion2 {
+  flex-direction: row-reverse;
+  justify-content: flex-end !important;
+  background-color: $color-white;
+  font-weight: 600 !important;
+  padding: 10px !important;
+  svg {
+    margin-right: 10px;
+  }
+}
+.accordionTitle {
+  @include flexbox;
+  @include align-items(center);
+  svg {
+    margin-right: 14px;
+  }
+}
+.accordionItemContainer {
+  margin: 0 10px;
+}
+
+.tagLabelContainer {
+  min-width: 40%;
+  .tagLabel {
+    font-size: 14px;
+  }
+}
+.propertiesTags {
+  @include align-items(baseline);
+  margin-left: 30px;
+  &.multipleTags {
+    margin-left: 13px;
+  }
+}
+
+.ruleLine {
+  @include flexbox;
+  @include flex-direction(column);
+  border-bottom: 1px solid $color-border;
+}
+.ruleTitleContainer {
+  @include flexbox;
+  @include justify-content(space-between);
+  > span {
+    width: 39%;
+    font-size: 10px;
+    margin: 15px 0;
+    color: $color-black;
+  }
+}
+.ruleContent {
+  @include flexbox;
+  @include justify-content(space-between);
+  > div {
+    width: 39%;
+  }
+}
+.actionColumn {
+  width: 22% !important;
+}
+
+.addButton {
+  display: block;
+}
+
+.arrow {
+  margin-right: 10px;
+}

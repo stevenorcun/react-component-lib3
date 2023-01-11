@@ -1,0 +1,56 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.generalProperty {
+  width: 95%;
+  margin: auto;
+
+  &Header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem 0 2rem;
+    background: #f7f9fc;
+    &Left {
+      display: flex;
+      align-items: center;
+      span {
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 1rem;
+        line-height: 25px;
+        color: var(--app-main-color, $color-darkblue);
+      }
+    }
+  }
+}
+
+.numberLink {
+  font-size: 12px;
+  margin-left: 0.1rem;
+  line-height: 25px;
+  color: #3083f7;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 1rem !important;
+  line-height: 25px;
+  color: var(--app-main-color, $color-darkblue);
+}
+
+.buttonOpen {
+  cursor: pointer;
+}
+
+.icon {
+  display: flex;
+}
+
+.icon > svg {
+  width: 20px;
+  height: 20px;
+}

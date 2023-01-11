@@ -1,0 +1,20 @@
+.fullScreen {
+  position: fixed;
+  background: rgba(10, 10, 10, 0.6);
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  &__feature {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: darkgray;
+  }
+}

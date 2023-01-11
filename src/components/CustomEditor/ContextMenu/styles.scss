@@ -1,0 +1,24 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.editorContextMenu {
+  background: linear-gradient(
+    157.81deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  border: 1px solid #f2f4f8;
+  box-shadow: 20px 30px 41px rgba(0, 0, 0, 0.13);
+  backdrop-filter: blur(45px);
+  border-radius: 10px;
+}
+.contextMenuOptions {
+  @include flexbox;
+  @include flex-direction(column);
+  padding: 5px 0;
+}
+.divider {
+  height: 0;
+  border: solid 1px #ffffff;
+  margin: 12px 0;
+}

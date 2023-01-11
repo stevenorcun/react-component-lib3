@@ -1,0 +1,71 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+}
+.inputElement {
+  display: inline-flex;
+  @include align-items(center);
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ededee;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border-radius: 4px;
+}
+.inputTagElement {
+  user-select: none;
+  cursor: default;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: #f2f4f8;
+  > svg {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+.inputTagElementLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.input {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 5px;
+  border: none;
+  border-radius: inherit;
+  background: transparent;
+  &::placeholder {
+    color: #94969a;
+  }
+  &:focus {
+    outline: none;
+  }
+  &.inputWithButton {
+    padding-right: 30px;
+  }
+}
+
+.optionContainer {
+  width: 100%;
+  position: absolute;
+  list-style: none;
+  padding-inline-start: 0;
+  box-shadow: 0px 7.58719px 20px rgba(42, 46, 115, 0.15);
+  border-radius: 4px;
+  margin: 0;
+  margin-top: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  z-index: 1;
+  .optionElement {
+    .optionElementInteractive {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}

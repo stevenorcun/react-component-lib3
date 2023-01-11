@@ -1,0 +1,239 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.recentActivity {
+  height: calc(100vh - 340px);
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+
+  &Left {
+    width: 39%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    background: $color-white;
+
+    &Header {
+      border-radius: 10px;
+      display: flex;
+      align-items: baseline;
+      margin: 1rem;
+      padding: 1rem;
+      background: #eaf3fe;
+
+      p {
+        font-weight: 600;
+        font-size: 14px;
+        width: 80%;
+        display: inline-block;
+        color: $color-blue;
+      }
+
+      &Icon {
+        display: inline-block;
+        margin: 0 1rem;
+      }
+    }
+
+    &Filtre {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background: $color-grey-white;
+
+      select {
+        height: 30px;
+        box-sizing: border-box;
+        border-radius: 2px;
+        box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+        border: 1px solid $color-grey-white;
+        color: $color-blue;
+      }
+
+      &Content {
+        display: flex;
+        align-items: center;
+        &Icon {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    &ListCards {
+      height: 70%;
+      overflow-y: auto;
+
+      &Card {
+        width: 100%;
+        box-sizing: border-box;
+        height: 110px;
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem;
+        justify-content: space-between;
+        cursor: pointer;
+        border: 1px solid $color-grey-white;
+
+        &Hover {
+          background: $color-blue;
+
+          &Color {
+            color: $color-white !important;
+          }
+        }
+
+        &Left {
+          display: flex;
+          align-items: flex-start;
+          width: 70%;
+          span {
+            margin-right: 1rem;
+          }
+
+          &Title {
+            font-weight: bold;
+            font-size: 15px;
+            color: $color-black;
+          }
+
+          &Subtitle {
+            font-size: 13px;
+            padding: 0.5rem 0;
+            color: $color-sublabel;
+          }
+        }
+
+        &Right {
+          font-size: 13px;
+          line-height: 18px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          color: $color-sublabel;
+
+          p {
+            font-size: 13px;
+            color: $color-sublabel;
+          }
+        }
+      }
+    }
+  }
+
+  &Right {
+    width: 58%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    background: #ffffff;
+
+    &ListCards {
+      height: 100%;
+      overflow: hidden;
+      overflow-x: hidden;
+
+      &Card {
+        height: 100%;
+
+        &Header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 1rem;
+          border-bottom: 1px solid #d2d3d4;
+
+          &Left {
+            display: flex;
+            align-items: center;
+
+            &Content {
+              display: flex;
+              flex-direction: column;
+              margin-left: 1rem;
+
+              &Title {
+                font-weight: 900;
+                font-size: 16px;
+                color: var(--app-main-color, $color-darkblue);
+              }
+
+              &Subtitle {
+                font-weight: normal;
+                font-size: 13px;
+                color: #94969a;
+              }
+            }
+          }
+
+          button {
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            font-size: 12px;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            border: 2px solid #3083f7;
+            color: #3083f7;
+            background-color: white;
+          }
+        }
+
+        &Main {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem 0 1rem;
+        }
+      }
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+iframe {
+  overflow: hidden;
+  border: 7px solid #f6f6f6;
+
+  body {
+    height: 100%;
+    width: 90%;
+  }
+}
+
+.iconType {
+  background: #f6f6f6;
+  border-radius: 5px;
+  min-width: 45px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > svg {
+    color: blue;
+    // fill: blue;
+  }
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.images {
+  max-width: 100%;
+}
+
+.openTab {
+  min-width: 220px;
+  height: 40px;
+}
+
+.noData {
+  color: #94969a;
+  font-size: 1.2em;
+}

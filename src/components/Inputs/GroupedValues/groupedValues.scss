@@ -1,0 +1,87 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.globalGroupedValues {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: end;
+  background-color: $color-white;
+  cursor: pointer;
+}
+
+.inputContainer {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  width: calc(100% - 12px);
+  min-height: 50px;
+  border-radius: 4px;
+  border: 1px solid $color-divider-grey;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+}
+
+.inputReadonly {
+  cursor: pointer;
+}
+
+.FakeInput__Container {
+  flex-wrap: wrap;
+  height: auto !important;
+  min-height: 53px !important;
+  gap: 0.25em;
+
+  .OnlyHereForTheBlinkingCursor {
+    border: 0;
+    min-width: 2px;
+    width: 2px;
+    outline: 0 !important;
+    background-color: transparent;
+  }
+
+  .FakeInput__Area {
+    user-select: none;
+    margin-left: -4px;
+    color: $color-grey60;
+  }
+}
+
+.Last {
+  margin-right: 0;
+}
+
+.groupedValue {
+  padding: 0.2em 0.3em;
+  z-index: 1;
+  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-weight: 700;
+  font-size: 12px;
+  color: $color-blue;
+  background: $color-white;
+  border: 1px solid $color-blue;
+
+  &.last {
+    margin-right: 0;
+  }
+
+  .groupedValue__closeIcon {
+    font-size: 0.7em;
+    border-radius: 50%;
+    margin-left: 5px;
+    padding: 0.1em 6px;
+    color: $color-blue;
+  }
+}
+
+.iconArrow {
+  svg {
+    position: absolute;
+    right: 12px;
+    top: 18px;
+  }
+}

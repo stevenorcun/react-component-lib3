@@ -1,0 +1,178 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.MainContainer {
+  @include flexbox;
+  @include size(100%, calc(100% - 2px));
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  & > .Widget {
+    flex-shrink: 0;
+    margin: 15px 10px 0 27px;
+    @include box-sizing(border-box);
+
+    .WidgetBody {
+      margin-top: -70px;
+    }
+  }
+
+  .SearchWidget {
+    width: 300px;
+
+    &.Collapsed {
+      left: -300px;
+    }
+
+    .SearchWidget__Body {
+      overflow-y: scroll;
+      // height: calc(100% - 70px);
+      height: calc(100% - 114px);
+      margin-right: -12px;
+      padding-right: 6px;
+
+      & > div:last-of-type {
+        border-radius: 0 0 10px 10px;
+      }
+
+      .SearchWidget__FormContainer {
+        padding: 14px 20px 20px;
+        background: #fff;
+      }
+
+      .SearchWidget__ResultTypeFilters {
+        background: $color-white;
+        border-top: 1px solid #cfd8ec;
+        padding: 25px 20px 0;
+      }
+    }
+  }
+
+  .ResultsWidget {
+    width: 394px;
+
+    .selectInput {
+      display: flex;
+      margin-top: 0.5rem;
+    }
+
+    .input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      margin: 0 0.5rem 0 0;
+    }
+    .label {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    &.Collapsed {
+      left: -394px;
+
+      // ugly, needed to position the floating "collapse on click" button
+      .ResultsWidget__Header + div {
+        // stick to the right side of the Search Widget
+        left: 721px;
+        // left: calc(2 * 379px);
+      }
+
+      &.BothCollapsed {
+        .ResultsWidget__Header + div {
+          left: 100%;
+        }
+      }
+    }
+
+    .ResultsWidget__Header__ButtonsContainer {
+      display: flex;
+
+      .ResultsWidget__Header_Button {
+        @include size(35px, 35px);
+        @include box-sizing(border-box);
+        background: #f6f6f6;
+        border-radius: 4px;
+        margin-left: 5px;
+
+        svg {
+          fill: $color-blue;
+          margin: auto;
+        }
+      }
+    }
+
+    .ResultsWidget__Body {
+      overflow-y: auto;
+      height: calc(100% - 136px);
+      margin-right: -12px;
+      padding-right: 6px;
+
+      .AdvancedSearchResult {
+        margin-bottom: 0.9em;
+        user-select: none;
+
+        &:first-of-type {
+          margin-top: 0.5em;
+        }
+      }
+    }
+  }
+
+  .EntityDetailsWidget {
+    width: 1050px;
+    flex-grow: 1;
+    margin: 4px 50px;
+    overflow-y: auto;
+    // background-color: white;
+  }
+}
+
+.ResultsWidget__FiltersContainer {
+  margin-top: -70px;
+  background: white;
+  height: 66px;
+
+  .Filters {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(start);
+    font-weight: bold;
+    font-size: 14px;
+    color: $color-grey80;
+    padding-top: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    b {
+      color: $color-grey;
+    }
+
+    .Filter {
+      background: $color-grey10;
+      border-radius: 30px;
+      padding: 6px 13px;
+      font-size: 12px;
+
+      svg {
+        transform: translate(4px, 4px) rotate(90deg);
+      }
+
+      &:not(:first-child) {
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.Collapsed {
+  position: absolute;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  // For the Search result column
+  &:nth-child(2) {
+    top: 70px;
+  }
+}

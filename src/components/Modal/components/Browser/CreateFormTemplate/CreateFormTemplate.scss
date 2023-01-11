@@ -1,0 +1,131 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.Wrapper {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  @include size(100vw, 100vh);
+  background-color: $color-grey30;
+}
+
+.Container {
+  user-select: none;
+  z-index: 11;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-white;
+
+  width: 425px;
+
+  .Header {
+    justify-content: space-between;
+
+    border-radius: 10px 10px 0 0;
+    padding: 13px 20px;
+    background-color: $color-blue;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 19px;
+
+    display: flex;
+    align-items: center;
+    color: $color-white;
+
+    .Title,
+    .CloseButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .Title {
+      svg {
+        @include size(18px, 16px);
+        padding-right: 14px;
+      }
+    }
+
+    .CloseButton {
+      @include size(16px, 16px);
+      cursor: pointer;
+    }
+  }
+
+  .Body {
+    padding: 24px;
+
+    .Label {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+
+      display: flex;
+      align-items: center;
+
+      color: $color-grey;
+
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+      margin-bottom: 12px;
+
+      input[type="checkbox"] {
+        margin-right: 8px;
+      }
+    }
+
+    .Input {
+      margin: 0;
+      padding: 15px;
+      width: 100%;
+      background: $color-white;
+
+      border: 1px solid $color-grey10;
+      box-sizing: border-box;
+
+      box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+      border-radius: 4px;
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+
+    .Footer {
+      display: flex;
+      margin-top: 24px;
+      justify-content: center;
+      gap: 10px;
+
+      .Cancel,
+      .Confirm {
+        padding: 12px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      .Cancel {
+        width: 120px;
+        color: $color-blue;
+        background: $color-white;
+        border: 2px solid $color-blue;
+      }
+
+      .Confirm {
+        color: $color-white;
+        background: $color-blue;
+      }
+    }
+  }
+}

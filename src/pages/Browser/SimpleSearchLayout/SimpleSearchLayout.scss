@@ -1,0 +1,362 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.MainContainer {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  overflow-y: auto;
+  background-color: #f2f4f8;
+}
+
+.ResultFilters__Container {
+  width: 340px;
+  height: max-content;
+
+  hr {
+    margin: 0;
+  }
+
+  .ResultFilters__Total {
+    padding: 44px 0 27px 25px;
+    justify-content: space-between;
+
+    .ResultFilters__Total_Label {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 27px;
+      display: flex;
+      align-items: center;
+      color: $color-darkblue;
+    }
+
+    .ResultFilters__Total_Count {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color-grey;
+    }
+  }
+
+  .ResultFilters__Filters {
+    padding-left: 30px;
+
+    & > :first-child {
+      display: none;
+    }
+  }
+}
+
+.SearchAndResults__Container {
+  width: 1410px;
+  margin-left: 100px;
+  background: #f2f4f8;
+
+  .SearchWidget {
+    &__Container {
+      display: flex;
+      width: 100%;
+      height: 60px;
+      box-sizing: border-box;
+    }
+
+    &__Form {
+      flex-grow: 1;
+      background-color: $color-white;
+      border-radius: 10px;
+      border: 1px solid $color-grey10;
+      box-shadow: 0 7.58719px 34px rgba(42, 46, 115, 0.05);
+      padding: 0 13px 0 20px;
+
+      svg {
+        flex-shrink: 0;
+        fill: $color-blue;
+      }
+
+      &_Input {
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 6px 14px;
+        flex-grow: 1;
+        max-height: 30px;
+        box-sizing: border-box;
+      }
+
+      &_QueryLanguage {
+        background: $color-grey5;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 13px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding: 5.5px 5px;
+        margin-right: 25px;
+      }
+
+      &_DatePicker {
+        cursor: pointer;
+        user-select: none;
+        height: 100%;
+        border-left: solid 1px $color-grey10;
+
+        &_Icons {
+          display: flex;
+          width: 90px;
+          height: 100%;
+          // padding-left: 25px;
+          // padding-right: 25px;
+
+          svg {
+            fill: $color-blue;
+            margin: auto;
+
+            &:last-of-type {
+              margin-left: 0;
+            }
+          }
+        }
+
+        &_DateInput {
+          flex-direction: column;
+          height: 100%;
+          width: 74px;
+          cursor: pointer;
+
+          &_Label {
+            color: $color-grey60;
+            font-size: 10px;
+            line-height: 14px;
+          }
+
+          &_Value {
+            font-weight: bold;
+            color: $color-grey;
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+
+        &_Separator {
+          height: 100%;
+          padding-left: 38px;
+          padding-right: 38px;
+          color: $color-grey60;
+          position: relative;
+        }
+
+        .SearchWidget__Form_DateTimePicker {
+          position: absolute;
+          transform: translate(-750px, 0px);
+          z-index: 1;
+          top: 58px;
+          background-color: $color-white;
+
+          &_Time {
+            padding: 0.5em 0;
+          }
+        }
+
+        .SearchWidget__Form_CalendarTime {
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__SubmitButton {
+      width: 109px;
+      font-size: 12px;
+      line-height: 16px;
+      padding-left: 25px;
+
+      svg {
+        fill: $color-white;
+        padding-right: 6px;
+      }
+    }
+
+    &__Filter {
+      &__Container {
+        display: flex;
+        align-items: center;
+        padding-left: 13px;
+      }
+
+      &__Button {
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        padding: 12px;
+        border: solid 2px $color-blue;
+        background: $color-white;
+        color: $color-blue;
+
+        svg {
+          padding-right: 6px;
+          fill: $color-blue;
+        }
+      }
+    }
+  }
+}
+
+.Results__Container {
+  flex-direction: column;
+  padding-top: 55px;
+  padding-bottom: 15px;
+
+  .Results__display {
+    display: flex;
+    align-items: center;
+  }
+
+  .Results__allSelected {
+    display: flex;
+    justify-content: space-between;
+    align-items: centers;
+    height: 70px;
+    padding: 10px 20px;
+    gap: 14px;
+    width: 87%;
+    box-sizing: border-box;
+    border-radius: 10px 0px 0px 0px;
+    color: $color-white;
+    background-color: $color-blue;
+
+    &Input {
+      margin: 0 0.5rem 0 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    &__title {
+      font-weight: 900;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    &__checkbox {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      margin-top: 0.5rem;
+    }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      width: 35px;
+      height: 35px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.3rem;
+      background-color: $color-white;
+      & div {
+        display: flex;
+        justify-content: center;
+      }
+
+      & svg {
+        fill: $color-blue;
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .Results__DisplayModeButtons_Container {
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-weight: 900;
+      font-size: 18.9188px;
+      line-height: 26px;
+      color: $color-grey;
+    }
+
+    .Results__DisplayModeButton {
+      @include size(50px, 50px);
+      background-color: $color-white;
+      border-radius: 10px;
+      border: 0;
+
+      &:hover {
+        box-shadow: 0 7.58719px 34px rgba(42, 46, 115, 0.05);
+      }
+
+      &.Results__DisplayModeButton_Grid {
+        margin-right: 4px;
+      }
+
+      svg {
+        margin: auto;
+        fill: $color-grey50;
+      }
+
+      &.Selected {
+        background-color: $color-blue;
+
+        svg {
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  .Results__List {
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    gap: 30px;
+
+    .Results__List_Group {
+      margin-top: 50px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    .Results__List_Group_Label {
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 33px;
+      color: $color-darkblue;
+
+      & > span {
+        padding-left: 14px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: $color-grey60;
+      }
+    }
+
+    .Results__List_GridMode {
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .AdvancedSearchResult {
+        width: 450px;
+      }
+    }
+  }
+}

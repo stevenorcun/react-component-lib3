@@ -1,0 +1,50 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.container {
+  @include flexbox;
+}
+
+.nodata {
+  margin-top: 20px;
+}
+
+.panel {
+  @include size(300px, 400px);
+  background: white;
+  z-index: 1;
+  position: absolute;
+  top: 60px;
+  right: -20px;
+
+  border-radius: 5px;
+  box-shadow: 0px 7.58719px 18.968px rgba(42, 46, 115, 0.28);
+
+  &:before {
+    @include size(14px, 14px);
+    background: white;
+    display: block;
+    position: absolute;
+    top: -6px;
+    content: "";
+    right: 18px;
+    transform: rotate(45deg);
+  }
+
+  > .title {
+    margin: 0;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #4d5056;
+    border-bottom: 1px solid #ededee;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .notifications {
+    overflow: scroll;
+    height: 350px;
+  }
+}

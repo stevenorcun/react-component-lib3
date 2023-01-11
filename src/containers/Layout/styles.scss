@@ -1,0 +1,26 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.wrapper {
+  @include flexbox;
+  @include flex(1);
+  @include flex-grow(1);
+  @include flex-direction(column);
+  @include size(100vw, calc(100vh - 60px));
+
+  // Dimensions
+  $dot-size: 2px;
+  $dot-space: 40px;
+  $dot-color: rgba(0, 0, 0, 0.1);
+
+  background: linear-gradient(
+        90deg,
+        $color-grey10 ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($color-grey10 ($dot-space - $dot-size), transparent 1%)
+      center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+}

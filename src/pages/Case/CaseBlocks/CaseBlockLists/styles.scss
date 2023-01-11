@@ -1,0 +1,30 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.listContent {
+  @include flexbox;
+  @include align-items(baseline);
+  padding: 14px 20px;
+  border-bottom: 1px solid #ededee;
+  svg {
+    margin-right: 1rem;
+  }
+  .listInfos {
+    @include flexbox;
+    @include flex-direction(column);
+    .listTitle {
+      font-size: 14px;
+      font-weight: bold;
+      color: #4d5056;
+    }
+    .listDate {
+      font-size: 12px;
+      font-weight: 500;
+      color: #94969a;
+    }
+  }
+}
+
+.listButton {
+  @include flexbox;
+  margin: 20px 0;
+}

@@ -1,0 +1,42 @@
+.multimediaFile {
+  width: 685px;
+  height: 386px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 2rem;
+  border: 1px solid #EDEDEE;
+  box-shadow: 0 7.58719px 34px rgba(42, 46, 115, 0.05);
+  padding: .5rem;
+
+  &Picture {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.component {
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  border: 1px solid #EDEDEE;
+  position: relative;
+
+  &__multimediaMinus {
+    max-height: 244px;
+  }
+
+  &__multimediaAll {
+    padding: .5rem;
+    overflow: auto;
+  }
+
+  .Thumbnail {
+    display: inline-flex;
+    margin: .5rem;
+    border-radius: 10px;
+  }
+}

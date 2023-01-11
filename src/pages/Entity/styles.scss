@@ -1,0 +1,81 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.EntityDetail {
+  min-height: 100%;
+  position: relative;
+  overflow-y: auto;
+  background-color: #fcfcfc;
+
+  p {
+    margin: 0;
+  }
+
+  &Content {
+    background-color: white;
+    border-radius: 5px;
+    margin: auto;
+    height: 87vh;
+
+    &Main {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background-color: white;
+
+      &Left,
+      &Right {
+        width: 49%;
+      }
+    }
+  }
+}
+
+.headerNavigation {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: #f2f4f8;
+
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .headerNavigation__title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      position: relative;
+      color: #717378;
+    }
+
+    .headerNavigation__active {
+      color: #3083f7;
+    }
+
+    .headerNavigationDivider__active {
+      position: absolute;
+      height: auto;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      transform: rotate(0deg);
+      border-radius: 5px;
+      border: 3px solid #3083f7;
+    }
+
+    button {
+      margin: 0 1rem;
+      cursor: pointer;
+      border: none;
+      padding: 1.2rem 0;
+      border-bottom: 5px solid transparent;
+      background-color: transparent;
+    }
+  }
+}

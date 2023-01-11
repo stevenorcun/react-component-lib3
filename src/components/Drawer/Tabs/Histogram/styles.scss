@@ -1,0 +1,143 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.histogram {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .histogramContainer {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+
+    .filters {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      font-weight: bold;
+      font-size: 14px;
+      color: $color-grey80;
+      margin-top: 20px;
+      width: 100%;
+
+      .filter {
+        background: $color-grey10;
+        border-radius: 30px;
+        padding: 6px 13px;
+        font-size: 12px;
+
+        &:not(:first-child) {
+          margin-left: 7px;
+        }
+      }
+
+      > svg {
+        padding: 6px 13px;
+      }
+    }
+
+    .group {
+      @include size(100%, calc(100% - 49px));
+      overflow: auto;
+
+      .groupName {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-between);
+        background: #f2f4f8;
+        color: $color-grey;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 10px 20px;
+        margin-top: 20px;
+      }
+
+      .attributes {
+        color: $color-grey;
+
+        &:not(:last-child) {
+          padding-bottom: 10px;
+          border-bottom: 1px solid $color-grey10;
+        }
+
+        .attributeName {
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(space-between);
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 10px;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+
+        .attribute {
+          font-size: 14px;
+          line-height: 19px;
+          display: flex;
+          align-items: center;
+          color: #717378;
+          margin-left: 20px;
+          margin-top: 10px;
+          @include justify-content(space-between);
+
+          &:last-child {
+            color: #3083f7;
+            font-weight: bold;
+          }
+
+          .attributeValue {
+            @include flexbox;
+            @include align-items(center);
+            font-size: 14px;
+            margin-right: 40px;
+
+            .bar {
+              background: $color-grey10;
+              position: relative;
+              width: 100px;
+              height: 7px;
+              border-radius: 50px;
+              margin-left: 10px;
+
+              .loadBar {
+                position: absolute;
+                height: 7px;
+                background: linear-gradient(
+                  90.61deg,
+                  #0081ff -16.15%,
+                  #45a3ff 52.54%
+                );
+                border-radius: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ContextMenu {
+  position: absolute;
+  z-index: 100;
+  background-color: $color-darkblue;
+  color: $color-white;
+  padding: 0.25em 0;
+
+  .ContextMenu__Item {
+    cursor: pointer;
+    padding: 0.3em 1em;
+
+    &:hover {
+      background: $color-grey30;
+    }
+  }
+}

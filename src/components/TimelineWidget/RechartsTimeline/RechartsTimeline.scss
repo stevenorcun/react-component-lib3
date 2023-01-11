@@ -1,0 +1,94 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.CustomTooltip {
+  background: white;
+  box-shadow: 0px -14px 20px -2px rgba(42, 46, 115, 0.09);
+  border: solid 1px $color-grey50;
+  padding: 0 0.4em;
+}
+
+.AxisLabel {
+  fill: #94969a;
+  font-size: 11px;
+  user-select: none;
+
+  &.YAxis {
+    text-anchor: end;
+  }
+
+  &.XAxis {
+    font-size: xx-small;
+    text-anchor: end;
+    transform: translate(-6px, -3px) rotate(-45deg);
+  }
+}
+
+.bottomNavigation {
+  @include flex;
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  color: #4d5056;
+  font-size: 12px;
+  height: 50px;
+  &Left {
+    font-size: 12px;
+    color: #4d5056;
+    @include align-items(center);
+    @include flexbox;
+    span {
+      margin: 0 0.5rem;
+    }
+    &Content {
+      @include align-items(center);
+      @include flexbox;
+      margin: 0 0.5rem;
+      &Background {
+        background-color: #f2f4f8;
+        border-radius: 6px;
+        height: 36px;
+      }
+    }
+    &Date {
+      position: absolute;
+      bottom: 60px;
+      left: 300px;
+      background-color: rgb(214, 205, 205);
+      &Calendar {
+        border: none;
+        width: 419px;
+        padding: 20px 24px 24px;
+      }
+    }
+  }
+  &Right {
+    padding-right: 1rem;
+    @include align-items(center);
+    @include flexbox;
+    .toolbar {
+      fill: $color-grey50;
+      height: 40px;
+      margin: auto;
+      @include align-items(center);
+      @include flexbox;
+      svg {
+        margin-left: 30px;
+      }
+    }
+    &Zoom {
+      &Number {
+        margin: 0 0.5rem;
+      }
+    }
+    &ButtonEllipsis {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.dividerVertical {
+  border-right: 1px solid #ededee;
+  height: 20px;
+  margin-left: 0.5rem;
+}

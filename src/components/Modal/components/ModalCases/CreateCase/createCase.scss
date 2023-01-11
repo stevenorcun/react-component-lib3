@@ -1,0 +1,70 @@
+.caseFooter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .buttonFooter {
+    margin: 0 .5rem;
+  }
+  .cancel {
+    padding: 0 3rem;
+  }
+}
+
+.setInputs {
+
+  .title {
+    margin: 12px 0;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4D5056;
+  }
+}
+
+.input {
+  margin: 0;
+}
+
+.createCase {
+  width: 425px;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.lists {
+  position: absolute;
+  background-color: #FFF;
+  border: 1px solid #EDEDEE;
+  box-shadow: 0px 8px 20px rgba(42, 46, 115, 0.09);
+  border-radius: 2px;
+  left: 10px;
+  right: 0;
+  z-index: 10;
+  width: 88%;
+  margin: 0 1rem;
+  max-height: 200px;
+  overflow: auto;
+
+  .element {
+    padding: .7rem 1rem;
+    margin: 0;
+    border-radius: 2px 2px 0px 0px;
+    color: #4D5056;
+    font-weight: 400;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover {
+      background-color: #EAF3FE;
+      color: #3083F7;
+    }
+  }
+}
+
+.asterix {
+  color: #3083F7;
+  margin-left: .3rem;
+}
+
+

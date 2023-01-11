@@ -1,0 +1,123 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.Accordion {
+  margin: -16px -16px 0 -16px;
+
+  .AccordionTitle {
+    gap: 14px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.FusionTargetSelection {
+  gap: 16px;
+  padding: 16px 16px 0 16px;
+}
+
+.Label {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-grey;
+
+  .Blue {
+    color: $color-blue;
+  }
+}
+
+.SearchInput {
+  background: $color-white;
+  padding: 3px 5px 3px 16px;
+  border: solid 1px $color-blue;
+  border-radius: 4px;
+
+  input {
+    border-width: 0;
+    width: 100%;
+    outline: 0 !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: $color-grey;
+  }
+
+  .SubmitButton {
+    width: 39px;
+    height: 31px;
+    background: $color-blue;
+    padding: 7.65311px 11.4797px;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $color-white;
+    }
+  }
+}
+
+.DropdownList {
+  max-height: calc(4 * 56px);
+  overflow: auto;
+  box-shadow: 0 7.58719px 20px #2a2e7326;
+}
+
+.Summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-blue5;
+  }
+
+  &_Selected {
+    background: $color-blue10;
+  }
+
+  .Summary__Left {
+    gap: 9px;
+
+    .Summary__Icon {
+      svg {
+        width: 13px;
+        height: 16px;
+        fill: $color-grey;
+        stroke: $color-grey;
+      }
+    }
+
+    .Summary__Label {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+      color: $color-grey;
+    }
+  }
+}
+
+.Summary__Properties {
+  border-bottom: 1px solid $color-grey10;
+}
+
+.Assistance {
+  border-radius: 10px;
+  color: $color-grey;
+  font-weight: 400;
+  font-style: normal;
+  padding: 16px;
+  margin: 0.8rem 0;
+  font-size: 14px;
+  line-height: 19px;
+  background: $color-blue10;
+}

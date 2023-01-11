@@ -1,0 +1,226 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.timeline {
+  @include flex;
+  @include flexbox;
+  @include size(316px, 50px);
+  @include justify-content(space-between);
+  @include align-items(center);
+  color: $color-blue;
+  background: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  z-index: 1;
+  box-shadow: 0px 7.58719px 18.968px rgba(42, 46, 115, 0.28);
+  transform: none;
+
+  &.opened {
+    @include size(calc(100% - 400px), 265px);
+    @include align-items(flex-start);
+    @include flex-direction(column);
+  }
+
+  .panelTitle {
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    margin-left: 20px;
+    color: $color-darkblue;
+
+    svg {
+      margin-right: 10px;
+    }
+
+    .alignRight {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      right: 10px;
+      position: absolute;
+    }
+  }
+
+  .panelContainer {
+    @include flexbox;
+    @include flex-direction(row);
+    @include size(100%, 100%);
+
+    overflow: hidden !important;
+
+    .leftNavigation {
+      border-right: 1px solid #ededee;
+      width: 270px;
+
+      .filtersContainer {
+        height: 185px;
+        overflow-x: auto;
+        position: relative;
+        padding-top: 15px;
+        scrollbar-color: $color-grey40 $color-white;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+          width: 13px;
+        }
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background-color: $color-divider-grey;
+          border-radius: 5px;
+          border-right: 8px solid $color-white;
+          border-top: 5px solid $color-white;
+          border-bottom: 5px solid $color-white;
+        }
+
+        [type="checkbox"] {
+          position: absolute;
+          left: 0;
+          opacity: 0.01;
+        }
+
+        [type="checkbox"] + label {
+          position: relative;
+          padding-left: 1.5rem;
+          font-size: 1.05em;
+          line-height: 1.7;
+          cursor: pointer;
+        }
+
+        /* Aspect de la case */
+        [type="checkbox"]:not(:checked) + label::before,
+        [type="checkbox"]:checked + label::before {
+          content: "";
+          position: absolute;
+          left: 0rem;
+          top: 0.5rem;
+          width: 0.8em;
+          height: 0.8em;
+          border: 1px solid $color-blue;
+          background: $color-white;
+          border-radius: 0.2em;
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
+            0 0 0 rgba(203, 34, 237, 0.2);
+        }
+
+        /* Aspect de la coche */
+        [type="checkbox"]:not(:checked) + label::after,
+        [type="checkbox"]:checked + label::after {
+          content: "✔";
+          speak: never; /* Pour être sûr que le lecteur d'écran ne lira pas "fois" */
+          position: absolute;
+          top: 1.15em;
+          left: 0.15rem;
+          font-size: 0.8em;
+          color: $color-blue;
+          line-height: 0;
+        }
+
+        /* Aspect non cochée */
+        [type="checkbox"]:not(:checked) + label::after {
+          opacity: 0;
+          transform: scale(0) rotate(90deg);
+        }
+
+        /* Aspect cochée */
+        [type="checkbox"]:checked + label::after {
+          opacity: 1;
+          transform: scale(1) rotate(0);
+        }
+
+        .filtersFolder {
+          @include flexbox;
+          @include align-items(center);
+          background: $color-blue10;
+          padding: 10px;
+          font-weight: bold;
+          margin: 20px 0;
+          padding-left: 30px;
+          > svg {
+            margin-right: 10px;
+          }
+        }
+
+        .filters {
+          @include flexbox;
+          @include flex-direction(column);
+          .filterGroupName {
+            @include flex;
+            @include align-items(center);
+            color: $color-blue;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 700;
+            margin: 0 30px;
+            > svg {
+              margin-right: 5px;
+            }
+          }
+
+          .filter {
+            @include flexbox;
+            @include align-items(center);
+            margin-left: 30px;
+
+            &:not(:first-child) {
+              margin-top: 10px;
+            }
+
+            > svg {
+              margin-right: 10px;
+            }
+            &Circle {
+              border-radius: 50%;
+              width: 10px;
+              height: 10px;
+              margin-right: 0.3rem;
+              display: inline-block;
+              &Blue {
+                background-color: #113e9f;
+              }
+              &Red {
+                background-color: #f53e6a;
+              }
+              &BluePurple {
+                background-color: #7876da;
+              }
+              &Purple {
+                background-color: #c32aa1;
+              }
+              &Green {
+                background-color: #9bc32a;
+              }
+            }
+
+            &Name {
+              font-size: 13px;
+              font-weight: 700;
+              line-height: 19px;
+              align-items: center;
+              color: $color-grey;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+    .rightNavigation {
+      overflow: hidden;
+      //overflow-x: scroll !important;
+      // width: 100%;
+      flex-grow: 1;
+      scrollbar-color: $color-divider-grey $color-white;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 1px;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background-color: $color-divider-grey;
+      }
+    }
+  }
+}

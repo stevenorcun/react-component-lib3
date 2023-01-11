@@ -1,0 +1,45 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+@import "@stevenorcun/common-css-lib/src/assets/scss/fonts";
+
+.Widget__Header {
+  @include box-sizing(border-box);
+  border-radius: 10px 0 0 0;
+  background: $color-blue;
+  color: $color-white;
+  padding: 16px 20px;
+  height: 70px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 19px;
+
+  .Widget__Header__light {
+    font-weight: normal;
+  }
+
+  .Widget__Header__Main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.ToggleVisibilityButton {
+  position: relative;
+  left: 100%;
+  top: -70px;
+  background: #ffffff;
+  border-radius: 0 10px 10px 0;
+  height: 70px;
+  width: 22px;
+  cursor: pointer;
+
+  &.IsFullWidth > svg {
+    transform: translate(7px, 21px) rotate(180deg);
+  }
+  & > svg {
+    transform: translate(7px, 21px);
+  }
+}

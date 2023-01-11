@@ -1,0 +1,37 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.setPalette {
+  height: 100%;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px 7.58719px 20px rgba(42, 46, 115, 0.15);
+  background: $color-white;
+
+  &Selection {
+    height: calc(100vh - 400px);
+  }
+
+  .headerPalette {
+    height: 70px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $color-divider-grey;
+    box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    .buttonTab {
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      color: #94969a;
+
+      &Active {
+        color: $color-white;
+        background-color: $color-blue;
+      }
+    }
+  }
+}

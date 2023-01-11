@@ -1,0 +1,50 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+@import "@stevenorcun/common-css-lib/src/assets/scss/colors";
+
+.item {
+  min-width: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 5px;
+
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+  height: 54px;
+
+  &:last-child {
+    margin-right: 10px;
+  }
+
+  > p {
+    font-size: 9px;
+    color: white;
+    margin: 0;
+    margin-top: 6px;
+  }
+
+  > svg {
+    padding: 5px;
+  }
+
+  &.active {
+    > svg {
+      background: linear-gradient(90.61deg, #0081ff -16.15%, #45a3ff 52.54%);
+      border-radius: 5px;
+    }
+
+    &:after {
+      content: "";
+      background: linear-gradient(90.61deg, #0081ff -16.15%, #45a3ff 52.54%);
+      height: 2px;
+      border-radius: 5px;
+      position: absolute;
+      bottom: -3px;
+      width: 30px;
+      z-index: 1;
+    }
+  }
+}

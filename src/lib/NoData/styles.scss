@@ -1,0 +1,12 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+
+.NoData {
+  background: $color-grey5;
+  color: $color-grey60;
+  font-size: 14px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 auto;
+  text-align: center;
+}

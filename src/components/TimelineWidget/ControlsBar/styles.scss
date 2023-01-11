@@ -1,0 +1,64 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/variables";
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.controlsBar {
+  @include flexbox;
+  @include align-items(center);
+  @include size(100%, 45px);
+  background: #f6f6f6;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 1s ease-in-out;
+
+  .smallDots {
+    padding: 15px;
+    fill: #94969a;
+  }
+
+  > svg {
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+
+  .tabs {
+    @include flexbox;
+    @include align-items(center);
+
+    .tab {
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include size(170px, 45px);
+      font-size: 14px;
+      font-weight: bold;
+      color: $color-grey60;
+
+      &.active {
+        box-shadow: 0px -14px 20px -2px rgba(42, 46, 115, 0.09);
+        color: $color-blue;
+        background: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+  }
+
+  .controls {
+    @include flexbox;
+    @include align-items(center);
+    position: absolute;
+    right: 10px;
+    > svg {
+      margin-right: 5px;
+    }
+  }
+
+  &.floating {
+    border-radius: 10px;
+    width: 500px;
+    height: calc(100% - 200px);
+    transition: all 0.4s ease-in;
+    right: 0px;
+  }
+}

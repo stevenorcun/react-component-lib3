@@ -1,0 +1,14 @@
+@import "@stevenorcun/common-css-lib/src/assets/scss/mixins";
+
+.returnButton {
+  @include size(100%, 70px);
+  @include flexbox;
+  @include align-items(center);
+  min-height: 70px;
+  font-weight: 600;
+  box-shadow: 0px 7.58719px 34px rgba(42, 46, 115, 0.05);
+  svg {
+    transform: rotate(180deg) scale(0.7);
+    margin: 0 10px 0 20px;
+  }
+}
