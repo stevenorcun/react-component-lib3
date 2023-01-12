@@ -8,44 +8,44 @@ import _ from "lodash";
 
 import AnnotationEntity, {
   AnnotationDto,
-} from "@/API/DataModels/Entities/AnnotationEntity";
+} from "../../API/DataModels/Entities/AnnotationEntity";
 import {
   DEFAULT_TILE_STYLE,
   STROKES_FILLS_COLORS,
   STYLES_BY_FILL_COLORS_OBJECT,
-} from "@/constants/graph-themes";
+} from "../../constants/graph-themes";
 import {
   EntityDto,
   GraphElementMandatoryProps,
   GraphEntityProperties,
   RelatedSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityConnexionType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { convertToEntityDto } from "@/API/DataModels/DTO/entityDto";
-import { GRAPH_OFFSET } from "@/constants/graph-offset";
-import { Optional } from "@/utils/types";
+} from "../../API/DataModels/Database/NovaObject";
+import { NovaEntityConnexionType } from "../../API/DataModels/Database/NovaEntityEnum";
+import { convertToEntityDto } from "../../API/DataModels/DTO/entityDto";
+import { GRAPH_OFFSET } from "../../constants/graph-offset";
+import { Optional } from "../../utils/types";
 import {
   computeDeadZoneAndPositions,
   computeGraphRect,
   getSelectedEntities,
   graphUpdateRectThenFitToView,
   isGraphEntityHighlightedSlightlyLighter,
-} from "@/utils/graph";
-import { ObjectDto } from "@/API/DataModels/Entities/ObjectEntity";
+} from "../../utils/graph";
+import { ObjectDto } from "../../API/DataModels/Entities/ObjectEntity";
 import {
   CanImplementHistogramState,
   highlightReducers,
   initialHistogramState,
-} from "@/store/shared/histogram";
+} from "../../store/shared/histogram";
 import {
   CanImplementTimelineState,
   initTimelineState,
   timelineReducers,
-} from "@/store/shared/timeline";
-import { DEFAULT_TILE_HITBOX } from "@/constants/graph";
-import { ConnectionProps } from "@/components/Connection/Connection";
-import { OntologyConfigState } from "@/store/ontology";
-import { getEntityTypeId } from "@/constants/entity-related";
+} from "../../store/shared/timeline";
+import { DEFAULT_TILE_HITBOX } from "../../constants/graph";
+import { ConnectionProps } from "../../components/Connection/Connection";
+import { OntologyConfigState } from "../../store/ontology";
+import { getEntityTypeId } from "../../constants/entity-related";
 import { initialStateToolbar, toolbarReducer } from "./toolbar";
 
 /* Type for setting the current graph Layout
