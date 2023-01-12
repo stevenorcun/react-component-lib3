@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
-import InfoBlock from "@/components/InfoBlock/InfoBlock";
-
-import IconTeam from "@/assets/images/icons/IconTeam";
-
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
+
+import InfoBlock from "../../../../components/InfoBlock/InfoBlock";
+
+import IconTeam from "../../../../assets/images/icons/IconTeam";
+
 import styles from "./styles.scss";
 
 interface CaseTeamProps {

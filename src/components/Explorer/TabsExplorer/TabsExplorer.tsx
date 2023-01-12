@@ -3,17 +3,17 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 
 import { toast } from "react-toastify";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import {
   sortFilterEntities,
   selectExplorer,
   toggleSelectSubTab,
-} from "@/store/explorer";
+} from "../../../store/explorer";
 
-import IconExplorer from "@/assets/images/icons/IconExplorer";
-import IconExplorerTabGraph from "@/assets/images/icons/IconExplorerTabGraph";
-import IconArrow from "@/assets/images/icons/IconArrowDown";
-import IconPhone from "@/assets/images/icons/IconPhone";
+import IconExplorer from "../../../assets/images/icons/IconExplorer";
+import IconExplorerTabGraph from "../../../assets/images/icons/IconExplorerTabGraph";
+import IconArrow from "../../../assets/images/icons/IconArrowDown";
+import IconPhone from "../../../assets/images/icons/IconPhone";
 
 import styles from "./tabsExplorer.scss";
 

@@ -5,13 +5,13 @@ import {
   selectLists,
   setOriginalLists,
   setSelectObjectId,
-} from "@/store/lists";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+} from "../../../store/lists";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 
-import IconEdit from "@/assets/images/icons/IconPencilEdit";
-import IconRemove from "@/assets/images/icons/IconRemove";
-import IconRecto from "@/assets/images/icons/IconRedo";
-import IconNewTab from "@/assets/images/icons/IconNewTab";
+import IconEdit from "../../../assets/images/icons/IconPencilEdit";
+import IconRemove from "../../../assets/images/icons/IconRemove";
+import IconRecto from "../../../assets/images/icons/IconRedo";
+import IconNewTab from "../../../assets/images/icons/IconNewTab";
 
 import styles from "./layoutSelectedListHeader.scss";
 

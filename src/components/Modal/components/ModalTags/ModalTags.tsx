@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import cx from "classnames";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
 
-import Modal from "@/components/Modal/Modal";
-import ContextMenu from "@/components/ContextMenu/DefaultContextMenu/ContextMenu";
-import Autocomplete from "@/components/Inputs/Autocomplete/Autocomplete";
-import Button from "@/components/Buttons/Button/Button";
+import Modal from "../../../../components/Modal/Modal";
+import ContextMenu from "../../../../components/ContextMenu/DefaultContextMenu/ContextMenu";
+import Autocomplete from "../../../../components/Inputs/Autocomplete/Autocomplete";
+import Button from "../../../../components/Buttons/Button/Button";
 
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import IconTrash from "@/assets/images/icons/IconTrash";
-import IconPlus from "@/assets/images/icons/IconPlus";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
+import IconTrash from "../../../../assets/images/icons/IconTrash";
+import IconPlus from "../../../../assets/images/icons/IconPlus";
 
-import { getTagColor, getTagLabel } from "@/constants/tags";
+import { getTagColor, getTagLabel } from "../../../../constants/tags";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectTags, editTags } from "@/store/tags";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { selectTags, editTags } from "../../../../store/tags";
 
-import { isDark } from "@/utils/colors";
+import { isDark } from "../../../../utils/colors";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import MarkingsApi from "@/API/controllers/markings-api";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import MarkingsApi from "../../../../API/controllers/markings-api";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

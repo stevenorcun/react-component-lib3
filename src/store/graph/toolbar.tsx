@@ -3,11 +3,11 @@ import { Draft, PayloadAction } from "@reduxjs/toolkit";
 import {
   STROKES_FILLS_COLORS,
   STYLES_BY_FILL_COLORS_OBJECT,
-} from "@/constants/graph-themes";
+} from "../../constants/graph-themes";
 
-import { AnnotationDto } from "@/API/DataModels/Entities/AnnotationEntity";
-import { GraphState } from "@/store/graph/index";
-import { ObjectDto } from "@/API/DataModels/Entities/ObjectEntity";
+import { AnnotationDto } from "../../API/DataModels/Entities/AnnotationEntity";
+import { GraphState } from "../../store/graph/index";
+import { ObjectDto } from "../../API/DataModels/Entities/ObjectEntity";
 
 export interface ToolbarState {
   currentFill: string;

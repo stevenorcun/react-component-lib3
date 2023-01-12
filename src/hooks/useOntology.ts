@@ -1,11 +1,11 @@
-import { OntologySettings } from '@/API/controllers/ontology-settings-api';
-import { useState } from 'react';
+import { OntologySettings } from "../API/controllers/ontology-settings-api";
+import { useState } from "react";
 
 export default function useOntology() {
-    const [ontology, setOntology] = useState<OntologySettings[]>([]);
+  const [ontology, setOntology] = useState<OntologySettings[]>([]);
 
-    return {
-        ontology,
-        setOntology,
-    };
+  return {
+    ontology,
+    setOntology,
+  };
 }

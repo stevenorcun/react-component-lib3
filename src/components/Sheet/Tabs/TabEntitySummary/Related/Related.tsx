@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import IconRelated from "@/assets/images/icons/IconRelated";
-import { RelatedSummary } from "@/API/DataModels/Database/NovaObject";
+import IconRelated from "../../../../../assets/images/icons/IconRelated";
+import { RelatedSummary } from "../../../../../API/DataModels/Database/NovaObject";
 import RelatedObject from "./RelatedObject";
 
 import styles from "../styles.scss";

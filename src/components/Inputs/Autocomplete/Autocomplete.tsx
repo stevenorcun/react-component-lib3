@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, Fragment } from "react";
 
-import IconCross from "@/assets/images/icons/IconCross";
+import IconCross from "../../../assets/images/icons/IconCross";
 
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";

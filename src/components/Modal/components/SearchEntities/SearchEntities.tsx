@@ -8,19 +8,19 @@ import {
   getEntityTitleProperty,
   getEntityTypeColor,
   getEntityTypeLabel,
-} from "@/constants/entity-related";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+} from "../../../../constants/entity-related";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 
-import Accordion from "@/components/Accordion/Accordion";
-import selectionStyles from "@/components/Drawer/Tabs/Selection/styles.scss";
-import { EntityTypeTag } from "@/components/Browser/SearchResult/SearchResult";
-import AdvancedSearchResultPropertyLine from "@/components/Browser/SearchResult/PropertyLine/PropertyLine";
-import NoData from "@/lib/NoData/NoData";
-import { selectOntologyConfig } from "@/store/ontology";
-import { useAppSelector } from "@/store/hooks";
+import Accordion from "../../../../components/Accordion/Accordion";
+import selectionStyles from "../../../../components/Drawer/Tabs/Selection/styles.scss";
+import { EntityTypeTag } from "../../../../components/Browser/SearchResult/SearchResult";
+import AdvancedSearchResultPropertyLine from "../../../../components/Browser/SearchResult/PropertyLine/PropertyLine";
+import NoData from "../../../../lib/NoData/NoData";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { useAppSelector } from "../../../../store/hooks";
 
-import IconBox from "@/assets/images/icons/IconBox";
-import IconSearch from "@/assets/images/icons/IconSearch";
+import IconBox from "../../../../assets/images/icons/IconBox";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./searchEntities.scss";

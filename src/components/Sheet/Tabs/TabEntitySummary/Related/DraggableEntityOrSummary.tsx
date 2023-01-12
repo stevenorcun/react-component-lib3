@@ -5,8 +5,8 @@ import cx from "classnames";
 import {
   EntityDto,
   RelatedSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import DRAG_EVENT_TYPES from "@/constants/drag-events-types";
+} from "../../../../../API/DataModels/Database/NovaObject";
+import DRAG_EVENT_TYPES from "../../../../../constants/drag-events-types";
 
 import styles from "./styles.scss";
 

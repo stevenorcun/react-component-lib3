@@ -1,8 +1,8 @@
-import { Case } from '@/API/DataModels/Database/Case';
-import BaseApi from './base-api';
+import { Case } from "../../API/DataModels/Database/Case";
+import BaseApi from "./base-api";
 
 export default class CasesApi extends BaseApi {
-  private readonly uri_segment = 'objects';
+  private readonly uri_segment = "objects";
 
   public async getCase(caseId: string): Promise<Case> {
     try {
@@ -32,9 +32,7 @@ export default class CasesApi extends BaseApi {
 
   public async createCase(c: any): Promise<any> {
     try {
-      const response = await super
-        .init()
-        .post<any>(`/${this.uri_segment}/`, c);
+      const response = await super.init().post<any>(`/${this.uri_segment}/`, c);
       return response.data;
     } catch (err) {
       throw this.handleError(err);

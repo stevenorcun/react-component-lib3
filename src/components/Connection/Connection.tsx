@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import throttle from "lodash.throttle";
 import cx from "classnames";
 import { v4 as uuidv4 } from "uuid";
-import { PINS_OFFSETS } from "@/store/graph";
-import { distanceFormula } from "@/utils/trigonometry";
+import { PINS_OFFSETS } from "../../store/graph";
+import { distanceFormula } from "../../utils/trigonometry";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { DEFAULT_TILE_PIN_RADIUS } from "@/constants/graph";
+import { DEFAULT_TILE_PIN_RADIUS } from "../../constants/graph";
 
 export interface ConnectionProps {
   from: string;

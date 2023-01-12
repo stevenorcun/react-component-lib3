@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { STYLE_BY_FILL_COLORS } from '@/constants/graph-themes';
+import * as React from "react";
+import { STYLE_BY_FILL_COLORS } from "../../../constants/graph-themes";
 
 function IconMinutes(props: React.SVGProps<SVGSVGElement> = {}) {
   return (

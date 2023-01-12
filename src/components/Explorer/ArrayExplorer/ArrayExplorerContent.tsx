@@ -1,16 +1,16 @@
 import React from "react";
 import cx from "classnames";
 
-import { getEntityPropLabelForExplorer } from "@/constants/entity-related";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+import { getEntityPropLabelForExplorer } from "../../../constants/entity-related";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { selectOntologyConfig } from "../../../store/ontology";
 import {
   changeSelection,
   handleEntitiesSelected,
   handleSelected,
-} from "@/store/explorer";
+} from "../../../store/explorer";
 
-import IconSmartPhone from "@/assets/images/icons/entityTypes/IconSmartPhone";
+import IconSmartPhone from "../../../assets/images/icons/entityTypes/IconSmartPhone";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./arrayExplorer.scss";

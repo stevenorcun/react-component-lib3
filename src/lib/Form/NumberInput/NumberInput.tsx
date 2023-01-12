@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconChevron from "@/assets/images/icons/IconChevron";
+import IconChevron from "../../../assets/images/icons/IconChevron";
 import styles from "./NumberInput.scss";
 
 interface BetaMaleNumberInputProps {

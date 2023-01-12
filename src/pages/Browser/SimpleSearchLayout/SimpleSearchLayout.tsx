@@ -2,44 +2,44 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import Moment from "react-moment";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
 import {
   createTabByType,
   selectBrowser,
   setActiveTabSearchForm,
   toggleAllSelection,
-} from "@/store/browser";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { unhandle } from "@/utils/DOM";
-import { selectOntologyConfig } from "@/store/ontology";
+} from "../../../store/browser";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { unhandle } from "../../../utils/DOM";
+import { selectOntologyConfig } from "../../../store/ontology";
 
-import advancedSearchStyles from "@/pages/Browser/ComplexSearchLayout/ComplexSearchLayout.scss";
-import BrowserSearchResult from "@/components/Browser/SearchResult/SearchResult";
-import GroupedValuesInput from "@/lib/Form/GroupedValuesInput/GroupedValuesInput";
-import Button from "@/lib/Button/Button";
-import ResultFilters from "@/components/Browser/ComplexSearch/ResultFilters/ResultFilters";
-import { SearchTabLayoutProps } from "@/pages/Browser/SearchTabLayout/SearchTabLayout";
-import DateTimePicker from "@/lib/DateTimePicker/DateTimePicker";
+import advancedSearchStyles from "../../../pages/Browser/ComplexSearchLayout/ComplexSearchLayout.scss";
+import BrowserSearchResult from "../../../components/Browser/SearchResult/SearchResult";
+import GroupedValuesInput from "../../../lib/Form/GroupedValuesInput/GroupedValuesInput";
+import Button from "../../../lib/Button/Button";
+import ResultFilters from "../../../components/Browser/ComplexSearch/ResultFilters/ResultFilters";
+import { SearchTabLayoutProps } from "../../../pages/Browser/SearchTabLayout/SearchTabLayout";
+import DateTimePicker from "../../../lib/DateTimePicker/DateTimePicker";
 import {
   BROWSER_FORM_MAPPING_BY_TYPE_DETAILS,
   BrowserTabType,
-} from "@/constants/browser-related";
+} from "../../../constants/browser-related";
 import {
   getEntityTypeId,
   ONTOLOGY_TYPES_GROUPS,
-} from "@/constants/entity-related";
+} from "../../../constants/entity-related";
 
-import IconSearch from "@/assets/images/icons/IconSearch";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
-import IconGridDisplayMode from "@/assets/images/icons/IconGridDisplayMode";
-import IconTrash from "@/assets/images/icons/IconTrash";
-import IconBell from "@/assets/images/icons/IconBell";
-import IconFullScreen from "@/assets/images/icons/IconNewTab";
-import IconOpen from "@/assets/images/icons/IconOpen";
+import IconSearch from "../../../assets/images/icons/IconSearch";
+import IconCalendar from "../../../assets/images/icons/IconCalendar";
+import IconGridDisplayMode from "../../../assets/images/icons/IconGridDisplayMode";
+import IconTrash from "../../../assets/images/icons/IconTrash";
+import IconBell from "../../../assets/images/icons/IconBell";
+import IconFullScreen from "../../../assets/images/icons/IconNewTab";
+import IconOpen from "../../../assets/images/icons/IconOpen";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import ModalTypes from "@/constants/modal";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import ModalTypes from "../../../constants/modal";
+import { useGlobalModalContext } from "../../../hooks/useGlobalModal";
 import styles from "./SimpleSearchLayout.scss";
 
 const SimpleSearchLayout = ({

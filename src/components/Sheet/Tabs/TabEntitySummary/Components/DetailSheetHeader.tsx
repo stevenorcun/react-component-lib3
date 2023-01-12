@@ -1,20 +1,23 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { EntityDto, RelatedSummary } from '@/API/DataModels/Database/NovaObject';
-import { APP_ROUTES } from '@/constants/routes';
-import { createEntities } from '@/store/graph';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  EntityDto,
+  RelatedSummary,
+} from "../../../../../API/DataModels/Database/NovaObject";
+import { APP_ROUTES } from "../../../../../constants/routes";
+import { createEntities } from "../../../../../store/graph";
+import { useAppDispatch, useAppSelector } from "../../../../../store/hooks";
 
-import IconBars from '@/assets/images/icons/IconBars';
-import IconGraph from '@/assets/images/icons/IconGraph';
-import IconMap from '@/assets/images/icons/IconMap';
-import { useGlobalModalContext } from '@/hooks/useGlobalModal';
-import ModalTypes from '@/constants/modal';
-import { getEntitiesFromSummaries } from '@/utils/drag-events';
-import { addEntities as addEntitiesToMap } from '@/store/map';
-import { selectOntologyConfig } from '@/store/ontology';
-import { convertToEntityDto2 } from '@/API/DataModels/DTO/entityDto';
-import HeaderComponent, { HeaderProps } from './Header/HeaderComponent';
+import IconBars from "../../../../../assets/images/icons/IconBars";
+import IconGraph from "../../../../../assets/images/icons/IconGraph";
+import IconMap from "../../../../../assets/images/icons/IconMap";
+import { useGlobalModalContext } from "../../../../../hooks/useGlobalModal";
+import ModalTypes from "../../../../../constants/modal";
+import { getEntitiesFromSummaries } from "../../../../../utils/drag-events";
+import { addEntities as addEntitiesToMap } from "../../../../../store/map";
+import { selectOntologyConfig } from "../../../../../store/ontology";
+import { convertToEntityDto2 } from "../../../../../API/DataModels/DTO/entityDto";
+import HeaderComponent, { HeaderProps } from "./Header/HeaderComponent";
 
 export interface SheetHeaderOptionsSummary {
   label: string;
@@ -24,7 +27,7 @@ export interface SheetHeaderOptionsSummary {
 }
 
 interface DetailSheetHeaderProps extends HeaderProps {
-  entities: EntityDto[] | RelatedSummary[],
+  entities: EntityDto[] | RelatedSummary[];
 }
 
 const DetailSheetHeader = ({
@@ -45,7 +48,11 @@ const DetailSheetHeader = ({
 
   const dispatchAddToGraph = () => {
     if (Array.isArray(entities)) {
-      dispatch(createEntities(entities.map((entity) => convertToEntityDto2(entity, ont))));
+      dispatch(
+        createEntities(
+          entities.map((entity) => convertToEntityDto2(entity, ont))
+        )
+      );
       navigate(APP_ROUTES.graph.path);
     }
   };
@@ -57,7 +64,7 @@ const DetailSheetHeader = ({
           dispatch(addEntitiesToMap(dtos.filter((e) => !!e.geometry)));
           navigate(APP_ROUTES.map.path);
         })
-        .catch((err) => console.error('catch', err));
+        .catch((err) => console.error("catch", err));
     }
   };
 
@@ -67,21 +74,21 @@ const DetailSheetHeader = ({
 
   const OPTIONS_SUMMARY: SheetHeaderOptionsSummary[] = [
     {
-      label: 'Ouvrir dans',
+      label: "Ouvrir dans",
       isDivider: true,
     },
     {
-      label: 'Liste',
+      label: "Liste",
       icon: <IconBars />,
       onClick: displayAddToListModal,
     },
     {
-      label: 'Graph',
+      label: "Graph",
       icon: <IconGraph />,
       onClick: dispatchAddToGraph,
     },
     {
-      label: 'Carte',
+      label: "Carte",
       icon: <IconMap />,
       onClick: addToMap,
     },

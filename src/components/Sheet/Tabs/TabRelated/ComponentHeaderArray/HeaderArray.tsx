@@ -1,8 +1,8 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import { iconArrow } from '@/utils/general';
-import styles from './headerArray.scss';
+import { iconArrow } from "../../../../../utils/general";
+import styles from "./headerArray.scss";
 
 const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
   return (
@@ -19,7 +19,7 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
             styles.flexAlignCenter
           )}
         >
-            {/* <input
+          {/* <input
               type="checkbox"
               id="entitled"
               onChange={() => checkedByCategory(type)}
@@ -28,7 +28,10 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
             <label htmlFor="entitled">Type de lien</label>
           </div> */}
           Type de lien
-          <button type="button" onClick={() => sortFn('typeLink', type, 'type')}>
+          <button
+            type="button"
+            onClick={() => sortFn("typeLink", type, "type")}
+          >
             {iconArrow(isSort[type].type)}
           </button>
         </div>
@@ -43,12 +46,11 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
           <button
             className={styles.flexAlignCenter}
             type="button"
-            onClick={() => sortFn('object', type, 'label')}
+            onClick={() => sortFn("object", type, "label")}
           >
             {iconArrow(isSort[type].label)}
           </button>
         </span>
-
 
         <span
           className={cx(
@@ -58,7 +60,10 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
           )}
         >
           Valeur de confiance
-          <button type="button" onClick={() => sortFn('confidenceValue', type, 'confidenceValue')}>
+          <button
+            type="button"
+            onClick={() => sortFn("confidenceValue", type, "confidenceValue")}
+          >
             {iconArrow(isSort[type].confidenceValue)}
           </button>
         </span>
@@ -70,7 +75,10 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
           )}
         >
           Date de début
-          <button type="button" onClick={() => sortFn('startDate', type, 'startDate')}>
+          <button
+            type="button"
+            onClick={() => sortFn("startDate", type, "startDate")}
+          >
             {iconArrow(isSort[type].startDate)}
           </button>
         </span>
@@ -82,7 +90,10 @@ const HeaderArray = ({ sortFn, isSort, type, checkedByCategory }: any) => {
           )}
         >
           Date de fin
-          <button type="button" onClick={() => sortFn('endDate', type, 'endDate')}>
+          <button
+            type="button"
+            onClick={() => sortFn("endDate", type, "endDate")}
+          >
             {iconArrow(isSort[type].endDate)}
           </button>
         </span>

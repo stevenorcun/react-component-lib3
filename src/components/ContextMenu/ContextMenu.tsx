@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cx from "classnames";
 import _ from "lodash";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   createConnectionFromTo,
   createEntities,
@@ -11,46 +11,46 @@ import {
   GraphState,
   selectGraph,
   setSelectedConnections,
-} from "@/store/graph";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+} from "../../store/graph";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
 // import {
 //   NovaEntityType,
 //   NovaEntityTypeGroup,
-// } from "@/API/DataModels/Database/NovaEntityEnum";
+// } from "../../API/DataModels/Database/NovaEntityEnum";
 import {
   getEntityTitleProperty,
   getEntityTypeGroup,
   getIdProperty,
   ONTOLOGY_TYPES_GROUPS,
-} from "@/constants/entity-related";
-import ApiFactory from "@/API/controllers/api-factory";
-import ObjectsApi from "@/API/controllers/object-api";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
+} from "../../constants/entity-related";
+import ApiFactory from "../../API/controllers/api-factory";
+import ObjectsApi from "../../API/controllers/object-api";
+import { convertToEntityDto2 } from "../../API/DataModels/DTO/entityDto";
 import { toast } from "react-toastify";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import ModalTypes from "@/constants/modal";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useGlobalModalContext } from "../../hooks/useGlobalModal";
+import ModalTypes from "../../constants/modal";
+import { selectOntologyConfig } from "../../store/ontology";
 import {
   castEntitiesToConnections,
   relatedWithIds,
   sortLinksByIdObjet,
-} from "@/utils/graph";
+} from "../../utils/graph";
 
-import { ConnectionProps } from "@/components/Connection/Connection";
-import ContextSubMenu from "@/components/ContextMenu/ContextSubMenu/ContextSubMenu";
+import { ConnectionProps } from "../../components/Connection/Connection";
+import ContextSubMenu from "../../components/ContextMenu/ContextSubMenu/ContextSubMenu";
 
-import IconGroup from "@/assets/images/icons/wheelMenu/IconGroup";
-import IconRelations from "@/assets/images/icons/wheelMenu/IconRelations";
-import IconFusion from "@/assets/images/icons/wheelMenu/IconFusion";
-import IconSplit from "@/assets/images/icons/wheelMenu/IconSplit";
-import IconPublish from "@/assets/images/icons/wheelMenu/IconPublish";
-import IconSelect from "@/assets/images/icons/wheelMenu/IconSelect";
-import IconSearch from "@/assets/images/icons/IconSearch";
-import IconTrash from "@/assets/images/icons/IconTrash";
-import IconDotCircle from "@/assets/images/icons/wheelMenu/IconDotCircle";
-import IconSquares from "@/assets/images/icons/wheelMenu/IconSquares";
+import IconGroup from "../../assets/images/icons/wheelMenu/IconGroup";
+import IconRelations from "../../assets/images/icons/wheelMenu/IconRelations";
+import IconFusion from "../../assets/images/icons/wheelMenu/IconFusion";
+import IconSplit from "../../assets/images/icons/wheelMenu/IconSplit";
+import IconPublish from "../../assets/images/icons/wheelMenu/IconPublish";
+import IconSelect from "../../assets/images/icons/wheelMenu/IconSelect";
+import IconSearch from "../../assets/images/icons/IconSearch";
+import IconTrash from "../../assets/images/icons/IconTrash";
+import IconDotCircle from "../../assets/images/icons/wheelMenu/IconDotCircle";
+import IconSquares from "../../assets/images/icons/wheelMenu/IconSquares";
 
-import SearchApi from "@/API/controllers/search-api";
+import SearchApi from "../../API/controllers/search-api";
 import styles from "./styles.scss";
 
 interface ContextMenuProps {

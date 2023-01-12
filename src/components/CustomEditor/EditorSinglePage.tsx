@@ -15,11 +15,11 @@ import Editor, {
 import createFocusPlugin from "@draft-js-plugins/focus";
 import createResizeablePlugin from "@draft-js-plugins/resizeable";
 import createAlignmentPlugin from "@draft-js-plugins/alignment";
-import { styleMap } from "@/constants/editor";
-import createImagePlugin from "@/components/CustomEditor/plugins/image";
-import createNovaObjectsPlugin from "@/components/CustomEditor/plugins/novaObjects";
+import { styleMap } from "../../constants/editor";
+import createImagePlugin from "../../components/CustomEditor/plugins/image";
+import createNovaObjectsPlugin from "../../components/CustomEditor/plugins/novaObjects";
 import "@draft-js-plugins/alignment/lib/plugin.css";
-import IconLoader from "@/assets/images/icons/IconLoader";
+import IconLoader from "../../assets/images/icons/IconLoader";
 import styles from "./styles.scss";
 
 interface EditorSinglePageProps {

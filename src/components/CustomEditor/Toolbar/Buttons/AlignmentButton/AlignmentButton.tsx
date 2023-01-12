@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import BaseButton from "@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
-import IconToolTextLeft from "@/assets/images/icons/IconToolTextLeft";
-import IconToolTextCenter from "@/assets/images/icons/IconToolTextCenter";
-import IconToolTextRight from "@/assets/images/icons/IconToolTextRight";
+import BaseButton from "../../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import IconToolTextLeft from "../../../../../assets/images/icons/IconToolTextLeft";
+import IconToolTextCenter from "../../../../../assets/images/icons/IconToolTextCenter";
+import IconToolTextRight from "../../../../../assets/images/icons/IconToolTextRight";
 import styles from "./styles.scss";
 
 interface AlignmentButtonProps {

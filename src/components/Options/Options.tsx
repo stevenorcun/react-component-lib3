@@ -7,11 +7,11 @@ import cx from "classnames";
 import { useCSVDownloader, useCSVReader } from "react-papaparse";
 import { toast } from "react-toastify";
 
-import { unhandle } from "@/utils/DOM";
+import { unhandle } from "../../utils/DOM";
 
-import { SheetHeaderOptionsSummary } from "@/components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectExplorer, addEntitiesExplorer } from "@/store/explorer";
+import { SheetHeaderOptionsSummary } from "../../components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { selectExplorer, addEntitiesExplorer } from "../../store/explorer";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./options.scss";

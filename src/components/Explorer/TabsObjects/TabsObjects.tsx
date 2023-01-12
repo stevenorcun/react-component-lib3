@@ -3,24 +3,24 @@ import cx from "classnames";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import {
   removeTabExplorer,
   selectExplorer,
   toggleSelectActiveExplorerTab,
-} from "@/store/explorer";
-import { APP_ROUTES } from "@/constants/routes";
+} from "../../../store/explorer";
+import { APP_ROUTES } from "../../../constants/routes";
 
-import Options from "@/components/Options/Options";
+import Options from "../../../components/Options/Options";
 
-import IconCross from "@/assets/images/icons/IconCross";
-import IconArrowdown from "@/assets/images/icons/IconArrowDown";
-// import IconList from '@/assets/images/icons/IconHamburgerMenu';
-// import IconGraph from '@/assets/images/icons/IconGraph';
-// import IconMap from '@/assets/images/icons/IconMap';
-import IconFile from "@/assets/images/icons/IconFile";
-import IconExportFile from "@/assets/images/icons/IconFileExport";
-import IconImportFile from "@/assets/images/icons/IconExportFile";
+import IconCross from "../../../assets/images/icons/IconCross";
+import IconArrowdown from "../../../assets/images/icons/IconArrowDown";
+// import IconList from '../../../assets/images/icons/IconHamburgerMenu';
+// import IconGraph from '../../../assets/images/icons/IconGraph';
+// import IconMap from '../../../assets/images/icons/IconMap';
+import IconFile from "../../../assets/images/icons/IconFile";
+import IconExportFile from "../../../assets/images/icons/IconFileExport";
+import IconImportFile from "../../../assets/images/icons/IconExportFile";
 
 import styles from "./tabsObjects.scss";
 

@@ -3,14 +3,14 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import SvgIconPencilEdit from "@/assets/images/icons/IconPencilEdit";
-import SvgIconSearch from "@/assets/images/icons/IconSearch";
-import SvgIconSettings from "@/assets/images/icons/IconSettings";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectMap, setActiveMenu } from "@/store/map";
+import SvgIconPencilEdit from "../../../assets/images/icons/IconPencilEdit";
+import SvgIconSearch from "../../../assets/images/icons/IconSearch";
+import SvgIconSettings from "../../../assets/images/icons/IconSettings";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { selectMap, setActiveMenu } from "../../../store/map";
 import React from "react";
 import cx from "classnames";
-import SvgIconCross from "@/assets/images/icons/IconCross";
+import SvgIconCross from "../../../assets/images/icons/IconCross";
 import styles from "./styles.scss";
 
 const Sidebar = () => {

@@ -4,36 +4,36 @@ import {
   BrowserTabType,
   IBrowserAdvancedSearchForm,
   IBrowserSearchFormField,
-} from "@/constants/browser-related";
+} from "../../../../constants/browser-related";
 import BrowserAdvancedSearchForm, {
   CanLoadBrowserTemplates,
-} from "@/components/Browser/ComplexSearch/Form/AdvancedSearch";
+} from "../../../../components/Browser/ComplexSearch/Form/AdvancedSearch";
 import cx from "classnames";
 import {
   _addCustomFieldToForm,
   _deleteCustomFieldByKey,
   _editCustomFormFieldByIndex,
-} from "@/store/browser/actions";
+} from "../../../../store/browser/actions";
 import {
   DrawerAdvancedSearchTabState,
   SearchResultFilterBy,
-} from "@/store/drawer";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+} from "../../../../store/drawer";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import {
   ENTITY_TYPE_DETAILS,
   getEntityStrIcon,
   getEntityTitleProperty,
   getObjectTypeLabel,
-} from "@/constants/entity-related";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
-import IconArrow from "@/assets/images/icons/IconArrow";
-import DropDownSelect from "@/lib/Form/DropDownSelect/DropDownSelect";
+} from "../../../../constants/entity-related";
+import DraggableEntityOrSummary from "../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import IconArrow from "../../../../assets/images/icons/IconArrow";
+import DropDownSelect from "../../../../lib/Form/DropDownSelect/DropDownSelect";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { SaveFormAsTemplateWidget } from "@/pages/Browser/Browser";
+import { SaveFormAsTemplateWidget } from "../../../../pages/Browser/Browser";
 import styles from "./styles.scss";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
 
 const searchFilterValues = [
   {

@@ -3,36 +3,40 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import cx from "classnames";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaUserRole } from "@/API/DataModels/Database/User";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
+import { NovaUserRole } from "../../../../API/DataModels/Database/User";
 import {
   ENTITY_PROPERTY_DETAILS,
   getEntityStrIcon,
   getEntityTitleProperty,
   getEntityTypeLabel,
-} from "@/constants/entity-related";
-import { SESSION_STORAGE_KEYS } from "@/constants/storage-keys";
-import { getTagColor, getTagLabel, TAG_TYPE_COLOR } from "@/constants/tags";
-import { BrowserTabType } from "@/constants/browser-related";
-import ModalTypes from "@/constants/modal";
+} from "../../../../constants/entity-related";
+import { SESSION_STORAGE_KEYS } from "../../../../constants/storage-keys";
+import {
+  getTagColor,
+  getTagLabel,
+  TAG_TYPE_COLOR,
+} from "../../../../constants/tags";
+import { BrowserTabType } from "../../../../constants/browser-related";
+import ModalTypes from "../../../../constants/modal";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { createTabByType } from "@/store/browser";
-import { selectTags } from "@/store/tags";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { createTabByType } from "../../../../store/browser";
+import { selectTags } from "../../../../store/tags";
+import { selectOntologyConfig } from "../../../../store/ontology";
 
-import { isDark } from "@/utils/colors";
+import { isDark } from "../../../../utils/colors";
 
-import Accordion from "@/components/Accordion/Accordion";
-import Switch from "@/components/Inputs/Switch/Switch";
-import NovaImage from "@/components/NovaImage/NovaImage";
+import Accordion from "../../../../components/Accordion/Accordion";
+import Switch from "../../../../components/Inputs/Switch/Switch";
+import NovaImage from "../../../../components/NovaImage/NovaImage";
 
-import IconToolPencil from "@/assets/images/icons/IconFolderLinkNav";
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import IconTag from "@/assets/images/icons/IconTag";
+import IconToolPencil from "../../../../assets/images/icons/IconFolderLinkNav";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
+import IconTag from "../../../../assets/images/icons/IconTag";
 
-import { APP_ROUTES } from "@/constants/routes";
+import { APP_ROUTES } from "../../../../constants/routes";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";
 

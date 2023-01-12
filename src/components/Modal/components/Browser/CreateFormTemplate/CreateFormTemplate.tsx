@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import IconInboxSearch from "@/assets/images/icons/IconInboxSearch";
-import IconCross from "@/assets/images/icons/IconCrossBlue";
+import IconInboxSearch from "../../../../../assets/images/icons/IconInboxSearch";
+import IconCross from "../../../../../assets/images/icons/IconCrossBlue";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { BrowserSearchTemplate } from "@/constants/browser-related";
-import { unhandle } from "@/utils/DOM";
+import { BrowserSearchTemplate } from "../../../../../constants/browser-related";
+import { unhandle } from "../../../../../utils/DOM";
 import styles from "./CreateFormTemplate.scss";
 
 interface CreateBrowserFormTemplateModalProps {

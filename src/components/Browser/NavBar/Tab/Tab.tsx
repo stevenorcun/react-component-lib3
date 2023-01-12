@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import styles from "@/components/Browser/NavBar/styles.scss";
-import IconCross from "@/assets/images/icons/IconCross";
-import IconSearch from "@/assets/images/icons/IconSearch";
-import { BrowserTabType, IBrowserSearchTab } from "@/constants/browser-related";
-import IconPhone from "@/assets/images/icons/IconPhone";
-import Man from "@/assets/images/icons/entityTypes/Man";
-import { getEntityStrIcon } from "@/constants/entity-related";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+import styles from "../../../../components/Browser/NavBar/styles.scss";
+import IconCross from "../../../../assets/images/icons/IconCross";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
+import {
+  BrowserTabType,
+  IBrowserSearchTab,
+} from "../../../../constants/browser-related";
+import IconPhone from "../../../../assets/images/icons/IconPhone";
+import Man from "../../../../assets/images/icons/entityTypes/Man";
+import { getEntityStrIcon } from "../../../../constants/entity-related";
+import { useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
 
 interface BrowserSearchTabProps {
   tab: IBrowserSearchTab;

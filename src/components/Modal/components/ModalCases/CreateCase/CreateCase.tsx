@@ -6,24 +6,28 @@ import cx from "classnames";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { createCase, selectCase, setListSupervisor } from "@/store/case";
-import ApiFactory from "@/API/controllers/api-factory";
-import UsersApi from "@/API/controllers/users-api";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import {
+  createCase,
+  selectCase,
+  setListSupervisor,
+} from "../../../../store/case";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import UsersApi from "../../../../API/controllers/users-api";
 
-import Modal from "@/components/Modal/Modal";
-import Button from "@/components/Buttons/Button/Button";
-import Input from "@/components/Inputs/General/General";
-import InputGroupedValue from "@/components/Inputs/GroupedValues/GroupedValues";
+import Modal from "../../../../components/Modal/Modal";
+import Button from "../../../../components/Buttons/Button/Button";
+import Input from "../../../../components/Inputs/General/General";
+import InputGroupedValue from "../../../../components/Inputs/GroupedValues/GroupedValues";
 
-import IconCase from "@/assets/images/icons/IconCase";
-import IconArrow from "@/assets/images/icons/IconArrowBottomFull";
+import IconCase from "../../../../assets/images/icons/IconCase";
+import IconArrow from "../../../../assets/images/icons/IconArrowBottomFull";
 
 import styles from "./createCase.scss";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { CaseStatus } from "@/API/DataModels/Database/Case";
-import CasesApi from "@/API/controllers/cases-api";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import { CaseStatus } from "../../../../API/DataModels/Database/Case";
+import CasesApi from "../../../../API/controllers/cases-api";
 
 interface ValuesInputsProps {
   [key: string]: {

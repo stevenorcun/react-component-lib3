@@ -1,10 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
-import { ModalContext } from '@/hooks/useGlobalModal';
-import ModalTypes from '@/constants/modal';
-import CreateBrowserFormTemplateModal, { OverwritePrivateBrowserFormTemplateModal } from '@/components/Modal/components/Browser/CreateFormTemplate/CreateFormTemplate';
-import ModalObjectFusion from '@/components/Modal/components/Graph/ObjectFusion/ModalObjectFusion';
-import UndoFusionModal from '@/components/Modal/components/Graph/ObjectFusion/UndoFusionModal';
+import React, { useState } from "react";
+import { ModalContext } from "../../hooks/useGlobalModal";
+import ModalTypes from "../../constants/modal";
+import CreateBrowserFormTemplateModal, {
+  OverwritePrivateBrowserFormTemplateModal,
+} from "../../components/Modal/components/Browser/CreateFormTemplate/CreateFormTemplate";
+import ModalObjectFusion from "../../components/Modal/components/Graph/ObjectFusion/ModalObjectFusion";
+import UndoFusionModal from "../../components/Modal/components/Graph/ObjectFusion/UndoFusionModal";
 import {
   AddToListModal,
   CreateListModal,
@@ -16,7 +18,7 @@ import {
   ModalRules,
   ModalTags,
   RemoveListModal,
-} from './components';
+} from "./components";
 
 const MODAL_COMPONENTS: any = {
   [ModalTypes.CUSTOMIZED_ACTIONS]: ModalCustomizedActions,
@@ -29,7 +31,8 @@ const MODAL_COMPONENTS: any = {
   [ModalTypes.LISTS_CREATE_LIST]: CreateListModal,
   [ModalTypes.LISTS_REMOVE_LIST]: RemoveListModal,
   [ModalTypes.BROWSER_CREATE_FORM_TEMPLATE]: CreateBrowserFormTemplateModal,
-  [ModalTypes.BROWSER_OVERWRITE_FORM_TEMPLATE]: OverwritePrivateBrowserFormTemplateModal,
+  [ModalTypes.BROWSER_OVERWRITE_FORM_TEMPLATE]:
+    OverwritePrivateBrowserFormTemplateModal,
   [ModalTypes.CASES_CREATE_CASE]: ModalCreateCase,
   [ModalTypes.GRAPH_OBJECT_FUSION]: ModalObjectFusion,
   [ModalTypes.GRAPH_OBJECT_FISSION]: UndoFusionModal,

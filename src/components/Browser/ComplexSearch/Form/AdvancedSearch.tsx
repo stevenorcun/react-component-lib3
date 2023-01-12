@@ -7,37 +7,37 @@ import {
   BrowserTabType,
   IBrowserAdvancedSearchForm,
   IBrowserSearchFormField,
-} from "@/constants/browser-related";
-import FormField from "@/lib/Form/Field/Field";
-import DropDownSelect from "@/lib/Form/DropDownSelect/DropDownSelect";
-import IconSearch from "@/assets/images/icons/IconSearch";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
+} from "../../../../constants/browser-related";
+import FormField from "../../../../lib/Form/Field/Field";
+import DropDownSelect from "../../../../lib/Form/DropDownSelect/DropDownSelect";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
 import {
   ENTITY_PROPERTY_DETAILS,
   ENTITY_TYPE_DETAILS,
-} from "@/constants/entity-related";
-import { EntityTypeTag } from "@/components/Browser/SearchResult/SearchResult";
-import IconPlusOutline from "@/assets/images/icons/IconPlusOutline";
-import GroupedValuesInput from "@/lib/Form/GroupedValuesInput/GroupedValuesInput";
-import { preventDefault } from "@/utils/DOM";
-import GroupedValuesCalendar from "@/lib/Form/GroupedValuesInput/MultiValuesCalendar/MultiValuesCalendar";
+} from "../../../../constants/entity-related";
+import { EntityTypeTag } from "../../../../components/Browser/SearchResult/SearchResult";
+import IconPlusOutline from "../../../../assets/images/icons/IconPlusOutline";
+import GroupedValuesInput from "../../../../lib/Form/GroupedValuesInput/GroupedValuesInput";
+import { preventDefault } from "../../../../utils/DOM";
+import GroupedValuesCalendar from "../../../../lib/Form/GroupedValuesInput/MultiValuesCalendar/MultiValuesCalendar";
 import { toast } from "react-toastify";
-import DateTimePicker from "@/lib/DateTimePicker/DateTimePicker";
+import DateTimePicker from "../../../../lib/DateTimePicker/DateTimePicker";
 import Moment from "react-moment";
-import { createBrowserSearchFormField } from "@/utils/browser";
+import { createBrowserSearchFormField } from "../../../../utils/browser";
 import {
   DB_STRICTNESS,
   defaultStrictnessSelectValues,
-} from "@/constants/strictness-select-values";
-import IconCross from "@/assets/images/icons/IconCross";
-import FormTemplateLoaderWithInput from "@/components/Browser/FormTemplateLoader/FormTemplateLoader";
-import { BrowserSearchTemplateStorage } from "@/hooks/usePreferences";
+} from "../../../../constants/strictness-select-values";
+import IconCross from "../../../../assets/images/icons/IconCross";
+import FormTemplateLoaderWithInput from "../../../../components/Browser/FormTemplateLoader/FormTemplateLoader";
+import { BrowserSearchTemplateStorage } from "../../../../hooks/usePreferences";
 import styles from "./Form.scss";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
-import ObjectDefault from "@/assets/images/icons/entityTypes/DEFAULT";
-import PropDefault from "@/assets/images/icons/entityProperties/DEFAULT";
-import { ICON_STORE } from "@/assets/images/icons/icon-store";
+import { useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import ObjectDefault from "../../../../assets/images/icons/entityTypes/DEFAULT";
+import PropDefault from "../../../../assets/images/icons/entityProperties/DEFAULT";
+import { ICON_STORE } from "../../../../assets/images/icons/icon-store";
 
 export interface CanLoadBrowserTemplates {
   templateSearchValue: string;

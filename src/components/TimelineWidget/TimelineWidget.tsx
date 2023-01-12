@@ -4,23 +4,23 @@ import cx from "classnames";
 import deepmerge from "deepmerge";
 
 import "moment/locale/fr";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { GraphState } from "@/store/graph";
-import { CanImplementTimelineState } from "@/store/shared/timeline";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { ENTITY_TYPE_DETAILS } from "../../constants/entity-related";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import { GraphState } from "../../store/graph";
+import { CanImplementTimelineState } from "../../store/shared/timeline";
 
 import RechartsTimeline, {
   RechartsTimelineData,
   RechartsTimelineYAxisKeys,
-} from "@/components/TimelineWidget/RechartsTimeline/RechartsTimeline";
-import { ModelLabelEvent } from "@/components/TimelineWidget/ModelLabelEvent/ModelLabelEvent";
+} from "../../components/TimelineWidget/RechartsTimeline/RechartsTimeline";
+import { ModelLabelEvent } from "../../components/TimelineWidget/ModelLabelEvent/ModelLabelEvent";
 import ControlsBar from "./ControlsBar/ControlsBar";
 
-import IconTime from "@/assets/images/icons/IconTime";
-import IconCirclePlus from "@/assets/images/icons/IconCirclePlus";
-import IconArrowDown from "@/assets/images/icons/IconArrowDown";
-import IconOpenArrow from "@/assets/images/icons/IconOpenArrow";
+import IconTime from "../../assets/images/icons/IconTime";
+import IconCirclePlus from "../../assets/images/icons/IconCirclePlus";
+import IconArrowDown from "../../assets/images/icons/IconArrowDown";
+import IconOpenArrow from "../../assets/images/icons/IconOpenArrow";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconArrow from "@/assets/images/icons/IconArrow";
-import IconNewTab from "@/assets/images/icons/IconNewTab";
+import IconArrow from "../../../assets/images/icons/IconArrow";
+import IconNewTab from "../../../assets/images/icons/IconNewTab";
 import {
   BrowserSearchTemplate,
   BrowserTabType,
@@ -10,17 +10,17 @@ import {
   IBrowserPhoneSearchForm,
   IBrowserPhysicalPersonSearchForm,
   IBrowserSearchFormField,
-} from "@/constants/browser-related";
-import BrowserPhysicalPersonSearchForm from "@/components/Browser/ComplexSearch/Form/PhysicalPerson";
-import ResultFilters from "@/components/Browser/ComplexSearch/ResultFilters/ResultFilters";
-import BrowserSearchResult from "@/components/Browser/SearchResult/SearchResult";
-import WidgetHeader from "@/components/Browser/WidgetHeader/WidgetHeader";
-import Entity from "@/pages/Entity/Entity";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import BrowserPhoneSearchForm from "@/components/Browser/ComplexSearch/Form/Phone";
-import BrowserAdvancedSearchForm from "@/components/Browser/ComplexSearch/Form/AdvancedSearch";
-import { SearchTabLayoutProps } from "@/pages/Browser/SearchTabLayout/SearchTabLayout";
-import { unhandle } from "@/utils/DOM";
+} from "../../../constants/browser-related";
+import BrowserPhysicalPersonSearchForm from "../../../components/Browser/ComplexSearch/Form/PhysicalPerson";
+import ResultFilters from "../../../components/Browser/ComplexSearch/ResultFilters/ResultFilters";
+import BrowserSearchResult from "../../../components/Browser/SearchResult/SearchResult";
+import WidgetHeader from "../../../components/Browser/WidgetHeader/WidgetHeader";
+import Entity from "../../../pages/Entity/Entity";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
+import BrowserPhoneSearchForm from "../../../components/Browser/ComplexSearch/Form/Phone";
+import BrowserAdvancedSearchForm from "../../../components/Browser/ComplexSearch/Form/AdvancedSearch";
+import { SearchTabLayoutProps } from "../../../pages/Browser/SearchTabLayout/SearchTabLayout";
+import { unhandle } from "../../../utils/DOM";
 import {
   addCustomFieldToForm,
   BrowserState,
@@ -34,15 +34,15 @@ import {
   setTemplateSearchInputValue,
   toggleAllSelection,
   updateTemplate,
-} from "@/store/browser";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+} from "../../../store/browser";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 
-import IconBell from "@/assets/images/icons/IconBell";
-import IconOpen from "@/assets/images/icons/IconOpen";
+import IconBell from "../../../assets/images/icons/IconBell";
+import IconOpen from "../../../assets/images/icons/IconOpen";
 
 import styles from "./ComplexSearchLayout.scss";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import ModalTypes from "@/constants/modal";
+import { useGlobalModalContext } from "../../../hooks/useGlobalModal";
+import ModalTypes from "../../../constants/modal";
 
 const ComplexSearchLayout = ({
   tab,

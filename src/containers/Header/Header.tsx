@@ -1,11 +1,11 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import cx from 'classnames';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import cx from "classnames";
 
-import IconDots from '@/assets/images/icons/IconDots';
-import { APP_ROUTES } from '@/constants/routes';
-import Navigation from './Navigation/Navigation';
-import styles from './styles.scss';
+import IconDots from "../../assets/images/icons/IconDots";
+import { APP_ROUTES } from "../../constants/routes";
+import Navigation from "./Navigation/Navigation";
+import styles from "./styles.scss";
 
 interface AuxProps {
   children?: React.ReactNode;
@@ -26,7 +26,7 @@ const Header = ({ children }: AuxProps) => {
           <IconDots />
         </div>
         {children}
-        {params.pathname === APP_ROUTES.login.path ? '' : <Navigation />}
+        {params.pathname === APP_ROUTES.login.path ? "" : <Navigation />}
       </div>
     </>
   );

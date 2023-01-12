@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
-import jsonObjects from '@/API/controllers/mock/data/objects.json';
-import jsonUsers from '@/API/controllers/mock/data/auth.json';
-import jsonRules from '@/API/controllers/mock/data/rules.json';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
+import jsonObjects from "../../API/controllers/mock/data/objects.json";
+import jsonUsers from "../../API/controllers/mock/data/auth.json";
+import jsonRules from "../../API/controllers/mock/data/rules.json";
 
 export interface TagsState {
   objects: any[];
@@ -74,13 +74,13 @@ const removeTagFn = (
                   state.selectedProperty &&
                   state.selectedProperty.title === payload.property.title &&
                   state.selectedProperty.data.entitled ===
-                  propertyValue[propertyValueIndex].entitled
+                    propertyValue[propertyValueIndex].entitled
                 ) {
                   state.selectedProperty.data.tags.splice(tagIndex, 1);
                 }
                 state.objects[objectIndex]._source.property[0].general[
                   objectPropertyIndex
-                  ].content[propertyValueIndex].tags = [...tags];
+                ].content[propertyValueIndex].tags = [...tags];
               }
             }
           }
@@ -140,13 +140,13 @@ const addTagFn = (
                   state.selectedProperty &&
                   state.selectedProperty.title === payload.property.title &&
                   state.selectedProperty.data.entitled ===
-                  propertyValue[propertyValueIndex].entitled
+                    propertyValue[propertyValueIndex].entitled
                 ) {
                   state.selectedProperty.data.tags.push(payload.tag);
                 }
                 state.objects[objectIndex]._source.property[0].general[
                   objectPropertyIndex
-                  ].content[propertyValueIndex].tags = [...tags];
+                ].content[propertyValueIndex].tags = [...tags];
               }
             }
           }
@@ -164,7 +164,7 @@ const addTagFn = (
 };
 
 const tagsSlice = createSlice({
-  name: 'case',
+  name: "case",
   initialState,
   reducers: {
     /**
@@ -287,12 +287,12 @@ const tagsSlice = createSlice({
                 if (propertyValueIndex !== -1) {
                   state.objects[objectIndex]._source.property[0].general[
                     objectPropertyIndex
-                    ].content[propertyValueIndex].tags = [...payload.tags];
+                  ].content[propertyValueIndex].tags = [...payload.tags];
                   if (
                     state.selectedProperty &&
                     state.selectedProperty.title === payload.property.title &&
                     state.selectedProperty.data.entitled ===
-                    propertyValue[propertyValueIndex].entitled
+                      propertyValue[propertyValueIndex].entitled
                   ) {
                     state.selectedProperty.data.tags = [...payload.tags];
                   }
@@ -308,9 +308,7 @@ const tagsSlice = createSlice({
     /**
      * Set context tags
      */
-    setContextTags: (
-      state,
-      action: PayloadAction<string[]>) => {
+    setContextTags: (state, action: PayloadAction<string[]>) => {
       const { payload } = action;
       if (payload) {
         state.contextTags = payload;

@@ -3,15 +3,18 @@ import cx from "classnames";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconBox from "@/assets/images/icons/IconBox";
-import IconLink from "@/assets/images/icons/IconLink";
-import IconArrowWindow from "@/assets/images/icons/IconArrowWindow";
-import IconMap from "@/assets/images/icons/IconMap";
-import IconGraph from "@/assets/images/icons/IconGraph";
-import IconToolPencil from "@/assets/images/icons/IconFolderLinkNav";
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectGraph, updateEntityRelatedSummaryById } from "@/store/graph";
+import IconBox from "../../../../assets/images/icons/IconBox";
+import IconLink from "../../../../assets/images/icons/IconLink";
+import IconArrowWindow from "../../../../assets/images/icons/IconArrowWindow";
+import IconMap from "../../../../assets/images/icons/IconMap";
+import IconGraph from "../../../../assets/images/icons/IconGraph";
+import IconToolPencil from "../../../../assets/images/icons/IconFolderLinkNav";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import {
+  selectGraph,
+  updateEntityRelatedSummaryById,
+} from "../../../../store/graph";
 import {
   DocumentSummary,
   EntityDto,
@@ -19,9 +22,9 @@ import {
   EventSummary,
   FileSummary,
   RelatedSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { convertToEntityDto } from "@/API/DataModels/DTO/entityDto";
+} from "../../../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import { convertToEntityDto } from "../../../../API/DataModels/DTO/entityDto";
 import {
   getEntityPropLabel,
   getEntityStrIcon,
@@ -29,21 +32,21 @@ import {
   getEntityTypeId,
   getEntityTypeLabel,
   getObjectTypeLabel,
-} from "@/constants/entity-related";
-import { APP_ROUTES } from "@/constants/routes";
-import AdvancedSearchResultPropertyLine from "@/components/Browser/SearchResult/PropertyLine/PropertyLine";
-import { createTabByType } from "@/store/browser";
-import { BrowserTabType } from "@/constants/browser-related";
-import IconArrow from "@/assets/images/icons/IconArrow";
-import IconLoader from "@/assets/images/icons/IconLoader";
+} from "../../../../constants/entity-related";
+import { APP_ROUTES } from "../../../../constants/routes";
+import AdvancedSearchResultPropertyLine from "../../../../components/Browser/SearchResult/PropertyLine/PropertyLine";
+import { createTabByType } from "../../../../store/browser";
+import { BrowserTabType } from "../../../../constants/browser-related";
+import IconArrow from "../../../../assets/images/icons/IconArrow";
+import IconLoader from "../../../../assets/images/icons/IconLoader";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import ObjectsApi from "@/API/controllers/object-api";
-import SelectionWidget from "@/components/selectionWidget/Selection/SelectionWidget";
-import NoData from "@/lib/NoData/NoData";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import ObjectsApi from "../../../../API/controllers/object-api";
+import SelectionWidget from "../../../../components/selectionWidget/Selection/SelectionWidget";
+import NoData from "../../../../lib/NoData/NoData";
 import styles from "./styles.scss";
-import { selectOntologyConfig } from "@/store/ontology";
-import { selectMap } from "@/store/map";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { selectMap } from "../../../../store/map";
 
 const CommonActions = () => (
   <div className={styles.actions}>

@@ -1,11 +1,11 @@
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import Modal from "@/components/Modal/Modal";
-import styles from "@/components/Modal/components/Graph/ObjectFusion/styles.scss";
+import { EntityDto } from "../../../../../API/DataModels/Database/NovaObject";
+import Modal from "../../../../../components/Modal/Modal";
+import styles from "../../../../../components/Modal/components/Graph/ObjectFusion/styles.scss";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconCheck from "@/assets/images/icons/IconCheck";
-import IconCrossCircle from "@/assets/images/icons/IconCrossBlue";
-import Button from "@/components/Buttons/Button/Button";
+import IconCheck from "../../../../../assets/images/icons/IconCheck";
+import IconCrossCircle from "../../../../../assets/images/icons/IconCrossBlue";
+import Button from "../../../../../components/Buttons/Button/Button";
 import React, { Fragment } from "react";
 
 const UndoFusionModal = ({

@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconArrow from "@/assets/images/icons/IconArrow";
-import DrawerNavigation from "@/lib/Drawer/Navigation/Navigation";
+import IconArrow from "../../assets/images/icons/IconArrow";
+import DrawerNavigation from "../../lib/Drawer/Navigation/Navigation";
 import styles from "./Drawer.scss";
 
 // can be useful to have have an `activeMenu` props

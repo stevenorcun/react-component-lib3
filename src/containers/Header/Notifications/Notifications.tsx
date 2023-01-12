@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import cx from "classnames";
 
-import Notification from "@/components/Notification/Notification";
+import Notification from "../../../components/Notification/Notification";
 
-import IconBell from "@/assets/images/icons/IconBellNav";
+import IconBell from "../../../assets/images/icons/IconBellNav";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";
-import NoData from "@/lib/NoData/NoData";
+import NoData from "../../../lib/NoData/NoData";
 
 interface AuxProps {
   className?: string;

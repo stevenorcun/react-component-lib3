@@ -2,18 +2,18 @@
 import React from "react";
 import cx from "classnames";
 
-import HeaderSubtitleIcon from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
-import RemoveButton from "@/components/Buttons/RemoveButton/RemoveButton";
+import HeaderSubtitleIcon from "../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
+import RemoveButton from "../../../../components/Buttons/RemoveButton/RemoveButton";
 
-import IconSelectionTool from "@/assets/images/icons/IconSelect";
+import IconSelectionTool from "../../../../assets/images/icons/IconSelect";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import {
   changeSelection,
   handleEntitiesSelected,
   handleSelected,
   selectExplorer,
-} from "@/store/explorer";
+} from "../../../../store/explorer";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./currentSelection.scss";

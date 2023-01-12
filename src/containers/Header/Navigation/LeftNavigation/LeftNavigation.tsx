@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import cx from "classnames";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import { ExternalApp } from "@/API/controllers/applicative-api";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
-import SearchApi from "@/API/controllers/search-api";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import { ExternalApp } from "../../../../API/controllers/applicative-api";
+import { convertToEntityDto2 } from "../../../../API/DataModels/DTO/entityDto";
+import SearchApi from "../../../../API/controllers/search-api";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import {
   createConnectionFromTo,
   createEntities,
@@ -15,39 +15,39 @@ import {
   selectGraph,
   setIsOverviewInitialized,
   updateGraphRectThenFitToView,
-} from "@/store/graph";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
-import { addEntitiesExplorer } from "@/store/explorer";
+} from "../../../../store/graph";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { addEntitiesExplorer } from "../../../../store/explorer";
 import {
   addEntities as addMapEntities,
   addPlaneFlightCoord,
   setOnImportEntitiesWithoutGeo,
   setValidTypeEntities,
-} from "@/store/map";
-import { handleEntityOrSummaryDrop } from "@/utils/drag-events";
-import { preventDefault } from "@/utils/DOM";
+} from "../../../../store/map";
+import { handleEntityOrSummaryDrop } from "../../../../utils/drag-events";
+import { preventDefault } from "../../../../utils/DOM";
 import {
   castEntitiesToConnections,
   relatedWithIds,
   sortLinksByIdObjet,
-} from "@/utils/graph";
-import { APP_ROUTES, EXTERNAL_APP_ROUTE } from "@/constants/routes";
-import DRAG_EVENT_TYPES from "@/constants/drag-events-types";
+} from "../../../../utils/graph";
+import { APP_ROUTES, EXTERNAL_APP_ROUTE } from "../../../../constants/routes";
+import DRAG_EVENT_TYPES from "../../../../constants/drag-events-types";
 import {
   getEntityTypeGroup,
   ONTOLOGY_TYPES_GROUPS,
-} from "@/constants/entity-related";
+} from "../../../../constants/entity-related";
 
-import NavigationItem from "@/components/Navigation/NavigationItem";
+import NavigationItem from "../../../../components/Navigation/NavigationItem";
 
-import IconExternalApps from "@/assets/images/icons/menuItems/IconExternalApps";
-import IconGraph from "@/assets/images/icons/IconGraph";
-import IconFolder from "@/assets/images/icons/IconFolderNav";
-import IconMap from "@/assets/images/icons/IconMap";
-import IconExplorer from "@/assets/images/icons/IconExplorer";
-import IconNote from "@/assets/images/icons/IconNoteNav";
-import IconBrowser from "@/assets/images/icons/IconBrowser";
+import IconExternalApps from "../../../../assets/images/icons/menuItems/IconExternalApps";
+import IconGraph from "../../../../assets/images/icons/IconGraph";
+import IconFolder from "../../../../assets/images/icons/IconFolderNav";
+import IconMap from "../../../../assets/images/icons/IconMap";
+import IconExplorer from "../../../../assets/images/icons/IconExplorer";
+import IconNote from "../../../../assets/images/icons/IconNoteNav";
+import IconBrowser from "../../../../assets/images/icons/IconBrowser";
 
 import stylesGlobal from "../styles.scss";
 

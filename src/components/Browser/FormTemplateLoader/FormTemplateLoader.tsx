@@ -3,21 +3,21 @@ import cx from "classnames";
 import {
   BrowserSearchTemplateStorage,
   StorableBrowserTabType,
-} from "@/hooks/usePreferences";
+} from "../../../hooks/usePreferences";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import formStyles from "@/lib/Form/DropDownSelect/DropDownSelect.scss";
+import formStyles from "../../../lib/Form/DropDownSelect/DropDownSelect.scss";
 import { toast } from "react-toastify";
-import IconSortDown from "@/assets/images/icons/IconSortDown";
+import IconSortDown from "../../../assets/images/icons/IconSortDown";
 import {
   BrowserSearchTemplate,
   BrowserTabType,
   BrowserTemplateVisibility,
   IBrowserSearchTab,
-} from "@/constants/browser-related";
-import { unhandle } from "@/utils/DOM";
-import IconFavoris from "@/assets/images/icons/IconFavoris";
-import ApiFactory from "@/API/controllers/api-factory";
-import SearchQueriesApi from "@/API/controllers/search-queries-api";
+} from "../../../constants/browser-related";
+import { unhandle } from "../../../utils/DOM";
+import IconFavoris from "../../../assets/images/icons/IconFavoris";
+import ApiFactory from "../../../API/controllers/api-factory";
+import SearchQueriesApi from "../../../API/controllers/search-queries-api";
 import styles from "./FormTemplateLoader.scss";
 
 interface SearchTemplateListByStatusProps {

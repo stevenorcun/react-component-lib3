@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import cx from "classnames";
-import Button from "@/components/Buttons/Button/Button";
-import IconCross from "@/assets/images/icons/IconCrossBlue";
-import { Key } from "@/constants/DOM";
+import Button from "../../components/Buttons/Button/Button";
+import IconCross from "../../assets/images/icons/IconCrossBlue";
+import { Key } from "../../constants/DOM";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";
 

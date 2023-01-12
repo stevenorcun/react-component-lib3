@@ -1,5 +1,5 @@
-import ApiFactory from "@/API/controllers/api-factory";
-import FilesApi from "@/API/controllers/files-api";
+import ApiFactory from "../../API/controllers/api-factory";
+import FilesApi from "../../API/controllers/files-api";
 import React, { useEffect, useState } from "react";
 
 /**

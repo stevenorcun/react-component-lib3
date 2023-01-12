@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import Modal from '@/components/Modal/Modal';
-import Button from '@/components/Buttons/Button/Button';
-import styles from './styles.scss';
-import IconPersonOutline from '@/assets/images/icons/IconPersonOutline';
-import useResetStore from '@/hooks/useResetStore';
+import Modal from "../../../../components/Modal/Modal";
+import Button from "../../../../components/Buttons/Button/Button";
+import styles from "./styles.scss";
+import IconPersonOutline from "../../../../assets/images/icons/IconPersonOutline";
+import useResetStore from "../../../../hooks/useResetStore";
 
 interface ModalProfileProps {
   className?: string;
-  openModalProfile: () => void
+  openModalProfile: () => void;
 }
 
 const ModalProfile = ({ className, openModalProfile }: ModalProfileProps) => {
@@ -32,8 +32,7 @@ const ModalProfile = ({ className, openModalProfile }: ModalProfileProps) => {
         </Button>
       }
     >
-      <div className={styles.modalContent}>
-      </div>
+      <div className={styles.modalContent}></div>
     </Modal>
   );
 };

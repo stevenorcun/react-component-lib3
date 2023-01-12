@@ -1,13 +1,13 @@
 import React from "react";
 import cx from "classnames";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
-import OPTIONS_SUMMARY from "@/constants/options";
-import IconMedia from "@/assets/images/icons/IconMedia";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { RelatedSummariesProps } from "@/components/Sheet/Tabs/TabEntitySummary/Related/Related";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import { ENTITY_TYPE_DETAILS } from "../../../../../constants/entity-related";
+import OPTIONS_SUMMARY from "../../../../../constants/options";
+import IconMedia from "../../../../../assets/images/icons/IconMedia";
+import { NovaEntityType } from "../../../../../API/DataModels/Database/NovaEntityEnum";
+import { RelatedSummariesProps } from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/Related";
+import DraggableEntityOrSummary from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import DetailSheetHeader from "@/components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
+import DetailSheetHeader from "../../../../../components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
 import RelatedFooter from "../Components/Footer/RelatedFooterComponent";
 import styles from "./multimediaFileComponent.scss";
 

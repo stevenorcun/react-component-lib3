@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import cx from "classnames";
 import "moment/locale/fr";
 import { toast } from "react-toastify";
+import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   BrowserState,
   createTabByType,
@@ -15,11 +16,11 @@ import {
   setSearchTemplates,
   toggleActiveTabDrawer,
   updateTemplate,
-} from "@/store/browser";
-import Container from "@/containers/Container/Container";
-import Layout from "@/containers/Layout/Layout";
-import BrowserNavBar from "@/components/Browser/NavBar/NavBar";
-import BrowserHomePage from "@/pages/Browser/BrowserHomePage/BrowserHomePage";
+} from "../../store/browser";
+import Container from "../../containers/Container/Container";
+import Layout from "../../containers/Layout/Layout";
+import BrowserNavBar from "../../components/Browser/NavBar/NavBar";
+import BrowserHomePage from "../../pages/Browser/BrowserHomePage/BrowserHomePage";
 import {
   BROWSER_FORM_MAPPING_BY_TYPE_DETAILS,
   BrowserSearchTemplate,
@@ -30,24 +31,23 @@ import {
   IBrowserPhysicalPersonSearchForm,
   IBrowserSearchTab,
   IBrowserSimpleSearchForm,
-} from "@/constants/browser-related";
+} from "../../constants/browser-related";
 
-import Entity from "@/pages/Entity/Entity";
-import AuxiliariesDrawer from "@/components/Drawer/Drawer";
-import SearchTabLayout from "@/pages/Browser/SearchTabLayout/SearchTabLayout";
-import { unhandle } from "@/utils/DOM";
-import { BrowserSearchTemplateStorage } from "@/hooks/usePreferences";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import ModalTypes from "@/constants/modal";
-import ApiFactory from "@/API/controllers/api-factory";
-import SearchQueriesApi from "@/API/controllers/search-queries-api";
-import { emptyStoreSearchQueries } from "@/store/browser/actions";
-import { formToSearchQuery } from "@/utils/browser";
+import Entity from "../../pages/Entity/Entity";
+import AuxiliariesDrawer from "../../components/Drawer/Drawer";
+import SearchTabLayout from "../../pages/Browser/SearchTabLayout/SearchTabLayout";
+import { unhandle } from "../../utils/DOM";
+import { BrowserSearchTemplateStorage } from "../../hooks/usePreferences";
+import { useGlobalModalContext } from "../../hooks/useGlobalModal";
+import ModalTypes from "../../constants/modal";
+import ApiFactory from "../../API/controllers/api-factory";
+import SearchQueriesApi from "../../API/controllers/search-queries-api";
+import { emptyStoreSearchQueries } from "../../store/browser/actions";
+import { formToSearchQuery } from "../../utils/browser";
 
-import IconInboxSearch from "@/assets/images/icons/IconInboxSearch";
-import IconNewTab from "@/assets/images/icons/IconNewTab";
+import IconInboxSearch from "../../assets/images/icons/IconInboxSearch";
+import IconNewTab from "../../assets/images/icons/IconNewTab";
 
-import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";
 
 const BrowserPage = () => {

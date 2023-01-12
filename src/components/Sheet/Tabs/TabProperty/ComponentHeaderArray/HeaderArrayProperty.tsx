@@ -1,9 +1,9 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import { iconArrow } from '@/utils/general';
+import { iconArrow } from "../../../../../utils/general";
 
-import styles from './headerArrayProperty.scss';
+import styles from "./headerArrayProperty.scss";
 
 const HeaderArrayProperty = ({
   isAllChecked,
@@ -24,37 +24,37 @@ const HeaderArrayProperty = ({
           />
           <label htmlFor="entitled">Intitulé</label>
         </div>
-        <button type="button" onClick={() => sortFn('label')}>
+        <button type="button" onClick={() => sortFn("label")}>
           {iconArrow(isSort.label)}
         </button>
       </div>
       <span className={cx(styles.description, styles.flexAlignCenter)}>
         Valeur de confiance
-        <button type="button" onClick={() => sortFn('description')}>
+        <button type="button" onClick={() => sortFn("description")}>
           {iconArrow(isSort.confidenceValue)}
         </button>
       </span>
       <span className={cx(styles.description, styles.flexAlignCenter)}>
         Source
-        <button type="button" onClick={() => sortFn('description')}>
+        <button type="button" onClick={() => sortFn("description")}>
           {iconArrow(isSort.confidenceValue)}
         </button>
       </span>
       <span className={cx(styles.timestamp, styles.flexAlignCenter)}>
         Horodatage
-        <button type="button" onClick={() => sortFn('timestamp')}>
+        <button type="button" onClick={() => sortFn("timestamp")}>
           {iconArrow(isSort.timestamp)}
         </button>
       </span>
       <span className={cx(styles.geocoding, styles.flexAlignCenter)}>
         Nouveauté
-        <button type="button" onClick={() => sortFn('geocoding')}>
+        <button type="button" onClick={() => sortFn("geocoding")}>
           {iconArrow(isSort.geocoding)}
         </button>
       </span>
       <span className={cx(styles.tags, styles.flexAlignCenter)}>
         ###
-        <button type="button" onClick={() => sortFn('tags')}>
+        <button type="button" onClick={() => sortFn("tags")}>
           {iconArrow(isSort.tags)}
         </button>
       </span>

@@ -3,19 +3,19 @@ import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import {
   ENTITY_PROPERTY_DETAILS,
   ENTITY_TYPE_DETAILS,
-} from "@/constants/entity-related";
+} from "../../../../constants/entity-related";
 
-import Modal from "@/components/Modal/Modal";
-import Button from "@/components/Buttons/Button/Button";
-import Input from "@/components/Input/Input";
+import Modal from "../../../../components/Modal/Modal";
+import Button from "../../../../components/Buttons/Button/Button";
+import Input from "../../../../components/Input/Input";
 
-import IconPens from "@/assets/images/icons/IconPencilEdit";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
 
 import cx from "classnames";
 import styles from "./styles.scss";

@@ -1,7 +1,7 @@
-import React from 'react';
-import IconPlus from '@/assets/images/icons/IconPlus';
-import IconFilter from '@/assets/images/icons/IconFilter';
-import styles from './componentHeaderFiltre.scss';
+import React from "react";
+import IconPlus from "../../../../assets/images/icons/IconPlus";
+import IconFilter from "../../../../assets/images/icons/IconFilter";
+import styles from "./componentHeaderFiltre.scss";
 
 interface PropsHeaderFiltre {
   nameButton: string;
@@ -48,11 +48,11 @@ const ComponentHeaderFiltre = ({
           />
           {nameButton}
         </button>
-        {tab === 'related' && (
-        <select name="actions" id="filtre">
-          <option value="action">Action</option>
-          <option value="">Etiquette (A-Z)</option>
-        </select>
+        {tab === "related" && (
+          <select name="actions" id="filtre">
+            <option value="action">Action</option>
+            <option value="">Etiquette (A-Z)</option>
+          </select>
         )}
       </div>
     </form>

@@ -1,8 +1,8 @@
 import React from "react";
 
-import IconSmallDots from "@/assets/images/icons/IconSmallDots";
-import IconOpenArrow from "@/assets/images/icons/IconOpenArrow";
-import IconCircleMinus from "@/assets/images/icons/IconCircleMinus";
+import IconSmallDots from "../../../assets/images/icons/IconSmallDots";
+import IconOpenArrow from "../../../assets/images/icons/IconOpenArrow";
+import IconCircleMinus from "../../../assets/images/icons/IconCircleMinus";
 
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";

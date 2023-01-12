@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { STYLE_BY_FILL_COLORS } from "@/constants/graph-themes";
+import { STYLE_BY_FILL_COLORS } from "../../../../constants/graph-themes";
 
 const IconBuilding = (props: { fill?: string } = {}) => {
   return (

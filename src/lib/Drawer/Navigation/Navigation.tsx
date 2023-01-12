@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconDoubleArrow from "@/assets/images/icons/IconDoubleArrow";
+import IconDoubleArrow from "../../../assets/images/icons/IconDoubleArrow";
 import styles from "./Navigation.scss";
 
 interface DrawerNavigationProps {

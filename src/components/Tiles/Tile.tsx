@@ -3,7 +3,7 @@ import cx from "classnames";
 import { toast } from "react-toastify";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   PINS_OFFSETS,
   selectGraph,
@@ -12,19 +12,19 @@ import {
   setSelectedAnnotations,
   toggleGraphSelection,
   translateSelectedElements,
-} from "@/store/graph";
-import { selectOntologyConfig } from "@/store/ontology";
-import { preventDefault } from "@/utils/DOM";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import DRAG_EVENT_TYPES from "@/constants/drag-events-types";
-import { getEntityStrIcon } from "@/constants/entity-related";
-import ModalTypes from "@/constants/modal";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+} from "../../store/graph";
+import { selectOntologyConfig } from "../../store/ontology";
+import { preventDefault } from "../../utils/DOM";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import DRAG_EVENT_TYPES from "../../constants/drag-events-types";
+import { getEntityStrIcon } from "../../constants/entity-related";
+import ModalTypes from "../../constants/modal";
+import { useGlobalModalContext } from "../../hooks/useGlobalModal";
 
-import flagsIcon from "@/assets/images/icons/flags";
-import IconIdCard from "@/assets/images/icons/IconIdCard";
-import IconGeoSlim from "@/assets/images/icons/IconGeoSlim";
+import flagsIcon from "../../assets/images/icons/flags";
+import IconIdCard from "../../assets/images/icons/IconIdCard";
+import IconGeoSlim from "../../assets/images/icons/IconGeoSlim";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import Pin from "./Pin";

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   selectBoard,
   setCursor,
@@ -8,7 +8,7 @@ import {
   setPrevWindowPosition,
   setWindowDrag,
   setWindowPos,
-} from "@/store/board/window";
+} from "../../store/board/window";
 
 import styles from "./BoardWindow.scss";
 

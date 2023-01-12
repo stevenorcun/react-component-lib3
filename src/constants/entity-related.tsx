@@ -5,54 +5,54 @@ import {
   EntityDto,
   HomeAddress,
   PhysicalEntityDto,
-} from "@/API/DataModels/Database/NovaObject";
-import Man from "@/assets/images/icons/entityTypes/Man";
-import IconFile from "@/assets/images/icons/IconFile";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
-import IconJusticeHammer from "@/assets/images/icons/IconJusticeHammer";
-import IconPersonOutline from "@/assets/images/icons/IconPersonOutline";
-import IconAttachedFile from "@/assets/images/icons/entityTypes/IconAttachedFile";
-import IconMail from "@/assets/images/icons/IconMail";
-import IconInformationNote from "@/assets/images/icons/IconInformationNote";
-import IconGraphNetwork from "@/assets/images/icons/IconGraphNetwork";
-import IconWindowsFolder from "@/assets/images/icons/IconWindowsFolder";
-import IconLegalPerson from "@/assets/images/icons/IconLegalPerson";
-import IconPhone from "@/assets/images/icons/IconPhone";
-import IconSmartPhone from "@/assets/images/icons/entityTypes/IconSmartPhone";
-import IconStickyNote from "@/assets/images/icons/entityTypes/IconStickyNote";
-import IconCar from "@/assets/images/icons/entityTypes/IconCar";
-import Woman from "@/assets/images/icons/entityTypes/Woman";
-import IconHamburgerMenu from "@/assets/images/icons/IconHamburgerMenu";
-import IconPencilEdit from "@/assets/images/icons/IconPencilEdit";
-import IconMinutes from "@/assets/images/icons/IconMinutes";
-import IconAircraft from "@/assets/images/icons/entityTypes/events/IconAircraft";
-import IconAttack from "@/assets/images/icons/entityTypes/events/IconAttack";
-import IconAtmRobbery from "@/assets/images/icons/entityTypes/events/IconAtmRobbery";
-import IconCarCrashed from "@/assets/images/icons/entityTypes/IconCarCrashed";
-import COUNTRY_DETAILS from "@/assets/images/icons/flags";
-import IconNationality from "@/assets/images/icons/entityProperties/IconNationality";
-import IconDeathDate from "@/assets/images/icons/entityProperties/IconDeathDate";
-import IconAddress from "@/assets/images/icons/entityProperties/IconAddress";
-import IconGeoSlim from "@/assets/images/icons/IconGeoSlim";
-import IconIpAddress from "@/assets/images/icons/IconIpAddress";
-import IconTravel from "@/assets/images/icons/IconAircraft";
-import IconWork from "@/assets/images/icons/entityProperties/IconWork";
-import IconReference from "@/assets/images/icons/entityProperties/IconReference";
+} from "../API/DataModels/Database/NovaObject";
+import Man from "../assets/images/icons/entityTypes/Man";
+import IconFile from "../assets/images/icons/IconFile";
+import IconCalendar from "../assets/images/icons/IconCalendar";
+import IconJusticeHammer from "../assets/images/icons/IconJusticeHammer";
+import IconPersonOutline from "../assets/images/icons/IconPersonOutline";
+import IconAttachedFile from "../assets/images/icons/entityTypes/IconAttachedFile";
+import IconMail from "../assets/images/icons/IconMail";
+import IconInformationNote from "../assets/images/icons/IconInformationNote";
+import IconGraphNetwork from "../assets/images/icons/IconGraphNetwork";
+import IconWindowsFolder from "../assets/images/icons/IconWindowsFolder";
+import IconLegalPerson from "../assets/images/icons/IconLegalPerson";
+import IconPhone from "../assets/images/icons/IconPhone";
+import IconSmartPhone from "../assets/images/icons/entityTypes/IconSmartPhone";
+import IconStickyNote from "../assets/images/icons/entityTypes/IconStickyNote";
+import IconCar from "../assets/images/icons/entityTypes/IconCar";
+import Woman from "../assets/images/icons/entityTypes/Woman";
+import IconHamburgerMenu from "../assets/images/icons/IconHamburgerMenu";
+import IconPencilEdit from "../assets/images/icons/IconPencilEdit";
+import IconMinutes from "../assets/images/icons/IconMinutes";
+import IconAircraft from "../assets/images/icons/entityTypes/events/IconAircraft";
+import IconAttack from "../assets/images/icons/entityTypes/events/IconAttack";
+import IconAtmRobbery from "../assets/images/icons/entityTypes/events/IconAtmRobbery";
+import IconCarCrashed from "../assets/images/icons/entityTypes/IconCarCrashed";
+import COUNTRY_DETAILS from "../assets/images/icons/flags";
+import IconNationality from "../assets/images/icons/entityProperties/IconNationality";
+import IconDeathDate from "../assets/images/icons/entityProperties/IconDeathDate";
+import IconAddress from "../assets/images/icons/entityProperties/IconAddress";
+import IconGeoSlim from "../assets/images/icons/IconGeoSlim";
+import IconIpAddress from "../assets/images/icons/IconIpAddress";
+import IconTravel from "../assets/images/icons/IconAircraft";
+import IconWork from "../assets/images/icons/entityProperties/IconWork";
+import IconReference from "../assets/images/icons/entityProperties/IconReference";
 
-import { EnumValueSelectRenderer } from "@/components/Browser/ComplexSearch/Form/PhysicalPerson";
+import { EnumValueSelectRenderer } from "../components/Browser/ComplexSearch/Form/PhysicalPerson";
 import {
   datetimeStrictnessSelectValues,
   DB_STRICTNESS,
   defaultStrictnessSelectValues,
-} from "@/constants/strictness-select-values";
+} from "../constants/strictness-select-values";
 import {
   NovaEntityConnexionType,
   NovaEntityGender,
   NovaEntityTag,
   NovaEntityType,
   NovaEntityTypeGroup,
-} from "@/API/DataModels/Database/NovaEntityEnum";
-import { ICON_STORE } from "@/assets/images/icons/icon-store";
+} from "../API/DataModels/Database/NovaEntityEnum";
+import { ICON_STORE } from "../assets/images/icons/icon-store";
 
 export interface MappedDetails {
   label: string;

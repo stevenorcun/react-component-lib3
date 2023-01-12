@@ -3,14 +3,14 @@ import React from "react";
 import {
   getObjectTypeLabel,
   getObjectTypeStrIcon,
-} from "@/constants/entity-related";
+} from "../../../../constants/entity-related";
 
-import IconArrow from "@/assets/images/icons/IconArrowUp";
-import IconArrowDown from "@/assets/images/icons/IconArrowDown";
+import IconArrow from "../../../../assets/images/icons/IconArrowUp";
+import IconArrowDown from "../../../../assets/images/icons/IconArrowDown";
 
-import { selectOntologyConfig } from "@/store/ontology";
-import { useAppSelector } from "@/store/hooks";
-import { ICON_STORE } from "@/assets/images/icons/icon-store";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { useAppSelector } from "../../../../store/hooks";
+import { ICON_STORE } from "../../../../assets/images/icons/icon-store";
 import styles from "./componentSubtitle.scss";
 
 interface ComponentSubtitleProps {

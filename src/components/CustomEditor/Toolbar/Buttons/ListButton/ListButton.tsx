@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import BaseButton from "@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
-import IconNumList from "@/assets/images/icons/IconNumList";
-import IconPointList from "@/assets/images/icons/IconPointList";
+import BaseButton from "../../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import IconNumList from "../../../../../assets/images/icons/IconNumList";
+import IconPointList from "../../../../../assets/images/icons/IconPointList";
 import styles from "./styles.scss";
 
 interface ListButtonProps {

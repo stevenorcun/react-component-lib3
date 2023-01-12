@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import cx from "classnames";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { removeFromSelection, selectGraph, setGraphFocus } from "@/store/graph";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import {
+  removeFromSelection,
+  selectGraph,
+  setGraphFocus,
+} from "../../../store/graph";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
 import {
   getEntityStrIcon,
   getEntityTitleProperty,
-} from "@/constants/entity-related";
-import { selectOntologyConfig } from "@/store/ontology";
+} from "../../../constants/entity-related";
+import { selectOntologyConfig } from "../../../store/ontology";
 import {
   removeFromSelectedEntities,
   selectMap,
   setMapFocus,
-} from "@/store/map";
+} from "../../../store/map";
 
-import RemoveButton from "@/components/Buttons/RemoveButton/RemoveButton";
+import RemoveButton from "../../../components/Buttons/RemoveButton/RemoveButton";
 
-import SvgIconSelect from "@/assets/images/icons/IconSelect";
+import SvgIconSelect from "../../../assets/images/icons/IconSelect";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

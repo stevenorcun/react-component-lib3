@@ -4,7 +4,7 @@ import axios, {
   AxiosRequestConfig,
   Method,
 } from "axios";
-import { SESSION_STORAGE_KEYS } from "@/constants/storage-keys";
+import { SESSION_STORAGE_KEYS } from "../../constants/storage-keys";
 import { LoginResponse } from "./auth-api";
 
 export default class BaseApi {

@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-import BaseApi from "@/API/controllers/base-api";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import BaseApi from "../../API/controllers/base-api";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
 import {
   CUSTOMIZED_ACTION_CALLBACK,
   CustomizedActionsType,
-} from "@/constants/customization";
+} from "../../constants/customization";
 // Hook imports
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import { useGlobalModalContext } from "../../hooks/useGlobalModal";
 // Store imports
-import { useAppSelector } from "@/store/hooks";
+import { useAppSelector } from "../../store/hooks";
 import {
   ActionState,
   selectCustomizedActions,
-} from "@/store/customizedActions";
-import { selectTags } from "@/store/tags";
+} from "../../store/customizedActions";
+import { selectTags } from "../../store/tags";
 // Component imports
-import Options from "@/components/Options/Options";
+import Options from "../../components/Options/Options";
 // Icon imports
-import IconArrow from "@/assets/images/icons/IconArrow";
-import IconLoader from "@/assets/images/icons/IconLoader";
+import IconArrow from "../../assets/images/icons/IconArrow";
+import IconLoader from "../../assets/images/icons/IconLoader";
 
 import styles from "./styles.scss";
 

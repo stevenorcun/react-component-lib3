@@ -3,19 +3,23 @@ import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconSearch from "@/assets/images/icons/IconSearch";
-import IconSearchAlt from "@/assets/images/icons/IconSearchAlt";
-import Man from "@/assets/images/icons/entityTypes/Man";
-import IconPhone from "@/assets/images/icons/IconPhone";
-import Container from "@/containers/Container/Container";
-import { FormTemplateLoader } from "@/components/Browser/FormTemplateLoader/FormTemplateLoader";
+import IconSearch from "../../../assets/images/icons/IconSearch";
+import IconSearchAlt from "../../../assets/images/icons/IconSearchAlt";
+import Man from "../../../assets/images/icons/entityTypes/Man";
+import IconPhone from "../../../assets/images/icons/IconPhone";
+import Container from "../../../containers/Container/Container";
+import { FormTemplateLoader } from "../../../components/Browser/FormTemplateLoader/FormTemplateLoader";
 import {
   BrowserSearchTemplate,
   BrowserTabType,
-} from "@/constants/browser-related";
-import { BrowserState, createTabByType, selectBrowser } from "@/store/browser";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { ignore, unhandle } from "@/utils/DOM";
+} from "../../../constants/browser-related";
+import {
+  BrowserState,
+  createTabByType,
+  selectBrowser,
+} from "../../../store/browser";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { ignore, unhandle } from "../../../utils/DOM";
 import styles from "./BrowserHomePage.scss";
 
 interface AdvancedSearchByModelProps {

@@ -1,10 +1,10 @@
 import React from "react";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { unhandle } from "@/utils/DOM";
-import IconClean from "@/assets/images/icons/IconClean";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../../API/DataModels/Database/NovaEntityEnum";
+import { unhandle } from "../../../utils/DOM";
+import IconClean from "../../../assets/images/icons/IconClean";
 import styles from "./styles.scss";
 
 export interface IHistogramElementData {

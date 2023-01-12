@@ -1,5 +1,5 @@
-import React from 'react';
-import { STYLE_BY_FILL_COLORS } from '@/constants/graph-themes';
+import React from "react";
+import { STYLE_BY_FILL_COLORS } from "../../../../constants/graph-themes";
 
 const IconStickyNote = (props: React.SVGProps<SVGSVGElement> = {}) => (
   <svg

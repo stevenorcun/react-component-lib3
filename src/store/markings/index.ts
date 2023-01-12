@@ -1,27 +1,30 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Marking } from '@/API/controllers/markings-api';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Marking } from "../../API/controllers/markings-api";
 
 export interface MarkingsConfigState {
   markings: Marking[];
 }
 
 const initialState: MarkingsConfigState = {
-  markings: []
+  markings: [],
 };
 
 const markingsConfigSlice = createSlice({
-  name: 'markingsConfig',
+  name: "markingsConfig",
   initialState: initialState,
   reducers: {
     setMarkingsConfig: (state, action: PayloadAction<Marking[]>) => {
       state.markings = [...action.payload];
     },
-    editMarkingsConfig: (state, action: PayloadAction<{ id: string, key: string, value: string }>) => {
+    editMarkingsConfig: (
+      state,
+      action: PayloadAction<{ id: string; key: string; value: string }>
+    ) => {
       const { payload } = action;
       if (payload?.id) {
-        const mIndex = state.markings.findIndex(m => m.id === payload.id);
+        const mIndex = state.markings.findIndex((m) => m.id === payload.id);
         if (mIndex >= 0) {
-          const newMarking = { ...state.markings[mIndex] }
+          const newMarking = { ...state.markings[mIndex] };
           newMarking[payload.key] = payload.value;
           state.markings[mIndex] = newMarking;
         }

@@ -6,24 +6,24 @@ import {
   sortAlphabeticallyDesc,
   sortAsc,
   sortDesc,
-} from "@/utils/general";
+} from "../../../../utils/general";
 import {
   getEntityTypeId,
   getIdProperty,
   getLinkIdPropKey,
   getEntityTitleProperty,
-} from "@/constants/entity-related";
+} from "../../../../constants/entity-related";
 import {
   EntitySummary,
   RelatedSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { selectOntologyConfig } from "@/store/ontology";
-import { useAppSelector } from "@/store/hooks";
+} from "../../../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { useAppSelector } from "../../../../store/hooks";
 
-import HeaderFiltre from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderFiltre/ComponentHeaderFiltre";
-import Subtitle from "@/pages/Entity/ComponentsEntityDetail/ComponentSubtitle/ComponentSubtitle";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import HeaderFiltre from "../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderFiltre/ComponentHeaderFiltre";
+import Subtitle from "../../../../pages/Entity/ComponentsEntityDetail/ComponentSubtitle/ComponentSubtitle";
+import DraggableEntityOrSummary from "../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import HeaderArray from "./ComponentHeaderArray/HeaderArray";
 import ContentArray from "./ComponentContentArray";

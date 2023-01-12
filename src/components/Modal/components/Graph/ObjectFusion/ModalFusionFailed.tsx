@@ -1,10 +1,10 @@
 import React from "react";
 import cx from "classnames";
-import IconCheck from "@/assets/images/icons/IconCheck";
-import IconCrossCircle from "@/assets/images/icons/IconCrossBlue";
-import Button from "@/components/Buttons/Button/Button";
+import IconCheck from "../../../../../assets/images/icons/IconCheck";
+import IconCrossCircle from "../../../../../assets/images/icons/IconCrossBlue";
+import Button from "../../../../../components/Buttons/Button/Button";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import styles from "@/components/Modal/components/Graph/ObjectFusion/styles.scss";
+import styles from "../../../../../components/Modal/components/Graph/ObjectFusion/styles.scss";
 
 const ModalFusionFailed = ({ onClose }: { onClose: () => void }) => {
   const handleClose = () => {

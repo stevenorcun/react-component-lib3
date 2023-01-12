@@ -6,14 +6,14 @@ import {
   getEntityTitleProperty,
   getEntityTypeId,
   getObjectTypeLabel,
-} from "@/constants/entity-related";
-import HeaderSubtitleIcon from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
-import { RelatedSummariesProps } from "@/components/Sheet/Tabs/TabEntitySummary/Related/Related";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+} from "../../../../../constants/entity-related";
+import HeaderSubtitleIcon from "../../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
+import { RelatedSummariesProps } from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/Related";
+import DraggableEntityOrSummary from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import { useAppSelector } from "../../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../../store/ontology";
 
-import IconLink from "@/assets/images/icons/IconLink";
+import IconLink from "../../../../../assets/images/icons/IconLink";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import RelatedFooter from "../Components/Footer/RelatedFooterComponent";

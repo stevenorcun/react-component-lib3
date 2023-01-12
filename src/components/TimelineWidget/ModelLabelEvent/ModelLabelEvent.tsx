@@ -1,7 +1,7 @@
-import styles from '@/components/TimelineWidget/styles.scss';
-import IconSmallDots from '@/assets/images/icons/IconSmallDots';
-import cx from 'classnames';
-import React from 'react';
+import styles from "../../../components/TimelineWidget/styles.scss";
+import IconSmallDots from "../../../assets/images/icons/IconSmallDots";
+import cx from "classnames";
+import React from "react";
 
 interface ModelLabelEventProps {
   name: string;

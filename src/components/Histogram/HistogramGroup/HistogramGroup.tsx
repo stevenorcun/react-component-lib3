@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import IconSortDown from "@/assets/images/icons/IconSortDown";
+import IconSortDown from "../../../assets/images/icons/IconSortDown";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";
-import { IHistogramElementData } from "@/components/Histogram/HistogramGroups/HistogramGroups";
-import { CanImplementHistogramState } from "@/store/shared/histogram";
+import { IHistogramElementData } from "../../../components/Histogram/HistogramGroups/HistogramGroups";
+import { CanImplementHistogramState } from "../../../store/shared/histogram";
 import HistogramElement from "../HistogramElement/HistogramElement";
 import styles from "./styles.scss";
 import histogramElementStyles from "../HistogramElement/styles.scss";

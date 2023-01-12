@@ -1,15 +1,15 @@
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../API/DataModels/Database/NovaEntityEnum";
+import { EntityDto } from "../API/DataModels/Database/NovaObject";
 // Components
-import CaseHeader from "@/components/Sheet/Headers/CaseHeader/CaseHeader";
-import EntityHeader from "@/components/Sheet/Headers/EntityHeader/EntityHeader";
-import TabCaseSummary from "@/components/Sheet/Tabs/TabCaseSummary/TabCaseSummary";
-import TabEntitySummary from "@/components/Sheet/Tabs/TabEntitySummary/TabEntitySummary";
-import TabMap from "@/components/Sheet/Tabs/TabMap/TabMap";
-import TabMultimediaFile from "@/components/Sheet/Tabs/TabMultimediaFile/TabMultimediaFile";
-import TabProperty from "@/components/Sheet/Tabs/TabProperty/TabProperty";
-import TabRecentActivity from "@/components/Sheet/Tabs/TabRecentActivity/TabRecentActivity";
-import TabRelated from "@/components/Sheet/Tabs/TabRelated/TabRelated";
+import CaseHeader from "../components/Sheet/Headers/CaseHeader/CaseHeader";
+import EntityHeader from "../components/Sheet/Headers/EntityHeader/EntityHeader";
+import TabCaseSummary from "../components/Sheet/Tabs/TabCaseSummary/TabCaseSummary";
+import TabEntitySummary from "../components/Sheet/Tabs/TabEntitySummary/TabEntitySummary";
+import TabMap from "../components/Sheet/Tabs/TabMap/TabMap";
+import TabMultimediaFile from "../components/Sheet/Tabs/TabMultimediaFile/TabMultimediaFile";
+import TabProperty from "../components/Sheet/Tabs/TabProperty/TabProperty";
+import TabRecentActivity from "../components/Sheet/Tabs/TabRecentActivity/TabRecentActivity";
+import TabRelated from "../components/Sheet/Tabs/TabRelated/TabRelated";
 
 interface SheetTab {
   key: string;

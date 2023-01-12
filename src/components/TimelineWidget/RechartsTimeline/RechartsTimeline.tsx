@@ -16,14 +16,21 @@ import cx from "classnames";
 import * as d3 from "d3-scale";
 import lodash from "lodash";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { DAY, HOUR, MINUTE, MONTH, SECOND, YEAR } from "@/constants/date";
-import IconDate from "@/assets/images/icons/Dates";
-import IconArrowDown from "@/assets/images/icons/IconArrowDown";
-import IconEllipsisH from "@/assets/images/icons/IconToolEllipsisH";
-import { unhandle } from "@/utils/DOM";
-import DateTimePicker from "@/lib/DateTimePicker/DateTimePicker";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { CanImplementTimelineState } from "@/store/shared/timeline";
+import {
+  DAY,
+  HOUR,
+  MINUTE,
+  MONTH,
+  SECOND,
+  YEAR,
+} from "../../../constants/date";
+import IconDate from "../../../assets/images/icons/Dates";
+import IconArrowDown from "../../../assets/images/icons/IconArrowDown";
+import IconEllipsisH from "../../../assets/images/icons/IconToolEllipsisH";
+import { unhandle } from "../../../utils/DOM";
+import DateTimePicker from "../../../lib/DateTimePicker/DateTimePicker";
+import { NovaEntityType } from "../../../API/DataModels/Database/NovaEntityEnum";
+import { CanImplementTimelineState } from "../../../store/shared/timeline";
 import styles from "./RechartsTimeline.scss";
 
 export interface ChartMouseEvent {

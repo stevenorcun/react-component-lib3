@@ -1,11 +1,14 @@
-import { EntityDto } from '@/API/DataModels/Database/NovaObject';
-import { NovaEntityType } from '@/API/DataModels/Database/NovaEntityEnum';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { CanImplementTimelineState, initTimelineState } from '@/store/shared/timeline';
+import { PayloadAction } from "@reduxjs/toolkit";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import {
+  CanImplementTimelineState,
+  initTimelineState,
+} from "../../store/shared/timeline";
 
 export interface CanImplementHistogramState {
   // necessary in histogram
-  timelineHighlightedIds: CanImplementTimelineState['timelineHighlightedIds'];
+  timelineHighlightedIds: CanImplementTimelineState["timelineHighlightedIds"];
   histogramHighlights: {
     types: {
       [type in NovaEntityType]?: boolean;
@@ -20,23 +23,21 @@ export interface CanImplementHistogramState {
   };
 }
 
-export const initialHistogramState: () => CanImplementHistogramState = () => (
-  {
-    timelineHighlightedIds: initTimelineState().timelineHighlightedIds,
-    histogramHighlights: {
-      types: {},
-      properties: {
-        entityIds: {},
-        rowIds: {},
-      },
+export const initialHistogramState: () => CanImplementHistogramState = () => ({
+  timelineHighlightedIds: initTimelineState().timelineHighlightedIds,
+  histogramHighlights: {
+    types: {},
+    properties: {
+      entityIds: {},
+      rowIds: {},
     },
-  }
-);
+  },
+});
 
 export const highlightReducers = {
   toggleAuxiliaryHistogramHighlightedTypes: (
     state,
-    action: PayloadAction<NovaEntityType>,
+    action: PayloadAction<NovaEntityType>
   ) => {
     const type = action.payload;
     if (state.histogramHighlights.types[type]) {
@@ -61,7 +62,7 @@ export const highlightReducers = {
     action: PayloadAction<{
       histogramElementId: string;
       entities: Partial<EntityDto>[];
-    }>,
+    }>
   ) => {
     const { histogramElementId, entities } = action.payload;
     // toggle OFF
@@ -76,20 +77,15 @@ export const highlightReducers = {
       });
     } else {
       // toggle ON
-      state.histogramHighlights
-        .properties
-        .rowIds[histogramElementId] = entities
-          .reduce((acc: string[], e) => {
-            if (e.id) acc.push(e.id);
-            return acc;
-          }, []);
+      state.histogramHighlights.properties.rowIds[histogramElementId] =
+        entities.reduce((acc: string[], e) => {
+          if (e.id) acc.push(e.id);
+          return acc;
+        }, []);
       entities.forEach(({ id }) => {
         if (id) {
-          state.histogramHighlights
-            .properties
-            .entityIds[id] = state.histogramHighlights
-              .properties
-              .entityIds[id] + 1 || 1;
+          state.histogramHighlights.properties.entityIds[id] =
+            state.histogramHighlights.properties.entityIds[id] + 1 || 1;
         }
       });
     }

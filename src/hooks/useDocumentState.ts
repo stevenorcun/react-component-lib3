@@ -3,12 +3,8 @@
  */
 
 /* eslint-disable no-restricted-syntax */
-import {
-  useState,
-  useLayoutEffect,
-  useReducer,
-} from 'react';
-import { toast } from 'react-toastify';
+import { useState, useLayoutEffect, useReducer } from "react";
+import { toast } from "react-toastify";
 import {
   EditorState,
   ContentState,
@@ -17,7 +13,7 @@ import {
   Modifier,
   CompositeDecorator,
   genKey,
-} from 'draft-js';
+} from "draft-js";
 import {
   calculateHeightOverflow,
   checkPageHeight,
@@ -26,7 +22,7 @@ import {
   isLastBlock,
   getOverflowBlockKeys,
   insertContentBlock,
-} from '@/utils/editor';
+} from "../utils/editor";
 
 export interface DocumentStateOptions {
   decorator?: CompositeDecorator;
@@ -70,9 +66,17 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * @param payload New states to apply
    * @returns New states with updated pages
    */
-  const updateStates = (editorStates, index: number | number[], payload: any) => {
+  const updateStates = (
+    editorStates,
+    index: number | number[],
+    payload: any
+  ) => {
     const states = [...editorStates];
-    if (index === undefined || index === null || (Array.isArray(index) && !index.length)) {
+    if (
+      index === undefined ||
+      index === null ||
+      (Array.isArray(index) && !index.length)
+    ) {
       return states;
     }
     if (Array.isArray(index)) {
@@ -97,25 +101,25 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
   };
   const stateReducer = (
     state: {
-      state: EditorState,
-      ref: any,
+      state: EditorState;
+      ref: any;
     }[],
-    action,
+    action
   ) => {
     let states = [...state];
     let newState;
     switch (action.type) {
-      case 'new':
+      case "new":
         newState = {
           state: EditorState.createEmpty(options?.decorator),
           ref: undefined,
         };
         states.push(newState);
         break;
-      case 'remove':
+      case "remove":
         states = removeStates(states, action.index);
         break;
-      case 'set':
+      case "set":
         if (action.payload && action.payload.length) {
           states = action.payload.map((content) => ({
             state: EditorState.createWithContent(content, options?.decorator),
@@ -129,27 +133,31 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     }
     return [...states];
   };
-  const [editorStates, dispatchStates] = useReducer<(
-  state: {
-    state: EditorState,
-    ref: any,
-  }[], action: any) => {
-    state: EditorState,
-    ref: any,
-  }[]>(
+  const [editorStates, dispatchStates] = useReducer<
+    (
+      state: {
+        state: EditorState;
+        ref: any;
+      }[],
+      action: any
+    ) => {
+      state: EditorState;
+      ref: any;
+    }[]
+  >(
     stateReducer,
     initState && initState.length
       ? initState.map((content) => ({
-        state: EditorState.createWithContent(content, options?.decorator),
-        ref: undefined,
-      }))
-      : [
-        {
-          state: EditorState.createEmpty(options?.decorator),
+          state: EditorState.createWithContent(content, options?.decorator),
           ref: undefined,
-        },
-      ],
-    );
+        }))
+      : [
+          {
+            state: EditorState.createEmpty(options?.decorator),
+            ref: undefined,
+          },
+        ]
+  );
 
   /**
    * Give the focus to a document's page
@@ -163,7 +171,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * Add a new page in the document
    */
   const addNewPage = () => {
-    dispatchStates({ type: 'new' });
+    dispatchStates({ type: "new" });
   };
 
   /**
@@ -171,7 +179,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * @param index Page's index
    */
   const removePage = (index: number) => {
-    dispatchStates({ index, type: 'remove' });
+    dispatchStates({ index, type: "remove" });
   };
 
   /**
@@ -187,7 +195,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const currentState = editorStates[index].state;
     const contentState = currentState.getCurrentContent();
     const selectionState = currentState.getSelection();
-    const words = contentBlock.getText().split(' ');
+    const words = contentBlock.getText().split(" ");
     const lastWord = words[words.length - 1];
     // Remove word from current page
     const wordSelection = selectionState.merge({
@@ -196,12 +204,15 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const newContentState = Modifier.replaceText(
       contentState,
       wordSelection,
-      '',
+      ""
     );
     // Write word in next page
     const nextEditorState = editorStates[index + 1]?.state;
     const nextSelectionState = nextEditorState.getSelection();
-    const firstBlockKey = nextEditorState.getCurrentContent()?.getFirstBlock()?.getKey();
+    const firstBlockKey = nextEditorState
+      .getCurrentContent()
+      ?.getFirstBlock()
+      ?.getKey();
     const nextSelectionStateStart = nextSelectionState.merge({
       anchorKey: firstBlockKey,
       anchorOffset: 0,
@@ -211,7 +222,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const res = Modifier.insertText(
       nextEditorState.getCurrentContent(),
       nextSelectionStateStart,
-      lastWord,
+      lastWord
     );
     dispatchStates({
       index: [index, index + 1],
@@ -219,13 +230,9 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
         EditorState.push(
           currentState,
           newContentState,
-          'split-characters-page',
+          "split-characters-page"
         ),
-        EditorState.push(
-          nextEditorState,
-          res,
-          'split-characters-page',
-        ),
+        EditorState.push(nextEditorState, res, "split-characters-page"),
       ],
     });
   };
@@ -242,35 +249,45 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    */
   const addNewLineBetweenAtomicGroupChained = (
     editorState: EditorState,
-    contentBlocks: ContentBlock[],
+    contentBlocks: ContentBlock[]
   ) => {
     // Atomic group
     if (contentBlocks.length < 3) {
       return editorState;
     }
     const contentState = editorState.getCurrentContent();
-    const previousBlock = contentState.getBlockBefore(contentBlocks[0].getKey());
-    const nextBlock = contentState.getBlockAfter(contentBlocks[contentBlocks.length - 1].getKey());
+    const previousBlock = contentState.getBlockBefore(
+      contentBlocks[0].getKey()
+    );
+    const nextBlock = contentState.getBlockAfter(
+      contentBlocks[contentBlocks.length - 1].getKey()
+    );
     let eState = editorState;
-    if (previousBlock?.getType() === 'atomic') {
+    if (previousBlock?.getType() === "atomic") {
       const newSelection = new SelectionState({
         anchorKey: previousBlock.getKey(),
         anchorOffset: previousBlock.getLength(),
         focusKey: previousBlock.getKey(),
         focusOffset: previousBlock.getLength(),
       });
-      const editorStateSelection = EditorState.acceptSelection(editorState, newSelection);
-      eState = insertContentBlock('after', editorStateSelection);
+      const editorStateSelection = EditorState.acceptSelection(
+        editorState,
+        newSelection
+      );
+      eState = insertContentBlock("after", editorStateSelection);
     }
-    if (nextBlock?.getType() === 'atomic') {
+    if (nextBlock?.getType() === "atomic") {
       const newSelection = new SelectionState({
         anchorKey: nextBlock.getKey(),
         anchorOffset: 0,
         focusKey: nextBlock.getKey(),
         focusOffset: 0,
       });
-      const editorStateSelection = EditorState.acceptSelection(editorState, newSelection);
-      eState = insertContentBlock('before', editorStateSelection);
+      const editorStateSelection = EditorState.acceptSelection(
+        editorState,
+        newSelection
+      );
+      eState = insertContentBlock("before", editorStateSelection);
     }
     return eState;
   };
@@ -285,7 +302,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
   const addBlocksToPage = (
     editorState: EditorState,
     contentBlocks: ContentBlock[],
-    position: number | 'start' | 'end',
+    position: number | "start" | "end"
   ): ContentState => {
     const contentState = editorState.getCurrentContent();
     const blockMapArray: any[] = contentState.getBlockMap().toArray();
@@ -293,7 +310,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const newContentBlocks: any[] = [];
     for (const contentBlock of contentBlocks) {
       if (!contentBlock) {
-        throw Error('Unable to get data from contentBlock');
+        throw Error("Unable to get data from contentBlock");
       }
       const newContentBlock = new ContentBlock({
         key: genKey(),
@@ -305,9 +322,9 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
       });
       newContentBlocks.push(newContentBlock);
     }
-    if (position === 'start') {
+    if (position === "start") {
       newBlockMapArray = [...newContentBlocks, ...newBlockMapArray];
-    } else if (position === 'end') {
+    } else if (position === "end") {
       newBlockMapArray = [...newBlockMapArray, ...newContentBlocks];
     } else {
       newBlockMapArray[position] = newContentBlocks[position];
@@ -323,9 +340,12 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    */
   const removeBlocksFromPage = (
     currentState: EditorState,
-    contentBlocks: ContentBlock[],
+    contentBlocks: ContentBlock[]
   ): ContentState => {
-    const stateAddedLines = addNewLineBetweenAtomicGroupChained(currentState, contentBlocks);
+    const stateAddedLines = addNewLineBetweenAtomicGroupChained(
+      currentState,
+      contentBlocks
+    );
     const contentState = stateAddedLines.getCurrentContent();
     const startBlock = contentBlocks[0];
     const endBlock = contentBlocks[contentBlocks.length - 1];
@@ -352,7 +372,7 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const newContentState = Modifier.removeRange(
       contentState,
       removeSelection,
-      'forward',
+      "forward"
     );
     return newContentState;
   };
@@ -369,24 +389,43 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     currentState: EditorState,
     contentBlocks: ContentBlock[],
     targetEditorState: EditorState,
-    position: number | 'start' | 'end',
+    position: number | "start" | "end"
   ) => {
     if (!currentState || !targetEditorState || !contentBlocks?.length) {
       return undefined;
     }
     let contentBlocksWithAtomic = [...contentBlocks];
     if (contentBlocks.length === 1) {
-      contentBlocksWithAtomic = getAtomicGroup(currentState, contentBlocks[0].getKey());
+      contentBlocksWithAtomic = getAtomicGroup(
+        currentState,
+        contentBlocks[0].getKey()
+      );
     } else {
-      const firstContentBlocksWithAtomic = getAtomicGroup(currentState, contentBlocks[0].getKey());
-      const lastContentBlocksWithAtomic = getAtomicGroup(currentState, contentBlocks[contentBlocks.length - 1].getKey());
-      contentBlocksWithAtomic = [...firstContentBlocksWithAtomic, ...contentBlocksWithAtomic, ...lastContentBlocksWithAtomic];
-      contentBlocksWithAtomic = contentBlocksWithAtomic.filter((value, index) => contentBlocksWithAtomic.indexOf(value) === index);
+      const firstContentBlocksWithAtomic = getAtomicGroup(
+        currentState,
+        contentBlocks[0].getKey()
+      );
+      const lastContentBlocksWithAtomic = getAtomicGroup(
+        currentState,
+        contentBlocks[contentBlocks.length - 1].getKey()
+      );
+      contentBlocksWithAtomic = [
+        ...firstContentBlocksWithAtomic,
+        ...contentBlocksWithAtomic,
+        ...lastContentBlocksWithAtomic,
+      ];
+      contentBlocksWithAtomic = contentBlocksWithAtomic.filter(
+        (value, index) => contentBlocksWithAtomic.indexOf(value) === index
+      );
     }
     // Add content block to target page
     let newTargetContentState = targetEditorState;
     try {
-      newTargetContentState = addBlocksToPage(targetEditorState, contentBlocksWithAtomic, position);
+      newTargetContentState = addBlocksToPage(
+        targetEditorState,
+        contentBlocksWithAtomic,
+        position
+      );
     } catch (error: any) {
       toast.error(error);
       return undefined;
@@ -394,14 +433,17 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const newTargetES = EditorState.push(
       targetEditorState,
       newTargetContentState,
-      'split-block-page',
+      "split-block-page"
     );
     // Remove content block from current page
-    const newContentState = removeBlocksFromPage(currentState, contentBlocksWithAtomic);
+    const newContentState = removeBlocksFromPage(
+      currentState,
+      contentBlocksWithAtomic
+    );
     const newES = EditorState.push(
       currentState,
       newContentState,
-      'split-block-page',
+      "split-block-page"
     );
     return {
       target: newTargetES,
@@ -414,9 +456,17 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * @param index Page's index
    * @param contentBlocks List of following content blocks
    */
-  const splitBlockToNextPage = (index: number, contentBlocks: ContentBlock[]) => {
+  const splitBlockToNextPage = (
+    index: number,
+    contentBlocks: ContentBlock[]
+  ) => {
     const currentState = editorStates[index]?.state;
-    const states = splitBlocks(currentState, contentBlocks, editorStates[index + 1]?.state, 'start');
+    const states = splitBlocks(
+      currentState,
+      contentBlocks,
+      editorStates[index + 1]?.state,
+      "start"
+    );
     if (!states) {
       return;
     }
@@ -424,7 +474,11 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     let eState = states.current;
     if (isLastBlock(currentState, selectionState.getAnchorKey())) {
       focusPage(index + 1);
-    } else if (states.current.getCurrentContent().getBlockForKey(selectionState.getAnchorKey())) {
+    } else if (
+      states.current
+        .getCurrentContent()
+        .getBlockForKey(selectionState.getAnchorKey())
+    ) {
       eState = EditorState.acceptSelection(states.current, selectionState);
     }
     dispatchStates({
@@ -438,8 +492,16 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * @param index Page's index
    * @param contentBlocks List of following content blocks
    */
-  const splitBlockToPreviousPage = (index: number, contentBlocks: ContentBlock[]) => {
-    const states = splitBlocks(editorStates[index]?.state, contentBlocks, editorStates[index - 1]?.state, 'end');
+  const splitBlockToPreviousPage = (
+    index: number,
+    contentBlocks: ContentBlock[]
+  ) => {
+    const states = splitBlocks(
+      editorStates[index]?.state,
+      contentBlocks,
+      editorStates[index - 1]?.state,
+      "end"
+    );
     if (!states) {
       return;
     }
@@ -454,7 +516,10 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
    * @param index Page's index
    */
   const manageOverflowPage = (index: number) => {
-    const blockKeys = getOverflowBlockKeys(editorStates[index].ref, options?.zoom);
+    const blockKeys = getOverflowBlockKeys(
+      editorStates[index].ref,
+      options?.zoom
+    );
     if (!blockKeys?.length) {
       return;
     }
@@ -468,17 +533,27 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
     const lastChange = editorState.getLastChangeType();
     const lastBlock = contentState.getLastBlock();
     // If adding a character in the last line, split the text between current and next page
-    if (lastChange === 'insert-characters' && selectionState.getStartKey() === lastBlock.getKey()) {
+    if (
+      lastChange === "insert-characters" &&
+      selectionState.getStartKey() === lastBlock.getKey()
+    ) {
       splitText(index, lastBlock);
       return;
     }
-    const heightOverflow = calculateHeightOverflow(editorStates[index].ref, options?.zoom);
+    const heightOverflow = calculateHeightOverflow(
+      editorStates[index].ref,
+      options?.zoom
+    );
     // One block take all the page height
     if (heightOverflow && heightOverflow >= 1082 && blockKeys.length === 1) {
-      toast.warning('Un bloc de texte est trop grand. Diviser le bloc en ajoutant un retour à la ligne.');
+      toast.warning(
+        "Un bloc de texte est trop grand. Diviser le bloc en ajoutant un retour à la ligne."
+      );
       return;
     }
-    const contentBlocks = blockKeys.map((key) => contentState.getBlockForKey(key));
+    const contentBlocks = blockKeys.map((key) =>
+      contentState.getBlockForKey(key)
+    );
     splitBlockToNextPage(index, contentBlocks);
   };
 
@@ -490,23 +565,27 @@ export function useDocumentState(initState?, options?: DocumentStateOptions) {
         // TODO: Not the best solution, cause the block can contain multiple lines
         // TODO: Need to split text inside the block
         manageOverflowPage(index);
-      // If content is not too long and we have a next page
+        // If content is not too long and we have a next page
       } else if (editorStates[index + 1]) {
-        const nextPageContentState = editorStates[index + 1].state.getCurrentContent();
+        const nextPageContentState =
+          editorStates[index + 1].state.getCurrentContent();
         const nextPageFirstBlock = nextPageContentState.getFirstBlock();
         const nextPageFirstGroup = getAtomicGroup(
-          editorStates[index + 1].state, nextPageFirstBlock.getKey(),
+          editorStates[index + 1].state,
+          nextPageFirstBlock.getKey()
         );
-        const nextPageFirstGroupKeys = nextPageFirstGroup.map((block) => block?.getKey());
+        const nextPageFirstGroupKeys = nextPageFirstGroup.map((block) =>
+          block?.getKey()
+        );
         // If the first block of next page can take the free place in current page, split the block
         if (
-          nextPageContentState.hasText()
-          && nextPageFirstBlock
-          && checkAddToPage(
+          nextPageContentState.hasText() &&
+          nextPageFirstBlock &&
+          checkAddToPage(
             currentState.ref,
             editorStates[index + 1].ref,
             nextPageFirstGroupKeys,
-            options?.zoom,
+            options?.zoom
           )
         ) {
           splitBlockToPreviousPage(index + 1, [nextPageFirstBlock]);

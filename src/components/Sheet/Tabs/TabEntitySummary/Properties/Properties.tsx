@@ -7,17 +7,17 @@ import {
   ENTITY_PROPERTY_DETAILS,
   getEntityPropLabel,
   getPropStrIcon,
-} from "@/constants/entity-related";
+} from "../../../../../constants/entity-related";
 
-import IconBars from "@/assets/images/icons/IconList";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
+import IconBars from "../../../../../assets/images/icons/IconList";
+import { EntityDto } from "../../../../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../../../../API/DataModels/Database/NovaEntityEnum";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import RelatedFooter from "../Components/Footer/RelatedFooterComponent";
 import HeaderComponent from "../Components/Header/HeaderComponent";
 import styles from "./properties.scss";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useAppSelector } from "../../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../../store/ontology";
 
 const layoutLocalStorageKey = "propertiesLayout";
 const propertiesSettingsLocalStorageKey = "propertiesSettings";

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 
-import BaseButton from '@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton';
-import ColourDropdownMenu from '@/lib/DropdownMenu/ColourDropdownMenu/ColourDropdownMenu';
+import BaseButton from "../../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import ColourDropdownMenu from "../../../../../lib/DropdownMenu/ColourDropdownMenu/ColourDropdownMenu";
 
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 interface ColorButtonProps {
   onClick: any;
@@ -12,12 +12,7 @@ interface ColorButtonProps {
   tooltip?: string;
 }
 
-const ColorButton = ({
-  onClick,
-  icon,
-  color,
-  tooltip,
-}: ColorButtonProps) => {
+const ColorButton = ({ onClick, icon, color, tooltip }: ColorButtonProps) => {
   const refButton = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const toggle = () => {
@@ -36,9 +31,9 @@ const ColorButton = ({
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOut);
+    document.addEventListener("click", handleClickOut);
     return () => {
-      document.removeEventListener('click', handleClickOut);
+      document.removeEventListener("click", handleClickOut);
     };
   }, []);
 

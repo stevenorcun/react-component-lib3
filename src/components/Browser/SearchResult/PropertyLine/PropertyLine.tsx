@@ -3,11 +3,11 @@ import cx from "classnames";
 import Moment from "react-moment";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconGraphNetwork from "@/assets/images/icons/IconGraphNetwork";
-import IconGeoSlim from "@/assets/images/icons/IconGeoSlim";
-import COUNTRY_DETAILS from "@/assets/images/icons/flags";
-import { ENTITY_GENDER_DETAILS } from "@/constants/entity-related";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import IconGraphNetwork from "../../../../assets/images/icons/IconGraphNetwork";
+import IconGeoSlim from "../../../../assets/images/icons/IconGeoSlim";
+import COUNTRY_DETAILS from "../../../../assets/images/icons/flags";
+import { ENTITY_GENDER_DETAILS } from "../../../../constants/entity-related";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import styles from "./PropertyLine.scss";
 
 interface AdvancedSearchResultPropertyLineProps {

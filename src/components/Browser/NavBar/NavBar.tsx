@@ -1,9 +1,9 @@
 import React from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconPlus from "@/assets/images/icons/IconPlus";
-import BrowserNavBarTab from "@/components/Browser/NavBar/Tab/Tab";
-import { IBrowserSearchTab } from "@/constants/browser-related";
+import IconPlus from "../../../assets/images/icons/IconPlus";
+import BrowserNavBarTab from "../../../components/Browser/NavBar/Tab/Tab";
+import { IBrowserSearchTab } from "../../../constants/browser-related";
 import styles from "./styles.scss";
 
 interface AuxProps {

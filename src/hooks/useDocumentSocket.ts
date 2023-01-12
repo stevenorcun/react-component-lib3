@@ -1,42 +1,44 @@
-import {
-  useState,
-  useEffect,
-  useCallback,
-  useRef,
-} from 'react';
+import { useState, useEffect, useCallback, useRef } from "react";
 import {
   EditorState,
   SelectionState,
   convertFromRaw,
   RichUtils,
-} from 'draft-js';
-import { useSocketContext } from '@/hooks/useSocket';
-import { useDocumentState, DocumentStateOptions } from '@/hooks/useDocumentState';
-import { useAppSelector } from '@/store/hooks';
-import { selectToken } from '@/store/token';
-import { selectCase } from '@/store/case';
-import { USER_COLORS } from '@/constants/editor';
-import { SESSION_STORAGE_KEYS } from '@/constants/storage-keys';
+} from "draft-js";
+import { useSocketContext } from "../hooks/useSocket";
+import {
+  useDocumentState,
+  DocumentStateOptions,
+} from "../hooks/useDocumentState";
+import { useAppSelector } from "../store/hooks";
+import { selectToken } from "../store/token";
+import { selectCase } from "../store/case";
+import { USER_COLORS } from "../constants/editor";
+import { SESSION_STORAGE_KEYS } from "../constants/storage-keys";
 
 interface DocumentSocketConfig extends DocumentStateOptions {
   docId?: string;
 }
 
-export default function useDocSocket(initState?, config?: DocumentSocketConfig) {
+export default function useDocSocket(
+  initState?,
+  config?: DocumentSocketConfig
+) {
   const documentRef = useRef<any>(null);
-  const [userColor, setUserColor] = useState('black');
+  const [userColor, setUserColor] = useState("black");
   const [onlineUsers, setOnlineUsers] = useState<any[]>([]);
   const [onlineUserJoined, setOnlineUserJoined] = useState<any>(undefined);
   const [onlineUserLeft, setOnlineUserLeft] = useState<any>(undefined);
-  const [onlineUserCursorMoved, setOnlineUserCursorMoved] = useState<any>(undefined);
-  const [onlineUserCursorSelection, setOnlineUserCursorSelection] = useState<any>(undefined);
+  const [onlineUserCursorMoved, setOnlineUserCursorMoved] =
+    useState<any>(undefined);
+  const [onlineUserCursorSelection, setOnlineUserCursorSelection] =
+    useState<any>(undefined);
 
-  const documentState = useDocumentState(initState, { decorator: config?.decorator, zoom: config?.zoom });
-  const {
-    focusPageIndex,
-    editorStates,
-    dispatchStates,
-  } = documentState;
+  const documentState = useDocumentState(initState, {
+    decorator: config?.decorator,
+    zoom: config?.zoom,
+  });
+  const { focusPageIndex, editorStates, dispatchStates } = documentState;
 
   const caseState = useAppSelector(selectCase);
   const { token } = useAppSelector(selectToken);
@@ -47,7 +49,7 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
   const toggleHighlightUsers = (
     state: EditorState,
     editorIndex: number = focusPageIndex,
-    users: any[] = onlineUsers,
+    users: any[] = onlineUsers
   ): EditorState => {
     let eState = state;
     if (users?.length <= 1) {
@@ -59,17 +61,22 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
       const highlight = user?.selection?.highlightSelection;
       if (highlight && editorIndex === user?.selection?.editorIndex) {
         const eContentState = eState.getCurrentContent();
-        const startBlock = eContentState.getBlockForKey(highlight.getAnchorKey());
+        const startBlock = eContentState.getBlockForKey(
+          highlight.getAnchorKey()
+        );
         const endBlock = eContentState.getBlockForKey(highlight.getFocusKey());
         // Check if the selection always exist
         if (
-          startBlock
-          && endBlock
-          && highlight.getAnchorOffset() <= startBlock.getLength()
-          && highlight.getFocusOffset() <= endBlock.getLength()
+          startBlock &&
+          endBlock &&
+          highlight.getAnchorOffset() <= startBlock.getLength() &&
+          highlight.getFocusOffset() <= endBlock.getLength()
         ) {
           eState = EditorState.acceptSelection(eState, highlight);
-          eState = RichUtils.toggleInlineStyle(eState, `HIGHLIGHT-COLOR-${user.color}`);
+          eState = RichUtils.toggleInlineStyle(
+            eState,
+            `HIGHLIGHT-COLOR-${user.color}`
+          );
           eState = EditorState.acceptSelection(eState, selection);
         }
       }
@@ -113,9 +120,18 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
       return;
     }
     const contentState = convertFromRaw(JSON.parse(data.content));
-    const newEditorState = EditorState.createWithContent(contentState, config?.decorator);
-    const state = toggleHighlightUsers(newEditorState, data.editorIndex || focusPageIndex);
-    dispatchStates({ index: data.editorIndex || focusPageIndex, payload: state });
+    const newEditorState = EditorState.createWithContent(
+      contentState,
+      config?.decorator
+    );
+    const state = toggleHighlightUsers(
+      newEditorState,
+      data.editorIndex || focusPageIndex
+    );
+    dispatchStates({
+      index: data.editorIndex || focusPageIndex,
+      payload: state,
+    });
   };
   const onReceiveNewCursor = (data) => {
     if (data?.id === myId) {
@@ -132,10 +148,16 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
   // Collaborative features
   useEffect(() => {
     if (onlineUserJoined) {
-      const findUser = onlineUsers.find((user: any) => user.id === onlineUserJoined.id);
+      const findUser = onlineUsers.find(
+        (user: any) => user.id === onlineUserJoined.id
+      );
       if (!findUser) {
         const color = USER_COLORS[onlineUsers.length % USER_COLORS.length];
-        const user = { id: onlineUserJoined.id, username: onlineUserJoined.username, color };
+        const user = {
+          id: onlineUserJoined.id,
+          username: onlineUserJoined.username,
+          color,
+        };
         setOnlineUsers([...onlineUsers, user]);
       }
       setOnlineUserJoined(undefined);
@@ -144,7 +166,9 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
 
   useEffect(() => {
     if (onlineUserLeft) {
-      const filteredUsers = onlineUsers.filter((user: any) => user.id !== onlineUserLeft.id);
+      const filteredUsers = onlineUsers.filter(
+        (user: any) => user.id !== onlineUserLeft.id
+      );
       setOnlineUsers([...filteredUsers]);
       setOnlineUserLeft(undefined);
     }
@@ -153,19 +177,26 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
   // Changes when cursor move
   useEffect(() => {
     if (onlineUserCursorMoved) {
-      const findUserIndex = onlineUsers.findIndex((user) => user.id === onlineUserCursorMoved.id);
+      const findUserIndex = onlineUsers.findIndex(
+        (user) => user.id === onlineUserCursorMoved.id
+      );
       if (findUserIndex !== -1) {
         const onlineUsersCopied = [...onlineUsers];
         const marginLeft = 100;
         const marginTop = 210; // Height of navbar (60) + toolbars (60 * 2) + padding (30);
-        const documentMarginLeftStyle = documentRef?.current?.currentStyle?.marginLeft
-          || window.getComputedStyle(documentRef?.current)?.marginLeft;
-        let documentMarginLeft = documentMarginLeftStyle ? parseInt(documentMarginLeftStyle, 10) : 0;
+        const documentMarginLeftStyle =
+          documentRef?.current?.currentStyle?.marginLeft ||
+          window.getComputedStyle(documentRef?.current)?.marginLeft;
+        let documentMarginLeft = documentMarginLeftStyle
+          ? parseInt(documentMarginLeftStyle, 10)
+          : 0;
         documentMarginLeft = documentMarginLeft || 0;
         onlineUsersCopied[findUserIndex].cursor = {
           top: onlineUserCursorMoved.loc.top - marginTop,
-          left: onlineUserCursorMoved.loc.left - marginLeft + documentMarginLeft,
-          height: onlineUserCursorMoved.loc.bottom - onlineUserCursorMoved.loc.top,
+          left:
+            onlineUserCursorMoved.loc.left - marginLeft + documentMarginLeft,
+          height:
+            onlineUserCursorMoved.loc.bottom - onlineUserCursorMoved.loc.top,
         };
         if (onlineUsersCopied[findUserIndex].selection) {
           // Set highlight
@@ -186,20 +217,30 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
   // Changes when other user select
   useEffect(() => {
     if (onlineUserCursorSelection) {
-      const findUserIndex = onlineUsers.findIndex((user) => user.id === onlineUserCursorSelection.id);
+      const findUserIndex = onlineUsers.findIndex(
+        (user) => user.id === onlineUserCursorSelection.id
+      );
       if (findUserIndex !== -1) {
         const onlineUsersCopied = [...onlineUsers];
-        const highlightSelection = new SelectionState(onlineUserCursorSelection.incomingSelectionObj);
-        const editorIndex = onlineUserCursorSelection.editorIndex !== undefined
-          ? onlineUserCursorSelection.editorIndex
-          : focusPageIndex;
+        const highlightSelection = new SelectionState(
+          onlineUserCursorSelection.incomingSelectionObj
+        );
+        const editorIndex =
+          onlineUserCursorSelection.editorIndex !== undefined
+            ? onlineUserCursorSelection.editorIndex
+            : focusPageIndex;
         const eIndex = onlineUsersCopied[findUserIndex].selection?.editorIndex;
         let state = editorStates[editorIndex]?.state;
         // Remove previous selection
-        let removeSelectionState = eIndex !== undefined ? editorStates[eIndex]?.state : undefined;
+        let removeSelectionState =
+          eIndex !== undefined ? editorStates[eIndex]?.state : undefined;
         // Set highlight
         if (removeSelectionState) {
-          removeSelectionState = toggleHighlightUsers(removeSelectionState, eIndex, onlineUsersCopied);
+          removeSelectionState = toggleHighlightUsers(
+            removeSelectionState,
+            eIndex,
+            onlineUsersCopied
+          );
           if (eIndex === editorIndex) {
             state = removeSelectionState;
           }
@@ -214,7 +255,10 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
           if (!removeSelectionState || eIndex === editorIndex) {
             dispatchStates({ index: editorIndex, payload: state });
           } else {
-            dispatchStates({ index: [editorIndex, eIndex], payload: [state, removeSelectionState] });
+            dispatchStates({
+              index: [editorIndex, eIndex],
+              payload: [state, removeSelectionState],
+            });
           }
         }
         // Remove cursor
@@ -226,33 +270,33 @@ export default function useDocSocket(initState?, config?: DocumentSocketConfig) 
   }, [onlineUserCursorSelection]);
 
   useEffect(() => {
-    socket.emit('login', {
+    socket.emit("login", {
       token,
     });
 
-    socket.emit('document/join', {
+    socket.emit("document/join", {
       document_id: config?.docId || caseState.currentCase?.id,
     });
   }, [token]);
 
   useEffect(() => {
-    socket.on('welcome', onWelcome);
-    socket.on('userjoined', onUserJoined);
-    socket.on('userleft', onUserLeft);
-    socket.on('receivedNewContent', onReceivedNewContent);
-    socket.on('receiveNewCursor', onReceiveNewCursor);
+    socket.on("welcome", onWelcome);
+    socket.on("userjoined", onUserJoined);
+    socket.on("userleft", onUserLeft);
+    socket.on("receivedNewContent", onReceivedNewContent);
+    socket.on("receiveNewCursor", onReceiveNewCursor);
 
-    socket.emit('document/join', {
+    socket.emit("document/join", {
       document_id: config?.docId || caseState.currentCase?.id,
     });
 
     return () => {
-      socket.emit('document/leave');
-      socket.off('welcome', onWelcome);
-      socket.off('userjoined', onUserJoined);
-      socket.off('userleft', onUserLeft);
-      socket.off('receivedNewContent', onReceivedNewContent);
-      socket.off('receiveNewCursor', onReceiveNewCursor);
+      socket.emit("document/leave");
+      socket.off("welcome", onWelcome);
+      socket.off("userjoined", onUserJoined);
+      socket.off("userleft", onUserLeft);
+      socket.off("receivedNewContent", onReceivedNewContent);
+      socket.off("receiveNewCursor", onReceiveNewCursor);
     };
   }, []);
 

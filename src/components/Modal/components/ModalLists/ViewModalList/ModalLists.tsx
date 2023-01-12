@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Moment from "react-moment";
 import cx from "classnames";
 
-import { APP_ROUTES } from "@/constants/routes";
-import ApiFactory from "@/API/controllers/api-factory";
-import ListsApi from "@/API/controllers/lists-api";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { APP_ROUTES } from "../../../../../constants/routes";
+import ApiFactory from "../../../../../API/controllers/api-factory";
+import ListsApi from "../../../../../API/controllers/lists-api";
+import { useAppDispatch, useAppSelector } from "../../../../../store/hooks";
 
 import {
   selectLists,
@@ -14,13 +14,13 @@ import {
   setOriginalListsFilter,
   setSelectOneList,
   setValueFilter,
-} from "@/store/lists";
+} from "../../../../../store/lists";
 
-import Modal from "@/components/Modal/Modal";
-import Button from "@/components/Buttons/Button/Button";
-import InputSearch from "@/components/Search/Search";
+import Modal from "../../../../../components/Modal/Modal";
+import Button from "../../../../../components/Buttons/Button/Button";
+import InputSearch from "../../../../../components/Search/Search";
 
-import IconList from "@/assets/images/icons/IconList2";
+import IconList from "../../../../../assets/images/icons/IconList2";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./modalList.scss";

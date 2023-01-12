@@ -1,21 +1,22 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SESSION_STORAGE_KEYS } from '@/constants/storage-keys';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { SESSION_STORAGE_KEYS } from "../../constants/storage-keys";
 
 export interface CaseState {
   currentCase: {
     id: string;
     label: string;
-  }|null;
+  } | null;
   currentPage: number;
   hasMore: boolean;
-  listCases: Array<{}>,
-  listFilteredCases: Array<{}>,
-  listSupervisor: Array<{}>
+  listCases: Array<{}>;
+  listFilteredCases: Array<{}>;
+  listSupervisor: Array<{}>;
 }
 
-
 const initialState: CaseState = {
-  currentCase: JSON.parse(sessionStorage.getItem(SESSION_STORAGE_KEYS.currentCase) || 'null'),
+  currentCase: JSON.parse(
+    sessionStorage.getItem(SESSION_STORAGE_KEYS.currentCase) || "null"
+  ),
   currentPage: 1,
   hasMore: true,
   listCases: [],
@@ -24,7 +25,7 @@ const initialState: CaseState = {
 };
 
 const caseSlice = createSlice({
-  name: 'case',
+  name: "case",
   initialState,
   reducers: {
     /**
@@ -32,7 +33,7 @@ const caseSlice = createSlice({
      */
     setCurrentCase: (
       state,
-      action: PayloadAction<{ id: string; label: string }|null>,
+      action: PayloadAction<{ id: string; label: string } | null>
     ) => {
       state.currentCase = action.payload;
     },

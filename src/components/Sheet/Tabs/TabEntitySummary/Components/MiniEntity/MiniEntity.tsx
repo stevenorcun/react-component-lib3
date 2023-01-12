@@ -5,8 +5,8 @@ import {
   EntitySummary,
   EventSummary,
   FileSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
+} from "../../../../../../API/DataModels/Database/NovaObject";
+import { ENTITY_TYPE_DETAILS } from "../../../../../../constants/entity-related";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

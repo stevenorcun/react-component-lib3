@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import React, { useState, useEffect } from "react";
 import { EditorState, ContentBlock } from "draft-js";
-import ContextMenu from "@/components/ContextMenu/DefaultContextMenu/ContextMenu";
-import EditorContextMenuOption from "@/components/CustomEditor/ContextMenu/Option/EditorContextMenuOption";
-import transformEntity from "@/components/CustomEditor/plugins/novaObjects/modifiers/transformEntity";
-import IconToolAddSelection from "@/assets/images/icons/IconToolAddSelection";
-import IconCopy from "@/assets/images/icons/IconCopy";
+import ContextMenu from "../../../components/ContextMenu/DefaultContextMenu/ContextMenu";
+import EditorContextMenuOption from "../../../components/CustomEditor/ContextMenu/Option/EditorContextMenuOption";
+import transformEntity from "../../../components/CustomEditor/plugins/novaObjects/modifiers/transformEntity";
+import IconToolAddSelection from "../../../assets/images/icons/IconToolAddSelection";
+import IconCopy from "../../../assets/images/icons/IconCopy";
 import styles from "./styles.scss";
 
 interface EditorContextMenuProps {

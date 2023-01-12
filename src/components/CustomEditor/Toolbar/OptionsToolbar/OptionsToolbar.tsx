@@ -9,8 +9,8 @@ import {
   getFormatOptions,
   getToolsOptions,
   getHelpOptions,
-} from "@/constants/editor";
-import MenuDropdown from "@/components/MenuDropdown/MenuDropdown";
+} from "../../../../constants/editor";
+import MenuDropdown from "../../../../components/MenuDropdown/MenuDropdown";
 import styles from "./styles.scss";
 
 interface OptionsToolbarProps {

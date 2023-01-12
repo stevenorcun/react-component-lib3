@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
-import { LOCAL_STORAGE_KEYS } from '@/constants/storage-keys';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
+import { LOCAL_STORAGE_KEYS } from "../../constants/storage-keys";
 
 export interface ExternalAppState {
   id: string;
@@ -22,7 +22,7 @@ const storedApps = localStorage.getItem(LOCAL_STORAGE_KEYS.externalAppsConfig);
 const extApps = storedApps ? JSON.parse(storedApps) : null;
 
 const extAppsSlice = createSlice({
-  name: 'externalApps',
+  name: "externalApps",
   initialState: extApps || initialState,
   reducers: {
     setExternalApps: (state, action: PayloadAction<ExternalAppState[]>) => {

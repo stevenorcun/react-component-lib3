@@ -1,20 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { convertToEntityDto } from "@/API/DataModels/DTO/entityDto";
-import { GraphState } from "@/store/graph";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { convertToEntityDto } from "../../API/DataModels/DTO/entityDto";
+import { GraphState } from "../../store/graph";
 import {
   CanImplementHistogramState,
   highlightReducers,
   initialHistogramState,
-} from "@/store/shared/histogram";
+} from "../../store/shared/histogram";
 import {
   CanImplementTimelineState,
   initTimelineState,
   timelineReducers,
-} from "@/store/shared/timeline";
+} from "../../store/shared/timeline";
 import { toast } from "react-toastify";
 import React from "react";
-import { getEntityTypeId, getIdProperty } from "@/constants/entity-related";
+import { getEntityTypeId, getIdProperty } from "../../constants/entity-related";
 import { OntologyConfigState } from "../ontology";
 
 export interface MapState

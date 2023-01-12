@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconArrow from "@/assets/images/icons/IconArrow";
+import IconArrow from "../../../assets/images/icons/IconArrow";
 import styles from "./WidgetHeader.scss";
 
 interface WidgetHeaderProps {

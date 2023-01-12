@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 
-import InfoBlock from "@/components/InfoBlock/InfoBlock";
-import Search from "@/components/Inputs/Search/Search";
-import Button from "@/components/Buttons/Button/Button";
+import InfoBlock from "../../../../components/InfoBlock/InfoBlock";
+import Search from "../../../../components/Inputs/Search/Search";
+import Button from "../../../../components/Buttons/Button/Button";
 
-import IconBars from "@/assets/images/icons/IconBars";
+import IconBars from "../../../../assets/images/icons/IconBars";
 
 import styles from "./styles.scss";
-import { APP_ROUTES } from "@/constants/routes";
+import { APP_ROUTES } from "../../../../constants/routes";
 import { useNavigate } from "react-router-dom";
 
 interface CaseListsProps {

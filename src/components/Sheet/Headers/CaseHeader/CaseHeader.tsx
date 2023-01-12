@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import Moment from 'react-moment';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React, { useState, useEffect } from "react";
+import Moment from "react-moment";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import {
   CaseClassification,
   CasePriority,
-} from '@/API/DataModels/Database/Case';
-import { EntityDto } from '@/API/DataModels/Database/NovaObject';
+} from "../../../../API/DataModels/Database/Case";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import {
   CasePriorityTranslation,
   CaseClassificationTranslation,
-} from '@/constants/cases';
-import Button from '@/components/Buttons/Button/Button';
-import { useAppDispatch } from '@/store/hooks';
-import { setCurrentCase } from '@/store/case';
-import IconStar from '@/assets/images/icons/IconStar';
-import { APP_ROUTES } from '@/constants/routes';
-import { SESSION_STORAGE_KEYS } from '@/constants/storage-keys';
-import styles from './styles.scss';
-import NovaImage from '@/components/NovaImage/NovaImage';
-import ApiFactory from '@/API/controllers/api-factory';
-import FavoritesApi from '@/API/controllers/favorite-api';
-import SvgIconCase from '@/assets/images/icons/IconCase';
+} from "../../../../constants/cases";
+import Button from "../../../../components/Buttons/Button/Button";
+import { useAppDispatch } from "../../../../store/hooks";
+import { setCurrentCase } from "../../../../store/case";
+import IconStar from "../../../../assets/images/icons/IconStar";
+import { APP_ROUTES } from "../../../../constants/routes";
+import { SESSION_STORAGE_KEYS } from "../../../../constants/storage-keys";
+import styles from "./styles.scss";
+import NovaImage from "../../../../components/NovaImage/NovaImage";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import FavoritesApi from "../../../../API/controllers/favorite-api";
+import SvgIconCase from "../../../../assets/images/icons/IconCase";
 
 const CaseHeader = ({
   entity,
-  favorite
+  favorite,
 }: {
   entity: EntityDto;
   favorite: boolean;
@@ -45,10 +45,11 @@ const CaseHeader = ({
       id: caseToOpen.id,
       label: caseToOpen.label,
     };
-    sessionStorage.setItem(SESSION_STORAGE_KEYS.currentCase, JSON.stringify(data));
-    dispatch(
-      setCurrentCase(data)
+    sessionStorage.setItem(
+      SESSION_STORAGE_KEYS.currentCase,
+      JSON.stringify(data)
     );
+    dispatch(setCurrentCase(data));
     navigate(APP_ROUTES.browser.path);
   };
 
@@ -67,7 +68,7 @@ const CaseHeader = ({
         setIsFavorite(true);
       }
     } catch (err) {
-      const baseMsg = 'Favoris : erreur';
+      const baseMsg = "Favoris : erreur";
       const msg = err ? `${baseMsg}\r\n${err}` : baseMsg;
       toast.error(msg);
     }
@@ -82,8 +83,8 @@ const CaseHeader = ({
       {caseCurrent?.subscribers && (
         <div className={styles.headerCaseFavorite}>
           <IconStar
-            fill={isFavorite ? '#3083F7' : '#FFF'}
-            stroke={isFavorite ? '#3083F7' : '#EDEDEE'}
+            fill={isFavorite ? "#3083F7" : "#FFF"}
+            stroke={isFavorite ? "#3083F7" : "#EDEDEE"}
             strokeWidth={isFavorite ? 1 : 2}
             onClick={toggleFavorite}
           />
@@ -125,7 +126,7 @@ const CaseHeader = ({
             <span className={styles.infoContent}>
               {
                 CaseClassificationTranslation[
-                CaseClassification[caseCurrent?.classification]
+                  CaseClassification[caseCurrent?.classification]
                 ]
               }
             </span>

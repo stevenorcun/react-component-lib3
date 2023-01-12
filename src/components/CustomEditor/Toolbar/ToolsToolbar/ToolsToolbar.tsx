@@ -7,29 +7,29 @@ import {
   BLOCK_TYPES,
   fontSizeOptions,
   DEFAULT_FONT_SIZE,
-} from "@/constants/editor";
+} from "../../../../constants/editor";
 // Components
-import BaseButton from "@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
-import StyleButton from "@/components/CustomEditor/Toolbar/Buttons/StyleButton/StyleButton";
-import ColorButton from "@/components/CustomEditor/Toolbar/Buttons/ColorButton/ColorButton";
-import SelectButton from "@/components/CustomEditor/Toolbar/Buttons/SelectButton/SelectButton";
-import AlignmentButton from "@/components/CustomEditor/Toolbar/Buttons/AlignmentButton/AlignmentButton";
-import ListButton from "@/components/CustomEditor/Toolbar/Buttons/ListButton/ListButton";
-import FileButton from "@/components/CustomEditor/Toolbar/Buttons/FileButton/FileButtons";
-import DownloadButton from "@/components/CustomEditor/Toolbar/Buttons/DownloadButton/DownloadButton";
+import BaseButton from "../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import StyleButton from "../../../../components/CustomEditor/Toolbar/Buttons/StyleButton/StyleButton";
+import ColorButton from "../../../../components/CustomEditor/Toolbar/Buttons/ColorButton/ColorButton";
+import SelectButton from "../../../../components/CustomEditor/Toolbar/Buttons/SelectButton/SelectButton";
+import AlignmentButton from "../../../../components/CustomEditor/Toolbar/Buttons/AlignmentButton/AlignmentButton";
+import ListButton from "../../../../components/CustomEditor/Toolbar/Buttons/ListButton/ListButton";
+import FileButton from "../../../../components/CustomEditor/Toolbar/Buttons/FileButton/FileButtons";
+import DownloadButton from "../../../../components/CustomEditor/Toolbar/Buttons/DownloadButton/DownloadButton";
 // Icons
-import IconToolColorText from "@/assets/images/icons/IconToolColorText";
-import IconToolTextLeft from "@/assets/images/icons/IconToolTextLeft";
-import IconNumList from "@/assets/images/icons/IconNumList";
-import IconArrowUndo from "@/assets/images/icons/IconArrowUndo";
-import IconArrowRedo from "@/assets/images/icons/IconArrowRedo";
-import IconSpellCheck from "@/assets/images/icons/IconSpellCheck";
-import IconHighlight from "@/assets/images/icons/IconHighlight";
-import IconToolMediaPlus from "@/assets/images/icons/IconToolMediaPlus";
-import IconDownload from "@/assets/images/icons/IconToolDownload";
-import IconIndentMore from "@/assets/images/icons/IconIndentMore";
-import IconIndentLess from "@/assets/images/icons/IconIndentLess";
-import IconUnstyle from "@/assets/images/icons/IconUnstyle";
+import IconToolColorText from "../../../../assets/images/icons/IconToolColorText";
+import IconToolTextLeft from "../../../../assets/images/icons/IconToolTextLeft";
+import IconNumList from "../../../../assets/images/icons/IconNumList";
+import IconArrowUndo from "../../../../assets/images/icons/IconArrowUndo";
+import IconArrowRedo from "../../../../assets/images/icons/IconArrowRedo";
+import IconSpellCheck from "../../../../assets/images/icons/IconSpellCheck";
+import IconHighlight from "../../../../assets/images/icons/IconHighlight";
+import IconToolMediaPlus from "../../../../assets/images/icons/IconToolMediaPlus";
+import IconDownload from "../../../../assets/images/icons/IconToolDownload";
+import IconIndentMore from "../../../../assets/images/icons/IconIndentMore";
+import IconIndentLess from "../../../../assets/images/icons/IconIndentLess";
+import IconUnstyle from "../../../../assets/images/icons/IconUnstyle";
 import styles from "./styles.scss";
 
 interface ToolsToolbarProps {

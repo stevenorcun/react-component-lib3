@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import IconArrow from "@/assets/images/icons/IconArrow";
+import IconArrow from "../../assets/images/icons/IconArrow";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";
 import styles from "./styles.scss";

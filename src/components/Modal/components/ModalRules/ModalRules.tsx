@@ -2,24 +2,24 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import MarkingsApi from "@/API/controllers/markings-api";
-import { TAG_TYPE_COLOR } from "@/constants/tags";
-import { useAppDispatch } from "@/store/hooks";
-import { addRule, editRule } from "@/store/tags";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import MarkingsApi from "../../../../API/controllers/markings-api";
+import { TAG_TYPE_COLOR } from "../../../../constants/tags";
+import { useAppDispatch } from "../../../../store/hooks";
+import { addRule, editRule } from "../../../../store/tags";
 
-import Modal from "@/components/Modal/Modal";
-import Accordion from "@/components/Accordion/Accordion";
-import Autocomplete from "@/components/Inputs/Autocomplete/Autocomplete";
-import Switch from "@/components/Inputs/Switch/Switch";
-import Button from "@/components/Buttons/Button/Button";
+import Modal from "../../../../components/Modal/Modal";
+import Accordion from "../../../../components/Accordion/Accordion";
+import Autocomplete from "../../../../components/Inputs/Autocomplete/Autocomplete";
+import Switch from "../../../../components/Inputs/Switch/Switch";
+import Button from "../../../../components/Buttons/Button/Button";
 import Select from "react-select";
 
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import IconSettings from "@/assets/images/icons/IconSettings";
-import IconCross from "@/assets/images/icons/IconCross";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
+import IconSettings from "../../../../assets/images/icons/IconSettings";
+import IconCross from "../../../../assets/images/icons/IconCross";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";

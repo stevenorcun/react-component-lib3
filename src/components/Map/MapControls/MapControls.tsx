@@ -3,16 +3,16 @@
 import React, { useState } from "react";
 import { saveAs } from "file-saver";
 
-import IconFileExport from "@/assets/images/icons/IconFileExport";
+import IconFileExport from "../../../assets/images/icons/IconFileExport";
 import tokml from "tokml";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 
 import cx from "classnames";
-import { selectMap } from "@/store/map";
-import { useAppSelector } from "@/store/hooks";
-import Options from "@/components/Options/Options";
-import IconToolDownload from "@/assets/images/icons/IconToolDownload";
-import { selectCase } from "@/store/case";
+import { selectMap } from "../../../store/map";
+import { useAppSelector } from "../../../store/hooks";
+import Options from "../../../components/Options/Options";
+import IconToolDownload from "../../../assets/images/icons/IconToolDownload";
+import { selectCase } from "../../../store/case";
 import styles from "./styles.scss";
 
 interface ControlsProps {

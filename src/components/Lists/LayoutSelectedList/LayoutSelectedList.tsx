@@ -2,16 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cx from "classnames";
-// import ApiFactory from "@/API/controllers/api-factory";
-// import ObjectsApi from "@/API/controllers/object-api";
-// import { convertToEntityDto } from "@/API/DataModels/DTO/entityDto";
-import { selectLists, setSelectObjectId } from "@/store/lists";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import SearchResult from "@/components/Browser/SearchResult/SearchResult";
+// import ApiFactory from "../../../API/controllers/api-factory";
+// import ObjectsApi from "../../../API/controllers/object-api";
+// import { convertToEntityDto } from "../../../API/DataModels/DTO/entityDto";
+import { selectLists, setSelectObjectId } from "../../../store/lists";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import SearchResult from "../../../components/Browser/SearchResult/SearchResult";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./layoutSelectedList.scss";
-import { APP_ROUTES } from "@/constants/routes";
-// import { selectOntologyConfig } from "@/store/ontology";
+import { APP_ROUTES } from "../../../constants/routes";
+// import { selectOntologyConfig } from "../../../store/ontology";
 
 const LayoutSelectedList = ({ entityIds }: { entityIds: string[] }) => {
   if (!entityIds) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { Key } from "@/constants/DOM";
+import { Key } from "../../../constants/DOM";
 import styles from "./GroupedValuesInput.scss";
 
 interface GroupedValuesInputProps {

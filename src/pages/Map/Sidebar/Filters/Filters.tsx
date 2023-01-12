@@ -2,17 +2,17 @@ import React from "react";
 
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconSatellite from "@/assets/images/icons/IconSatellite";
-import IconPlan from "@/assets/images/icons/IconPlan";
-import IconFile from "@/assets/images/icons/IconFile";
+import IconSatellite from "../../../../assets/images/icons/IconSatellite";
+import IconPlan from "../../../../assets/images/icons/IconPlan";
+import IconFile from "../../../../assets/images/icons/IconFile";
 import styles from "./styles.scss";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import {
   selectMap,
   setActiveMenu,
   setFilterActiveMenu,
   setStyleView,
-} from "@/store/map";
+} from "../../../../store/map";
 
 const Filters = () => {
   const mapState = useAppSelector(selectMap);

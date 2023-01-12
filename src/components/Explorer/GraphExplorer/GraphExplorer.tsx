@@ -9,7 +9,7 @@ import {
   Cell,
 } from "recharts";
 
-import SearchExplorer from "@/components/Explorer/SearchExplorer/SearchExplorer";
+import SearchExplorer from "../../../components/Explorer/SearchExplorer/SearchExplorer";
 
 import styles from "./graphExplorer.scss";
 

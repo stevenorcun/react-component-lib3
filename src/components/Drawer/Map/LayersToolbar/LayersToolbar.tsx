@@ -1,13 +1,13 @@
 import * as React from "react";
 /* eslint-disable global-require */
-import { useAppDispatch } from "@/store/hooks";
-import { setKmlEntity } from "@/store/map";
+import { useAppDispatch } from "../../../../store/hooks";
+import { setKmlEntity } from "../../../../store/map";
 import cx from "classnames";
-import IconOpenFile from "@/assets/images/icons/Map/IconOpenFile";
-import IconImportFile from "@/assets/images/icons/Map/IconImportFile";
-import IconLayersColor from "@/assets/images/icons/Map/IconLayersColor";
-import SvgIconSelect from "@/assets/images/icons/Map/IconSelect";
-import IconFX from "@/assets/images/icons/Map/IconFX";
+import IconOpenFile from "../../../../assets/images/icons/Map/IconOpenFile";
+import IconImportFile from "../../../../assets/images/icons/Map/IconImportFile";
+import IconLayersColor from "../../../../assets/images/icons/Map/IconLayersColor";
+import SvgIconSelect from "../../../../assets/images/icons/Map/IconSelect";
+import IconFX from "../../../../assets/images/icons/Map/IconFX";
 
 import { toast } from "react-toastify";
 import styles from "./styles.scss";

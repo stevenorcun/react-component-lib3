@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import MenuContainer from "@/components/MenuDropdown/MenuContainer/MenuContainer";
+import MenuContainer from "../../components/MenuDropdown/MenuContainer/MenuContainer";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { MenuOptions } from "@/constants/editor";
+import { MenuOptions } from "../../constants/editor";
 import styles from "./styles.scss";
 
 interface MenuDropdownProps {

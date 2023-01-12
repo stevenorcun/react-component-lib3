@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Moment from "react-moment";
 
-import InfoBlock from "@/components/InfoBlock/InfoBlock";
-import Accordion from "@/components/Accordion/Accordion";
+import InfoBlock from "../../../../components/InfoBlock/InfoBlock";
+import Accordion from "../../../../components/Accordion/Accordion";
 
-import IconCheck from "@/assets/images/icons/IconCheck";
+import IconCheck from "../../../../assets/images/icons/IconCheck";
 
 import cx from "classnames";
 import styles from "./styles.scss";

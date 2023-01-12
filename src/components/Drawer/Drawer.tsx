@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   clearAuxiliaryHistogramHighlightedProperties as graphClearAuxiliaryHistogramHighlightedProperties,
   clearAuxiliaryHistogramHighlightedTypes as graphClearAuxiliaryHistogramHighlightedTypes,
@@ -10,7 +10,7 @@ import {
   setGraphSelection as graphSetSelectedEntityIds,
   toggleAuxiliaryHistogramHighlightedProperty as graphToggleAuxiliaryHistogramHighlightedProperty,
   toggleAuxiliaryHistogramHighlightedTypes as graphToggleAuxiliaryHistogramHighlightedTypes,
-} from "@/store/graph";
+} from "../../store/graph";
 import {
   clearAuxiliaryHistogramHighlightedProperties as mapClearAuxiliaryHistogramHighlightedProperties,
   clearAuxiliaryHistogramHighlightedTypes as mapClearAuxiliaryHistogramHighlightedTypes,
@@ -20,7 +20,7 @@ import {
   setSelectedEntities as mapSetSelectedEntityIds,
   toggleAuxiliaryHistogramHighlightedProperty as mapToggleAuxiliaryHistogramHighlightedProperty,
   toggleAuxiliaryHistogramHighlightedTypes as mapToggleAuxiliaryHistogramHighlightedTypes,
-} from "@/store/map";
+} from "../../store/map";
 import {
   DrawerState,
   SearchResultFilterBy,
@@ -30,29 +30,33 @@ import {
   setResultsByGroupedByTypeByStoreKey,
   setTabByKey,
   setTemplateSearchValueByStoreKey,
-} from "@/store/drawer";
-import { BrowserState, selectBrowser, updateTemplate } from "@/store/browser";
+} from "../../store/drawer";
+import {
+  BrowserState,
+  selectBrowser,
+  updateTemplate,
+} from "../../store/browser";
 
-import Drawer from "@/lib/Drawer/Drawer";
-import HistogramDrawer from "@/components/Drawer/Tabs/Histogram/Histogram";
-import SelectionDrawer from "@/components/Drawer/Tabs/Selection/Selection";
-import TagsDrawer from "@/components/Drawer/Tabs/Tags/Tags";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import DrawerTabAdvancedSearch from "@/components/Drawer/Tabs/AdvancedSearch/AdvancedSearch";
+import Drawer from "../../lib/Drawer/Drawer";
+import HistogramDrawer from "../../components/Drawer/Tabs/Histogram/Histogram";
+import SelectionDrawer from "../../components/Drawer/Tabs/Selection/Selection";
+import TagsDrawer from "../../components/Drawer/Tabs/Tags/Tags";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import DrawerTabAdvancedSearch from "../../components/Drawer/Tabs/AdvancedSearch/AdvancedSearch";
 import {
   BROWSER_FORM_MAPPING_BY_TYPE_DETAILS,
   BrowserSearchTemplate,
   BrowserTabType,
   IBrowserAdvancedSearchForm,
-} from "@/constants/browser-related";
-import ApiFactory from "@/API/controllers/api-factory";
-import SearchApi from "@/API/controllers/search-api";
-import { formToSearchQuery } from "@/utils/browser";
-import SearchQueriesApi from "@/API/controllers/search-queries-api";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { initialHistogramState } from "@/store/shared/histogram";
-import { initTimelineState } from "@/store/shared/timeline";
+} from "../../constants/browser-related";
+import ApiFactory from "../../API/controllers/api-factory";
+import SearchApi from "../../API/controllers/search-api";
+import { formToSearchQuery } from "../../utils/browser";
+import SearchQueriesApi from "../../API/controllers/search-queries-api";
+import { useGlobalModalContext } from "../../hooks/useGlobalModal";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import { initialHistogramState } from "../../store/shared/histogram";
+import { initTimelineState } from "../../store/shared/timeline";
 import moment from "moment";
 
 interface AuxiliariesDrawerProps {

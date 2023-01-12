@@ -2,10 +2,10 @@ import React from "react";
 import cx from "classnames";
 import Moment from "react-moment";
 
-import { ENTITY_GENDER_DETAILS } from "@/constants/entity-related";
+import { ENTITY_GENDER_DETAILS } from "../../../../constants/entity-related";
 
-import IconTag from "@/assets/images/icons/IconTag";
-import COUNTRY_DETAILS from "@/assets/images/icons/flags";
+import IconTag from "../../../../assets/images/icons/IconTag";
+import COUNTRY_DETAILS from "../../../../assets/images/icons/flags";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

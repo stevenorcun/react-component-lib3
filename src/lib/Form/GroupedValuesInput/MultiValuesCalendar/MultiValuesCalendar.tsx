@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import Calendar from "react-calendar";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import formStyles from "@/components/Browser/ComplexSearch/Form/Form.scss";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
-import { unhandle } from "@/utils/DOM";
-import GroupedValuesInput from "@/lib/Form/GroupedValuesInput/GroupedValuesInput";
+import formStyles from "../../../../components/Browser/ComplexSearch/Form/Form.scss";
+import IconCalendar from "../../../../assets/images/icons/IconCalendar";
+import { unhandle } from "../../../../utils/DOM";
+import GroupedValuesInput from "../../../../lib/Form/GroupedValuesInput/GroupedValuesInput";
 import styles from "./MultiValuesCalendar.scss";
 
 interface GroupedValuesCalendarProps {

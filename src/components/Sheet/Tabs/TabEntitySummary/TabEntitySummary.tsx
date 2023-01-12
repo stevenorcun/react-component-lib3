@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import styles from "@/pages/Entity/styles.scss";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
+import styles from "../../../../pages/Entity/styles.scss";
+import DraggableEntityOrSummary from "../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
 import PropertiesContent from "./Properties/Properties";
 import MultimediaFile from "./MultimediaFileComponent/MultimediaFileComponent";
 import Related from "./Related/Related";

@@ -3,14 +3,17 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import { toast } from "react-toastify";
 
-import { EntityDto, NovaObject } from "@/API/DataModels/Database/NovaObject";
-import { getEntityTypeLabel } from "@/constants/entity-related";
+import {
+  EntityDto,
+  NovaObject,
+} from "../../../../API/DataModels/Database/NovaObject";
+import { getEntityTypeLabel } from "../../../../constants/entity-related";
 import {
   autoMergeEntityDTOs,
   MINIMUM_EQUAL_PROPERTIES_REQUIRED_FOR_FUSION,
-} from "@/utils/general";
-import ApiFactory from "@/API/controllers/api-factory";
-import ObjectsApi from "@/API/controllers/object-api";
+} from "../../../../utils/general";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import ObjectsApi from "../../../../API/controllers/object-api";
 import {
   createConnectionFromTo,
   createEntities,
@@ -19,23 +22,23 @@ import {
   selectGraph,
   setGraphSelection,
   updateRect,
-} from "@/store/graph";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { convertToEntityDto } from "@/API/DataModels/DTO/entityDto";
+} from "../../../../store/graph";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { convertToEntityDto } from "../../../../API/DataModels/DTO/entityDto";
 
-import ModalFusionConfirmation from "@/components/Modal/components/Graph/ObjectFusion/ModalFusionConfirmation";
-import PickPropertiesModal from "@/components/Modal/components/Graph/ObjectFusion/PickPropertiesModal";
-import Modal from "@/components/Modal/Modal";
-import Tile from "@/components/Tiles/Tile";
-import Button from "@/components/Buttons/Button/Button";
+import ModalFusionConfirmation from "../../../../components/Modal/components/Graph/ObjectFusion/ModalFusionConfirmation";
+import PickPropertiesModal from "../../../../components/Modal/components/Graph/ObjectFusion/PickPropertiesModal";
+import Modal from "../../../../components/Modal/Modal";
+import Tile from "../../../../components/Tiles/Tile";
+import Button from "../../../../components/Buttons/Button/Button";
 
-import IconObjectFusion from "@/assets/images/icons/IconObjectFusion";
+import IconObjectFusion from "../../../../assets/images/icons/IconObjectFusion";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import SearchEntities from "../../SearchEntities/SearchEntities";
 import styles from "./styles.scss";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
+import { selectOntologyConfig } from "../../../../store/ontology";
 
 export enum NovaDataTrustLevel {
   Viable = 1,

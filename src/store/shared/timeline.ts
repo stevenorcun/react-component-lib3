@@ -1,5 +1,5 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { ChartMouseEvent } from '@/components/TimelineWidget/RechartsTimeline/RechartsTimeline';
+import { PayloadAction } from "@reduxjs/toolkit";
+import { ChartMouseEvent } from "../../components/TimelineWidget/RechartsTimeline/RechartsTimeline";
 
 export interface CanImplementTimelineState {
   timelineHighlightedIds: { [key: string]: boolean };
@@ -23,25 +23,25 @@ export const initTimelineState: () => CanImplementTimelineState = () => ({
 export const timelineReducers = {
   setIsTimelineWidgetExpanded: (
     state: CanImplementTimelineState,
-    action: PayloadAction<boolean>,
+    action: PayloadAction<boolean>
   ) => {
     state.isTimelineWidgetExpanded = action.payload;
   },
   setTimelineHighlightedIds: (
     state: CanImplementTimelineState,
-    action: PayloadAction<CanImplementTimelineState['timelineHighlightedIds']>,
+    action: PayloadAction<CanImplementTimelineState["timelineHighlightedIds"]>
   ) => {
     state.timelineHighlightedIds = action.payload;
   },
   setTimelineLeftSelectionProps: (
     state: CanImplementTimelineState,
-    action: PayloadAction<ChartMouseEvent | null>,
+    action: PayloadAction<ChartMouseEvent | null>
   ) => {
     state.timelineLeftSelectionProps = action.payload;
   },
   setTimelineRightSelectionProps: (
     state: CanImplementTimelineState,
-    action: PayloadAction<ChartMouseEvent | null>,
+    action: PayloadAction<ChartMouseEvent | null>
   ) => {
     state.timelineRightSelectionProps = action.payload;
   },
@@ -54,10 +54,16 @@ export const timelineReducers = {
     state.timelineLeftSelectionProps = null;
     state.timelineRightSelectionProps = null;
   },
-  setStartDateTimeline: (state: CanImplementTimelineState, action: PayloadAction<number>) => {
+  setStartDateTimeline: (
+    state: CanImplementTimelineState,
+    action: PayloadAction<number>
+  ) => {
     state.startDateTimeline = action.payload;
   },
-  setEndDateTimeline: (state: CanImplementTimelineState, action: PayloadAction<number>) => {
+  setEndDateTimeline: (
+    state: CanImplementTimelineState,
+    action: PayloadAction<number>
+  ) => {
     state.endDateTimeline = action.payload;
   },
 };

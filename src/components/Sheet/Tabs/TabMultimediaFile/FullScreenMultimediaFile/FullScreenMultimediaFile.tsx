@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { ENTITY_TYPE_DETAILS } from '@/constants/entity-related';
-import FeaturesMultimediaFiles from '../FeaturesMultimediaFiles';
+import { ENTITY_TYPE_DETAILS } from "../../../../../constants/entity-related";
+import FeaturesMultimediaFiles from "../FeaturesMultimediaFiles";
 
-import IconCloseCross from '@/assets/images/icons/IconCross';
+import IconCloseCross from "../../../../../assets/images/icons/IconCross";
 
-import styles from './fullScreenMultimediaFile.scss';
+import styles from "./fullScreenMultimediaFile.scss";
 
 const FullScreenMultimediaFile = ({
   setIsDisplaySelectPicture,
@@ -39,25 +39,25 @@ const FullScreenMultimediaFile = ({
     <div className={styles.fullScreen}>
       <button
         type="button"
-        style={{ position: 'absolute', right: 20, top: 20 }}
+        style={{ position: "absolute", right: 20, top: 20 }}
         onClick={() => setIsDisplaySelectPicture(!isDisplaySelectPicture)}
       >
         <IconCloseCross transform="scale(3)" fill="white" />
       </button>
-      {ENTITY_TYPE_DETAILS[selectPicture.value.type].label === 'Photo' && (
+      {ENTITY_TYPE_DETAILS[selectPicture.value.type].label === "Photo" && (
         <img
           src={selectPicture.value.path}
           style={{
-            maxWidth: '100%',
-            maxHeight: '100%',
-            transition: `${transition ? '.5s' : 0}`,
-            borderRadius: '8px',
+            maxWidth: "100%",
+            maxHeight: "100%",
+            transition: `${transition ? ".5s" : 0}`,
+            borderRadius: "8px",
             transform: `rotate(${rotationPicture}deg) scale(${zoomPicture})`,
           }}
           alt=""
         />
       )}
-      {ENTITY_TYPE_DETAILS[selectPicture.value.type].label === 'Vidéo' && (
+      {ENTITY_TYPE_DETAILS[selectPicture.value.type].label === "Vidéo" && (
         <iframe
           src={selectPicture.value.path}
           width="100%"

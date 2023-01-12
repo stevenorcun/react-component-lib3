@@ -4,28 +4,28 @@ import Select from "react-select";
 import Moment from "react-moment";
 import cx from "classnames";
 
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { createConnectionFromTo, selectGraph } from "@/store/graph";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityConnexionType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { unhandle } from "@/utils/DOM";
-import DateTimePicker from "@/lib/DateTimePicker/DateTimePicker";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { createConnectionFromTo, selectGraph } from "../../../../store/graph";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
+import { NovaEntityConnexionType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import { unhandle } from "../../../../utils/DOM";
+import DateTimePicker from "../../../../lib/DateTimePicker/DateTimePicker";
 
-import Modal from "@/components/Modal/Modal";
-import Button from "@/components/Buttons/Button/Button";
-import Input from "@/components/Input/Input";
-import Switch from "@/components/Inputs/Switch/Switch";
-import Tile from "@/components/Tiles/Tile";
-import Connection from "@/components/Connection/Connection";
-import Accordion from "@/components/Accordion/Accordion";
-import SearchEntities from "@/components/Modal/components/SearchEntities/SearchEntities";
+import Modal from "../../../../components/Modal/Modal";
+import Button from "../../../../components/Buttons/Button/Button";
+import Input from "../../../../components/Input/Input";
+import Switch from "../../../../components/Inputs/Switch/Switch";
+import Tile from "../../../../components/Tiles/Tile";
+import Connection from "../../../../components/Connection/Connection";
+import Accordion from "../../../../components/Accordion/Accordion";
+import SearchEntities from "../../../../components/Modal/components/SearchEntities/SearchEntities";
 
-import IconCycle from "@/assets/images/icons/IconCycle";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
-import IconCross from "@/assets/images/icons/IconCross";
-import IconCheck from "@/assets/images/icons/IconCheckCircle";
+import IconCycle from "../../../../assets/images/icons/IconCycle";
+import IconCalendar from "../../../../assets/images/icons/IconCalendar";
+import IconCross from "../../../../assets/images/icons/IconCross";
+import IconCheck from "../../../../assets/images/icons/IconCheckCircle";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

@@ -1,12 +1,12 @@
 import React from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { setActiveTabSearchFilters } from "@/store/browser";
-import { useAppDispatch } from "@/store/hooks";
+import { setActiveTabSearchFilters } from "../../../../store/browser";
+import { useAppDispatch } from "../../../../store/hooks";
 
-import { ONTOLOGY_TYPES_GROUPS } from "@/constants/entity-related";
-import { SearchResultTypeFiler } from "@/constants/browser-related";
-import Checkbox from "@/lib/Form/Checkbox/Checkbox";
+import { ONTOLOGY_TYPES_GROUPS } from "../../../../constants/entity-related";
+import { SearchResultTypeFiler } from "../../../../constants/browser-related";
+import Checkbox from "../../../../lib/Form/Checkbox/Checkbox";
 import styles from "./ResultFilter.scss";
 
 const ResultFilters = ({ filters }: { filters: SearchResultTypeFiler[] }) => {

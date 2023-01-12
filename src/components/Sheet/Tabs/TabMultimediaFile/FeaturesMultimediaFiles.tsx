@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import CustomActions from '@/components/CustomActions/CustomActions';
+import CustomActions from "../../../../components/CustomActions/CustomActions";
 
-import IconDownload from '@/assets/images/icons/IconToolDownload';
-import IconLeftRotation from '@/assets/images/icons/IconLeftRotation';
-import IconRightRotation from '@/assets/images/icons/IconRightRotation';
-import IconMiniature from '@/assets/images/icons/IconMiniature';
-import IconLoupePlus from '@/assets/images/icons/IconZoom';
-import IconLoupeMinus from '@/assets/images/icons/IconDezoom';
-import IconFullScreen from '@/assets/images/icons/IconFullScreen';
+import IconDownload from "../../../../assets/images/icons/IconToolDownload";
+import IconLeftRotation from "../../../../assets/images/icons/IconLeftRotation";
+import IconRightRotation from "../../../../assets/images/icons/IconRightRotation";
+import IconMiniature from "../../../../assets/images/icons/IconMiniature";
+import IconLoupePlus from "../../../../assets/images/icons/IconZoom";
+import IconLoupeMinus from "../../../../assets/images/icons/IconDezoom";
+import IconFullScreen from "../../../../assets/images/icons/IconFullScreen";
 
-import IconMedia from '@/assets/images/icons/IconMedia';
+import IconMedia from "../../../../assets/images/icons/IconMedia";
 
-import styles from './multimediaFile.scss';
+import styles from "./multimediaFile.scss";
 
 const FeaturesMultimediaFiles = ({
   addRotation,
@@ -32,10 +32,10 @@ const FeaturesMultimediaFiles = ({
 
   useEffect(() => {
     if (isOpenedActionsMenu) {
-      document.addEventListener('click', toggleMenu);
+      document.addEventListener("click", toggleMenu);
     }
     return () => {
-      document.removeEventListener('click', toggleMenu);
+      document.removeEventListener("click", toggleMenu);
     };
   }, [isOpenedActionsMenu]);
 

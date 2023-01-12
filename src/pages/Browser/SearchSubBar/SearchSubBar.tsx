@@ -4,11 +4,11 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconFilter from "@/assets/images/icons/IconFilter";
-import IconCross from "@/assets/images/icons/IconCross";
-import IconBell from "@/assets/images/icons/IconBell";
-import IconSave from "@/assets/images/icons/IconSave";
-import Select from "@/components/Form/Select/Select";
+import IconFilter from "../../../assets/images/icons/IconFilter";
+import IconCross from "../../../assets/images/icons/IconCross";
+import IconBell from "../../../assets/images/icons/IconBell";
+import IconSave from "../../../assets/images/icons/IconSave";
+import Select from "../../../components/Form/Select/Select";
 import styles from "./styles.scss";
 
 const SearchSubBar = () => {

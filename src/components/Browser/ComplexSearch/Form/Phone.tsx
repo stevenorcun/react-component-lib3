@@ -5,25 +5,25 @@ import {
   BROWSER_FORM_MAPPING_BY_TYPE_DETAILS,
   BrowserTabType,
   IBrowserPhoneSearchForm,
-} from "@/constants/browser-related";
-import FormField from "@/lib/Form/Field/Field";
-import DropDownSelect from "@/lib/Form/DropDownSelect/DropDownSelect";
-import IconSearch from "@/assets/images/icons/IconSearch";
+} from "../../../../constants/browser-related";
+import FormField from "../../../../lib/Form/Field/Field";
+import DropDownSelect from "../../../../lib/Form/DropDownSelect/DropDownSelect";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
 import { useDispatch } from "react-redux";
 import {
   BrowserState,
   selectBrowser,
   setActiveTabSearchForm,
-} from "@/store/browser";
-import GroupedValuesInput from "@/lib/Form/GroupedValuesInput/GroupedValuesInput";
-import { preventDefault } from "@/utils/DOM";
+} from "../../../../store/browser";
+import GroupedValuesInput from "../../../../lib/Form/GroupedValuesInput/GroupedValuesInput";
+import { preventDefault } from "../../../../utils/DOM";
 import {
   DB_STRICTNESS,
   defaultStrictnessSelectValues,
-} from "@/constants/strictness-select-values";
-import FormTemplateLoaderWithInput from "@/components/Browser/FormTemplateLoader/FormTemplateLoader";
-import { useAppSelector } from "@/store/hooks";
-import { CanLoadBrowserTemplates } from "@/components/Browser/ComplexSearch/Form/AdvancedSearch";
+} from "../../../../constants/strictness-select-values";
+import FormTemplateLoaderWithInput from "../../../../components/Browser/FormTemplateLoader/FormTemplateLoader";
+import { useAppSelector } from "../../../../store/hooks";
+import { CanLoadBrowserTemplates } from "../../../../components/Browser/ComplexSearch/Form/AdvancedSearch";
 import styles from "./Form.scss";
 
 interface BrowserPhoneFormProps extends CanLoadBrowserTemplates {

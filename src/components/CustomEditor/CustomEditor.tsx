@@ -17,31 +17,31 @@ import { saveAs } from "file-saver";
 import { jsPDF } from "jspdf";
 import cx from "classnames";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import ObjectsApi from "@/API/controllers/object-api";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { useSocketContext } from "@/hooks/useSocket";
-import useDocumentSocket from "@/hooks/useDocumentSocket";
-import { useAppSelector, useAppDispatch } from "@/store/hooks";
-import { selectCase } from "@/store/case";
-import { selectDocument, setSelection } from "@/store/document";
-import { styleMap } from "@/constants/editor";
-import { SESSION_STORAGE_KEYS } from "@/constants/storage-keys";
-import { extractHtml } from "@/utils/general";
+import ApiFactory from "../../API/controllers/api-factory";
+import ObjectsApi from "../../API/controllers/object-api";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import { useSocketContext } from "../../hooks/useSocket";
+import useDocumentSocket from "../../hooks/useDocumentSocket";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
+import { selectCase } from "../../store/case";
+import { selectDocument, setSelection } from "../../store/document";
+import { styleMap } from "../../constants/editor";
+import { SESSION_STORAGE_KEYS } from "../../constants/storage-keys";
+import { extractHtml } from "../../utils/general";
 import {
   editorStatesToJson,
   editorStatesFromJson,
   cut,
   copy,
   paste,
-} from "@/utils/editor";
+} from "../../utils/editor";
 
-import pluginAddImage from "@/components/CustomEditor/plugins/image/modifiers/addImage";
-import createNovaObjectsPlugin from "@/components/CustomEditor/plugins/novaObjects";
-import EditorSinglePage from "@/components/CustomEditor/EditorSinglePage";
-import EditorToolbar from "@/components/CustomEditor/Toolbar/EditorToolbar";
-import EditorContextMenu from "@/components/CustomEditor/ContextMenu/EditorContextMenu";
-import PreviewDocumentDrawer from "@/components/Drawer/PreviewDocumentDrawer";
+import pluginAddImage from "../../components/CustomEditor/plugins/image/modifiers/addImage";
+import createNovaObjectsPlugin from "../../components/CustomEditor/plugins/novaObjects";
+import EditorSinglePage from "../../components/CustomEditor/EditorSinglePage";
+import EditorToolbar from "../../components/CustomEditor/Toolbar/EditorToolbar";
+import EditorContextMenu from "../../components/CustomEditor/ContextMenu/EditorContextMenu";
+import PreviewDocumentDrawer from "../../components/Drawer/PreviewDocumentDrawer";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

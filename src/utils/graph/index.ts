@@ -1,31 +1,31 @@
 /* eslint-disable import/no-cycle */
-import { GraphState } from "@/store/graph";
+import { GraphState } from "../../store/graph";
 import {
   EntityDto,
   GraphElementMandatoryProps,
   GraphEntityProperties,
-} from "@/API/DataModels/Database/NovaObject";
-import Graph from "@/API/DataModels/GraphRepresentation/Graph";
+} from "../../API/DataModels/Database/NovaObject";
+import Graph from "../../API/DataModels/GraphRepresentation/Graph";
 import {
   DEFAULT_TILE_HEIGHT,
   DEFAULT_TILE_HITBOX,
   DEFAULT_TILE_WIDTH,
-} from "@/constants/graph";
-import { AnnotationDto } from "@/API/DataModels/Entities/AnnotationEntity";
-import Vertex from "@/API/DataModels/GraphRepresentation/Vertex";
-import { Coordinates2D, pythagorean } from "@/utils/trigonometry";
-import { CanImplementHistogramState } from "@/store/shared/histogram";
-import { CanImplementTimelineState } from "@/store/shared/timeline";
+} from "../../constants/graph";
+import { AnnotationDto } from "../../API/DataModels/Entities/AnnotationEntity";
+import Vertex from "../../API/DataModels/GraphRepresentation/Vertex";
+import { Coordinates2D, pythagorean } from "../../utils/trigonometry";
+import { CanImplementHistogramState } from "../../store/shared/histogram";
+import { CanImplementTimelineState } from "../../store/shared/timeline";
 import {
   getEntityTitleProperty,
   getEntityTypeGroup,
   getIdProperty,
   getOntPropertyByTypeByObjectType,
   ONTOLOGY_TYPES_GROUPS,
-} from "@/constants/entity-related";
-import { ConnectionProps } from "@/components/Connection/Connection";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
-import { GRAPH_OFFSET } from "@/constants/graph-offset";
+} from "../../constants/entity-related";
+import { ConnectionProps } from "../../components/Connection/Connection";
+import { convertToEntityDto2 } from "../../API/DataModels/DTO/entityDto";
+import { GRAPH_OFFSET } from "../../constants/graph-offset";
 
 // /!\ HORRIBLE SCALING /!\
 // TODO:

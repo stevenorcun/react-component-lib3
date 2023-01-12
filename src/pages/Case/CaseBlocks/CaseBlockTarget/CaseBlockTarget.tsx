@@ -1,13 +1,13 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
+import { ENTITY_TYPE_DETAILS } from "../../../../constants/entity-related";
 
-import IconTarget from "@/assets/images/icons/wheelMenu/IconDotCircle";
+import IconTarget from "../../../../assets/images/icons/wheelMenu/IconDotCircle";
 
-import InfoBlock from "@/components/InfoBlock/InfoBlock";
+import InfoBlock from "../../../../components/InfoBlock/InfoBlock";
 
 import styles from "./styles.scss";
-import NovaImage from "@/components/NovaImage/NovaImage";
-import Man from "@/assets/images/icons/entityTypes/Man";
+import NovaImage from "../../../../components/NovaImage/NovaImage";
+import Man from "../../../../assets/images/icons/entityTypes/Man";
 
 interface CaseTargetProps {
   targets?: any[];

@@ -8,10 +8,10 @@ import { GeoJSONSource, Layer, Map, MapRef, Source } from "react-map-gl";
 
 import maplibregl from "maplibre-gl";
 
-import HeadbarMapControls from "@/pages/Map/Headbar/Headbar";
+import HeadbarMapControls from "../../../pages/Map/Headbar/Headbar";
 
 import bbox from "@turf/bbox";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import {
   MapState,
   selectMap,
@@ -25,7 +25,7 @@ import {
   clearAuxiliaryHistogramHighlightedTypes as mapClearAuxiliaryHistogramHighlightedTypes,
   addEntities,
   setActiveCluster,
-} from "@/store/map";
+} from "../../../store/map";
 import {
   CircleMode,
   DirectMode,
@@ -33,17 +33,17 @@ import {
   SimpleSelectMode,
 } from "mapbox-gl-draw-circle";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import SearchBar from "@/pages/Map/Sidebar/SearchBar/SearchBar";
+import SearchBar from "../../../pages/Map/Sidebar/SearchBar/SearchBar";
 import mapboxgl, { FitBoundsOptions, LngLatBoundsLike } from "mapbox-gl";
-import { selectCase } from "@/store/case";
-import { handleEntityOrSummaryDrop } from "@/utils/drag-events";
-import { preventDefault } from "@/utils/DOM";
-import { getEntityTypeGroup } from "@/constants/entity-related";
-import { selectOntologyConfig } from "@/store/ontology";
+import { selectCase } from "../../../store/case";
+import { handleEntityOrSummaryDrop } from "../../../utils/drag-events";
+import { preventDefault } from "../../../utils/DOM";
+import { getEntityTypeGroup } from "../../../constants/entity-related";
+import { selectOntologyConfig } from "../../../store/ontology";
 import { toast } from "react-toastify";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
 import MaplibreGeocoder from "@maplibre/maplibre-gl-geocoder";
-import { MAP_STYLE } from "@/constants/map";
+import { MAP_STYLE } from "../../../constants/map";
 import {
   highlightUnclusterpointLayer,
   unClusterPointLayer,

@@ -1,6 +1,6 @@
 import React from "react";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { STYLE_BY_FILL_COLORS } from "@/constants/graph-themes";
+import { STYLE_BY_FILL_COLORS } from "../../../constants/graph-themes";
 
 interface AuxProps extends React.SVGProps<SVGSVGElement> {
   withBadge?: boolean;

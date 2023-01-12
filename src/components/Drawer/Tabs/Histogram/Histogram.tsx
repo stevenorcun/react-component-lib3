@@ -7,32 +7,32 @@ import {
   getIdProperty,
   getObjectTypeStrIcon,
   ONTOLOGY_TYPES_GROUPS,
-} from "@/constants/entity-related";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import IconClean from "@/assets/images/icons/IconClean";
+} from "../../../../constants/entity-related";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import IconClean from "../../../../assets/images/icons/IconClean";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import HistogramGroups, {
   IHistogramElementData,
   IHistogramGroupData,
-} from "@/components/Histogram/HistogramGroups/HistogramGroups";
+} from "../../../../components/Histogram/HistogramGroups/HistogramGroups";
 import cx from "classnames";
-import HistogramGroup from "@/components/Histogram/HistogramGroup/HistogramGroup";
-import { unhandle } from "@/utils/DOM";
+import HistogramGroup from "../../../../components/Histogram/HistogramGroup/HistogramGroup";
+import { unhandle } from "../../../../utils/DOM";
 import {
   HistogramNovaEntityProperty,
   HistogramNovaEntityType,
-} from "@/components/Histogram/HistogramElement/HistogramElement";
+} from "../../../../components/Histogram/HistogramElement/HistogramElement";
 import {
   EntityDto,
   EntityPropertyDetails,
   HomeAddressSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import noContentStyles from "@/components/Drawer/Tabs/Selection/styles.scss";
-import { isGraphEntityHighlightedSlightlyLighter } from "@/utils/graph";
-import { CanImplementTimelineState } from "@/store/shared/timeline";
-import { CanImplementHistogramState } from "@/store/shared/histogram";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+} from "../../../../API/DataModels/Database/NovaObject";
+import noContentStyles from "../../../../components/Drawer/Tabs/Selection/styles.scss";
+import { isGraphEntityHighlightedSlightlyLighter } from "../../../../utils/graph";
+import { CanImplementTimelineState } from "../../../../store/shared/timeline";
+import { CanImplementHistogramState } from "../../../../store/shared/histogram";
+import { useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
 import styles from "./styles.scss";
 
 interface HistogramProps {

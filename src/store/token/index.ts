@@ -1,11 +1,11 @@
-import { LoginResponse } from '@/API/controllers/auth-api';
-import { getTokenFromStorage } from '@/store/token/actions';
-import { SESSION_STORAGE_KEYS } from '@/constants/storage-keys';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '@/store';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { LoginResponse } from "../../API/controllers/auth-api";
+import { getTokenFromStorage } from "../../store/token/actions";
+import { SESSION_STORAGE_KEYS } from "../../constants/storage-keys";
+import { RootState } from "../../store";
 
 export interface TokenState {
-  token?: LoginResponse|null;
+  token?: LoginResponse | null;
 }
 
 const initialState: TokenState = {
@@ -13,28 +13,34 @@ const initialState: TokenState = {
 };
 
 export const tokenSlice = createSlice({
-  name: 'token',
+  name: "token",
   initialState,
   reducers: {
-    saveToken: (state: TokenState, action: PayloadAction<LoginResponse|null>) => {
+    saveToken: (
+      state: TokenState,
+      action: PayloadAction<LoginResponse | null>
+    ) => {
       const data = action.payload;
       if (data) {
         try {
-          sessionStorage.setItem(SESSION_STORAGE_KEYS.token, JSON.stringify(data));
+          sessionStorage.setItem(
+            SESSION_STORAGE_KEYS.token,
+            JSON.stringify(data)
+          );
           state.token = data;
         } catch (e) {
-          console.error('Failed to save token', e);
+          console.error("Failed to save token", e);
         }
       } else {
         sessionStorage.removeItem(SESSION_STORAGE_KEYS.token);
-        state.token = null
+        state.token = null;
       }
     },
     /** ************
      * RESET SLICE *
      ************** */
     resetSlice: () => ({ ...initialState }),
-  }
+  },
 });
 
 export const {

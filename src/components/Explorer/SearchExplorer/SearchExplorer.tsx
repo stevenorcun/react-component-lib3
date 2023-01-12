@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Moment from "react-moment";
 
-import IconSearch from "@/assets/images/icons/IconSearch";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
-import IconFilter from "@/assets/images/icons/IconFilter";
+import IconSearch from "../../../assets/images/icons/IconSearch";
+import IconCalendar from "../../../assets/images/icons/IconCalendar";
+import IconFilter from "../../../assets/images/icons/IconFilter";
 
 import styles from "./searchExplorer.scss";
 

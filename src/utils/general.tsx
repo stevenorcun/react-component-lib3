@@ -3,12 +3,12 @@
 import React from "react";
 import _ from "lodash";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../API/DataModels/Database/NovaObject";
 
-import IconArrowTopFull from "@/assets/images/icons/IconArrowTopFull";
-import IconArrowBottomFull from "@/assets/images/icons/IconArrowBottomFull";
-import IconArrowDown from "@/assets/images/icons/IconArrowDown";
-import IconArrowTop from "@/assets/images/icons/IconArrow";
+import IconArrowTopFull from "../assets/images/icons/IconArrowTopFull";
+import IconArrowBottomFull from "../assets/images/icons/IconArrowBottomFull";
+import IconArrowDown from "../assets/images/icons/IconArrowDown";
+import IconArrowTop from "../assets/images/icons/IconArrow";
 
 export const iconArrow = (field: boolean) =>
   field ? (

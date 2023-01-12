@@ -2,26 +2,29 @@
 import React, { useEffect, useState } from "react";
 
 // Icon
-import IconBell from "@/assets/images/icons/IconBellNavigation";
-import IconGroup from "@/assets/images/icons/IconGroup";
-import IconActions from "@/assets/images/icons/IconActions";
-import IconPencilEdit from "@/assets/images/icons/IconPencilEdit";
+import IconBell from "../../../../assets/images/icons/IconBellNavigation";
+import IconGroup from "../../../../assets/images/icons/IconGroup";
+import IconActions from "../../../../assets/images/icons/IconActions";
+import IconPencilEdit from "../../../../assets/images/icons/IconPencilEdit";
 
-import { selectBrowser, toggleActiveTabDrawer } from "@/store/browser";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectProperty } from "@/store/tags";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import {
+  selectBrowser,
+  toggleActiveTabDrawer,
+} from "../../../../store/browser";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { selectProperty } from "../../../../store/tags";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 
 import {
   getEntityTitleProperty,
   getEntityTypeLabel,
   getEntityTypeGroup,
   getEntityStrIcon,
-} from "@/constants/entity-related";
-import { getTagColor, getTagLabel } from "@/constants/tags";
+} from "../../../../constants/entity-related";
+import { getTagColor, getTagLabel } from "../../../../constants/tags";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import Options from "@/components/Options/Options";
+import Options from "../../../../components/Options/Options";
 import {
   createConnectionFromTo,
   createEntities,
@@ -29,9 +32,9 @@ import {
   selectGraph,
   setIsOverviewInitialized,
   updateGraphRectThenFitToView,
-} from "@/store/graph";
+} from "../../../../store/graph";
 import { useNavigate } from "react-router-dom";
-import { APP_ROUTES } from "@/constants/routes";
+import { APP_ROUTES } from "../../../../constants/routes";
 import { toast } from "react-toastify";
 import {
   addEntities,
@@ -40,29 +43,29 @@ import {
   selectMap,
   setOnImportEntitiesWithoutGeo,
   setValidTypeEntities,
-} from "@/store/map";
-import IconList from "@/assets/images/icons/IconList";
-import IconMap from "@/assets/images/icons/IconMap";
-import IconGraphNetwork from "@/assets/images/icons/IconGraphNetwork";
-import IconLink from "@/assets/images/icons/IconLink";
-import IconNote from "@/assets/images/icons/IconNote";
-import IconExplorer from "@/assets/images/icons/IconExplorer";
+} from "../../../../store/map";
+import IconList from "../../../../assets/images/icons/IconList";
+import IconMap from "../../../../assets/images/icons/IconMap";
+import IconGraphNetwork from "../../../../assets/images/icons/IconGraphNetwork";
+import IconLink from "../../../../assets/images/icons/IconLink";
+import IconNote from "../../../../assets/images/icons/IconNote";
+import IconExplorer from "../../../../assets/images/icons/IconExplorer";
 
-import ModalTypes from "@/constants/modal";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+import ModalTypes from "../../../../constants/modal";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
 import cx from "classnames";
-import NovaImage from "@/components/NovaImage/NovaImage";
-import { selectOntologyConfig } from "@/store/ontology";
-import { isDark } from "@/utils/colors";
+import NovaImage from "../../../../components/NovaImage/NovaImage";
+import { selectOntologyConfig } from "../../../../store/ontology";
+import { isDark } from "../../../../utils/colors";
 import {
   castEntitiesToConnections,
   relatedWithIds,
   sortLinksByIdObjet,
-} from "@/utils/graph";
-import { addEntitiesExplorer } from "@/store/explorer";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
-import ApiFactory from "@/API/controllers/api-factory";
-import SearchApi from "@/API/controllers/search-api";
+} from "../../../../utils/graph";
+import { addEntitiesExplorer } from "../../../../store/explorer";
+import { convertToEntityDto2 } from "../../../../API/DataModels/DTO/entityDto";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import SearchApi from "../../../../API/controllers/search-api";
 import styles from "./styles.scss";
 
 const EntityHeader = ({ entity }: { entity: any }) => {

@@ -6,16 +6,16 @@ import _ from "lodash";
 import {
   getEntityTypeLabel,
   getEntityPropLabelForExplorer,
-} from "@/constants/entity-related";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { changeSelection, selectExplorer } from "@/store/explorer";
-import { selectOntologyConfig } from "@/store/ontology";
-import { isOpenCategory } from "@/utils/general";
+} from "../../../../../constants/entity-related";
+import { useAppDispatch, useAppSelector } from "../../../../../store/hooks";
+import { changeSelection, selectExplorer } from "../../../../../store/explorer";
+import { selectOntologyConfig } from "../../../../../store/ontology";
+import { isOpenCategory } from "../../../../../utils/general";
 
-import HeaderSubtitleIcon from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
-import FooterSelection from "@/components/Explorer/PaletteExplorer/Components/FooterSelection/FooterSelection";
+import HeaderSubtitleIcon from "../../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
+import FooterSelection from "../../../../../components/Explorer/PaletteExplorer/Components/FooterSelection/FooterSelection";
 
-import IconArrow from "@/assets/images/icons/IconArrowDown";
+import IconArrow from "../../../../../assets/images/icons/IconArrowDown";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./histogramExplorer.scss";

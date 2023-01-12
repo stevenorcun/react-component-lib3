@@ -1,19 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import { APP_ROUTES } from '@/constants/routes';
-import { LOCAL_STORAGE_KEYS, SESSION_STORAGE_KEYS } from '@/constants/storage-keys';
-import usePreferences from '@/hooks/usePreferences';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { GlobalHotKeys } from 'react-hotkeys';
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { selectCase, setCurrentCase } from '@/store/case';
-import { selectEveryEntity as mapSelectEveryEntity } from '@/store/map';
+import { APP_ROUTES } from "../../constants/routes";
 import {
-  invertSelection as graphInvertSelection, selectEveryEntity as graphSelectEveryEntity, selectEveryAnnotations, selectInvertSelectionAnnotations,
-} from '@/store/graph';
-import { selectOntologyConfig } from '@/store/ontology';
-import { explorerInvertSelection, explorerSelectEveryEntity } from '@/store/explorer';
-import preventDefaultHandlers from './CommonShortcuts';
+  LOCAL_STORAGE_KEYS,
+  SESSION_STORAGE_KEYS,
+} from "../../constants/storage-keys";
+import usePreferences from "../../hooks/usePreferences";
+import { useLocation, useNavigate } from "react-router-dom";
+import { GlobalHotKeys } from "react-hotkeys";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { selectCase, setCurrentCase } from "../../store/case";
+import { selectEveryEntity as mapSelectEveryEntity } from "../../store/map";
+import {
+  invertSelection as graphInvertSelection,
+  selectEveryEntity as graphSelectEveryEntity,
+  selectEveryAnnotations,
+  selectInvertSelectionAnnotations,
+} from "../../store/graph";
+import { selectOntologyConfig } from "../../store/ontology";
+import {
+  explorerInvertSelection,
+  explorerSelectEveryEntity,
+} from "../../store/explorer";
+import preventDefaultHandlers from "./CommonShortcuts";
 
 const ShortcutsHandler = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +32,7 @@ const ShortcutsHandler = () => {
   const { ont } = useAppSelector(selectOntologyConfig);
 
   const { preferences: keyMapData } = usePreferences(
-    LOCAL_STORAGE_KEYS.shortcuts,
+    LOCAL_STORAGE_KEYS.shortcuts
   );
 
   const handlers = preventDefaultHandlers({
@@ -67,13 +76,7 @@ const ShortcutsHandler = () => {
     },
   });
 
-  return (
-    <GlobalHotKeys
-      keyMap={keyMapData}
-      handlers={handlers}
-      allowChanges
-    />
-  );
+  return <GlobalHotKeys keyMap={keyMapData} handlers={handlers} allowChanges />;
 };
 
 export default ShortcutsHandler;

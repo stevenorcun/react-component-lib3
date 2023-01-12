@@ -1,12 +1,12 @@
 import React from "react";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 
-import CaseBlockDescription from "@/pages/Case/CaseBlocks/CaseBlockDescription/CaseBlockDescription";
-import CaseBlockTarget from "@/pages/Case/CaseBlocks/CaseBlockTarget/CaseBlockTarget";
-import CaseBlockTeam from "@/pages/Case/CaseBlocks/CaseBlockTeam/CaseBlockTeam";
-import CaseBlockLists from "@/pages/Case/CaseBlocks/CaseBlockLists/CaseBlockLists";
-import CaseBlockCheckList from "@/pages/Case/CaseBlocks/CaseBlockCheckList/CaseBlockCheckList";
+import CaseBlockDescription from "../../../../pages/Case/CaseBlocks/CaseBlockDescription/CaseBlockDescription";
+import CaseBlockTarget from "../../../../pages/Case/CaseBlocks/CaseBlockTarget/CaseBlockTarget";
+import CaseBlockTeam from "../../../../pages/Case/CaseBlocks/CaseBlockTeam/CaseBlockTeam";
+import CaseBlockLists from "../../../../pages/Case/CaseBlocks/CaseBlockLists/CaseBlockLists";
+import CaseBlockCheckList from "../../../../pages/Case/CaseBlocks/CaseBlockCheckList/CaseBlockCheckList";
 
 import cx from "classnames";
 import styles from "./styles.scss";

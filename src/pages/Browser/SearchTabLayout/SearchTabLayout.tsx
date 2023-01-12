@@ -1,11 +1,11 @@
 import React from "react";
 import { toast } from "react-toastify";
 import moment from "moment";
-import ApiFactory from "@/API/controllers/api-factory";
-import SearchApi from "@/API/controllers/search-api";
-import { formToSearchQuery } from "@/utils/browser";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
+import ApiFactory from "../../../API/controllers/api-factory";
+import SearchApi from "../../../API/controllers/search-api";
+import { formToSearchQuery } from "../../../utils/browser";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
+import { convertToEntityDto2 } from "../../../API/DataModels/DTO/entityDto";
 import {
   BrowserState,
   incrActiveTabRequestCount,
@@ -14,16 +14,16 @@ import {
   setActiveTabResults,
   setActiveTabSearchFilters,
   toggleResultSelection,
-} from "@/store/browser";
-import DRAG_EVENT_TYPES from "@/constants/drag-events-types";
+} from "../../../store/browser";
+import DRAG_EVENT_TYPES from "../../../constants/drag-events-types";
 import {
   BrowserTabType,
   IBrowserSearchForm,
   IBrowserSearchTab,
-} from "@/constants/browser-related";
-import ComplexSearchLayout from "@/pages/Browser/ComplexSearchLayout/ComplexSearchLayout";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import SimpleSearchLayout from "@/pages/Browser/SimpleSearchLayout/SimpleSearchLayout";
+} from "../../../constants/browser-related";
+import ComplexSearchLayout from "../../../pages/Browser/ComplexSearchLayout/ComplexSearchLayout";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import SimpleSearchLayout from "../../../pages/Browser/SimpleSearchLayout/SimpleSearchLayout";
 import {
   getEntityStrIcon,
   getEntityTitleProperty,
@@ -31,8 +31,11 @@ import {
   getEntityTypeId,
   getEntityTypeLabel,
   getIdProperty,
-} from "@/constants/entity-related";
-import { OntologyConfigState, selectOntologyConfig } from "@/store/ontology";
+} from "../../../constants/entity-related";
+import {
+  OntologyConfigState,
+  selectOntologyConfig,
+} from "../../../store/ontology";
 
 export interface SearchTabLayoutProps {
   tab: IBrowserSearchTab;

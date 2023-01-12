@@ -1,4 +1,4 @@
-import { EntityIconProps } from "@/assets/images/icons/entityTypes/EntityIconsProps";
+import { EntityIconProps } from "../assets/images/icons/entityTypes/EntityIconsProps";
 
 export interface EntityObjectProps {
   // Fill for most of the icons

@@ -1,4 +1,4 @@
-import Vertex from "@/API/DataModels/GraphRepresentation/Vertex";
+import Vertex from "./Vertex";
 
 class Graph {
   public nodes: Map<string, Vertex>;

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
 import {
   ENTITY_DEFAULT_HEADER,
   ENTITY_DEFAULT_TABS,
   ENTITY_SHEET_DEFAULT,
-} from "@/constants/entity-sheet-config";
+} from "../../constants/entity-sheet-config";
 
-import Tabs from "@/components/Tabs/Tabs";
-import Tab from "@/components/Tabs/Tab";
+import Tabs from "../../components/Tabs/Tabs";
+import Tab from "../../components/Tabs/Tab";
 
 const Sheet = ({
   type,

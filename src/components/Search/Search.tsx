@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 
-import IconSearch from "@/assets/images/icons/IconSearch";
+import IconSearch from "../../assets/images/icons/IconSearch";
 
 import styles from "./search.scss";
 

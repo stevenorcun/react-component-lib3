@@ -1,11 +1,27 @@
-import { ENTITY_TYPE_DETAILS, ENTITY_TYPE_GROUP, ONTOLOGY_BLACKLISTED_PROPS } from '@/constants/entity-related';
-import { EntityDto, NovaObject, PhysicalEntityDto } from '@/API/DataModels/Database/NovaObject';
+import {
+  ENTITY_TYPE_DETAILS,
+  ENTITY_TYPE_GROUP,
+  ONTOLOGY_BLACKLISTED_PROPS,
+} from "../../../constants/entity-related";
+import {
+  EntityDto,
+  NovaObject,
+  PhysicalEntityDto,
+} from "../Database/NovaObject";
 
-export function convertToEntityDto2(data: any, ontology: any, related?: any): any {
-  const ontType = ontology.find((o) => o.name === data._DATATYPE)?.properties.map((p) => p.name);
+export function convertToEntityDto2(
+  data: any,
+  ontology: any,
+  related?: any
+): any {
+  const ontType = ontology
+    .find((o) => o.name === data._DATATYPE)
+    ?.properties.map((p) => p.name);
   const propsSet = new Set(ontType || []);
 
-  const keys = Object.keys(data).filter((k) => !ONTOLOGY_BLACKLISTED_PROPS.has(k) && propsSet.has(k) && !!data[k]);
+  const keys = Object.keys(data).filter(
+    (k) => !ONTOLOGY_BLACKLISTED_PROPS.has(k) && propsSet.has(k) && !!data[k]
+  );
 
   const m = data._MARKINGS;
   return {
@@ -13,9 +29,9 @@ export function convertToEntityDto2(data: any, ontology: any, related?: any): an
     related: related
       ? { entities: [...related.relations], links: [...related.links] }
       : {
-        entities: [],
-        links: [],
-      },
+          entities: [],
+          links: [],
+        },
     _MARKINGS: m ? (Array.isArray(m) ? m : [m]) : [],
     __related: related ? [...related.relations, ...related.links] : [],
     __properties: {
@@ -30,36 +46,34 @@ export function convertToEntityDto2(data: any, ontology: any, related?: any): an
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export function convertToEntityDto(
-  data: NovaObject['_source'],
-): EntityDto {
+export function convertToEntityDto(data: NovaObject["_source"]): EntityDto {
   // Properties not meant for the average user to see
   const metaProperties: Array<keyof EntityDto | keyof PhysicalEntityDto> = [
-    'id',
-    'createdAt',
-    'createdBy',
-    'updatedAt',
-    'updatedBy',
-    'label',
-    'type',
-    'tags',
-    'files',
-    'related',
-    'avatar',
+    "id",
+    "createdAt",
+    "createdBy",
+    "updatedAt",
+    "updatedBy",
+    "label",
+    "type",
+    "tags",
+    "files",
+    "related",
+    "avatar",
     // cases
-    'associatedCases',
-    'subscribers',
-    'messageCount',
-    'alerts',
-    'comments',
-    'sharing',
-    'requests',
-    'events',
-    'lists',
-    'checkList',
-    'picture',
-    'geometry',
-    '__fusedEntities',
+    "associatedCases",
+    "subscribers",
+    "messageCount",
+    "alerts",
+    "comments",
+    "sharing",
+    "requests",
+    "events",
+    "lists",
+    "checkList",
+    "picture",
+    "geometry",
+    "__fusedEntities",
   ];
 
   const keys = Object.keys(data);
@@ -76,7 +90,7 @@ export function convertToEntityDto(
       count: values.length,
       values,
     },
-    label: '',
+    label: "",
     type: 0,
 
     ...data,
@@ -84,17 +98,17 @@ export function convertToEntityDto(
     // évite de perdre data.related quand on passe un DTO en props
     // (chose que l'on n'est pas censé faire
     //  mais je n'ai remarqué ce bug que récemment et donc 3/4 de l'App le fait)
-    related: (
-      data.related
-      && typeof data.related === 'object'
-      && !Array.isArray(data.related)
-    ) ? data.related
-      : {
-        entities: { count: 0, values: [] },
-        documents: { count: 0, values: [] },
-        events: { count: 0, values: [] },
-        multimediaFiles: { count: 0, values: [] },
-      },
+    related:
+      data.related &&
+      typeof data.related === "object" &&
+      !Array.isArray(data.related)
+        ? data.related
+        : {
+            entities: { count: 0, values: [] },
+            documents: { count: 0, values: [] },
+            events: { count: 0, values: [] },
+            multimediaFiles: { count: 0, values: [] },
+          },
   };
 
   if (data.related && Array.isArray(data.related)) {
@@ -105,7 +119,8 @@ export function convertToEntityDto(
         if (!curr.value?.type && !ENTITY_TYPE_DETAILS[curr.value.type]) {
           return acc;
         }
-        const { key } = ENTITY_TYPE_GROUP[ENTITY_TYPE_DETAILS[curr.value.type].typeGroup];
+        const { key } =
+          ENTITY_TYPE_GROUP[ENTITY_TYPE_DETAILS[curr.value.type].typeGroup];
 
         if (!key) return acc;
         acc[key] = acc[key] ?? { count: 0, values: [] };

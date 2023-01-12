@@ -1,6 +1,6 @@
 import React from "react";
 
-import IconSearch from "@/assets/images/icons/IconSearch";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 
 import cx from "classnames";

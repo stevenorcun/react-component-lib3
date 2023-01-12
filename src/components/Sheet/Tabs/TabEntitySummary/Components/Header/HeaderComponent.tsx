@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import Options from "@/components/Options/Options";
-import Settings from "@/pages/Dashboard/SettingsComponent/Settings";
+import Options from "../../../../../../components/Options/Options";
+import Settings from "../../../../../../pages/Dashboard/SettingsComponent/Settings";
 
-import IconEllipsisH from "@/assets/images/icons/IconEllipsisH";
-import IconSetting from "@/assets/images/icons/IconSettings";
+import IconEllipsisH from "../../../../../../assets/images/icons/IconEllipsisH";
+import IconSetting from "../../../../../../assets/images/icons/IconSettings";
 
-import { SheetHeaderOptionsSummary } from "@/components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
+import { SheetHeaderOptionsSummary } from "../../../../../../components/Sheet/Tabs/TabEntitySummary/Components/DetailSheetHeader";
 import styles from "./header.scss";
 
 export interface HeaderProps {

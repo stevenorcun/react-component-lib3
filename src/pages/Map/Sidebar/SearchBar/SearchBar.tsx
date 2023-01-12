@@ -1,9 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React from "react";
-import SvgIconSearch from "@/assets/images/icons/IconSearch";
+import SvgIconSearch from "../../../../assets/images/icons/IconSearch";
 import cx from "classnames";
-import { selectMap } from "@/store/map";
-import { useAppSelector } from "@/store/hooks";
+import { selectMap } from "../../../../store/map";
+import { useAppSelector } from "../../../../store/hooks";
 import styles from "./styles.scss";
 
 const SearchBar = ({

@@ -1,7 +1,7 @@
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { selectMap, setActiveKmlMap } from '@/store/map';
-import * as React from 'react';
-import styles from '../MapServices/clustering_styles.scss';
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { selectMap, setActiveKmlMap } from "../../../store/map";
+import * as React from "react";
+import styles from "../MapServices/clustering_styles.scss";
 
 function KmlPanel(props) {
   const mapState = useAppSelector(selectMap);
@@ -19,14 +19,9 @@ function KmlPanel(props) {
   };
 
   return (
-    <div className={styles['control-panel-kml']}>
-      <h3 style={{ display: 'inline-block' }}>Kml</h3>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={toggleChecked}
-      />
-
+    <div className={styles["control-panel-kml"]}>
+      <h3 style={{ display: "inline-block" }}>Kml</h3>
+      <input type="checkbox" checked={checked} onChange={toggleChecked} />
     </div>
   );
 }

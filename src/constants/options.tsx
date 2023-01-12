@@ -1,7 +1,7 @@
-import React from 'react';
-import IconBars from '@/assets/images/icons/IconBars';
-import IconGraph from '@/assets/images/icons/IconGraph';
-import IconMap from '@/assets/images/icons/IconMap';
+import React from "react";
+import IconBars from "../assets/images/icons/IconBars";
+import IconGraph from "../assets/images/icons/IconGraph";
+import IconMap from "../assets/images/icons/IconMap";
 
 interface OptionsSummary {
   label: string;
@@ -11,15 +11,15 @@ interface OptionsSummary {
 
 const OPTIONS_SUMMARY: OptionsSummary[] = [
   {
-    label: 'Liste',
+    label: "Liste",
     icon: <IconBars />,
   },
   {
-    label: 'Graph',
+    label: "Graph",
     icon: <IconGraph />,
   },
   {
-    label: 'Carte',
+    label: "Carte",
     icon: <IconMap />,
   },
 ];

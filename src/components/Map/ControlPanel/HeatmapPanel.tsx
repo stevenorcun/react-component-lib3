@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { selectMap, setActiveHeatmap } from '@/store/map';
-import * as React from 'react';
-import { useState } from 'react';
-import styles from '../MapServices/clustering_styles.scss';
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { selectMap, setActiveHeatmap } from "../../../store/map";
+import * as React from "react";
+import { useState } from "react";
+import styles from "../MapServices/clustering_styles.scss";
 
 function formatTime(time) {
   const date = new Date(time);
@@ -11,7 +11,12 @@ function formatTime(time) {
 
 function HeatmapPanel(props) {
   const {
-    startTime, endTime, onChangeTime, allDays, onChangeAllDays, selectedTime,
+    startTime,
+    endTime,
+    onChangeTime,
+    allDays,
+    onChangeAllDays,
+    selectedTime,
   } = props;
   const day = 24 * 60 * 60 * 1000;
   const days = Math.round((endTime - startTime) / day);
@@ -38,32 +43,25 @@ function HeatmapPanel(props) {
   };
 
   return (
-    <div className={styles['control-panel']}>
+    <div className={styles["control-panel"]}>
       <div className={styles.head_container}>
-        <h3 style={{
-          display: 'inline-block', color: 'white', marginRight: '15px', marginLeft: '33%',
-        }}
+        <h3
+          style={{
+            display: "inline-block",
+            color: "white",
+            marginRight: "15px",
+            marginLeft: "33%",
+          }}
         >
           Heatmap
         </h3>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={toggleChecked}
-        />
+        <input type="checkbox" checked={checked} onChange={toggleChecked} />
       </div>
       <div className={styles.div_container}>
-        <p style={{ textAlign: 'center' }}>
+        <p style={{ textAlign: "center" }}>
           Map : tremblement de terre
           <br />
-          du
-          {' '}
-          <b>{formatTime(startTime)}</b>
-          {' '}
-          au
-          {' '}
-          <b>{formatTime(endTime)}</b>
-          .
+          du <b>{formatTime(startTime)}</b> au <b>{formatTime(endTime)}</b>.
         </p>
         <hr />
         <div className="input">
@@ -75,12 +73,8 @@ function HeatmapPanel(props) {
             onChange={(evt) => onChangeAllDays(evt.target.checked)}
           />
         </div>
-        <div className={`input ${allDays ? 'disabled' : ''}`}>
-          <label>
-            Par jour:
-            {' '}
-            {formatTime(selectedTime)}
-          </label>
+        <div className={`input ${allDays ? "disabled" : ""}`}>
+          <label>Par jour: {formatTime(selectedTime)}</label>
           <input
             type="range"
             disabled={allDays}

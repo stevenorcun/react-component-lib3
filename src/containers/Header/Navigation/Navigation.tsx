@@ -3,11 +3,11 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import cx from "classnames";
 
-import { useAppSelector } from "@/store/hooks";
-import { selectCase } from "@/store/case";
-import { APP_ROUTES } from "@/constants/routes";
+import { useAppSelector } from "../../../store/hooks";
+import { selectCase } from "../../../store/case";
+import { APP_ROUTES } from "../../../constants/routes";
 
-import NavigationItem from "@/components/Navigation/NavigationItem";
+import NavigationItem from "../../../components/Navigation/NavigationItem";
 import LeftNavigation from "./LeftNavigation/LeftNavigation";
 import RightNavigation from "./RightNavigation/RightNavigation";
 

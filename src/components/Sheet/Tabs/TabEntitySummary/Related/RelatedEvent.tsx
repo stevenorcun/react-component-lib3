@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import Moment from "react-moment";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
+import { ENTITY_TYPE_DETAILS } from "../../../../../constants/entity-related";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconDate from "@/assets/images/icons/IconCalendar";
-import IconCompany from "@/assets/images/icons/IconCompanyAirIberia";
-import HeaderSubtitleIcon from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
-import { RelatedSummariesProps } from "@/components/Sheet/Tabs/TabEntitySummary/Related/Related";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import { EventSummary } from "@/API/DataModels/Database/NovaObject";
+import IconDate from "../../../../../assets/images/icons/IconCalendar";
+import IconCompany from "../../../../../assets/images/icons/IconCompanyAirIberia";
+import HeaderSubtitleIcon from "../../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
+import { RelatedSummariesProps } from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/Related";
+import DraggableEntityOrSummary from "../../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import { NovaEntityType } from "../../../../../API/DataModels/Database/NovaEntityEnum";
+import { EventSummary } from "../../../../../API/DataModels/Database/NovaObject";
 import RelatedFooter from "../Components/Footer/RelatedFooterComponent";
 import styles from "./styles.scss";
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
-import { IContextMenu } from "@/components/ContextMenu/ContextMenu";
+import { IContextMenu } from "../../../components/ContextMenu/ContextMenu";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";
 

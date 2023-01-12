@@ -1,12 +1,12 @@
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../API/DataModels/Database/NovaObject";
 import {
   NovaEntityGender,
   NovaEntityType,
   NovaEntityTypeGroup,
-} from "@/API/DataModels/Database/NovaEntityEnum";
-import { AggregatedBucket } from "@/API/controllers/search-api";
-import { NovaDataType } from "@/constants/entity-related";
-import { DB_STRICTNESS } from "@/constants/strictness-select-values";
+} from "../API/DataModels/Database/NovaEntityEnum";
+import { AggregatedBucket } from "../API/controllers/search-api";
+import { NovaDataType } from "../constants/entity-related";
+import { DB_STRICTNESS } from "../constants/strictness-select-values";
 
 export enum BrowserTabType {
   Simple = "simple",

@@ -1,11 +1,11 @@
 /* eslint-disable import/no-cycle */
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import { STROKES_FILLS_COLORS } from '@/constants/graph-themes';
-import { unhandle } from '@/utils/DOM';
+import { STROKES_FILLS_COLORS } from "../../../constants/graph-themes";
+import { unhandle } from "../../../utils/DOM";
 
-import styles from './ColourDropdownMenu.scss';
+import styles from "./ColourDropdownMenu.scss";
 
 /**
  * To avoid an inline function... maybe overkill
@@ -29,18 +29,18 @@ const ColorButton = ({
   };
 
   return (
-    <div className={styles['colored-disc-area']} onMouseDown={handleClick}>
+    <div className={styles["colored-disc-area"]} onMouseDown={handleClick}>
       <div
         className={cx(styles.buttonColor, {
           [styles.buttonColor__active]: typeColor === value,
         })}
       >
-        {' '}
+        {" "}
         <span
-          className={styles['colored-disc']}
+          className={styles["colored-disc"]}
           style={{ backgroundColor: value }}
         >
-          {value === 'transparent' && (
+          {value === "transparent" && (
             <div className={styles.dividerTransparent} />
           )}
         </span>
@@ -54,22 +54,22 @@ const ColourDropdownMenu = ({
   handleClick,
   typeColor,
 }: {
-  className?: string | {
-    container?: string;
-    title?: string;
-    colorPicker?: string;
-  };
+  className?:
+    | string
+    | {
+        container?: string;
+        title?: string;
+        colorPicker?: string;
+      };
   handleClick: (value: string) => void;
   typeColor?: string;
 }) => {
-  const cn = typeof className === 'string' ? { container: className } : className;
+  const cn =
+    typeof className === "string" ? { container: className } : className;
   return (
-    <div
-      className={cx(styles.contentColor, cn?.container)}
-      onClick={unhandle}
-    >
+    <div className={cx(styles.contentColor, cn?.container)} onClick={unhandle}>
       <div className={cx(styles.title, cn?.title)}>Couleur</div>
-      <div className={cx(styles['color-picker'], cn?.colorPicker)}>
+      <div className={cx(styles["color-picker"], cn?.colorPicker)}>
         {STROKES_FILLS_COLORS.map((elem) => (
           <ColorButton
             key={elem}

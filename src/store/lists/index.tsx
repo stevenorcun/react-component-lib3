@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-import { ListProps } from "@/constants/ListProps";
-import filterOriginList from "@/components/Lists/utils";
+import { ListProps } from "../../constants/ListProps";
+import filterOriginList from "../../components/Lists/utils";
 
 export interface ListState {
   originalLists: ListProps[];

@@ -3,11 +3,11 @@
 import React from "react";
 import moment from "moment";
 import _ from "lodash";
-
 import { createSlice } from "@reduxjs/toolkit";
-import PrimaryViews from "@/constants/general";
 
-import IconExplorer from "@/assets/images/icons/IconExplorer";
+import PrimaryViews from "../../constants/general";
+
+import IconExplorer from "../../assets/images/icons/IconExplorer";
 
 export interface ExplorerState {
   tabs: Array<{

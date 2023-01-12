@@ -1,18 +1,18 @@
-import React from 'react';
-import cx from 'classnames';
+import React from "react";
+import cx from "classnames";
 
-import SelectionExplorer from '@/components/Explorer/PaletteExplorer/SetPalette/SelectionExplorer/SelectionExplorer';
-import HistogramExplorer from '@/components/Explorer/PaletteExplorer/SetPalette/HistogramExplorer/HistogramExplorer';
+import SelectionExplorer from "../../../../components/Explorer/PaletteExplorer/SetPalette/SelectionExplorer/SelectionExplorer";
+import HistogramExplorer from "../../../../components/Explorer/PaletteExplorer/SetPalette/HistogramExplorer/HistogramExplorer";
 
-import { useAppSelector } from '@/store/hooks';
-import { selectExplorer } from '@/store/explorer';
-import NoData from '@/lib/NoData/NoData';
-import styles from './setPalette.scss';
+import { useAppSelector } from "../../../../store/hooks";
+import { selectExplorer } from "../../../../store/explorer";
+import NoData from "../../../../lib/NoData/NoData";
+import styles from "./setPalette.scss";
 
 enum ListTab {
-  selection = 'Sélection',
-  histogram = 'Histogramme',
-  search = 'Recherche',
+  selection = "Sélection",
+  histogram = "Histogramme",
+  search = "Recherche",
 }
 
 interface SetPaletteProps {
@@ -44,14 +44,18 @@ const SetPalette = ({ changeSelectTab, selectTab }: SetPaletteProps) => {
   };
 
   return (
-    <div className={cx(styles.setPalette, {
-      [styles.setPaletteSelection]: selectTab === 'selection',
-    })}
+    <div
+      className={cx(styles.setPalette, {
+        [styles.setPaletteSelection]: selectTab === "selection",
+      })}
     >
       <HeaderPalette changeSelectTab={changeSelectTab} selectTab={selectTab} />
-      {explorerState.tabs[explorerState.activeExlorerTabIndex].entitiesSelected.length > 0 ? (
+      {explorerState.tabs[explorerState.activeExlorerTabIndex].entitiesSelected
+        .length > 0 ? (
         tabSelected[selectTab]
-      ) : <NoData>Pas de sélection</NoData>}
+      ) : (
+        <NoData>Pas de sélection</NoData>
+      )}
     </div>
   );
 };

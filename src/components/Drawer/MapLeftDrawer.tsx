@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
-import Drawer from '@/lib/Drawer/Drawer';
-import React from 'react';
+import Drawer from "../../lib/Drawer/Drawer";
+import React from "react";
 // import HeatmapPanel from '../Map/ControlPanel/HeatmapPanel';
-import LayersData from './Map/LayersData/LayersData';
+import LayersData from "./Map/LayersData/LayersData";
 
 interface AuxiliariesLeftMapDrawerProps {
   className?: string;
@@ -21,7 +21,7 @@ const AuxiliariesLeftMapDrawer = ({
     //   component: <HeatmapPanel />,
     // },
     {
-      key: 'Couches',
+      key: "Couches",
       component: <LayersData />,
     },
   ];

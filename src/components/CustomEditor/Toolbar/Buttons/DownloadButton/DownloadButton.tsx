@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import BaseButton from "@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import BaseButton from "../../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

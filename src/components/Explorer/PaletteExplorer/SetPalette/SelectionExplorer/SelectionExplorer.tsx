@@ -2,20 +2,20 @@
 import React from "react";
 import cx from "classnames";
 
-import HeaderSubtitleIcon from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
-import SelectionFooter from "@/components/Explorer/PaletteExplorer/Components/FooterSelection/FooterSelection";
-import NoData from "@/lib/NoData/NoData";
+import HeaderSubtitleIcon from "../../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderSubtitleIcon/HeaderSubtitleIcon";
+import SelectionFooter from "../../../../../components/Explorer/PaletteExplorer/Components/FooterSelection/FooterSelection";
+import NoData from "../../../../../lib/NoData/NoData";
 
-import IconList from "@/assets/images/icons/IconList2";
-import IconEvent from "@/assets/images/icons/IconCalendar";
-import IconLink from "@/assets/images/icons/IconLink";
-import IconArrowBottom from "@/assets/images/icons/IconArrowDown";
-import IconPerson from "@/assets/images/icons/IconWoman";
+import IconList from "../../../../../assets/images/icons/IconList2";
+import IconEvent from "../../../../../assets/images/icons/IconCalendar";
+import IconLink from "../../../../../assets/images/icons/IconLink";
+import IconArrowBottom from "../../../../../assets/images/icons/IconArrowDown";
+import IconPerson from "../../../../../assets/images/icons/IconWoman";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 
-import { selectExplorer } from "@/store/explorer";
-import { useAppSelector } from "@/store/hooks";
+import { selectExplorer } from "../../../../../store/explorer";
+import { useAppSelector } from "../../../../../store/hooks";
 import styles from "./selectionExplorer.scss";
 
 const SelectionLine = ({

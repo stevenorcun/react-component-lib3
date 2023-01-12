@@ -1,4 +1,4 @@
-import { ApiStore } from '@/API/controllers/api-store';
+import { ApiStore } from "../../API/controllers/api-store";
 
 export default class ApiFactory {
   public static create<T>(name: string, ...args: any[]): T {

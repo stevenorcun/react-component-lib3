@@ -2,32 +2,36 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-import { sortAlphabeticallyAsc } from "@/utils/general";
-import ApiFactory from "@/API/controllers/api-factory";
-import MarkingsApi from "@/API/controllers/markings-api";
-import { TAG_TYPE_COLOR } from "@/constants/tags";
+import { sortAlphabeticallyAsc } from "../../../../utils/general";
+import ApiFactory from "../../../../API/controllers/api-factory";
+import MarkingsApi from "../../../../API/controllers/markings-api";
+import { TAG_TYPE_COLOR } from "../../../../constants/tags";
 import {
   CUSTOMIZED_ACTION_TYPE,
   CUSTOMIZED_ACTION_CALLBACK,
   CustomizedActionsType,
-} from "@/constants/customization";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { useAppDispatch } from "@/store/hooks";
-import { ActionState, addAction, editAction } from "@/store/customizedActions";
+} from "../../../../constants/customization";
+import { ENTITY_TYPE_DETAILS } from "../../../../constants/entity-related";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
+import { useAppDispatch } from "../../../../store/hooks";
+import {
+  ActionState,
+  addAction,
+  editAction,
+} from "../../../../store/customizedActions";
 
-import Modal from "@/components/Modal/Modal";
-import Accordion from "@/components/Accordion/Accordion";
-import Autocomplete from "@/components/Inputs/Autocomplete/Autocomplete";
-import Switch from "@/components/Inputs/Switch/Switch";
-import Button from "@/components/Buttons/Button/Button";
+import Modal from "../../../../components/Modal/Modal";
+import Accordion from "../../../../components/Accordion/Accordion";
+import Autocomplete from "../../../../components/Inputs/Autocomplete/Autocomplete";
+import Switch from "../../../../components/Inputs/Switch/Switch";
+import Button from "../../../../components/Buttons/Button/Button";
 import Select from "react-select";
-import Input from "@/components/Input/Input";
+import Input from "../../../../components/Input/Input";
 
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import IconSettings from "@/assets/images/icons/IconSettings";
-import IconCross from "@/assets/images/icons/IconCross";
-import IconPlusOutline from "@/assets/images/icons/IconPlusOutline";
+import IconPens from "../../../../assets/images/icons/IconPencilEdit";
+import IconSettings from "../../../../assets/images/icons/IconSettings";
+import IconCross from "../../../../assets/images/icons/IconCross";
+import IconPlusOutline from "../../../../assets/images/icons/IconPlusOutline";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";

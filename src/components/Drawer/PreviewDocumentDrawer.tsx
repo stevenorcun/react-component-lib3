@@ -1,9 +1,7 @@
-import React from 'react';
-import {
-  EditorState,
-} from 'draft-js';
-import Drawer from '@/lib/Drawer/Drawer';
-import PreviewTab from '@/components/Drawer/Editor/PreviewTab';
+import React from "react";
+import { EditorState } from "draft-js";
+import Drawer from "../../lib/Drawer/Drawer";
+import PreviewTab from "../../components/Drawer/Editor/PreviewTab";
 
 interface PreviewDocumentDrawerProps {
   className?: string;
@@ -22,9 +20,11 @@ const PreviewDocumentDrawer = ({
 }: PreviewDocumentDrawerProps) => {
   const menus = [
     {
-      key: 'documentPages',
+      key: "documentPages",
       label: `${editorStates.length} pages`,
-      component: <PreviewTab editorStates={editorStates} handleAddPage={addPage} />,
+      component: (
+        <PreviewTab editorStates={editorStates} handleAddPage={addPage} />
+      ),
     },
   ];
 

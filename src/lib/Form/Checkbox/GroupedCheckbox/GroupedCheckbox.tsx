@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import Checkbox, {
   CheckboxProps,
   ICheckbox,
-} from '@/lib/Form/Checkbox/Checkbox';
-import styles from './GroupedCheckbox.scss';
+} from "../../../../lib/Form/Checkbox/Checkbox";
+import styles from "./GroupedCheckbox.scss";
 
 export interface IGroupedCheckbox extends ICheckbox {
   group: Array<ICheckbox>;
 }
 export interface GroupedCheckboxProps
   extends IGroupedCheckbox,
-    Omit<CheckboxProps, 'onChange'> {
+    Omit<CheckboxProps, "onChange"> {
   onChange: ({ id, label, checked, group }: IGroupedCheckbox) => void;
 }
 const GroupedCheckbox = ({

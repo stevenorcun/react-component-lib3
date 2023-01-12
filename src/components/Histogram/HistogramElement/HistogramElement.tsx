@@ -1,14 +1,14 @@
 // @ts-nocheck
 import React from "react";
 import cx from "classnames";
-import { unhandle } from "@/utils/DOM";
+import { unhandle } from "../../../utils/DOM";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { IHistogramElementData } from "@/components/Histogram/HistogramGroups/HistogramGroups";
+import { IHistogramElementData } from "../../../components/Histogram/HistogramGroups/HistogramGroups";
 import {
   ENTITY_PROPERTY_DETAILS,
   EntityPropertyMappedDetails,
-} from "@/constants/entity-related";
-import { CanImplementHistogramState } from "@/store/shared/histogram";
+} from "../../../constants/entity-related";
+import { CanImplementHistogramState } from "../../../store/shared/histogram";
 import styles from "./styles.scss";
 
 interface HistogramElementProps {

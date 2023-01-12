@@ -2,18 +2,18 @@
 import React, { useState } from "react";
 import cx from "classnames";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { ENTITY_PROPERTY_DETAILS } from "@/constants/entity-related";
+import { EntityDto } from "../../../../../API/DataModels/Database/NovaObject";
+import { ENTITY_PROPERTY_DETAILS } from "../../../../../constants/entity-related";
 
-import selectionStyles from "@/components/Drawer/Tabs/Selection/styles.scss";
-import AdvancedSearchResultPropertyLine from "@/components/Browser/SearchResult/PropertyLine/PropertyLine";
-import Button from "@/components/Buttons/Button/Button";
+import selectionStyles from "../../../../../components/Drawer/Tabs/Selection/styles.scss";
+import AdvancedSearchResultPropertyLine from "../../../../../components/Browser/SearchResult/PropertyLine/PropertyLine";
+import Button from "../../../../../components/Buttons/Button/Button";
 
-import IconCheck from "@/assets/images/icons/IconCheck";
-import IconCrossCircle from "@/assets/images/icons/IconCrossBlue";
+import IconCheck from "../../../../../assets/images/icons/IconCheck";
+import IconCrossCircle from "../../../../../assets/images/icons/IconCrossBlue";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import styles from "@/components/Modal/components/Graph/ObjectFusion/styles.scss";
+import styles from "../../../../../components/Modal/components/Graph/ObjectFusion/styles.scss";
 
 const PickPropertiesModal = ({
   e1,

@@ -5,12 +5,12 @@
 /* eslint-disable @typescript-eslint/brace-style */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import {
   selectMap,
   setOnImportEntities,
   setSelectedKMLEntities,
-} from "@/store/map";
+} from "../../../../store/map";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import cx from "classnames";

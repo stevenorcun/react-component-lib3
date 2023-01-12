@@ -1,27 +1,27 @@
 import React, { useEffect } from "react";
 import cx from "classnames";
 import { toast } from "react-toastify";
+import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 
-import { selectBrowser, setActiveEntity } from "@/store/browser";
+import { selectBrowser, setActiveEntity } from "../../store/browser";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { selectProperty } from "@/store/tags";
-import { selectOntologyConfig } from "@/store/ontology";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { convertToEntityDto2 } from "@/API/DataModels/DTO/entityDto";
-import ObjectsApi from "@/API/controllers/object-api";
-import ApiFactory from "@/API/controllers/api-factory";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { selectProperty } from "../../store/tags";
+import { selectOntologyConfig } from "../../store/ontology";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { convertToEntityDto2 } from "../../API/DataModels/DTO/entityDto";
+import ObjectsApi from "../../API/controllers/object-api";
+import ApiFactory from "../../API/controllers/api-factory";
 
 import {
   getEntityTitleProperty,
   getIdProperty,
-} from "@/constants/entity-related";
-import SearchApi from "@/API/controllers/search-api";
+} from "../../constants/entity-related";
+import SearchApi from "../../API/controllers/search-api";
 
-import Sheet from "@/components/Sheet/Sheet";
+import Sheet from "../../components/Sheet/Sheet";
 
-import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { relatedWithIds } from "@/utils/graph";
+import { relatedWithIds } from "../../utils/graph";
 import styles from "./styles.scss";
 
 const EntityPage = ({ entity }: { entity: EntityDto }) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import ArrayExplorerContent from "@/components/Explorer/ArrayExplorer/ArrayExplorerContent";
+import ArrayExplorerContent from "../../../../../../components/Explorer/ArrayExplorer/ArrayExplorerContent";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./styles.scss";

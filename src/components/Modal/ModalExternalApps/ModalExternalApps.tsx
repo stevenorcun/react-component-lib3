@@ -2,19 +2,19 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
-import ApiFactory from "@/API/controllers/api-factory";
-import MarkingsApi from "@/API/controllers/markings-api";
-import { TAG_TYPE_COLOR } from "@/constants/tags";
-import { useAppDispatch } from "@/store/hooks";
+import ApiFactory from "../../../API/controllers/api-factory";
+import MarkingsApi from "../../../API/controllers/markings-api";
+import { TAG_TYPE_COLOR } from "../../../constants/tags";
+import { useAppDispatch } from "../../../store/hooks";
 
-import Modal from "@/components/Modal/Modal";
-import Autocomplete from "@/components/Inputs/Autocomplete/Autocomplete";
-import Switch from "@/components/Inputs/Switch/Switch";
-import Button from "@/components/Buttons/Button/Button";
-import Input from "@/components/Input/Input";
+import Modal from "../../../components/Modal/Modal";
+import Autocomplete from "../../../components/Inputs/Autocomplete/Autocomplete";
+import Switch from "../../../components/Inputs/Switch/Switch";
+import Button from "../../../components/Buttons/Button/Button";
+import Input from "../../../components/Input/Input";
 
-import IconPens from "@/assets/images/icons/IconPencilEdit";
-import IconCross from "@/assets/images/icons/IconCross";
+import IconPens from "../../../assets/images/icons/IconPencilEdit";
+import IconCross from "../../../assets/images/icons/IconCross";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import cx from "classnames";
@@ -23,7 +23,7 @@ import {
   addExternalApp,
   editExternalApp,
   ExternalAppState,
-} from "@/store/externalApps";
+} from "../../../store/externalApps";
 
 interface ModalCustomizedActionsProps {
   className?: string;

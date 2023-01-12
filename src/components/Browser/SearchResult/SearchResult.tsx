@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import cx from "classnames";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { createTabByType } from "@/store/browser";
-import { BrowserTabType } from "@/constants/browser-related";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { createTabByType } from "../../../store/browser";
+import { BrowserTabType } from "../../../constants/browser-related";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import IconNewTab from "@/assets/images/icons/IconNewTab";
-import AdvancedSearchResultPropertyLine from "@/components/Browser/SearchResult/PropertyLine/PropertyLine";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import IconNewTab from "../../../assets/images/icons/IconNewTab";
+import AdvancedSearchResultPropertyLine from "../../../components/Browser/SearchResult/PropertyLine/PropertyLine";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
 import {
   ENTITY_PROPERTY_DETAILS,
   ENTITY_TYPE_DETAILS,
@@ -14,8 +14,8 @@ import {
   getEntityStrIcon,
   getEntityTitleProperty,
   getEntityTypeLabel,
-} from "@/constants/entity-related";
-import { selectOntologyConfig } from "@/store/ontology";
+} from "../../../constants/entity-related";
+import { selectOntologyConfig } from "../../../store/ontology";
 import styles from "./SearchResult.scss";
 
 interface BrowserSearchResultProps extends React.HTMLProps<HTMLDivElement> {

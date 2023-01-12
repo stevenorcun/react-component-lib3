@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import Moment from "react-moment";
 
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { ENTITY_TYPE_DETAILS } from "../../../../constants/entity-related";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import DraggableEntityOrSummary from "../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
 
-import IconInfo from "@/assets/images/icons/IconInfo";
-import IconSort from "@/assets/images/icons/IconSort";
-import IconFilter from "@/assets/images/icons/IconFilter";
-import IconExportFile from "@/assets/images/icons/IconExportFile";
+import IconInfo from "../../../../assets/images/icons/IconInfo";
+import IconSort from "../../../../assets/images/icons/IconSort";
+import IconFilter from "../../../../assets/images/icons/IconFilter";
+import IconExportFile from "../../../../assets/images/icons/IconExportFile";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./recentActivity.scss";

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import Calendar, { CalendarProps } from "react-calendar";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import Button from "@/lib/Button/Button";
-import IconCalendar from "@/assets/images/icons/IconCalendar";
+import Button from "../../lib/Button/Button";
+import IconCalendar from "../../assets/images/icons/IconCalendar";
 import Moment from "react-moment";
-import IconSortDown from "@/assets/images/icons/IconSortDown";
-import NumberInput from "@/lib/Form/NumberInput/NumberInput";
+import IconSortDown from "../../assets/images/icons/IconSortDown";
+import NumberInput from "../../lib/Form/NumberInput/NumberInput";
 import styles from "./DateTimePicker.scss";
 
 /**

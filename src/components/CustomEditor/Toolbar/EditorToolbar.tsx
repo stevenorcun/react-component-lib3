@@ -1,7 +1,7 @@
 import React from "react";
 import { EditorState } from "draft-js";
-import OptionsToolbar from "@/components/CustomEditor/Toolbar/OptionsToolbar/OptionsToolbar";
-import ToolsToolbar from "@/components/CustomEditor/Toolbar/ToolsToolbar/ToolsToolbar";
+import OptionsToolbar from "../../../components/CustomEditor/Toolbar/OptionsToolbar/OptionsToolbar";
+import ToolsToolbar from "../../../components/CustomEditor/Toolbar/ToolsToolbar/ToolsToolbar";
 
 interface EditorToolbarProps {
   editorState: EditorState;

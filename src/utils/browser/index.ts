@@ -6,14 +6,14 @@ import {
   IBrowserSearchForm,
   IBrowserSearchFormField,
   IBrowserSimpleSearchForm,
-} from "@/constants/browser-related";
+} from "../../constants/browser-related";
 import {
   NovaEntityGender,
   NovaEntityType,
-} from "@/API/DataModels/Database/NovaEntityEnum";
-import { DB_STRICTNESS } from "@/constants/strictness-select-values";
-import { ENTITY_PROPERTY_DETAILS } from "@/constants/entity-related";
-import { Optional } from "@/utils/types";
+} from "../../API/DataModels/Database/NovaEntityEnum";
+import { DB_STRICTNESS } from "../../constants/strictness-select-values";
+import { ENTITY_PROPERTY_DETAILS } from "../../constants/entity-related";
+import { Optional } from "../../utils/types";
 
 /**
  * Formats a form to become a elastic-KQL valid query

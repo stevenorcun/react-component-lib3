@@ -2,7 +2,7 @@ import {
   File,
   NovaObject,
   NovaObjectRelation,
-} from "@/API/DataModels/Database/NovaObject";
+} from "../../API/DataModels/Database/NovaObject";
 import BaseApi from "./base-api";
 
 export interface NovaObjectRelated {
@@ -73,13 +73,11 @@ export default class ObjectsApi extends BaseApi {
     data: NovaObject
   ): Promise<NovaObject> {
     try {
-      const response = await super
-        .init()
-        .post<NovaObject>("/objects/merge", {
-          fromId: idFrom,
-          toId: idTo,
-          ...data,
-        });
+      const response = await super.init().post<NovaObject>("/objects/merge", {
+        fromId: idFrom,
+        toId: idTo,
+        ...data,
+      });
       return response.data;
     } catch (err) {
       throw this.handleError(err);

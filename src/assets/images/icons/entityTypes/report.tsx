@@ -1,5 +1,5 @@
 import React from "react";
-import { STYLE_BY_FILL_COLORS } from "@/constants/graph-themes";
+import { STYLE_BY_FILL_COLORS } from "../../../../constants/graph-themes";
 
 const report = (props: { fill?: string } = {}) => {
   return (

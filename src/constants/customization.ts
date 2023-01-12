@@ -1,9 +1,8 @@
-import ModalTypes from '@/constants/modal';
+import ModalTypes from "../constants/modal";
 
+export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
-export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
-
-export type ResponseFormat = 'TEXT' | 'XML' | 'JSON';
+export type ResponseFormat = "TEXT" | "XML" | "JSON";
 
 export enum CustomizedActionsType {
   API = 1,
@@ -14,7 +13,7 @@ export enum CustomizedActionsCallback {
 }
 
 export const CUSTOMIZED_ACTION_TYPE = {
-  [CustomizedActionsType.API]: 'API',
+  [CustomizedActionsType.API]: "API",
 };
 
 export const CUSTOMIZED_ACTION_CALLBACK = {

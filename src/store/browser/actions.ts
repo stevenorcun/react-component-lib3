@@ -1,4 +1,4 @@
-import { BrowserState } from "@/store/browser/index";
+import { BrowserState } from "../../store/browser/index";
 import {
   BrowserTabType,
   BrowserTemplateVisibility,
@@ -8,8 +8,8 @@ import {
   IBrowserSearchForm,
   IBrowserSearchFormField,
   IBrowserSimpleSearchForm,
-} from "@/constants/browser-related";
-import { DB_STRICTNESS } from "@/constants/strictness-select-values";
+} from "../../constants/browser-related";
+import { DB_STRICTNESS } from "../../constants/strictness-select-values";
 
 export const emptyStoreSearchQueries = {
   [BrowserTabType.Simple]: {

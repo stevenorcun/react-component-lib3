@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { MappedDetails } from "@/constants/entity-related";
+import { MappedDetails } from "../../../constants/entity-related";
 import ad from "./flags/ad.svg";
 import ae from "./flags/ae.svg";
 import af from "./flags/af.svg";

@@ -2,28 +2,28 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import DropDownSelect from "@/lib/Form/DropDownSelect/DropDownSelect";
+import DropDownSelect from "../../../../lib/Form/DropDownSelect/DropDownSelect";
 import {
   BROWSER_FORM_MAPPING_BY_TYPE_DETAILS,
   BrowserTabType,
   IBrowserPhysicalPersonSearchForm,
-} from "@/constants/browser-related";
-import Checkbox, { ICheckbox } from "@/lib/Form/Checkbox/Checkbox";
-import IconSearch from "@/assets/images/icons/IconSearch";
-import FormField from "@/lib/Form/Field/Field";
-import { setActiveTabSearchForm } from "@/store/browser";
-import { COUNTRIES_AS_ARRAY } from "@/assets/images/icons/flags";
-import GroupedValuesInput from "@/lib/Form/GroupedValuesInput/GroupedValuesInput";
-import GroupedValuesCalendar from "@/lib/Form/GroupedValuesInput/MultiValuesCalendar/MultiValuesCalendar";
-import { preventDefault } from "@/utils/DOM";
-import { ENTITY_PROPERTY_DETAILS } from "@/constants/entity-related";
+} from "../../../../constants/browser-related";
+import Checkbox, { ICheckbox } from "../../../../lib/Form/Checkbox/Checkbox";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
+import FormField from "../../../../lib/Form/Field/Field";
+import { setActiveTabSearchForm } from "../../../../store/browser";
+import { COUNTRIES_AS_ARRAY } from "../../../../assets/images/icons/flags";
+import GroupedValuesInput from "../../../../lib/Form/GroupedValuesInput/GroupedValuesInput";
+import GroupedValuesCalendar from "../../../../lib/Form/GroupedValuesInput/MultiValuesCalendar/MultiValuesCalendar";
+import { preventDefault } from "../../../../utils/DOM";
+import { ENTITY_PROPERTY_DETAILS } from "../../../../constants/entity-related";
 import {
   DB_STRICTNESS,
   defaultStrictnessSelectValues,
-} from "@/constants/strictness-select-values";
-import { NovaEntityGender } from "@/API/DataModels/Database/NovaEntityEnum";
-import FormTemplateLoaderWithInput from "@/components/Browser/FormTemplateLoader/FormTemplateLoader";
-import { CanLoadBrowserTemplates } from "@/components/Browser/ComplexSearch/Form/AdvancedSearch";
+} from "../../../../constants/strictness-select-values";
+import { NovaEntityGender } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import FormTemplateLoaderWithInput from "../../../../components/Browser/FormTemplateLoader/FormTemplateLoader";
+import { CanLoadBrowserTemplates } from "../../../../components/Browser/ComplexSearch/Form/AdvancedSearch";
 import styles from "./Form.scss";
 
 interface BrowserPhysicalPersonSearchFormProps extends CanLoadBrowserTemplates {

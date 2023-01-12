@@ -3,14 +3,14 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import cx from "classnames";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { sortFilterEntities, selectExplorer } from "@/store/explorer";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { sortFilterEntities, selectExplorer } from "../../../store/explorer";
 
-import Input from "@/components/Inputs/General/General";
+import Input from "../../../components/Inputs/General/General";
 
-import IconFilter from "@/assets/images/icons/IconFilter";
-import IconClose from "@/assets/images/icons/IconCross";
-import IconArrow from "@/assets/images/icons/IconArrowDown";
+import IconFilter from "../../../assets/images/icons/IconFilter";
+import IconClose from "../../../assets/images/icons/IconCross";
+import IconArrow from "../../../assets/images/icons/IconArrowDown";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./filterExplorer.scss";

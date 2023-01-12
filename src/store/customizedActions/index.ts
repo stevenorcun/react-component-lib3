@@ -1,9 +1,12 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
-import { Method } from 'axios';
-import { NovaEntityType } from '@/API/DataModels/Database/NovaEntityEnum';
-import { CustomizedActionsCallback, CustomizedActionsType, } from '@/constants/customization';
-import { LOCAL_STORAGE_KEYS } from '@/constants/storage-keys';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
+import { Method } from "axios";
+import { NovaEntityType } from "../../API/DataModels/Database/NovaEntityEnum";
+import {
+  CustomizedActionsCallback,
+  CustomizedActionsType,
+} from "../../constants/customization";
+import { LOCAL_STORAGE_KEYS } from "../../constants/storage-keys";
 
 export interface ActionState {
   id: string;
@@ -46,7 +49,7 @@ const customizedActionsLoaded = storedActions
   : null;
 
 const actionsSlice = createSlice({
-  name: 'customizedActions',
+  name: "customizedActions",
   initialState: customizedActionsLoaded || initialState,
   reducers: {
     /**

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import BaseButton from "@/components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
+import BaseButton from "../../../../../components/CustomEditor/Toolbar/Buttons/BaseButton/BaseButton";
 import styles from "./styles.scss";
 
 interface FileButtonProps {

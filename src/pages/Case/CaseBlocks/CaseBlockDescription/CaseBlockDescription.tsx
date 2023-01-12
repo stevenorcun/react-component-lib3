@@ -1,9 +1,9 @@
 import React from "react";
 import Moment from "react-moment";
 
-import IconBars from "@/assets/images/icons/IconBars";
+import IconBars from "../../../../assets/images/icons/IconBars";
 
-import InfoBlock from "@/components/InfoBlock/InfoBlock";
+import InfoBlock from "../../../../components/InfoBlock/InfoBlock";
 
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";

@@ -14,7 +14,7 @@ import moment from "moment";
 import "moment/locale/fr";
 import cx from "classnames";
 import * as d3 from "d3-scale";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
+import { NovaEntityType } from "../../../API/DataModels/Database/NovaEntityEnum";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./RechartsTimeline.scss";
 

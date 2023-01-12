@@ -3,21 +3,21 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
 import {
   ENTITY_GENDER_DETAILS,
   getEntityPropLabel,
-} from "@/constants/entity-related";
+} from "../../../../constants/entity-related";
 import {
   sortAlphabeticallyAsc,
   sortAlphabeticallyDesc,
   sortAsc,
   sortDesc,
-} from "@/utils/general";
-import FiltreProperty from "@/pages/Entity/ComponentsEntityDetail/ComponentHeaderFiltre/ComponentHeaderFiltre";
+} from "../../../../utils/general";
+import FiltreProperty from "../../../../pages/Entity/ComponentsEntityDetail/ComponentHeaderFiltre/ComponentHeaderFiltre";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import { useAppSelector } from "@/store/hooks";
-import { selectOntologyConfig } from "@/store/ontology";
+import { useAppSelector } from "../../../../store/hooks";
+import { selectOntologyConfig } from "../../../../store/ontology";
 import GeneralProperty from "./ComponentBodyProperty";
 
 import styles from "./styles.scss";

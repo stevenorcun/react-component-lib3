@@ -3,14 +3,14 @@
 import React from "react";
 import cx from "classnames";
 
-import IconBox from "@/assets/images/icons/IconBox";
-import IconOpenArrow from "@/assets/images/icons/IconOpenArrow";
-import IconMinus from "@/assets/images/icons/IconMinus";
-import IconMap from "@/assets/images/icons/IconMap";
-import IconArrowUp from "@/assets/images/icons/IconArrowUp";
-import IconHome from "@/assets/images/icons/IconAddressBackground";
-import IconHobbies from "@/assets/images/icons/IconHobbies";
-import IconOffice from "@/assets/images/icons/IconOffice";
+import IconBox from "../../../../assets/images/icons/IconBox";
+import IconOpenArrow from "../../../../assets/images/icons/IconOpenArrow";
+import IconMinus from "../../../../assets/images/icons/IconMinus";
+import IconMap from "../../../../assets/images/icons/IconMap";
+import IconArrowUp from "../../../../assets/images/icons/IconArrowUp";
+import IconHome from "../../../../assets/images/icons/IconAddressBackground";
+import IconHobbies from "../../../../assets/images/icons/IconHobbies";
+import IconOffice from "../../../../assets/images/icons/IconOffice";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import style from "./modalMap.scss";

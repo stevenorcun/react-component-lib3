@@ -1,26 +1,26 @@
 import React, { useState, useEffect, Fragment } from "react";
 import cx from "classnames";
-
-import { useAppSelector } from "@/store/hooks";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import ModalTypes from "@/constants/modal";
-import { preventDefault } from "@/utils/DOM";
-import { handleEntityOrSummaryDrop } from "@/utils/drag-events";
-import { selectToken } from "@/store/token";
-import { getUserInfo } from "@/store/token/actions";
-import { APP_ROUTES } from "@/constants/routes";
-
-import ModalProfile from "@/components/Modal/components/ModalProfile/ModalProfile";
-import ModalLists from "@/components/Modal/components/ModalLists/ViewModalList/ModalLists";
-import NavigationItem from "@/components/Navigation/NavigationItem";
-import Notifications from "@/containers/Header/Notifications/Notifications";
-
-import IconList from "@/assets/images/icons/IconList";
-import IconArrowDown from "@/assets/images/icons/IconArrowDown";
-import IconSettings from "@/assets/images/icons/IconSettings";
-import IconSearch from "@/assets/images/icons/IconSearch";
-
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
+
+import { useAppSelector } from "../../../../store/hooks";
+import { useGlobalModalContext } from "../../../../hooks/useGlobalModal";
+import ModalTypes from "../../../../constants/modal";
+import { preventDefault } from "../../../../utils/DOM";
+import { handleEntityOrSummaryDrop } from "../../../../utils/drag-events";
+import { selectToken } from "../../../../store/token";
+import { getUserInfo } from "../../../../store/token/actions";
+import { APP_ROUTES } from "../../../../constants/routes";
+
+import ModalProfile from "../../../../components/Modal/components/ModalProfile/ModalProfile";
+import ModalLists from "../../../../components/Modal/components/ModalLists/ViewModalList/ModalLists";
+import NavigationItem from "../../../../components/Navigation/NavigationItem";
+import Notifications from "../../../../containers/Header/Notifications/Notifications";
+
+import IconList from "../../../../assets/images/icons/IconList";
+import IconArrowDown from "../../../../assets/images/icons/IconArrowDown";
+import IconSettings from "../../../../assets/images/icons/IconSettings";
+import IconSearch from "../../../../assets/images/icons/IconSearch";
+
 import styles from "./rightNavigation.scss";
 import stylesGlobal from "../styles.scss";
 

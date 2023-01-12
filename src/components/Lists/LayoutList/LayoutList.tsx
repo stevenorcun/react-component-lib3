@@ -7,22 +7,22 @@ import {
   setOriginalLists,
   setSelectOneList,
   setValueFilter,
-} from "@/store/lists";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+} from "../../../store/lists";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 
-import { iconArrow } from "@/utils/general";
-import Search from "@/components/Search/Search";
-import ModalTypes from "@/constants/modal";
+import { iconArrow } from "../../../utils/general";
+import Search from "../../../components/Search/Search";
+import ModalTypes from "../../../constants/modal";
 
-import IconCase from "@/assets/images/icons/IconCase";
-import IconFavorite from "@/assets/images/icons/IconStar";
-import IconPlus from "@/assets/images/icons/IconPlus";
-import IconDelete from "@/assets/images/icons/IconRemove";
+import IconCase from "../../../assets/images/icons/IconCase";
+import IconFavorite from "../../../assets/images/icons/IconStar";
+import IconPlus from "../../../assets/images/icons/IconPlus";
+import IconDelete from "../../../assets/images/icons/IconRemove";
 
 import styles from "./layoutList.scss";
 import { filterSortLists } from "../utils";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
-import { selectCase } from "@/store/case";
+import { useGlobalModalContext } from "../../../hooks/useGlobalModal";
+import { selectCase } from "../../../store/case";
 
 interface ListProps {
   id: string;

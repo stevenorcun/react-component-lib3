@@ -4,21 +4,21 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable linebreak-style */
 // @ts-nocheck
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import SvgIconCross from "@/assets/images/icons/IconCross";
-import IconPin from "@/assets/images/icons/Map/IconPin";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { EntityDto } from "../../../API/DataModels/Database/NovaObject";
+import SvgIconCross from "../../../assets/images/icons/IconCross";
+import IconPin from "../../../assets/images/icons/Map/IconPin";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import {
   addEntities,
   MapState,
   selectMap,
   setOnImportEntitiesWithoutGeo,
-} from "@/store/map";
+} from "../../../store/map";
 import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { Map, MapRef } from "react-map-gl";
 import maplibregl from "maplibre-gl";
-import { MAP_STYLE } from "@/constants/map";
+import { MAP_STYLE } from "../../../constants/map";
 import styles from "./styles.scss";
 import { unclusteredPointLayer } from "../../Layers/Clusterlayers";
 

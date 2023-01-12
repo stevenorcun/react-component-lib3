@@ -1,12 +1,12 @@
 import React from "react";
 import GridLayout from "react-grid-layout";
 import cx from "classnames";
-
-import { unhandle } from "@/utils/DOM";
-import IconDisplay from "@/assets/images/icons/IconEyes";
-import IconHidden from "@/assets/images/icons/IconHiddent";
-
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
+
+import { unhandle } from "../../../utils/DOM";
+import IconDisplay from "../../../assets/images/icons/IconEyes";
+import IconHidden from "../../../assets/images/icons/IconHiddent";
+
 import styles from "./settings.scss";
 
 interface SettingsProps {

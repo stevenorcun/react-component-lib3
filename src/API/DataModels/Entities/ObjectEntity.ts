@@ -1,6 +1,6 @@
-import { GraphEntityProperties } from "@/API/DataModels/Database/NovaObject";
+import * as NovaObject from "../Database/NovaObject";
 
-export interface ObjectDto extends GraphEntityProperties {
+export interface ObjectDto extends NovaObject.GraphEntityProperties {
   fill: string;
   textColor: string;
   icon: string;

@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
 import Moment from "react-moment";
 
-import { EntityDto } from "@/API/DataModels/Database/NovaObject";
-import { ENTITY_TYPE_DETAILS } from "@/constants/entity-related";
-import { NovaEntityType } from "@/API/DataModels/Database/NovaEntityEnum";
-import OPTIONS_SUMMARY from "@/constants/options";
+import { EntityDto } from "../../../../API/DataModels/Database/NovaObject";
+import { ENTITY_TYPE_DETAILS } from "../../../../constants/entity-related";
+import { NovaEntityType } from "../../../../API/DataModels/Database/NovaEntityEnum";
+import OPTIONS_SUMMARY from "../../../../constants/options";
 
-import IconMedia from "@/assets/images/icons/IconMedia";
-import IconPlus from "@/assets/images/icons/IconPlus";
+import IconMedia from "../../../../assets/images/icons/IconMedia";
+import IconPlus from "../../../../assets/images/icons/IconPlus";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
-import DraggableEntityOrSummary from "@/components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
+import DraggableEntityOrSummary from "../../../../components/Sheet/Tabs/TabEntitySummary/Related/DraggableEntityOrSummary";
 import FullScreenMultimediaFile from "./FullScreenMultimediaFile/FullScreenMultimediaFile";
 import FeaturesMultimediaFiles from "./FeaturesMultimediaFiles";
 

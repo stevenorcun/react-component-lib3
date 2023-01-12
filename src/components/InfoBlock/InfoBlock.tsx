@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import IconEllipsisH from "@/assets/images/icons/IconEllipsisH";
+import IconEllipsisH from "../../assets/images/icons/IconEllipsisH";
 
 import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";

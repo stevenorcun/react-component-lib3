@@ -6,31 +6,31 @@ import { toast } from "react-toastify";
 import {
   EntityDto,
   RelatedSummary,
-} from "@/API/DataModels/Database/NovaObject";
-import ApiFactory from "@/API/controllers/api-factory";
-import ListsApi from "@/API/controllers/lists-api";
+} from "../../../../../API/DataModels/Database/NovaObject";
+import ApiFactory from "../../../../../API/controllers/api-factory";
+import ListsApi from "../../../../../API/controllers/lists-api";
 
-import Button from "@/components/Buttons/Button/Button";
-import Modal from "@/components/Modal/Modal";
-import InputSearch from "@/components/Search/Search";
-import filterOriginList from "@/components/Lists/utils";
-import CreateNewListModalBody from "@/components/Modal/components/ModalLists/Components/CreateList/CreateList";
+import Button from "../../../../../components/Buttons/Button/Button";
+import Modal from "../../../../../components/Modal/Modal";
+import InputSearch from "../../../../../components/Search/Search";
+import filterOriginList from "../../../../../components/Lists/utils";
+import CreateNewListModalBody from "../../../../../components/Modal/components/ModalLists/Components/CreateList/CreateList";
 
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../../store/hooks";
 import {
   addIdsToListById,
   createList,
   selectLists,
   setOriginalLists,
-} from "@/store/lists";
-import { useGlobalModalContext } from "@/hooks/useGlobalModal";
+} from "../../../../../store/lists";
+import { useGlobalModalContext } from "../../../../../hooks/useGlobalModal";
 
-import IconList from "@/assets/images/icons/IconList2";
+import IconList from "../../../../../assets/images/icons/IconList2";
 
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import styles from "./addToListModal.scss";
-import { getIdProperty } from "@/constants/entity-related";
-import { selectOntologyConfig } from "@/store/ontology";
+import { getIdProperty } from "../../../../../constants/entity-related";
+import { selectOntologyConfig } from "../../../../../store/ontology";
 
 const Tabs = ({
   handleSelectTab,

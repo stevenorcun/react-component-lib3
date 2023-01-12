@@ -1,5 +1,5 @@
-import { createContext, useContext } from 'react';
-import ModalTypes from '@/constants/modal';
+import { createContext, useContext } from "react";
+import ModalTypes from "../constants/modal";
 
 type GlobalModalContext = {
   showModal: (modalType: ModalTypes, modalProps?: any) => void;
