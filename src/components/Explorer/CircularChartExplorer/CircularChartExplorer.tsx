@@ -2,9 +2,9 @@ import React from "react";
 
 import SearchExplorer from "../SearchExplorer/SearchExplorer";
 import RechartsCircular from "./RechartsCircular";
-import IconSmallDots from "@/assets/images/icons/IconSmallDots";
+import IconSmallDots from "../../../assets/images/icons/IconSmallDots";
 
-import IconArrow from "@/assets/images/icons/IconArrowDown";
+import IconArrow from "../../../assets/images/icons/IconArrowDown";
 
 import styles from "./circularCharsExplorer.scss";
 

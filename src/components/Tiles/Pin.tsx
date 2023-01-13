@@ -1,10 +1,10 @@
-import React, { useCallback } from 'react';
-import DRAG_EVENT_TYPES from '@/constants/drag-events-types';
-import { unhandle } from '@/utils/DOM';
-import throttle from 'lodash.throttle';
-import { setIsDraggingPin, setMousePos } from '@/store/graph';
-import { useAppDispatch } from '@/store/hooks';
-import styles from './styles.scss';
+import React, { useCallback } from "react";
+import DRAG_EVENT_TYPES from "../../constants/drag-events-types";
+import { unhandle } from "../../utils/DOM";
+import throttle from "lodash.throttle";
+import { setIsDraggingPin, setMousePos } from "../../store/graph";
+import { useAppDispatch } from "../../store/hooks";
+import styles from "./styles.scss";
 
 interface PinProps {
   parentId: string;
@@ -33,7 +33,7 @@ const Pin = ({
     e.stopPropagation();
     e.dataTransfer.setData(
       DRAG_EVENT_TYPES.createGraphConnection,
-      JSON.stringify(parentId),
+      JSON.stringify(parentId)
     );
     const startPos = {
       x: parentPos.x + x,

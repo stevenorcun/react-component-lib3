@@ -3,7 +3,7 @@ import cx from "classnames";
 import commons from "@stevenorcun/common-css-lib/src/assets/scss/_commons.scss";
 import IconSortDown from "../../../assets/images/icons/IconSortDown";
 import IconCross from "../../../assets/images/icons/IconCross";
-import { unhandle } from "@/utils/DOM";
+import { unhandle } from "../../../utils/DOM";
 import styles from "./DropDownSelect.scss";
 
 export interface DropDownSelectProps {

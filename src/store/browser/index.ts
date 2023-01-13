@@ -9,18 +9,18 @@ import {
   IBrowserSearchFormField,
   IBrowserSearchTab,
   IBrowserSimpleSearchForm,
-} from "@/constants/browser-related";
+} from "../../constants/browser-related";
 import { EntityDto } from "../../API/DataModels/Database/NovaObject";
-import { NovaEntityTypeGroup } from "@/API/DataModels/Database/NovaEntityEnum";
-import { createBrowserSearchFormByType } from "@/utils/browser";
+import { NovaEntityTypeGroup } from "../../API/DataModels/Database/NovaEntityEnum";
+import { createBrowserSearchFormByType } from "../../utils/browser";
 import {
   _addCustomFieldToForm,
   _deleteCustomFieldByKey,
   _editCustomFormFieldByIndex,
   _setActiveTabSearchForm,
   emptyStoreSearchQueries,
-} from "@/store/browser/actions";
-import { BrowserSearchTemplateStorage } from "@/hooks/usePreferences";
+} from "../../store/browser/actions";
+import { BrowserSearchTemplateStorage } from "../../hooks/usePreferences";
 
 export interface BrowserState {
   currentSearch: string;

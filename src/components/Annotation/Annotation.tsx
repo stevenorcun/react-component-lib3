@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 import throttle from "lodash.throttle";
 import cx from "classnames";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   selectGraph,
   setGraphFocus,
@@ -11,10 +11,10 @@ import {
   setSelectedAnnotations,
   toggleAnnotationSelectionById,
   updateAnnotationById,
-} from "@/store/graph";
-import { AnnotationDto } from "@/API/DataModels/Entities/AnnotationEntity";
-import { unhandle } from "@/utils/DOM";
-import { Key } from "@/constants/DOM";
+} from "../../store/graph";
+import { AnnotationDto } from "../../API/DataModels/Entities/AnnotationEntity";
+import { unhandle } from "../../utils/DOM";
+import { Key } from "../../constants/DOM";
 import styles from "./Annotation.scss";
 
 const Annotation = ({ id, ...props }: AnnotationDto) => {

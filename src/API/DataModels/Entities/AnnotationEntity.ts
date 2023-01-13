@@ -1,6 +1,6 @@
-import { STROKES_FILLS_COLORS } from "@/constants/graph-themes";
+import { STROKES_FILLS_COLORS } from "../../../constants/graph-themes";
 import { GraphEntityProperties } from "../../../API/DataModels/Database/NovaObject";
-import { Optional } from "@/utils/types";
+import { Optional } from "../../../utils/types";
 
 /**
  * Composant servant à créer une bulle de texte servant d'annotation/commentaire

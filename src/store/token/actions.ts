@@ -1,4 +1,4 @@
-import { TokenState } from "@/store/token/index";
+import { TokenState } from "../../store/token/index";
 import jwt_decode from "jwt-decode";
 import { User } from "../../API/DataModels/Database/User";
 import { SESSION_STORAGE_KEYS } from "../../constants/storage-keys";

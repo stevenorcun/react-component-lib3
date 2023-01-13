@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { selectMap, setActiveKmlMap } from "../../../store/map";
 import * as React from "react";
 import styles from "../MapServices/clustering_styles.scss";

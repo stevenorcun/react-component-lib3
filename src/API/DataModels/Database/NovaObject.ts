@@ -1,4 +1,4 @@
-import { NovaDataTrustLevel } from "@/components/Modal/components/Graph/ObjectFusion/ModalObjectFusion";
+import { NovaDataTrustLevel } from "../../../components/Modal/components/Graph/ObjectFusion/ModalObjectFusion";
 import { NovaEntityGender, NovaEntityType } from "./NovaEntityEnum";
 
 export type NovaObject = {
