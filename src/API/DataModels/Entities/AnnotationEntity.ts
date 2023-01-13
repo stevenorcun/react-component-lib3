@@ -1,6 +1,6 @@
-import { STROKES_FILLS_COLORS } from '@/constants/graph-themes';
-import { GraphEntityProperties } from '@/API/DataModels/Database/NovaObject';
-import { Optional } from '@/utils/types';
+import { STROKES_FILLS_COLORS } from "@/constants/graph-themes";
+import { GraphEntityProperties } from "../../../API/DataModels/Database/NovaObject";
+import { Optional } from "@/utils/types";
 
 /**
  * Composant servant à créer une bulle de texte servant d'annotation/commentaire
@@ -33,41 +33,39 @@ export interface AnnotationDto extends GraphEntityProperties {
   thikness: string;
 }
 
-function AnnotationEntity(
-  {
-    id = `Annotation-${Math.random()}-${Date.now()}`,
-    x,
-    y,
-    width = 200,
-    height = 100,
-    label = "Double clic pour éditer puis 'Entrer' pour valider le changement",
-    fill = STROKES_FILLS_COLORS[3],
-    stroke = STROKES_FILLS_COLORS[13],
-    borderWidth = 5,
-    fontSizeInPx,
-    font,
-    bold = false,
-    isItalic = false,
-    isUnderline = false,
-    textAlign,
-    textColor = STROKES_FILLS_COLORS[15],
-    thikness = '3',
-  }: Optional<
+function AnnotationEntity({
+  id = `Annotation-${Math.random()}-${Date.now()}`,
+  x,
+  y,
+  width = 200,
+  height = 100,
+  label = "Double clic pour éditer puis 'Entrer' pour valider le changement",
+  fill = STROKES_FILLS_COLORS[3],
+  stroke = STROKES_FILLS_COLORS[13],
+  borderWidth = 5,
+  fontSizeInPx,
+  font,
+  bold = false,
+  isItalic = false,
+  isUnderline = false,
+  textAlign,
+  textColor = STROKES_FILLS_COLORS[15],
+  thikness = "3",
+}: Optional<
   AnnotationDto,
-  | 'id'
-  | 'width'
-  | 'height'
-  | 'label'
-  | 'fill'
-  | 'stroke'
-  | 'borderWidth'
-  | 'fontSizeInPx'
-  | 'font'
-  | 'bold'
-  | 'isItalic'
-  | 'isUnderline'
-  >,
-) {
+  | "id"
+  | "width"
+  | "height"
+  | "label"
+  | "fill"
+  | "stroke"
+  | "borderWidth"
+  | "fontSizeInPx"
+  | "font"
+  | "bold"
+  | "isItalic"
+  | "isUnderline"
+>) {
   return {
     id,
     x,

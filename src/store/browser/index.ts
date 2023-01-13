@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   BrowserSearchTemplate,
   BrowserTabType,
@@ -9,52 +9,52 @@ import {
   IBrowserSearchFormField,
   IBrowserSearchTab,
   IBrowserSimpleSearchForm,
-} from '@/constants/browser-related';
-import { EntityDto } from '@/API/DataModels/Database/NovaObject';
-import { NovaEntityTypeGroup } from '@/API/DataModels/Database/NovaEntityEnum';
-import { createBrowserSearchFormByType } from '@/utils/browser';
+} from "@/constants/browser-related";
+import { EntityDto } from "../../API/DataModels/Database/NovaObject";
+import { NovaEntityTypeGroup } from "@/API/DataModels/Database/NovaEntityEnum";
+import { createBrowserSearchFormByType } from "@/utils/browser";
 import {
   _addCustomFieldToForm,
   _deleteCustomFieldByKey,
   _editCustomFormFieldByIndex,
   _setActiveTabSearchForm,
   emptyStoreSearchQueries,
-} from '@/store/browser/actions';
-import { BrowserSearchTemplateStorage } from '@/hooks/usePreferences';
+} from "@/store/browser/actions";
+import { BrowserSearchTemplateStorage } from "@/hooks/usePreferences";
 
 export interface BrowserState {
   currentSearch: string;
   tabs: Array<IBrowserSearchTab>;
   activeBrowserTabIndex: number | null;
   homepageKeywords: string;
-  rawSearchQueries: BrowserSearchTemplate[],
-  searchTemplates: BrowserSearchTemplateStorage
+  rawSearchQueries: BrowserSearchTemplate[];
+  searchTemplates: BrowserSearchTemplateStorage;
 }
 
 const initialState: BrowserState = {
-  currentSearch: '',
+  currentSearch: "",
   tabs: [],
   activeBrowserTabIndex: null,
-  homepageKeywords: '',
+  homepageKeywords: "",
   rawSearchQueries: [],
   searchTemplates: emptyStoreSearchQueries,
 };
 
 const browserSlice = createSlice({
-  name: 'browser',
+  name: "browser",
   initialState,
   reducers: {
     toggleResultSelection: (state, action: PayloadAction<EntityDto>) => {
       const { activeBrowserTabIndex, tabs } = state;
 
       if (
-        activeBrowserTabIndex === null
-        || tabs[activeBrowserTabIndex].type === BrowserTabType.EntityDetails
+        activeBrowserTabIndex === null ||
+        tabs[activeBrowserTabIndex].type === BrowserTabType.EntityDetails
       ) {
         console.warn(
-          '[browserState.toggleResultSelection]',
-          'Unable to toggle selection in the current Tab',
-          activeBrowserTabIndex,
+          "[browserState.toggleResultSelection]",
+          "Unable to toggle selection in the current Tab",
+          activeBrowserTabIndex
         );
         return;
       }
@@ -62,7 +62,8 @@ const browserSlice = createSlice({
       const tab = tabs[activeBrowserTabIndex];
       if (tab.selectedResults[action.payload.id]) {
         delete tab.selectedResults[action.payload.id];
-        if (tab.activeEntity && tab.activeEntity.id === action.payload.id) tab.activeEntity = undefined;
+        if (tab.activeEntity && tab.activeEntity.id === action.payload.id)
+          tab.activeEntity = undefined;
       } else {
         tab.selectedResults[action.payload.id] = action.payload;
         tab.activeEntity = action.payload;
@@ -71,7 +72,8 @@ const browserSlice = createSlice({
 
     toggleAllSelection: (state, action) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex].selectedResults = action.payload;
+        state.tabs[state.activeBrowserTabIndex].selectedResults =
+          action.payload;
       }
     },
     /**
@@ -79,7 +81,8 @@ const browserSlice = createSlice({
      * If the index is `null`, the BrowserHomePage will be displayed
      */
     setActiveTabByIndex: (state, action: PayloadAction<number | null>) => {
-      if (typeof action.payload === 'number' && state.tabs[action.payload]) state.activeBrowserTabIndex = action.payload;
+      if (typeof action.payload === "number" && state.tabs[action.payload])
+        state.activeBrowserTabIndex = action.payload;
       else state.activeBrowserTabIndex = null;
     },
     /**
@@ -93,8 +96,8 @@ const browserSlice = createSlice({
         newTabs.splice(action.payload, 1);
         // detect when user closes the right-most tab (and avoid "Array Index out of bounds" error)
         if (
-          state.activeBrowserTabIndex !== null
-          && state.activeBrowserTabIndex === newTabs.length
+          state.activeBrowserTabIndex !== null &&
+          state.activeBrowserTabIndex === newTabs.length
         ) {
           state.activeBrowserTabIndex = !newTabs.length
             ? null
@@ -103,9 +106,9 @@ const browserSlice = createSlice({
         state.tabs = newTabs;
       } else {
         console.warn(
-          '[browserState.removeTabByIndex]',
-          'Invalid index used to remove a Browser Tab',
-          action.payload,
+          "[browserState.removeTabByIndex]",
+          "Invalid index used to remove a Browser Tab",
+          action.payload
         );
       }
     },
@@ -114,19 +117,21 @@ const browserSlice = createSlice({
      *  If there is no active tab (`activeBrowserTabIndex === null`), we set the BrowserHomePage keywords
      */
     setActiveTabKeywords: (state, action: PayloadAction<string>) => {
-      if (state.activeBrowserTabIndex === null) state.homepageKeywords = action.payload;
+      if (state.activeBrowserTabIndex === null)
+        state.homepageKeywords = action.payload;
       else if (state.tabs[state.activeBrowserTabIndex]) {
         state.tabs[state.activeBrowserTabIndex].form.value.values = [
           action.payload,
         ];
         if (
           state.tabs[state.activeBrowserTabIndex].type === BrowserTabType.Simple
-        ) state.tabs[state.activeBrowserTabIndex].label = action.payload;
+        )
+          state.tabs[state.activeBrowserTabIndex].label = action.payload;
       } else {
         console.warn(
-          '[browserState.setTabKeywordsByIndex]',
-          'Invalid index used to set a tab\'s keywords',
-          action.payload,
+          "[browserState.setTabKeywordsByIndex]",
+          "Invalid index used to set a tab's keywords",
+          action.payload
         );
       }
     },
@@ -140,18 +145,18 @@ const browserSlice = createSlice({
         activeEntity?: EntityDto;
         form?: IBrowserSearchForm;
         loadedTemplate?: BrowserSearchTemplate;
-      }>,
+      }>
     ) => {
       let label;
       switch (action.payload.type) {
         case BrowserTabType.Advanced:
-          label = 'Recherche avancée';
+          label = "Recherche avancée";
           break;
         case BrowserTabType.Person:
-          label = 'Recherche personne physique';
+          label = "Recherche personne physique";
           break;
         case BrowserTabType.Phone:
-          label = 'Recherche téléphone';
+          label = "Recherche téléphone";
           break;
         case BrowserTabType.EntityDetails:
         case BrowserTabType.Simple:
@@ -159,10 +164,11 @@ const browserSlice = createSlice({
           label = action.payload.value;
       }
       state.tabs.push({
-        form: action.payload.form
-          || createBrowserSearchFormByType(
+        form:
+          action.payload.form ||
+          createBrowserSearchFormByType(
             action.payload.type,
-            action.payload.value ? [action.payload.value] : [],
+            action.payload.value ? [action.payload.value] : []
           ),
         resultTypeFilters: [],
         resultTypeFiltersAsMap: {},
@@ -178,18 +184,19 @@ const browserSlice = createSlice({
         isDrawerCollapsed: true,
 
         // [T922] Form templates
-        templateSearchValue: '',
+        templateSearchValue: "",
         loadedTemplate: action.payload.loadedTemplate || null,
       });
-      if (action.payload.isActive) state.activeBrowserTabIndex = state.tabs.length - 1;
+      if (action.payload.isActive)
+        state.activeBrowserTabIndex = state.tabs.length - 1;
       // Reset HomePage's value
-      state.homepageKeywords = '';
+      state.homepageKeywords = "";
     },
-    setActiveEntity: (state, action: PayloadAction<{ entity: any, index: number | null }>) => {
-      const {
-        entity,
-        index = state.activeBrowserTabIndex,
-      } = action.payload;
+    setActiveEntity: (
+      state,
+      action: PayloadAction<{ entity: any; index: number | null }>
+    ) => {
+      const { entity, index = state.activeBrowserTabIndex } = action.payload;
       // /!\ async init in useEffect could try to update a deleted element /!\
       // fixme:
       //  - si 3 tabs existent, et que l'on suppr la tab 2 avant que l'init se soit fini,
@@ -207,27 +214,32 @@ const browserSlice = createSlice({
         state.tabs[state.activeBrowserTabIndex].activeEntity = action.payload;
       }
     },
-    setActiveTabSearchFilters: (
-      state,
-      action: PayloadAction<any>,
-    ) => {
+    setActiveTabSearchFilters: (state, action: PayloadAction<any>) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex].resultTypeFilters = action.payload;
-        state.tabs[state.activeBrowserTabIndex].resultTypeFiltersAsMap = Object.keys(action.payload).reduce((acc, curr) => {
-          const types = Object.keys(action.payload[curr]).filter((key) => key !== 'total');
-          types.forEach((type) => {
-            acc[type] = action.payload[curr][type].checked;
-          });
-          return acc;
-        }, {});
+        state.tabs[state.activeBrowserTabIndex].resultTypeFilters =
+          action.payload;
+        state.tabs[state.activeBrowserTabIndex].resultTypeFiltersAsMap =
+          Object.keys(action.payload).reduce((acc, curr) => {
+            const types = Object.keys(action.payload[curr]).filter(
+              (key) => key !== "total"
+            );
+            types.forEach((type) => {
+              acc[type] = action.payload[curr][type].checked;
+            });
+            return acc;
+          }, {});
       }
     },
     setActiveTabSearchForm: (
       state,
-      action: PayloadAction<Partial< | IBrowserSimpleSearchForm
-      | IBrowserAdvancedSearchForm
-      | IBrowserPhysicalPersonSearchForm
-      | IBrowserPhoneSearchForm>>,
+      action: PayloadAction<
+        Partial<
+          | IBrowserSimpleSearchForm
+          | IBrowserAdvancedSearchForm
+          | IBrowserPhysicalPersonSearchForm
+          | IBrowserPhoneSearchForm
+        >
+      >
     ) => {
       _setActiveTabSearchForm(state, { form: action.payload, isForced: false });
       // if (state.activeBrowserTabIndex !== null) {
@@ -237,10 +249,14 @@ const browserSlice = createSlice({
     },
     forceSetActiveTabSearchForm: (
       state,
-      action: PayloadAction<Partial< | IBrowserSimpleSearchForm
-      | IBrowserAdvancedSearchForm
-      | IBrowserPhysicalPersonSearchForm
-      | IBrowserPhoneSearchForm>>,
+      action: PayloadAction<
+        Partial<
+          | IBrowserSimpleSearchForm
+          | IBrowserAdvancedSearchForm
+          | IBrowserPhysicalPersonSearchForm
+          | IBrowserPhoneSearchForm
+        >
+      >
     ) => {
       _setActiveTabSearchForm(state, { form: action.payload, isForced: true });
     },
@@ -251,7 +267,7 @@ const browserSlice = createSlice({
         resultsByTypeGroup: {
           [typeGroup in NovaEntityTypeGroup]?: EntityDto[];
         };
-      }>,
+      }>
     ) => {
       if (state.activeBrowserTabIndex !== null) {
         const tab = state.tabs[state.activeBrowserTabIndex];
@@ -266,82 +282,102 @@ const browserSlice = createSlice({
     },
     toggleActiveTabDrawer: (state) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex]
-          .isDrawerCollapsed = !state.tabs[state.activeBrowserTabIndex].isDrawerCollapsed;
+        state.tabs[state.activeBrowserTabIndex].isDrawerCollapsed =
+          !state.tabs[state.activeBrowserTabIndex].isDrawerCollapsed;
       }
     },
     addCustomFieldToForm: (state) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex].form
-          .__customFields = _addCustomFieldToForm(state.tabs[state.activeBrowserTabIndex].form);
+        state.tabs[state.activeBrowserTabIndex].form.__customFields =
+          _addCustomFieldToForm(state.tabs[state.activeBrowserTabIndex].form);
       }
     },
     editCustomFormFieldByIndex: (
       state,
-      action: PayloadAction<{ index: number; newValue: IBrowserSearchFormField<any> }>,
+      action: PayloadAction<{
+        index: number;
+        newValue: IBrowserSearchFormField<any>;
+      }>
     ) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex].form.__customFields = _editCustomFormFieldByIndex(
-          state.tabs[state.activeBrowserTabIndex].form,
-          action.payload.index,
-          action.payload.newValue,
-        );
+        state.tabs[state.activeBrowserTabIndex].form.__customFields =
+          _editCustomFormFieldByIndex(
+            state.tabs[state.activeBrowserTabIndex].form,
+            action.payload.index,
+            action.payload.newValue
+          );
       }
     },
-    setTemplateSearchInputValue: (state: BrowserState, action: PayloadAction<IBrowserSearchTab['templateSearchValue']>) => {
+    setTemplateSearchInputValue: (
+      state: BrowserState,
+      action: PayloadAction<IBrowserSearchTab["templateSearchValue"]>
+    ) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex].templateSearchValue = action.payload;
+        state.tabs[state.activeBrowserTabIndex].templateSearchValue =
+          action.payload;
       }
     },
-    setLoadedTemplate: (state: BrowserState, action: PayloadAction<IBrowserSearchTab['loadedTemplate']>) => {
+    setLoadedTemplate: (
+      state: BrowserState,
+      action: PayloadAction<IBrowserSearchTab["loadedTemplate"]>
+    ) => {
       if (state.activeBrowserTabIndex !== null) {
         state.tabs[state.activeBrowserTabIndex].loadedTemplate = action.payload;
-        state.tabs[state.activeBrowserTabIndex].templateSearchValue = action.payload?.title || '';
+        state.tabs[state.activeBrowserTabIndex].templateSearchValue =
+          action.payload?.title || "";
         if (action.payload) {
-          _setActiveTabSearchForm(state, { form: action.payload.form, isForced: true });
+          _setActiveTabSearchForm(state, {
+            form: action.payload.form,
+            isForced: true,
+          });
         }
       }
     },
     deleteCustomFieldByKey: (
       state: BrowserState,
-      action: PayloadAction<{ index: number }>,
+      action: PayloadAction<{ index: number }>
     ) => {
       if (state.activeBrowserTabIndex !== null) {
-        state.tabs[state.activeBrowserTabIndex]
-          .form.__customFields = _deleteCustomFieldByKey(
+        state.tabs[state.activeBrowserTabIndex].form.__customFields =
+          _deleteCustomFieldByKey(
             state.tabs[state.activeBrowserTabIndex].form,
-            action.payload.index,
+            action.payload.index
           );
       }
     },
     setSearchTemplates: (
       state: BrowserState,
-      action: PayloadAction<BrowserState['searchTemplates']>,
+      action: PayloadAction<BrowserState["searchTemplates"]>
     ) => {
       state.searchTemplates = action.payload;
     },
-    updateTemplate: (state: BrowserState, action: PayloadAction<BrowserSearchTemplate>) => {
+    updateTemplate: (
+      state: BrowserState,
+      action: PayloadAction<BrowserSearchTemplate>
+    ) => {
       const { payload } = action;
       if (
-        payload.id
-        && payload.type
-        && payload.formType
-        && state.searchTemplates?.[payload.formType]?.[payload.type]
+        payload.id &&
+        payload.type &&
+        payload.formType &&
+        state.searchTemplates?.[payload.formType]?.[payload.type]
       ) {
-        state.searchTemplates[payload.formType][payload.type] = state
-          .searchTemplates[payload.formType][payload.type]
-          .map(
-            (template) => (template.id === payload.id ? payload : template),
+        state.searchTemplates[payload.formType][payload.type] =
+          state.searchTemplates[payload.formType][payload.type].map(
+            (template) => (template.id === payload.id ? payload : template)
           );
       }
     },
-    createTemplate: (state: BrowserState, action: PayloadAction<BrowserSearchTemplate>) => {
+    createTemplate: (
+      state: BrowserState,
+      action: PayloadAction<BrowserSearchTemplate>
+    ) => {
       const { payload } = action;
       if (
-        payload.id
-        && payload.type
-        && payload.formType
-        && state.searchTemplates?.[payload.formType]?.[payload.type]
+        payload.id &&
+        payload.type &&
+        payload.formType &&
+        state.searchTemplates?.[payload.formType]?.[payload.type]
       ) {
         state.searchTemplates[payload.formType][payload.type].push(payload);
       }
